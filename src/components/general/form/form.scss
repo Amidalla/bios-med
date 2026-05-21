@@ -1,0 +1,55 @@
+@use "core/breakpoints" as bp;
+@use "core/mixins" as mix;
+
+.form {
+  .grid.col-2 {
+    columns: 2;
+    column-gap: var(--form-gap);
+
+    @include bp.mq(tablet) {
+      columns: 1;
+    }
+  }
+
+  .field {
+    width: 100%;
+    min-width: 0;
+    margin-bottom: 30px;
+
+    .label {
+      display: none;
+    }
+
+    .input-wrapper {
+      display: flex;
+      position: relative;
+
+      .input-icon {
+        position: absolute;
+        left: 24px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 3;
+      }
+    }
+  }
+
+  .field-error {
+    display: block;
+    margin-top: 6px;
+    font-size: 12px;
+    line-height: 1.4;
+    color: var(--color-brown);
+  }
+
+  .field-consent {
+    margin-top: 13px;
+    margin-bottom: 13px;
+  }
+
+  .actions {
+    .button {
+      width: 100%;
+    }
+  }
+}

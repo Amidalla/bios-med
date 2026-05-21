@@ -1,0 +1,37 @@
+{% macro render(
+    type="button",
+    text="",
+    variant="primary",
+    size="md",
+    id="",
+    class="",
+    disabled=false,
+    data={},
+    aria={}
+) %}
+{% set buttonClasses = "button button--" + variant + " button--" + size %}
+{% if class %}{% set buttonClasses = buttonClasses + " " + class %}{% endif %}
+
+<button
+    type="{{ type }}"
+    class="{{ buttonClasses }}"
+    {% if id %}id="{{ id }}"{% endif %}
+    {% if disabled %}disabled{% endif %}
+    {% if data %}
+        {% for key, val in data %}
+            data-{{ key | replace("_", "-") }}="{{ val }}"
+        {% endfor %}
+    {% endif %}
+    {% if aria %}
+        {% for key, val in aria %}
+            aria-{{ key | replace("_", "-") }}="{{ val }}"
+        {% endfor %}
+    {% endif %}
+>
+    {% if text %}
+        <span class="button-text">{{ text | safe }}</span>
+    {% else %}
+        {{ caller() if caller else "" }}
+    {% endif %}
+</button>
+{% endmacro %}

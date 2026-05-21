@@ -1,0 +1,20 @@
+{% macro render(
+    items=[],
+    class="",
+    ariaLabel="Навигация"
+) %}
+{% set navClasses = "navigation-main" %}
+{% if class %}{% set navClasses = navClasses + " " + class %}{% endif %}
+
+<nav class="{{ navClasses }}" aria-label="{{ ariaLabel }}">
+    <ul>
+        {% for item in items %}
+            <li class="{{ item.class if item.class else '' }}">
+                <a href="{{ item.href }}"{% if item.target %} target="{{ item.target }}"{% endif %}{% if item.ariaCurrent %} aria-current="{{ item.ariaCurrent }}"{% endif %}>
+                    {{ item.title }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+</nav>
+{% endmacro %}

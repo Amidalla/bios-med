@@ -1,0 +1,231 @@
+@use "core/breakpoints" as bp;
+@use "core/mixins" as mix;
+
+.button {
+  // Component variables
+  --button-border-radius: 49px;
+  --button-font-size-sm: 16px;
+  --button-font-size-md: 18px;
+  --button-font-size-lg: 20px;
+  --button-height-sm: 51px;
+  --button-height-md: 59px;
+  --button-height-lg: 62px;
+  --button-padding-sm: 0 26px;
+  --button-padding-md: 0 38px;
+  --button-padding-lg: 0 40px;
+  --button-gap-sm: 0.3125rem;
+  --button-gap-md: 0.375rem;
+
+  // Base styles
+  position: relative;
+  z-index: 0;
+  display: inline-flex;
+  gap: var(--button-gap-md);
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  overflow: hidden;
+  font-family: var(--font-family-primary);
+  font-size: var(--button-font-size-lg);
+  font-weight: 500;
+  line-height: 120%;
+  white-space: nowrap;
+  text-decoration: none;
+  cursor: pointer;
+  user-select: none;
+  outline: none;
+  border-radius: var(--button-border-radius);
+  isolation: isolate;
+  border: 1px solid #DEC294;
+  background: var(--bg, linear-gradient(96deg, #BE9158 12.36%, #F7E0AA 53.53%, #BE9158 91.65%));
+  box-shadow: 3px 3px 6px 0 rgba(123, 75, 9, 0.3);
+  backdrop-filter: blur(2px);
+  transition: all 0.3s ease;
+  height: var(--button-height-lg);
+  padding: var(--button-padding-lg);
+
+  @include bp.mq(laptop-l) {
+    padding: var(--button-padding-md);
+    height: var(--button-height-md);
+  }
+
+  @include bp.mq(mobile-xl) {
+    padding: var(--button-padding-md);
+    height: var(--button-height-sm);
+    font-size: var(--button-font-size-sm);
+  }
+
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(276deg, rgba(190, 145, 88, 0.74) 12.36%, rgba(247, 224, 170, 0.74) 53.53%, rgba(190, 145, 88, 0.74) 91.65%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 0;
+    border-radius: 49px;
+  }
+
+
+  &:hover {
+    transform: translateY(-2px);
+
+    &::before {
+      opacity: 1;
+    }
+  }
+
+  span {
+    color: var(--color-brown);
+    position: relative;
+    z-index: 3;
+  }
+
+
+  &:hover:not(:disabled, .disabled)::before {
+    transform: translateY(0);
+  }
+
+  // Focus state (accessibility)
+  &:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+
+  // Disabled state
+  &:disabled,
+  &.disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  // --------------------------------------
+  // Variants
+  // --------------------------------------
+
+  &.primary {
+    --button-bg: var(--color-primary);
+    --button-hover-bg: var(--color-primary-dark);
+
+    color: var(--color-brown);
+  }
+
+  &.outline {
+    --button-bg: transparent;
+    --button-hover-bg: var(--color-primary);
+
+    color: var(--color-black);
+    border-color: var(--color-primary);
+
+    &:hover:not(:disabled, .disabled) {
+      color: var(--color-white);
+    }
+  }
+
+  &.dashed {
+    --button-bg: transparent;
+    --button-hover-bg: var(--color-primary);
+
+    color: var(--color-black);
+    border-color: var(--color-primary);
+    border-style: dashed;
+
+    &:hover:not(:disabled, .disabled) {
+      color: var(--color-white);
+      border-style: solid;
+    }
+  }
+
+  &.ghost {
+    --button-bg: transparent;
+    --button-hover-bg: var(--color-primary);
+
+    color: var(--color-black);
+    border-color: transparent;
+
+    &:hover:not(:disabled, .disabled) {
+      color: var(--color-white);
+    }
+  }
+
+  &.link {
+    height: fit-content;
+    padding: 0;
+    overflow: visible;
+    color: var(--color-primary);
+    border-color: transparent;
+    border-radius: 0;
+
+    &::before,
+    &::after {
+      display: none;
+    }
+
+    &:hover:not(:disabled, .disabled) {
+      color: var(--color-primary);
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    &:active:not(:disabled, .disabled) {
+      transform: none;
+    }
+
+    &.underline-solid {
+      text-decoration: underline;
+      text-decoration-style: solid;
+      text-underline-offset: 4px;
+    }
+
+    &.underline-dashed {
+      text-decoration: underline;
+      text-decoration-style: dashed;
+      text-underline-offset: 4px;
+    }
+  }
+
+  // --------------------------------------
+  // Sizes
+  // --------------------------------------
+
+  &.sm {
+    gap: var(--button-gap-sm);
+    height: var(--button-height-sm);
+    padding: var(--button-padding-sm);
+    font-size: var(--button-font-size-sm);
+  }
+
+  &.md {
+    gap: var(--button-gap-md);
+    height: var(--button-height-md);
+    padding: var(--button-padding-md);
+    font-size: var(--button-font-size-md);
+  }
+
+  &.lg {
+    gap: var(--button-gap-md);
+    height: var(--button-height-lg);
+    padding: var(--button-padding-lg);
+    font-size: var(--button-font-size-lg);
+  }
+
+  // --------------------------------------
+  // Shapes
+  // --------------------------------------
+
+  &.default {
+    border-radius: var(--button-border-radius);
+  }
+
+  &.rounded {
+    border-radius: 9999px;
+  }
+}

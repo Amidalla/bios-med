@@ -1,0 +1,61 @@
+@use "core/breakpoints" as bp;
+@use "core/mixins" as mix;
+
+:root {
+    // --------------------------------------
+    // -- Base Сolors
+    // --------------------------------------
+    --color-white: #fff;
+    --color-black: #000;
+    --color-brown: #6D3F00;
+    --color-brown-dark: #25170E;
+    --color-gold: #DEC6B0;
+
+    // --------------------------------------
+    // -- Brand Сolors
+    // --------------------------------------
+    --color-primary: #FCE6B5;
+
+    // --------------------------------------
+    // -- Others Сolors
+    // --------------------------------------
+    --color-1: #25170E;
+    --color-2: #FBEDD6;
+    --color-3: #BE9158;
+
+    // --------------------------------------
+    // -- Fonts
+    // --------------------------------------
+    --font-family-primary: "Montserrat", sans-serif;
+    --font-family-secondary: "Bona Nova", serif;
+
+    // --------------------------------------
+    // -- Sizes
+    // --------------------------------------
+    --container-width: 1638px;
+    --container-padding: 77px;
+    --header-main-height: 95px;
+    --header-height: --header-main-height;
+    --section-mb: 60px;
+
+    @include bp.mq(laptop-l) {
+        --container-padding: 24px;
+        --section-mb: 40px;
+    }
+
+    @include bp.mq(tablet-xl) {
+        --header-main-height: 71px;
+    }
+
+    @include bp.mq(tablet) {
+        --container-padding: 20px;
+    }
+
+    @include bp.mq(mobile-xl) {
+        --header-main-height: 49px;
+    }
+
+    @include bp.mq(mobile-l) {
+        --container-padding: 15px;
+    }
+}

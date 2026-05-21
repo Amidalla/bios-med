@@ -1,0 +1,47 @@
+{% from "components/general/consent-notice/consent-notice.njk" import render as consentNotice %}
+{% from "components/general/breadcrumbs/breadcrumbs.njk" import render as breadcrumbsComponent %}
+
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        {% include "blocks/general/meta/meta.njk" %}
+        <link rel="stylesheet" href="./css/bundle.css" />
+    </head>
+    <body>
+        <div class="site">
+
+            {% include "blocks/general/header/header.njk" %}
+
+            <main class="page">
+                {% set page = page | default({}) %}
+                {% set page = {
+                    breadcrumbs: page.breadcrumbs | default(true),
+                    heading: page.heading | default(true)
+                } %}
+
+                {% if page.breadcrumbs or page.heading %}
+                    <div class="page-header">
+                        {% if page.breadcrumbs %}
+                            {{ breadcrumbsComponent(items=breadcrumbs.items, size="sm", separator="slash") }}
+                        {% endif %}
+                        {% if page.heading %}
+                            {% include "components/general/heading/heading.njk" %}
+                        {% endif %}
+                    </div>
+                {% endif %}
+
+                <div class="page-content">{% block content %}{% endblock %}</div>
+            </main>
+
+            {% include "components/common/popup-entry/popup-entry.njk" %}
+
+            {% include "components/general/menu/menu.njk" %}
+
+            {% set consentContent %}
+                Мы используем файлы cookie и сервис веб-аналитики Яндекс Метрика для улучшения работы сайта. Оставаясь на сайте, вы соглашаетесь с <a href="./policy.html">Политикой конфиденциальности</a>.
+            {% endset %}
+            {{ consentNotice(content=consentContent) }}
+        </div>
+        <script src="./js/bundle.js"></script>
+    </body>
+</html>
