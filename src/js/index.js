@@ -6,6 +6,7 @@ import { form } from "../components/general/form/form.js";
 import { input } from "../components/general/input/input.js";
 import { menu } from "../components/general/menu/menu.js";
 import { navigationMobile } from "../components/general/navigation-mobile/navigation-mobile.js";
+import { hero } from "../blocks/common/hero/hero.js";
 
 const components = [
     consentNotice,
@@ -14,7 +15,8 @@ const components = [
     form,
     input,
     menu,
-    navigationMobile
+    navigationMobile,
+    hero
 ];
 
 function init(context = document) {

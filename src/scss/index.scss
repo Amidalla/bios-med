@@ -34,6 +34,7 @@
 @use "../components/general/navigation-main/navigation-main";
 @use "../components/general/navigation-mobile/navigation-mobile";
 @use "../components/general/navigation-bottom/navigation-bottom";
+@use "../components/general/navigation-hero/navigation-hero";
 /*@use "../components/general/breadcrumbs/breadcrumbs";
 @use "../components/general/search-form/search-form";
 @use "../components/general/pagination/pagination";
@@ -92,12 +93,12 @@
 // --------------------------------------
 @use "../blocks/general/header/header";
 @use "../blocks/general/footer/footer";
-/*@use "../blocks/general/section/section";
-@use "../blocks/general/error-404/error-404";
-@use "../blocks/general/search/search";
+@use "../blocks/general/section/section";
+/*@use "../blocks/general/error-404/error-404";
+@use "../blocks/general/search/search";*/
 
 @use "../blocks/common/hero/hero";
-@use "../blocks/common/about-short/about-short";
+/*@use "../blocks/common/about-short/about-short";
 @use "../blocks/common/about-hero/about-hero";
 @use "../blocks/common/about-benefits/about-benefits";
 @use "../blocks/common/feedback/feedback";

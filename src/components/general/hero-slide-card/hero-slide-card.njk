@@ -1,0 +1,25 @@
+{# components/general/hero-slide-card/hero-slide-card.njk #}
+<div class="hero-slide-card swiper-slide" style="background-color: {{ params.bgColor | default('rgba(255, 255, 255, 0.55)') }};">
+    <div class="hero-slide-card__content">
+        <h3 class="hero-slide-card__title">{{ params.title | safe }}</h3>
+
+        {% if params.svg %}
+            <div class="hero-slide-card__icon">
+                {{ params.svg | safe }}
+            </div>
+        {% endif %}
+
+        {% if params.subtitle %}
+            <div class="hero-slide-card__subtitle">{{ params.subtitle | safe }}</div>
+        {% endif %}
+
+        <div class="hero-slide-card__price">
+            <span class="hero-slide-card__price-from">от</span>
+            <span class="hero-slide-card__price-value">{{ params.price }}</span>
+        </div>
+
+        <button class="hero-slide-card__btn">
+            {{ params.btnText | default('Подробнее') }}
+        </button>
+    </div>
+</div>

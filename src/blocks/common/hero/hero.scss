@@ -1,0 +1,96 @@
+@use "core/breakpoints" as bp;
+@use "core/mixins" as mix;
+
+
+.hero {
+  position: relative;
+  padding-top: 194px;
+  padding-bottom: 101px;
+
+  .container {
+    position: relative;
+    z-index: 1;
+  }
+
+  &__bg {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 0;
+    background: url('../assets/images/content/hero-bg.png') no-repeat;
+    background-size: cover;
+  }
+
+  &__content {
+    max-width: 699px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+
+  &__text {
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 96%;
+    color: var(--color-white);
+  }
+
+  .border-block {
+    border-radius: 49px;
+    border: 1px solid #C0A97F;
+    max-width: 330px;
+    background: transparent;
+    padding: 4px;
+
+    &:hover {
+      transform: translateY(-2px);
+      transition: all 0.3s ease;
+    }
+  }
+
+  &__btn {
+    @include mix.button-gradient;
+    width: 100%;
+    backdrop-filter: blur(2px);
+
+    &:hover {
+      transform: none;
+    }
+  }
+
+  @include bp.mq(laptop-l) {
+
+  }
+
+  @include bp.mq(laptop) {
+
+  }
+
+  @include bp.mq(tablet) {
+
+  }
+
+  .slider {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: calc(100% - 50%);
+    max-width: 845px;
+    overflow: hidden;
+
+    .swiper-wrapper {
+      display: flex;
+    }
+
+    .swiper-slide {
+      flex-shrink: 0;
+      width: auto;
+      height: auto;
+    }
+  }
+}

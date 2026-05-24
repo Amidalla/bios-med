@@ -1,0 +1,40 @@
+@use "core/breakpoints" as bp;
+@use "core/mixins" as mix;
+
+.hero__navigation {
+  margin-top: 42px;
+  margin-bottom: 55px;
+  max-width: 699px;
+
+  .navigation-hero {
+    &__list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 45px;
+      row-gap: 20px;
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    &__item {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    &__link {
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 96%;
+      text-transform: uppercase;
+      color: var(--color-gold);
+      transition: all 0.3s ease;
+
+      &:hover {
+        text-decoration: none;
+        color: var(--color-white);
+      }
+    }
+  }
+}

@@ -5,7 +5,7 @@ export function header(context = document) {
     root.dataset.init = "true";
 
     const toggleSticky = () => {
-        root.classList.toggle("is-sticky", window.scrollY > 0);
+        root.classList.toggle("is-fixed", window.scrollY > 0);
     };
 
     window.addEventListener("scroll", toggleSticky, { passive: true });
