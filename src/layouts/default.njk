@@ -33,8 +33,9 @@
                 <div class="page-content">{% block content %}{% endblock %}</div>
             </main>
 
-            {% include "components/common/popup-entry/popup-entry.njk" %}
+            {% include "blocks/general/footer/footer.njk" %}
 
+            {% include "components/common/popup-entry/popup-entry.njk" %}
             {% include "components/general/menu/menu.njk" %}
 
             {% set consentContent %}
