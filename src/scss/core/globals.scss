@@ -80,6 +80,18 @@ h1 {
     line-height: 102%;
     text-transform: uppercase;
     color: var(--color-primary);
+
+    @include bp.mq(laptop-m) {
+        font-size: 70px;
+    }
+
+    @include bp.mq(tablet-xl) {
+        font-size: 60px;
+    }
+
+    @include bp.mq(mobile-xl) {
+        font-size: 36px;
+    }
 }
 
 h2 {

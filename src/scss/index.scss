@@ -35,6 +35,8 @@
 @use "../components/general/navigation-mobile/navigation-mobile";
 @use "../components/general/navigation-bottom/navigation-bottom";
 @use "../components/general/navigation-hero/navigation-hero";
+@use "../components/general/hero-slide-card/hero-slide-card";
+@use "../components/general/advantage-card/advantage-card";
 /*@use "../components/general/breadcrumbs/breadcrumbs";
 @use "../components/general/search-form/search-form";
 @use "../components/general/pagination/pagination";
@@ -98,6 +100,7 @@
 @use "../blocks/general/search/search";*/
 
 @use "../blocks/common/hero/hero";
+@use "../blocks/common/advantages/advantages";
 /*@use "../blocks/common/about-short/about-short";
 @use "../blocks/common/about-hero/about-hero";
 @use "../blocks/common/about-benefits/about-benefits";

@@ -20,15 +20,32 @@ export function hero(context = document) {
                 slidesPerView: 1.3,
                 spaceBetween: 16
             },
-            480: {
-                slidesPerView: 1.3,
+            375: {
+                slidesPerView: 1.5,
                 spaceBetween: 16
             },
-            1310: {
+            480: {
+                slidesPerView: 1.8,
+                spaceBetween: 16
+            },
+            550: {
+                slidesPerView: 2.2,
+                spaceBetween: 16
+            },
+            700: {
                 slidesPerView: 2.8,
                 spaceBetween: 16
             },
-            1670: {
+
+            1050: {
+                slidesPerView: 3.2,
+                spaceBetween: 16
+            },
+            1309: {
+                slidesPerView: 2.2,
+                spaceBetween: 16
+            },
+            1669: {
                 slidesPerView: 3.2,
                 spaceBetween: 16
             }

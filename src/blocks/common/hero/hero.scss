@@ -6,6 +6,15 @@
   position: relative;
   padding-top: 194px;
   padding-bottom: 101px;
+  min-height: 958px;
+
+  @include bp.mq(tablet-xl) {
+    padding-bottom: 59px;
+  }
+
+  @include bp.mq(mobile-xl) {
+    padding-bottom: 0;
+  }
 
   .container {
     position: relative;
@@ -19,8 +28,23 @@
     left: 0;
     right: 0;
     z-index: 0;
-    background: url('../assets/images/content/hero-bg.png') no-repeat;
+    background: url('../assets/images/content/hero-bg.png') no-repeat center;
     background-size: cover;
+
+    @include bp.mq(laptop-m) {
+      background: url('../assets/images/content/hero-bg-laptop.png') no-repeat center;
+      background-size: cover;
+    }
+
+    @include bp.mq(tablet-xl) {
+      background: url('../assets/images/content/hero-bg-tablet.png') no-repeat center;
+      background-size: cover;
+    }
+
+    @include bp.mq(mobile-xl) {
+      background: url('../assets/images/content/hero-bg-mobile.png') no-repeat center;
+      background-size: cover;
+    }
   }
 
   &__content {
@@ -29,6 +53,20 @@
     flex-direction: column;
     gap: 20px;
     margin-bottom: 20px;
+
+    @include bp.mq(mobile-xl) {
+      align-items: center;
+      margin-bottom: 88px;
+      gap: 27px;
+    }
+  }
+
+  &__title {
+    @include bp.mq(mobile-xl) {
+      text-align: center;
+      max-width: 325px;
+      margin: 0 auto;
+    }
   }
 
   &__text {
@@ -37,6 +75,10 @@
     font-weight: 400;
     line-height: 96%;
     color: var(--color-white);
+
+    @include bp.mq(mobile-xl) {
+      font-size: 16px;
+    }
   }
 
   .border-block {
@@ -79,9 +121,26 @@
     right: 0;
     top: 50%;
     transform: translateY(-50%);
-    width: calc(100% - 50%);
-    max-width: 845px;
+    width: calc(100% - 56%);
+    max-width: 44%;
     overflow: hidden;
+    z-index: 3;
+
+    @include bp.mq(laptop-m) {
+      max-width: 725px;
+    }
+
+    @include bp.mq(laptop) {
+      max-width: 580px;
+    }
+
+    @include bp.mq(tablet-xl) {
+      position: relative;
+      max-width: 100%;
+      transform: none;
+      width: 100%;
+      padding-left: 24px;
+    }
 
     .swiper-wrapper {
       display: flex;

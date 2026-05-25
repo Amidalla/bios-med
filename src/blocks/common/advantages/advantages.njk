@@ -1,0 +1,58 @@
+              {% from "components/general/advantage-card/advantage-card.njk" import advantageCard %}
+
+              <section class="advantages section">
+                  <div class="advantages__bg"></div>
+                  <div class="advantages__decor"></div>
+
+                  <div class="container">
+                      <div class="advantages__header">
+                          {% set title = {
+                              text: "<span>почему выбирают&nbsp;нас</span>",
+                              tag: "h2",
+                              class: "section-title"
+                          } %}
+                          {% include "components/general/title/title.njk" %}
+                      </div>
+
+                      <div class="advantages__list">
+                          {% set items = [
+                              {
+                                  icon: "/assets/images/content/advantages1.png",
+                                  title: "Клиника работает с 1993 года",
+                                  text: "Более 40,000 пациентов. Надежность и опыт, проверенные временем"
+                              },
+                              {
+                                  icon: "/assets/images/content/advantages2.png",
+                                  title: "Проводим весь спектр пластических операций",
+                                  text: "Лицо, грудь, тело, реконструкция, комплексные операции"
+                              },
+                              {
+                                  icon: "/assets/images/content/advantages3.png",
+                                  title: "На базе госпиталя гражданской авиации",
+                                  text: "Высокие стандарты безопасности и качества"
+                              },
+                              {
+                                  icon: "/assets/images/content/advantages4.png",
+                                  title: "Круглосуточное дежурство реанимационной бригады",
+                                  text: "Спокойствие пациента начинается с безопасности"
+                              }
+                          ] %}
+
+                          {% for item in items %}
+                              {{ advantageCard(item.icon, item.title, item.text) }}
+                          {% endfor %}
+                      </div>
+
+                      <div class="advantages__footer">
+                      <div class=border-container>
+                          {% set text %}
+                              <b>Клиника пластической хирургии БИОС</b> — это современные технологии, передовое оборудование и высокий уровень медицинской безопасности. Мы выполняем операции с применением эндоскопических методик, вибрационной малотравматичной липосакции, а также <strong>проводим комплексные операции</strong>.<br>
+                              Наша задача — добиться максимально естественного результата и обеспечить пациенту комфорт на каждом этапе: от консультации до полного восстановления.
+                          {% endset %}
+                          <div class="advantages__text">
+                              {{ text | safe }}
+                          </div>
+                          </div>
+                      </div>
+                  </div>
+              </section>

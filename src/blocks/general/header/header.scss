@@ -3,14 +3,14 @@
 
 header.header {
   position: fixed;
-  width: 100%;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 100;
   height: var(--header-height);
   background: rgba(255, 237, 218, 0.10);
   backdrop-filter: blur(2.1500000953674316px);
   transition: all 0.5s ease;
-
 
   &.is-fixed {
     background: rgba(67, 51, 34, 0.9);
