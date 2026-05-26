@@ -7,6 +7,8 @@ import { input } from "../components/general/input/input.js";
 import { menu } from "../components/general/menu/menu.js";
 import { navigationMobile } from "../components/general/navigation-mobile/navigation-mobile.js";
 import { hero } from "../blocks/common/hero/hero.js";
+import { tabs } from "../components/general/tabs/tabs.js";
+import { specialistsShort } from "../blocks/common/specialists-short/specialists-short.js";
 
 const components = [
     consentNotice,
@@ -16,7 +18,9 @@ const components = [
     input,
     menu,
     navigationMobile,
-    hero
+    hero,
+    tabs,
+    specialistsShort
 ];
 
 function init(context = document) {

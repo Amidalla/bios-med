@@ -82,16 +82,7 @@
   }
 
   .border-block {
-    border-radius: 49px;
-    border: 1px solid #C0A97F;
-    max-width: 330px;
-    background: transparent;
-    padding: 4px;
-
-    &:hover {
-      transform: translateY(-2px);
-      transition: all 0.3s ease;
-    }
+    @include mix.border-block;
   }
 
   &__btn {

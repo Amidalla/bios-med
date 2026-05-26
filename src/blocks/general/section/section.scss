@@ -3,6 +3,8 @@
 
 .section {
   overflow-x: clip;
+  padding-top: var(--section-pt);
+  padding-bottom: var(--section-pb);
 
   &-title {
     font-family: var(--font-family-secondary);

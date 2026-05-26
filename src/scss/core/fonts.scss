@@ -45,3 +45,15 @@
     src: url('../assets/fonts/Montserrat-Italic-VariableFont_wght.ttf') format('truetype');
     font-display: swap;
 }
+
+// --------------------------------------
+// Commissioner (вариативный шрифт)
+// --------------------------------------
+
+@font-face {
+    font-family: 'Commissioner';
+    font-style: normal;
+    font-weight: 100 900;
+    src: url('../assets/fonts/Commissioner-VariableFont_FLAR,VOLM,slnt,wght.ttf') format('truetype-variations');
+    font-display: swap;
+}

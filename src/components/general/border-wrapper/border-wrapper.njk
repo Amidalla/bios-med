@@ -1,0 +1,32 @@
+{% macro borderWrapper(title = '', titleTag = 'h2', titleClass = 'section-title', button = false, buttonUrl = '', buttonText = '') %}
+    <div class="border-wrapper">
+        <div class="border-wrapper__outer"></div>
+        <div class="border-wrapper__inner"></div>
+
+        {% if title %}
+            <div class="border-wrapper__header">
+                <div class="container">
+                    <{{ titleTag }} class="{{ titleClass }}">
+                        {{ title | safe }}
+                    </{{ titleTag }}>
+                </div>
+            </div>
+        {% endif %}
+
+        <div class="border-wrapper__content">
+            {{ caller() }}
+        </div>
+
+        {% if button and buttonUrl and buttonText %}
+            <div class="border-wrapper__footer">
+                <div class="container">
+                    <div class="border-block">
+                        <a href="{{ buttonUrl }}" class="link-all-specialists">
+                            <span>{{ buttonText }}</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+{% endmacro %}

@@ -1,0 +1,41 @@
+{# Макрос для рендера табов #}
+{% macro render(items, activeTab = 'face') %}
+    <div class="tabs" data-tabs data-initial-tab="{{ activeTab }}">
+        <div class="tabs__nav">
+            {% for id, label in items %}
+                <button class="tabs__btn{% if id == activeTab %} active{% endif %}" data-tab-btn="{{ id }}">
+                    {{ label }}
+                </button>
+            {% endfor %}
+        </div>
+        <div class="tabs__content" data-tabs-content>
+            {{ caller() }}
+        </div>
+    </div>
+{% endmacro %}
+
+{% macro panel(id, isActive = false) %}
+    <div class="tabs__panel{% if isActive %} active{% endif %}" data-tab-panel="{{ id }}" {% if not isActive %}style="display: none;"{% endif %}>
+        {{ caller() }}
+    </div>
+{% endmacro %}{# Макрос для рендера табов #}
+              {% macro render(items, activeTab = 'face') %}
+                  <div class="tabs" data-tabs data-initial-tab="{{ activeTab }}">
+                      <div class="tabs__nav">
+                          {% for id, label in items %}
+                              <button class="tabs__btn{% if id == activeTab %} active{% endif %}" data-tab-btn="{{ id }}">
+                                  {{ label }}
+                              </button>
+                          {% endfor %}
+                      </div>
+                      <div class="tabs__content" data-tabs-content>
+                          {{ caller() }}
+                      </div>
+                  </div>
+              {% endmacro %}
+
+              {% macro panel(id, isActive = false) %}
+                  <div class="tabs__panel{% if isActive %} active{% endif %}" data-tab-panel="{{ id }}" {% if not isActive %}style="display: none;"{% endif %}>
+                      {{ caller() }}
+                  </div>
+              {% endmacro %}

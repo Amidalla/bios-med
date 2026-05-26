@@ -19,12 +19,12 @@
 }
 
 
-@mixin button-gradient {
+@mixin button-gradient($padding: 16px 38px) {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
-    padding: 16px 38px;
+    padding: $padding;
     font-size: 16px;
     font-weight: 400;
     line-height: 1;
@@ -67,5 +67,26 @@
 
     @include bp.mq(laptop-l) {
         padding: 10px 38px;
+    }
+}
+
+@mixin border-block {
+    border-radius: 49px;
+    border: 1px solid #C0A97F;
+    max-width: 330px;
+    background: transparent;
+    padding: 4px;
+
+    &:hover {
+        transform: translateY(-2px);
+        transition: all 0.3s ease;
+
+        a {
+            transform: translateY(-2px);
+
+            &:hover {
+                transform: none;
+            }
+        }
     }
 }

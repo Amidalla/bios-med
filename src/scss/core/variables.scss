@@ -25,11 +25,16 @@
     --color-4: #DDC9A8;
     --color-5: #AA7735;
     --color-6: #967252;
+    --color-7: #965E2D;
+    --color-8: #F6EFE5;
+    --color-9: #39251C;
+    --color-10: #AD8D6A;
     // --------------------------------------
     // -- Fonts
     // --------------------------------------
     --font-family-primary: "Montserrat", sans-serif;
     --font-family-secondary: "Bona Nova", serif;
+    --font-family-commissioner: "Commissioner", sans-serif;
 
     // --------------------------------------
     // -- Sizes
@@ -56,6 +61,8 @@
 
     @include bp.mq(mobile-xl) {
         --header-main-height: 49px;
+        --section-pt: 51px;
+        --section-pb: 51px;
     }
 
     @include bp.mq(mobile-l) {

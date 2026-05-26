@@ -1,0 +1,7 @@
+@use "core/mixins" as mix;
+@use "core/breakpoints" as bp;
+
+.specialists-short {
+  padding-top: 57px;
+  background: var(--color-8);
+}

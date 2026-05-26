@@ -5,6 +5,7 @@
   position: relative;
   margin-top: -150px;
   padding-bottom: 54px;
+  padding-top: 0;
 
   @include bp.mq(tablet-xl) {
     margin-top: 0;
@@ -146,11 +147,16 @@
       margin-bottom: -11px;
 
       @include bp.mq(mobile-xl) {
-        margin-right: -15px;
-        margin-left: -15px;
+        margin-right: -20px;
+        margin-left: -20px;
         margin-bottom: 0;
         padding-bottom: 0;
         border-radius: 20px 20px 0 0;
+      }
+
+      @include bp.mq(mobile-l) {
+        margin-right: -15px;
+        margin-left: -15px;
       }
     }
   }

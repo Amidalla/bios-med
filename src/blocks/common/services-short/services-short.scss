@@ -1,0 +1,51 @@
+@use "core/breakpoints" as bp;
+@use "core/mixins" as mix;
+
+.services {
+  background: url('../assets/images/content/services-bg.jpg') no-repeat center;
+  background-size: cover;
+
+  &__header {
+    margin-bottom: 47px;
+
+    @include bp.mq(mobile-xl) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 38px;
+    margin-bottom: 29px;
+
+    @include bp.mq(tablet-xl) {
+       gap: 9px;
+    }
+
+    @include bp.mq(mobile-xl) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__footer {
+    .border-block {
+      @include mix.border-block;
+      max-width: 182px;
+      margin: 0 auto;
+
+      @include bp.mq(mobile-l) {
+        max-width: 328px;
+      }
+    }
+
+     a {
+       @include mix.button-gradient(24px 40px);
+       max-width: 100%;
+
+       &:hover {
+         text-decoration: none;
+       }
+     }
+  }
+}
