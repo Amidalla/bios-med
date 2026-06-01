@@ -1,0 +1,16 @@
+{% macro reviewCard(image, badgeText, badgeName, reviewText, authorName, coAuthorName) %}
+<div class="review-card">
+    <div class="review-card__image">
+        <img src="{{ image }}" alt="{{ authorName }}">
+        <div class="review-card__badge">
+            <span class="review-card__badge-text">{{ badgeText }}</span>
+            <span class="review-card__badge-name">{{ badgeName }}</span>
+        </div>
+    </div>
+    <div class="review-card__content">
+        <p class="review-card__text">{{ reviewText }}</p>
+        <p class="review-card__author">{{ authorName }}</p>
+        <p class="review-card__co-author">{{ coAuthorName }}</p>  {# второй соавтор #}
+    </div>
+</div>
+{% endmacro %}

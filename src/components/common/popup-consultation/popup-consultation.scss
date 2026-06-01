@@ -1,0 +1,13 @@
+@use "core/popup" as *;
+
+.popup-consultation {
+  @include popup;
+
+  .frame {
+    .form {
+      .field {
+        margin-bottom: 14px;
+      }
+    }
+  }
+}

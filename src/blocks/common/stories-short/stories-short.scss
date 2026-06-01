@@ -1,0 +1,16 @@
+@use "core/mixins" as mix;
+@use "core/breakpoints" as bp;
+
+
+.stories-short {
+  background: var(--color-8);
+  padding-top: 52px;
+
+  &__slider {
+    margin-top: 34px;
+
+    .swiper {
+      padding: 10px 8px;
+    }
+  }
+}

@@ -90,3 +90,57 @@
         }
     }
 }
+
+@mixin swiper-nav-styles($nav-class: 'swiper-custom-nav', $prev-class: 'swiper-custom-nav-prev', $next-class: 'swiper-custom-nav-next') {
+    position: relative;
+    padding-left: 2.3%;
+    padding-right: 2.3%;
+    margin-left: -2.3%;
+    margin-right: -2.3%;
+
+    @include bp.mq(laptop-xl) {
+        padding-left: 1%;
+        padding-right: 1%;
+        margin-left: -1%;
+        margin-right: -1%;
+    }
+
+    .#{$nav-class} {
+        position: absolute;
+        top: 36%;
+        left: 0;
+        width: 100%;
+        z-index: 10;
+        display: flex;
+        justify-content: space-between;
+        pointer-events: none;
+
+        & > div {
+            pointer-events: auto;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            border: 1px solid #BE9158;
+            background: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+
+            &.swiper-button-disabled {
+                opacity: 0.5;
+                cursor: not-allowed;
+                pointer-events: none;
+            }
+
+            &:hover:not(.swiper-button-disabled) {
+                background: #BE9158;
+
+                svg path {
+                    stroke: #fff;
+                }
+            }
+        }
+    }
+}

@@ -1,7 +1,7 @@
 {% macro serviceCard(icon, titleFirst, titleSecond, url = '#', altText = '') %}
     <a href="{{ url }}" class="service-card">
         <div class="service-card__icon">
-            <img src="{{ icon }}" alt="{{ altText or titleFirst + ' ' + titleSecond }}">
+            <img class="lazy" src="{{ icon }}" alt="{{ altText or titleFirst + ' ' + titleSecond }}">
         </div>
         <div class="service-card__title">
             <span>{{ titleFirst }}</span> {{ titleSecond }}

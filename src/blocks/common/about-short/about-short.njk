@@ -1,0 +1,63 @@
+<section class="about-short section">
+    <div class="container">
+        <div class="about-short__grid">
+            <!-- Первый блок - галерея изображений -->
+            <div class="about-short__gallery" data-animate="fade-right">
+                <div class="about-short__gallery-wrapper">
+                    <div class="about-short__image about-short__image--1">
+                        <img
+                            class="lazy"
+                            src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='1'%20height='1'/%3E"
+                            data-src="/assets/images/content/about-short1.jpg"
+                            alt="О компании 1">
+                    </div>
+                    <div class="about-short__image about-short__image--2">
+                        <img
+                            class="lazy"
+                            src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='1'%20height='1'/%3E"
+                            data-src="/assets/images/content/about-short2.jpg"
+                            alt="О компании 2">
+                    </div>
+                    <div class="about-short__image about-short__image--3">
+                        <img
+                            class="lazy"
+                            src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='1'%20height='1'/%3E"
+                            data-src="/assets/images/content/about-short3.jpg"
+                            alt="О компании 3">
+                    </div>
+                    <div class="about-short__image about-short__image--4">
+                        <img
+                            class="lazy"
+                            src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='1'%20height='1'/%3E"
+                            data-src="/assets/images/content/about-short4.jpg"
+                            alt="О компании 4">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Второй блок - контент -->
+            <div class="about-short__content">
+                {% set title = {
+                    text: "о клинике биос",
+                    tag: "h2",
+                    class: "section-title"
+                } %}
+                {% include "components/general/title/title.njk" %}
+
+                <div class="about-short__text">
+                    <p>
+                        Не следует, однако забывать, что реализация намеченных плановых заданий требуют от нас анализа новых предложений. Разнообразный и богатый опыт укрепление и развитие структуры в значительной степени обуславливает создание направлений прогрессивного развития. С другой стороны консультация с широким активом обеспечивает широкому кругу (специалистов) участие в формировании новых предложений.
+                    </p>
+                    <p>
+                       Не следует, однако забывать, что реализация намеченных плановых заданий требуют от нас анализа новых предложений. Разнообразный и богатый опыт укрепление и развитие структуры в значительной степени обуславливает создание направлений прогрессивного развития. С другой стороны консультация с широким активом обеспечивает широкому кругу (специалистов) участие в формировании новых предложений.
+                    </p>
+                </div>
+                <div class="border-block">
+                    <a href="/about" class="about-short__link">
+                        <span>Подробнее</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

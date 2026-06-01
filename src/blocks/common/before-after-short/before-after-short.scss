@@ -4,6 +4,14 @@
 .before-after-short {
     background: var(--color-8);
 
+  @include bp.mq(tablet-xl) {
+    padding-bottom: 37px;
+  }
+
+  @include bp.mq(mobile-l) {
+    padding-bottom: 33px;
+  }
+
   &__header {
     margin-bottom: 27.5px;
   }

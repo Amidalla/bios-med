@@ -1,7 +1,7 @@
 import { Fancybox } from "@fancyapps/ui/dist/fancybox/";
 
-export function popupEntry(context = document) {
-    const triggers = context.querySelectorAll('*[data-src="popup-entry"]');
+export function popupConsultation(context = document) {
+    const triggers = context.querySelectorAll('*[data-src="popup-consultation"]');
     if (!triggers.length) return;
 
     triggers.forEach((item) => {
@@ -17,7 +17,7 @@ export function popupEntry(context = document) {
                 e.preventDefault();
                 Fancybox.show([
                     {
-                        src: "#popup-entry",
+                        src: "#popup-consultation",
                         type: "inline"
                     }
                 ]);
