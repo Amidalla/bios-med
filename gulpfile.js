@@ -66,6 +66,8 @@ export const htmlProd = () =>
         )
         .pipe(replace("bundle.css", "bundle.min.css"))
         .pipe(replace("bundle.js", "bundle.min.js"))
+        .pipe(replace(/\/assets\//g, 'assets/'))
+        .pipe(replace(/\.assets\//g, 'assets/'))
         .pipe(prettier({ parser: "html" }))
         .pipe(gulp.dest(paths.prodDist));
 

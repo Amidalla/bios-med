@@ -2,11 +2,11 @@
 @use "core/mixins" as mix;
 
 .main-form {
+  position: relative;
   padding-top: 0;
   padding-bottom: 0;
   background: linear-gradient(34deg, #4A3323 45.04%, #A88460 78.48%);
   backdrop-filter: blur(2px);
-  position: relative;
 
   &__wrapper {
     display: grid;
@@ -19,30 +19,29 @@
   }
 
   &__form {
-
-    padding-top: 93px;
-    padding-bottom: 83px;
-    border-right: 1px solid #604631;
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-top: 93px;
+    padding-bottom: 83px;
+    border-right: 1px solid #604631;
 
     @include bp.mq(tablet-xl) {
       align-items: flex-start;
-      padding: 72px 20px 55px 20px;
+      padding: 72px 20px 55px;
     }
 
     @include bp.mq(mobile-xl) {
-      padding: 40px 20px 41px 20px;
+      padding: 40px 20px 41px;
     }
 
     .section-title {
+      max-width: 611px;
+      padding-right: 0;
+      padding-left: 0;
       color: var(--color-white);
       background: none;
       -webkit-text-fill-color: var(--color-white);
-      max-width: 611px;
-      padding-left: 0;
-      padding-right: 0;
 
       @include bp.mq(tablet-xl) {
         text-align: left;
@@ -79,12 +78,12 @@
     }
 
     .border-block {
-      border: 1px solid var(--color-14);
+      max-width: 269px;
       padding: 4px;
+      border: 1px solid var(--color-14);
       border-radius: 49px;
       backdrop-filter: blur(2px);
       transition: all 0.3s ease;
-      max-width: 269px;
 
       @include bp.mq(mobile-l) {
         max-width: 100%;
@@ -95,18 +94,18 @@
       }
 
       button {
-        transform: none;
         background: var(--bg, linear-gradient(96deg, #BE9158 12.36%, #F7E0AA 53.53%, #BE9158 91.65%));
         backdrop-filter: blur(2px);
+        transform: none;
 
         &::before {
           background: var(--bg, linear-gradient(276deg, #BE9158 12.36%, #F7E0AA 53.53%, #BE9158 91.65%));
         }
 
         span {
-          color: var(--color-white);
           position: relative;
           z-index: 2;
+          color: var(--color-white);
 
           @include bp.mq(mobile-xl) {
             font-size: 16px;
@@ -117,14 +116,14 @@
   }
 
   .form-bg {
-    width: 50%;
-    height: 100%;
     position: absolute;
     top: 0;
     left: 0;
+    z-index: 0;
+    width: 50%;
+    height: 100%;
     background: linear-gradient(34deg, #4A3323 45.04%, #A88460 78.48%);
     backdrop-filter: blur(2px);
-    z-index: 0;
 
     @include bp.mq(tablet-xl) {
       width: 100%;
@@ -132,12 +131,12 @@
   }
 
   .form-social {
-    margin-top: 29px;
+    position: relative;
+    z-index: 2;
     display: grid;
     grid-template-columns: 418px 1fr;
     gap: 56px;
-    position: relative;
-    z-index: 2;
+    margin-top: 29px;
 
     @include bp.mq(laptop) {
       grid-template-columns: 364px 1fr;
@@ -156,14 +155,13 @@
     }
 
     &__wrapper {
-
       p {
+        margin: 0;
         font-size: 20px;
         font-style: normal;
         font-weight: 500;
         line-height: 136%;
         color: var(--color-white);
-        margin: 0;
 
         @include bp.mq(mobile-xl) {
           text-align: center;
@@ -177,6 +175,11 @@
 
           @include bp.mq(tablet-xl) {
             display: block;
+          }
+
+          @include bp.mq(mobile-xl) {
+            display: flex;
+            flex-direction: column;
           }
         }
 
@@ -193,47 +196,47 @@
   }
 
   &__map {
-    flex: 1;
     position: relative;
+    flex: 1;
 
     .map-decor {
-      background: linear-gradient(180deg, rgba(124, 89, 63, 0.00) 0%, #4A3323 100%);
       position: absolute;
       z-index: 0;
       pointer-events: none;
+      background: linear-gradient(180deg, rgb(124 89 63 / 0%) 0%, #4A3323 100%);
 
       &:first-child {
-        width: 196px;
-        height: 100%;
         top: 0;
         left: 0;
+        width: 196px;
+        height: 100%;
         background: url('../assets/images/content/map-decor1.png') no-repeat center;
         background-size: cover;
       }
 
       &:nth-child(2) {
-        width: 100%;
-        height: 171px;
         bottom: -2px;
         left: 0;
+        width: 100%;
+        height: 171px;
         background: url('../assets/images/content/map-decor2.png') no-repeat center;
         background-size: 100% 100%;
       }
 
       &:nth-child(3) {
-        width: 232px;
-        height: 100%;
         top: 0;
         right: 0;
+        width: 232px;
+        height: 100%;
         background: url('../assets/images/content/map-decor3.png') no-repeat center;
         background-size: 100% 100%;
       }
 
       &:nth-child(4) {
-        width: 100%;
-        height: 233px;
         top: 0;
         left: 0;
+        width: 100%;
+        height: 233px;
         background: url('../assets/images/content/map-decor4.png') no-repeat center;
         background-size: 100% 100%;
       }
@@ -250,14 +253,14 @@
   }
 
   &__contacts {
-    display: grid;
-    grid-template-columns: 348px 1fr;
-    padding-left: 93px;
-    padding-right: 93px;
-    gap: 61px;
-    background: var(--color-16);
     position: relative;
     z-index: 2;
+    display: grid;
+    grid-template-columns: 348px 1fr;
+    gap: 61px;
+    padding-right: 93px;
+    padding-left: 93px;
+    background: var(--color-16);
 
     @include bp.mq(laptop-l) {
       padding-right: 44px;
@@ -288,13 +291,13 @@
         }
 
         p {
+          margin-top: 37px;
+          margin-bottom: 6px;
           font-size: 18px;
           font-style: normal;
           font-weight: 500;
           line-height: 120%;
           color: var(--color-white);
-          margin-top: 37px;
-          margin-bottom: 6px;
 
           @include bp.mq(mobile-xl) {
             text-align: center;
@@ -311,12 +314,12 @@
         }
 
         .address-link {
-          color: var(--color-white);
-          text-decoration: underline;
           font-size: 18px;
           font-style: normal;
           font-weight: 500;
           line-height: 136%;
+          color: var(--color-white);
+          text-decoration: underline;
 
           &:hover {
             text-decoration: none;
@@ -325,11 +328,11 @@
       }
 
       &:last-child {
-        padding-top: 37px;
-        padding-bottom: 37px;
         display: flex;
         align-items: center;
         justify-content: flex-end;
+        padding-top: 37px;
+        padding-bottom: 37px;
 
         @include bp.mq(mobile-xl) {
           align-items: start;
@@ -339,14 +342,14 @@
         }
 
         .border-block {
-          border-radius: 49px;
-          border: 1px solid var(--color-15);
-          backdrop-filter: blur(2px);
           padding: 4px;
+          border: 1px solid var(--color-15);
+          border-radius: 49px;
+          backdrop-filter: blur(2px);
 
           @include bp.mq(mobile-l) {
-            max-width: 100%;
             width: 100%;
+            max-width: 100%;
           }
 
           .map-link {

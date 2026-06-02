@@ -24,8 +24,7 @@
       @include bp.mq(mobile-xl) {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        column-gap: 12px;
-        row-gap: 35px;
+        gap: 35px 12px;
 
         .swiper-slide {
           &:nth-child(n+5) {

@@ -7,8 +7,8 @@ footer.footer {
   flex-direction: column;
   gap: 99px;
   padding: 67px 0 45px;
-  background: linear-gradient(34deg, #4A3323 45.04%, #A88460 78.48%);
   margin-top: -1px;
+  background: linear-gradient(34deg, #4A3323 45.04%, #A88460 78.48%);
 ;
 
   @include bp.mq(laptop) {
@@ -18,7 +18,7 @@ footer.footer {
       gap: 41px;
   }
   @include bp.mq(mobile-xl) {
-    padding: 31px 0 31px;
+    padding: 31px 0;
   }
 
 
@@ -47,9 +47,9 @@ footer.footer {
 
         @include bp.mq(tablet-xl) {
           flex-direction: column;
+          grid-column: span 3;
           gap: 15px;
           align-items: center;
-          grid-column: span 3;
         }
 
         @include bp.mq(mobile-xl) {

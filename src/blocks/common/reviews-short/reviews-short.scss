@@ -2,8 +2,8 @@
 @use "core/breakpoints" as bp;
 
 .reviews-short {
-  background: var(--color-8);
   position: relative;
+  background: var(--color-8);
 
   @include bp.mq(tablet-xl) {
      padding-top: 25px;
@@ -12,10 +12,10 @@
   .border-wrapper__outer {
     @include bp.mq(mobile-xl) {
       position: absolute;
-      left: 0;
       right: 0;
-      margin-left: -20px;
+      left: 0;
       margin-right: -20px;
+      margin-left: -20px;
       border: 1px solid #BE9158;
     }
   }
@@ -23,18 +23,18 @@
   .border-wrapper__inner {
     @include bp.mq(mobile-xl) {
       position: absolute;
-      left: 0;
       right: 0;
-      margin-left: -20px;
+      left: 0;
       margin-right: -20px;
+      margin-left: -20px;
       border: 1px solid #BE9158;
     }
   }
 
   .border-wrapper__header {
     position: static;
-    transform: none;
     margin-bottom: 0;
+    transform: none;
 
     h2 {
       margin-top: 120px;
@@ -43,19 +43,17 @@
 
   .border-block {
     position: absolute;
-    z-index: 2;
     top: 105px;
     left: 50%;
+    z-index: 2;
     display: flex;
     align-items: center;
     width: 100%;
-
-    border-radius: 49px;
-    border: 1px solid #C0A97F;
-    background: transparent;
-    padding: 4px;
     max-width: 276px;
-
+    padding: 4px;
+    background: transparent;
+    border: 1px solid #C0A97F;
+    border-radius: 49px;
     transform: translateX(-50%) translateY(0);
     transition: transform 0.3s ease;
 
@@ -74,33 +72,30 @@
 
     a {
       position: relative;
+      z-index: 1;
       display: inline-block;
-      background: linear-gradient(89deg, #967252 15.33%, #CEB48D 97.83%);
+      padding: 16px 30px;
+      overflow: hidden;
       color: white;
       text-decoration: none;
-      padding: 16px 30px;
+      background: linear-gradient(89deg, #967252 15.33%, #CEB48D 97.83%);
       border-radius: 49px;
-      overflow: hidden;
-      z-index: 1;
 
       @include bp.mq(mobile-xl) {
-        padding: 14px 30px;
         width: 100%;
+        padding: 14px 30px;
         text-align: center;
       }
 
       &::before {
-        content: '';
         position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
+        inset: 0;
+        z-index: -1;
+        content: '';
         background: linear-gradient(89deg, #CEB48D 15.33%, #967252 97.83%);
         border-radius: 49px;
         opacity: 0;
         transition: opacity 0.3s ease;
-        z-index: -1;
       }
 
       &:hover::before {
@@ -115,26 +110,26 @@
 
   &__ratings {
     display: flex;
-    justify-content: center;
-    gap: 12px;
-    margin-bottom: 12px;
     flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    margin-bottom: 12px;
   }
 
   &__rating-link {
     display: flex;
-    padding: 16px 30px;
-    justify-content: center;
-    align-items: center;
     gap: 10px;
-    background: var(--color-white);
-    border-radius: 39px;
-    color: var(--color-12);
+    align-items: center;
+    justify-content: center;
+    padding: 16px 30px;
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
     line-height: 120%;
+    color: var(--color-12);
+    background: var(--color-white);
     border: 1px solid var(--color-white);
+    border-radius: 39px;
     transition: all 0.3s ease;
 
     @include bp.mq(mobile-xl) {
@@ -152,8 +147,8 @@
   &__stats {
     display: flex;
     gap: 25px;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
   }
 
   &__stat {
@@ -165,30 +160,31 @@
       font-weight: 400;
       line-height: 136%;
       background: var(--bg-frame, linear-gradient(89deg, #967252 15.33%, #CEB48D 97.83%));
-      background-clip: text;
       -webkit-background-clip: text;
+      background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
     &:last-child {
+      max-width: 330px;
       font-size: 24px;
       font-style: normal;
       font-weight: 400;
       line-height: 136%;
       color: var(--color-1);
-      max-width: 330px;
 
       @include bp.mq(mobile-xl) {
         font-size: 18px;
       }
     }
   }
+
   .reviews-short__slider {
     @include mix.swiper-nav-styles('reviews-slider__nav', 'reviews-slider__button-prev', 'reviews-slider__button-next');
 
     @include bp.mq(mobile-xl) {
-      margin-right: -20px;
       padding-right: 0;
+      margin-right: -20px;
     }
     @include bp.mq(mobile-l) {
       margin-right: -15px;
@@ -200,9 +196,9 @@
     }
 
     .swiper-slide {
-      height: auto;
       display: flex;
       flex-direction: column;
+      height: auto;
     }
   }
 }

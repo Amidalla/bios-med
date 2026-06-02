@@ -2,40 +2,40 @@
 @use "core/mixins" as mix;
 
 .hero-slide-card {
-  border-radius: 15px;
-  border: 2px solid var(--bg, #BE9158);
-  background: rgba(255, 255, 255, 0.55);
-  padding: 36px 42px 49px 42px;
-  transition: color 0.3s ease;
   display: flex;
   flex-direction: column;
   height: 100%;
+  padding: 36px 42px 49px;
+  background: rgb(255 255 255 / 55%);
+  border: 2px solid var(--bg, #BE9158);
+  border-radius: 15px;
+  transition: color 0.3s ease;
 
   @include bp.mq(mobile-xl) {
-     padding: 26px 15px 25px 15px;
+     padding: 26px 15px 25px;
   }
 
   &:hover {
-    background: rgba(255, 255, 255, 0.6);
+    background: rgb(255 255 255 / 60%);
   }
 
   &__content {
     display: flex;
+    flex-grow: 1;
     flex-direction: column;
     align-items: center;
-    flex-grow: 1;
   }
 
   &__title {
+    margin-bottom: 21px;
     font-family: var(--font-family-secondary);
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
     line-height: 120%;
-    text-transform: uppercase;
     color: var(--color-5);
-    margin-bottom: 21px;
     text-align: center;
+    text-transform: uppercase;
 
     @include bp.mq(mobile-xl) {
       margin-bottom: 14px;
@@ -43,10 +43,10 @@
   }
 
   &__icon {
-    width: 81.977px;
-    height: 77.739px;
     display: flex;
     justify-content: center;
+    width: 81.977px;
+    height: 77.739px;
     margin-bottom: 15px;
 
     @include bp.mq(mobile-xl) {
@@ -55,30 +55,30 @@
     }
 
     svg {
+      flex-shrink: 0;
       width: 100%;
       height: 100%;
-      flex-shrink: 0;
     }
   }
 
   &__subtitle {
+    margin-bottom: 13px;
     font-family: var(--font-family-secondary);
-    text-align: center;
     font-size: 18px;
     font-style: normal;
     font-weight: 400;
     line-height: 120%;
-    text-transform: uppercase;
     color: var(--color-1);
-    margin-bottom: 13px;
+    text-align: center;
+    text-transform: uppercase;
   }
 
   &__price {
-    margin-top: auto;
     display: flex;
     flex-direction: column;
     gap: 1px;
     align-items: center;
+    margin-top: auto;
   }
 
   &__price-from {
@@ -91,14 +91,14 @@
   }
 
   &__price-value {
+    margin-bottom: 20px;
     font-family: var(--font-family-secondary);
     font-size: 30px;
     font-style: normal;
     font-weight: 400;
     line-height: 120%;
-    letter-spacing: -0.6px;
     color: var(--color-brown-dark);
-    margin-bottom: 20px;
+    letter-spacing: -0.6px;
 
     @include bp.mq(mobile-xl) {
       margin-bottom: 16px;
@@ -109,16 +109,16 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 20px;
-    border: 1px solid var(--bg, #BE9158);
-    background: rgba(255, 255, 255, 0.40);
     padding: 13px 26px;
+    margin-top: auto;
     font-size: 16px;
     font-style: normal;
     font-weight: 500;
     line-height: 120%;
     color: var(--color-6);
-    margin-top: auto;
+    background: rgb(255 255 255 / 40%);
+    border: 1px solid var(--bg, #BE9158);
+    border-radius: 20px;
     transition: all 0.3s ease;
 
     @include bp.mq(mobile-xl) {
@@ -128,7 +128,7 @@
 
     &:hover {
       text-decoration: none;
-      background: rgba(255, 255, 255, 0.60);
+      background: rgb(255 255 255 / 60%);
       transform: translateY(-2px);
     }
   }

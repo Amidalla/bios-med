@@ -18,7 +18,7 @@ export function reviewsShort() {
         const nextBtn = document.querySelector('.reviews-slider__button-next');
 
         swiperInstance = new Swiper(sliderEl, {
-            slidesPerView: 1.2,
+            slidesPerView: 1.3,
             spaceBetween: 17,
             breakpoints: {
                 479: {

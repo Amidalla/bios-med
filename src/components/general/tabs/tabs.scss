@@ -4,8 +4,8 @@
 .tabs {
   &__nav {
     display: flex;
-    justify-content: center;
     gap: 10px;
+    justify-content: center;
     margin-bottom: 40px;
 
     @include bp.mq(mobile-xl) {
@@ -14,17 +14,17 @@
   }
 
   &__btn {
-    background: none;
-    border: 1px solid #BE9158;
-    border-radius: 7px;
+    position: relative;
+    padding: 16px 30px;
     font-size: 20px;
     font-style: normal;
     font-weight: 500;
     line-height: 120%;
     color: var(--color-brown-dark);
     cursor: pointer;
-    padding: 16px 30px;
-    position: relative;
+    background: none;
+    border: 1px solid #BE9158;
+    border-radius: 7px;
     isolation: isolate;
     transition: color 0.3s ease;
 
@@ -35,14 +35,14 @@
 
 
     &::before {
-      content: '';
       position: absolute;
       inset: 0;
-      border-radius: 6px;
+      z-index: -1;
+      content: '';
       background: linear-gradient(216deg, #E1AC68 9.39%, #A07049 90.71%);
+      border-radius: 6px;
       opacity: 0;
       transition: opacity 0.3s ease;
-      z-index: -1;
     }
 
     &:hover {
@@ -68,15 +68,16 @@
   }
 
   &__panel {
-    animation: slideLeft 0.4s ease forwards;
+    animation: slide-left 0.4s ease forwards;
   }
 }
 
-@keyframes slideLeft {
+@keyframes slide-left {
   from {
     opacity: 0;
     transform: translateX(-30px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);

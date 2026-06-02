@@ -2,7 +2,6 @@
 @use "core/mixins" as mix;
 
 .about-short {
-
   background: var(--color-8);
 
   @include bp.mq(tablet-xl) {
@@ -33,9 +32,9 @@
 
   &__content {
     h2 {
-      text-align: left;
-      padding-left: 0;
       padding-right: 0;
+      padding-left: 0;
+      text-align: left;
 
       @include bp.mq(mobile-xl) {
         text-align: center;
@@ -48,15 +47,18 @@
 
     .border-block {
       @include mix.border-block;
+
       max-width: 182px;
       margin-right: auto;
 
       @include bp.mq(mobile-l) {
         max-width: 328px;
+        margin: 0 auto;
       }
 
       a {
         @include mix.button-gradient(24px 40px);
+
         max-width: 100%;
 
         &:hover {
@@ -69,13 +71,12 @@
   &__gallery-wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    column-gap: 20px;
-    row-gap: 10px;
+    gap: 10px 20px;
   }
 
   &__image {
-    border: 2px solid var(--color-3);
     overflow: hidden;
+    border: 2px solid var(--color-3);
 
     img {
       width: 100%;
@@ -85,7 +86,7 @@
   }
 
   &__image--1 {
-    border-radius: 20px 20px 100px 20px;
+    border-radius: 20px 20px 100px;
   }
 
   &__image--2 {
@@ -114,7 +115,6 @@
       margin-top: 0;
 
       @include bp.mq(tablet-xl) {
-
         &:not(:last-child) {
           margin-bottom: 24px;
         }

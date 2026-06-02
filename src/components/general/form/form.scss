@@ -25,15 +25,15 @@
     }
 
     .input-wrapper {
-      display: flex;
       position: relative;
+      display: flex;
 
       .input-icon {
         position: absolute;
-        left: 24px;
         top: 50%;
-        transform: translateY(-50%);
+        left: 24px;
         z-index: 3;
+        transform: translateY(-50%);
       }
     }
   }

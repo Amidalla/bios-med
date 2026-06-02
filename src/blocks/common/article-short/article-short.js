@@ -17,10 +17,10 @@ export function articleShort() {
 
         if (isMobile()) {
             swiperInstance = new Swiper(sliderEl, {
-                slidesPerView: 1.2,
-                spaceBetween: 15,
+                slidesPerView: 1.3,
+                spaceBetween: 17,
                 breakpoints: {
-                    450: {
+                    420: {
                         slidesPerView: 1.5,
                         spaceBetween: 17,
                     },

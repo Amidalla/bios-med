@@ -2,14 +2,13 @@
 @use "core/mixins" as mix;
 
 .specialist-card {
-
   &__image {
-    border-radius: 20px;
-    border: 1px solid #BE9158;
-    background: rgba(255, 255, 255, 0.40);
     height: 461px;
     padding: 12px 11px 12px 12px;
     margin-bottom: 20px;
+    background: rgb(255 255 255 / 40%);
+    border: 1px solid #BE9158;
+    border-radius: 20px;
 
     @include bp.mq(tablet-l) {
       height: 335px;
@@ -46,6 +45,10 @@
   }
 
   &__title {
+    position: relative;
+    padding-right: 11px;
+    padding-bottom: 11px;
+    padding-left: 11px;
     font-family: var(--font-family-secondary);
     font-size: 32px;
     font-style: normal;
@@ -53,35 +56,34 @@
     line-height: 96%;
     color: var(--color-1);
     text-align: center;
-    padding-bottom: 11px;
-    position: relative;
-    padding-left: 11px;
-    padding-right: 11px;
 
     @include bp.mq(laptop) {
       font-size: 26px;
     }
 
     @include bp.mq(mobile-xl) {
-      font-size: 20px;
-      margin-bottom: 0;
-      padding-left: 3px;
       padding-right: 3px;
+      padding-left: 3px;
+      margin-bottom: 0;
+      font-size: 20px;
     }
 
     &::after {
-      content: "";
-      width: 71px;
-      height: 1px;
-      background: var(--color-3);
       position: absolute;
       bottom: 0;
       left: 50%;
+      width: 71px;
+      height: 1px;
+      content: "";
+      background: var(--color-3);
       transform: translateX(-50%);
     }
   }
 
   &__text {
+    padding-top: 10px;
+    padding-right: 11px;
+    padding-left: 11px;
     font-family: var(--font-family-commissioner);
     font-size: 20px;
     font-style: normal;
@@ -89,14 +91,11 @@
     line-height: 120%;
     color: var(--color-1);
     text-align: center;
-    padding-top: 10px;
-    padding-left: 11px;
-    padding-right: 11px;
 
     @include bp.mq(mobile-xl) {
-      font-size: 16px;
-      padding-left: 3px;
       padding-right: 3px;
+      padding-left: 3px;
+      font-size: 16px;
     }
   }
 }

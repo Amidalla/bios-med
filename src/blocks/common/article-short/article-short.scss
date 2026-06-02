@@ -2,8 +2,8 @@
 @use "core/mixins" as mixin;
 
 .article-short {
-  background: var(--color-8);
   padding-top: 36px;
+  background: var(--color-8);
 
   @include bp.mq(mobile-xl) {
     padding-top: 25px;
@@ -12,8 +12,9 @@
   .article-slider {
     @include bp.mq(tablet-xl) {
       @include mixin.swiper-nav-styles('article-slider__nav', 'article-slider__button-prev', 'article-slider__button-next');
-      margin-right: -20px !important;
+
       padding-right: 0 !important;
+      margin-right: -20px !important;
     }
 
     @include bp.mq(mobile-l) {
@@ -24,9 +25,9 @@
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 22px;
-      margin-bottom: 40px;
-      margin-top: 54.5px;
       align-items: stretch;
+      margin-top: 54.5px;
+      margin-bottom: 40px;
 
       & > :nth-child(n+4) {
         display: none;
@@ -34,8 +35,8 @@
 
       @include bp.mq(tablet-xl) {
         display: flex;
-        align-items: stretch;
         gap: 0;
+        align-items: stretch;
 
         & > :nth-child(n+4) {
           display: flex;
@@ -44,8 +45,8 @@
 
       .swiper-slide {
         @include bp.mq(tablet-xl) {
-          height: auto;
           display: flex;
+          height: auto;
         }
       }
     }
@@ -54,6 +55,7 @@
   &__footer {
     .border-block {
       @include mixin.border-block;
+
       max-width: 188px;
       margin: 0 auto;
 
@@ -64,6 +66,7 @@
 
     a {
       @include mixin.button-gradient(24px 40px);
+
       max-width: 100%;
 
       &:hover {

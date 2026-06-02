@@ -8,9 +8,9 @@
   padding-left: 165px;
 
   @include bp.mq(tablet-xl) {
-    padding-left: 0;
-    align-items: center;
     gap: 10px;
+    align-items: center;
+    padding-left: 0;
   }
 
   .item {
@@ -62,13 +62,13 @@
 
       a {
         display: inline;
-        font-variant-numeric: lining-nums proportional-nums;
-        color: var(--color-white);
         font-family: var(--font-family-secondary);
         font-size: 40px;
         font-style: normal;
         font-weight: 400;
+        font-variant-numeric: lining-nums proportional-nums;
         line-height: 96%;
+        color: var(--color-white);
         text-transform: uppercase;
         transition: all 0.3s;
 
@@ -84,9 +84,6 @@
     }
 
     &.address {
-      @include bp.mq(tablet-xl) {
-
-      }
       @include bp.mq(mobile-xl) {
         position: static;
       }

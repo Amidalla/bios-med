@@ -15,7 +15,7 @@ export function storiesShort() {
         }
 
         swiperInstance = new Swiper(sliderEl, {
-            slidesPerView: 1.2,
+            slidesPerView: 1.3,
             spaceBetween: 18,
             breakpoints: {
                 479: {

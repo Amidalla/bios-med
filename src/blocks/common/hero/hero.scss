@@ -4,9 +4,9 @@
 
 .hero {
   position: relative;
+  min-height: 958px;
   padding-top: 194px;
   padding-bottom: 101px;
-  min-height: 958px;
 
   @include bp.mq(tablet-xl) {
     padding-bottom: 59px;
@@ -23,10 +23,7 @@
 
   &__bg {
     position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    inset: 0;
     z-index: 0;
     background: url('../assets/images/content/hero-bg.png') no-repeat center;
     background-size: cover;
@@ -48,24 +45,24 @@
   }
 
   &__content {
-    max-width: 699px;
     display: flex;
     flex-direction: column;
     gap: 20px;
+    max-width: 699px;
     margin-bottom: 20px;
 
     @include bp.mq(mobile-xl) {
+      gap: 27px;
       align-items: center;
       margin-bottom: 88px;
-      gap: 27px;
     }
   }
 
   &__title {
     @include bp.mq(mobile-xl) {
-      text-align: center;
       max-width: 325px;
       margin: 0 auto;
+      text-align: center;
     }
   }
 
@@ -87,6 +84,7 @@
 
   &__btn {
     @include mix.button-gradient;
+
     width: 100%;
     backdrop-filter: blur(2px);
 
@@ -95,27 +93,15 @@
     }
   }
 
-  @include bp.mq(laptop-l) {
-
-  }
-
-  @include bp.mq(laptop) {
-
-  }
-
-  @include bp.mq(tablet) {
-
-  }
-
   .slider {
     position: absolute;
-    right: 0;
     top: 50%;
-    transform: translateY(-50%);
+    right: 0;
+    z-index: 3;
     width: calc(100% - 56%);
     max-width: 44%;
     overflow: hidden;
-    z-index: 3;
+    transform: translateY(-50%);
 
     @include bp.mq(laptop-m) {
       max-width: 725px;
@@ -127,10 +113,10 @@
 
     @include bp.mq(tablet-xl) {
       position: relative;
-      max-width: 100%;
-      transform: none;
       width: 100%;
+      max-width: 100%;
       padding-left: 24px;
+      transform: none;
     }
 
     .swiper-wrapper {

@@ -18,7 +18,7 @@
   transition: transform 0.3s;
 
   @include bp.mq(mobile-l) {
-    padding: 71px 15px 15px 15px;
+    padding: 71px 15px 15px;
   }
 
   &.is-open {
@@ -40,6 +40,9 @@
     display: none;
 
     @include bp.mq(tablet-xl) {
+      position: absolute;
+      top: 28px;
+      right: 28px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -52,9 +55,6 @@
       border: none;
       border-radius: 8px;
       transition: background 0.2s;
-      position: absolute;
-      top: 28px;
-      right: 28px;
     }
   }
 

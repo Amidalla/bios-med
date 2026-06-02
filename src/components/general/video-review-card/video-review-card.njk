@@ -7,22 +7,11 @@
             <div class="video-review-card__preview-container" data-video-url="{{ videoUrl }}">
                 <img src="{{ previewImage }}" alt="{{ name }}" class="video-review-card__preview">
                 <button class="video-review-card__play" aria-label="Воспроизвести видео">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="62" height="62" viewBox="0 0 62 62" fill="none">
-                        <foreignObject x="-4" y="-4" width="70" height="70"><div xmlns="http://www.w3.org/1999/xhtml" style="backdrop-filter:blur(2px);clip-path:url(#bgblur_0_1_516_clip_path);height:100%;width:100%"></div></foreignObject>
-                        <g data-figma-bg-blur-radius="4">
-                            <rect x="0.5" y="0.5" width="61" height="61" rx="30.5" fill="url(#paint0_linear_1_516)"/>
-                            <rect x="0.5" y="0.5" width="61" height="61" rx="30.5" stroke="#C0A97F"/>
-                            <path d="M24.4184 21.4947C24.4184 20.533 25.4594 19.932 26.2922 20.4128L43.6253 30.4201C44.4581 30.9009 44.4581 32.103 43.6253 32.5838L26.2922 42.5911C25.4594 43.0719 24.4184 42.4709 24.4184 41.5092L24.4184 21.4947Z" fill="white"/>
-                        </g>
-                        <defs>
-                            <clipPath id="bgblur_0_1_516_clip_path" transform="translate(4 4)"><rect x="0.5" y="0.5" width="61" height="61" rx="30.5"/></clipPath>
-                            <linearGradient id="paint0_linear_1_516" x1="8.4963" y1="-6.16422e-07" x2="62.344" y2="5.8335" gradientUnits="userSpaceOnUse">
-                                <stop stop-color="#BE9158"/>
-                                <stop offset="0.519231" stop-color="#F7E0AA"/>
-                                <stop offset="1" stop-color="#BE9158"/>
-                            </linearGradient>
-                        </defs>
-                    </svg>
+                    <img
+                        class="lazy"
+                        src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='1'%20height='1'/%3E"
+                        data-src="/assets/images/content/video-btn.png"
+                        alt="Кнопка видео">
                 </button>
             </div>
         </div>

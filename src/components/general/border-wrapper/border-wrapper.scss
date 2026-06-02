@@ -6,6 +6,7 @@
   --inner-offset: 67px;
   --vertical-offset-top: 9px;
   --vertical-offset-bottom: 9px;
+
   position: relative;
 
   @include bp.mq(laptop) {
@@ -26,78 +27,69 @@
   }
 
   &__outer {
-    border-radius: 20px;
-    border: 1px solid #BE9158;
     position: absolute;
-    top: -18px;
-    left: calc(50% - 50vw);
-    right: calc(50% - 50vw);
-    bottom: -18px;
+    inset: -18px calc(50% - 50vw);
     z-index: 0;
-
     margin: 0 var(--outer-offset);
+    border: 1px solid #BE9158;
+    border-radius: 20px;
 
     @include bp.mq(laptop-xl) {
-      left: 0;
       right: 0;
-      margin-left: -20px;
+      left: 0;
       margin-right: -20px;
+      margin-left: -20px;
     }
 
     @include bp.mq(mobile-xl) {
       position: static;
-      margin: 0;
       padding: 0;
+      margin: 0;
       border: none;
     }
   }
 
   &__inner {
-    border-radius: 20px;
-    border: 1px solid #BE9158;
     position: absolute;
-    top: calc(-1 * var(--vertical-offset-top));
-    left: calc(50% - 50vw);
-    right: calc(50% - 50vw);
-    bottom: calc(-1 * var(--vertical-offset-bottom));
+    inset: calc(-1 * var(--vertical-offset-top)) calc(50% - 50vw) calc(-1 * var(--vertical-offset-bottom));
     z-index: 0;
-
-
     margin: 0 var(--inner-offset);
+    border: 1px solid #BE9158;
+    border-radius: 20px;
 
     @include bp.mq(laptop-xl) {
-      left: 0;
       right: 0;
-      margin-left: -20px;
+      left: 0;
       margin-right: -20px;
+      margin-left: -20px;
     }
 
     @include bp.mq(mobile-xl) {
       position: static;
-      margin: 0;
       padding: 0;
+      margin: 0;
       border: none;
     }
   }
 
   &__header {
-    text-align: center;
     position: absolute;
     top: -45px;
     left: 50%;
-    transform: translateX(-50%);
     z-index: 2;
     margin-bottom: 30px;
+    text-align: center;
+    transform: translateX(-50%);
 
     @include bp.mq(mobile-xl) {
       position: static;
-      transform: none;
       margin-bottom: 0;
+      transform: none;
     }
 
     .container {
-      background: var(--color-8);
       padding: 0;
+      background: var(--color-8);
     }
 
     .section-title {
@@ -128,17 +120,17 @@
       }
 
       &::before {
-        content: '';
         position: absolute;
         bottom: 0;
         left: calc(50% - 45.5vw);
         width: 65px;
         height: 65px;
+        pointer-events: none;
+        content: '';
         background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='65' height='65' viewBox='0 0 65 65' fill='none'%3E%3Cpath d='M7.89431 56.697C12.4407 35.7436 40.5849 14.4026 57.9045 33.5841C75.224 55.6163 49.4612 72.8977 39.9354 58.4251C34.7396 47.4086 48.3787 42.2244 52.2756 46.9766C53.0973 47.9786 53.6013 49.0191 53.8405 50.0007M53.8405 50.0007C54.7357 53.6746 50.5437 56.913 48.1622 53.4568C46.2138 49.5687 52.591 47.1926 53.8405 50.0007ZM7.81884 56.4804C28.8194 51.9442 50.2084 23.8631 30.9837 6.58244C8.90197 -10.6982 -8.41823 15.0068 6.08688 24.5111C17.1281 29.6953 22.324 16.0868 17.5611 12.1987C16.5568 11.3788 15.5141 10.8759 14.5302 10.6373M14.5302 10.6373C10.848 9.74413 7.6024 13.9267 11.0663 16.3028C14.9632 18.2469 17.3446 11.884 14.5302 10.6373Z' stroke='%23BE9158' stroke-width='1.5'/%3E%3C/svg%3E");
         background-repeat: no-repeat;
         background-position: center;
         background-size: contain;
-        pointer-events: none;
 
         @include bp.mq(laptop-xl) {
           display: none;
@@ -146,17 +138,17 @@
       }
 
       &::after {
-        content: '';
         position: absolute;
-        bottom: 0;
         right: calc(50% - 45.5vw);
+        bottom: 0;
         width: 65px;
         height: 65px;
+        pointer-events: none;
+        content: '';
         background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='65' height='65' viewBox='0 0 65 65' fill='none'%3E%3Cpath d='M7.89431 56.697C12.4407 35.7436 40.5849 14.4026 57.9045 33.5841C75.224 55.6163 49.4612 72.8977 39.9354 58.4251C34.7396 47.4086 48.3787 42.2244 52.2756 46.9766C53.0973 47.9786 53.6013 49.0191 53.8405 50.0007M53.8405 50.0007C54.7357 53.6746 50.5437 56.913 48.1622 53.4568C46.2138 49.5687 52.591 47.1926 53.8405 50.0007ZM7.81884 56.4804C28.8194 51.9442 50.2084 23.8631 30.9837 6.58244C8.90197 -10.6982 -8.41823 15.0068 6.08688 24.5111C17.1281 29.6953 22.324 16.0868 17.5611 12.1987C16.5568 11.3788 15.5141 10.8759 14.5302 10.6373M14.5302 10.6373C10.848 9.74413 7.6024 13.9267 11.0663 16.3028C14.9632 18.2469 17.3446 11.884 14.5302 10.6373Z' stroke='%23BE9158' stroke-width='1.5'/%3E%3C/svg%3E");
         background-repeat: no-repeat;
         background-position: center;
         background-size: contain;
-        pointer-events: none;
         transform: rotate(270deg);
 
         @include bp.mq(laptop-xl) {
@@ -178,17 +170,18 @@
     }
 
     .container {
-      background: var(--color-8);
-      padding-left: 45px;
       padding-right: 45px;
+      padding-left: 45px;
+      background: var(--color-8);
 
       @include bp.mq(mobile-xl) {
-        padding-left: unset;
         padding-right: unset;
+        padding-left: unset;
       }
 
       .border-block {
         @include mix.border-block;
+
         max-width: 254px;
         margin: 0 auto;
 
@@ -199,6 +192,7 @@
 
       a {
         @include mix.button-gradient(24px 40px);
+
         max-width: 100%;
 
         &:hover {

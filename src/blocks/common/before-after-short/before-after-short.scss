@@ -33,6 +33,7 @@
 
     .border-block {
       @include mix.border-block;
+
       max-width: 221px;
       margin: 0 auto;
 
@@ -43,6 +44,7 @@
 
     a {
       @include mix.button-gradient(24px 40px);
+
       max-width: 100%;
 
       &:hover {

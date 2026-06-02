@@ -23,11 +23,11 @@
   color: var(--color-white);
   resize: vertical;
   outline: none;
-  border-radius: 5px;
+  background: rgb(255 255 255 / 2%);
   border: 1px solid #FFF;
-  background: rgba(255, 255, 255, 0.02);
+  border-radius: 5px;
   box-shadow: 0 0 15px 0 #FFE29D inset;
-  backdrop-filter: blur(12.1999998093px);
+  backdrop-filter: blur(12.1999px);
   transition: all 0.2s ease-in-out;
 
   &::placeholder {

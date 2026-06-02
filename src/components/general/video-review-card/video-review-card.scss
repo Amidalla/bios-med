@@ -2,38 +2,38 @@
 @use "core/breakpoints" as bp;
 
 .video-review-card {
-  border-radius: 20px;
-  border: 1px solid #BE9158;
   display: flex;
   flex-direction: column;
-  height: 100%;
   width: 100%;
-  background: rgba(255, 255, 255, 0.02);
-  backdrop-filter: blur(6.150000095367432px);
+  height: 100%;
+  background: rgb(255 255 255 / 2%);
+  border: 1px solid #BE9158;
+  border-radius: 20px;
+  backdrop-filter: blur(6.1500px);
 
   &__inner {
-    border-radius: 20px;
-    border: 1px solid #BE9158;
-    margin: 8px -7px 10px -7px;
-    padding: 12px 14px 52px 14px;
     height: 100%;
+    padding: 12px 14px 52px;
+    margin: 8px -7px 10px;
+    border: 1px solid #BE9158;
+    border-radius: 20px;
 
     @include bp.mq(mobile-xl) {
-      margin: 8px -3px 10px -3px;
-      padding: 12px 14px 52px 14px;
+      padding: 12px 14px 52px;
+      margin: 8px -3px 10px;
     }
   }
 
   &__media {
-    background: linear-gradient(148deg, #4A3328 10.3%, #785544 43.07%, #5F4335 82.82%);
-    height: 390px;
     position: relative;
+    height: 390px;
     margin-bottom: 10px;
-    border-radius: 20px;
     overflow: hidden;
+    background: linear-gradient(148deg, #4A3328 10.3%, #785544 43.07%, #5F4335 82.82%);
+    border-radius: 20px;
 
     @include bp.mq(mobile-xl) {
-      height: 315px;
+      height: 200px;
     }
 
     img {
@@ -44,17 +44,24 @@
   }
 
   &__play {
-    width: 62px;
-    height: 62px;
-    background: transparent;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 62px;
+    height: 62px;
+    background: transparent;
     border: none;
+    transform: translate(-50%, -50%);
+    padding: 0;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   }
 
   &__preview-container {
@@ -68,11 +75,11 @@
   }
 
   &__content {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
     padding-right: 21px;
     padding-left: 21px;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
 
     @include bp.mq(mobile-xl) {
       padding: 0;
@@ -86,13 +93,13 @@
   }
 
   &__name {
+    margin-bottom: 16px;
     font-family: var(--font-family-secondary);
-    color: var(--color-brown-dark);
     font-size: 32px;
     font-style: normal;
     font-weight: 400;
     line-height: 96%;
-    margin-bottom: 16px;
+    color: var(--color-brown-dark);
 
     @include bp.mq(mobile-xl) {
       font-size: 22px;
@@ -100,16 +107,16 @@
   }
 
   &__review-wrapper {
-    padding-bottom: 20px;
     position: relative;
+    padding-bottom: 20px;
 
     &::after {
-      content: "";
-      width: 71px;
-      height: 1px;
       position: absolute;
       bottom: 0;
       left: 0;
+      width: 71px;
+      height: 1px;
+      content: "";
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='71' height='1' viewBox='0 0 71 1' fill='none'%3E%3Cpath d='M0 0.5H71' stroke='%23BE9158'/%3E%3C/svg%3E");
       background-repeat: repeat-x;
       background-position: bottom;
@@ -119,38 +126,38 @@
 
   &__review {
     font-family: var(--font-family-secondary);
-    color: var(--color-brown-dark);
     font-size: 24px;
     font-style: normal;
     font-weight: 400;
     line-height: 120%;
+    color: var(--color-brown-dark);
 
     @include bp.mq(mobile-xl) {
-      font-size: 20px;
       display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-      transition: all 0.3s ease;
       margin-bottom: 13px;
+      overflow: hidden;
+      -webkit-line-clamp: 2;
+      font-size: 20px;
+      transition: all 0.3s ease;
+      -webkit-box-orient: vertical;
     }
 
     &.expanded {
       display: block;
-      -webkit-line-clamp: unset;
       overflow: visible;
+      -webkit-line-clamp: unset;
     }
   }
 
   &__read-more {
-    background: transparent;
-    border: none;
-    color: var(--color-3);
+    display: none;
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
     line-height: 120%;
-    display: none;
+    color: var(--color-3);
+    background: transparent;
+    border: none;
 
     @include bp.mq(mobile-xl) {
       display: inline-block;
@@ -158,14 +165,14 @@
   }
 
   &__text {
-    margin-top: 20px;
     display: flex;
     flex-direction: column;
-    color: var(--color-brown-dark);
+    margin-top: 20px;
     font-size: 20px;
     font-style: normal;
     font-weight: 400;
     line-height: 120%;
+    color: var(--color-brown-dark);
 
     @include bp.mq(mobile-xl) {
       font-size: 16px;
