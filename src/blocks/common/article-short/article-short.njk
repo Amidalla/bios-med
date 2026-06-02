@@ -1,0 +1,74 @@
+{# blocks/common/article-short/article-short.njk #}
+
+{% from "components/general/article-card/article-card.njk" import articleCard %}
+
+<section class="article-short section">
+    <div class="container">
+        <div class="article-short__header">
+            {% set title = {
+                text: "<span>полезные</span> статьи",
+                tag: "h2",
+                class: "section-title"
+            } %}
+            {% include "components/general/title/title.njk" %}
+        </div>
+
+        <div class="swiper article-slider">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    {{ articleCard(
+                        '/assets/images/content/article1.jpg',
+                        'Пластическая хирургия',
+                        'Пластика после похудения: торсопластика, круговая абдоминопластика, подтяжка рук, подтяжка внутренней поверхности бедер',
+                        '/articles/article1'
+                    ) }}
+                </div>
+                <div class="swiper-slide">
+                    {{ articleCard(
+                        '/assets/images/content/article2.jpg',
+                        'Реконструктивная хирургия',
+                        'Подтяжка лица: эндоскопическая, СМАС, нитевая — сравнение методов',
+                        '/articles/article2'
+                    ) }}
+                </div>
+                <div class="swiper-slide">
+                    {{ articleCard(
+                        '/assets/images/content/article3.jpg',
+                        'Лазерная косметология',
+                        'Lorem ipsum dolor sit amet consectetur. Viverra consequat consequat lacus',
+                        '/articles/article3'
+                    ) }}
+                </div>
+                <div class="swiper-slide">
+                    {{ articleCard(
+                        '/assets/images/content/article1.jpg',
+                        'Эстетическая хирургия',
+                        'Lorem ipsum dolor sit amet consectetur. Viverra consequat consequat lacus',
+                        '/articles/article4'
+                    ) }}
+                </div>
+            </div>
+
+            <div class="article-slider__nav">
+                <div class="article-slider__button-prev">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14 6L8.34315 11.6569L14 17.3137" stroke="#BE9158" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <div class="article-slider__button-next">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 6L15.6569 11.6569L10 17.3137" stroke="#BE9158" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <div class="article-short__footer">
+            <div class="border-block">
+                <a href="/articles" class="link--all-articles">
+                    <span>Все статьи</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>

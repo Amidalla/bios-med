@@ -1,0 +1,12 @@
+{# components/general/article-card/article-card.njk #}
+
+{% macro articleCard(image, category, text, url) %}
+    <div class="article-card">
+        <div class="article-card__category">{{ category }}</div>
+        <div class="article-card__image">
+            <img src="{{ image }}" alt="{{ text | striptags | truncate(50) }}">
+        </div>
+        <div class="article-card__text">{{ text }}</div>
+        <a href="{{ url }}" class="article-card__link">Читать статью полностью</a>
+    </div>
+{% endmacro %}

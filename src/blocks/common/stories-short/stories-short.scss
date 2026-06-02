@@ -5,12 +5,64 @@
 .stories-short {
   background: var(--color-8);
   padding-top: 52px;
+  padding-bottom: 34px;
+
+  @include bp.mq(tablet-xl) {
+    padding-top: 20px;
+  }
+
+  @include bp.mq(mobile-xl) {
+    padding-top: 10px;
+    padding-bottom: 25px;
+  }
 
   &__slider {
     margin-top: 34px;
+    margin-bottom: 28px;
+    @include mix.swiper-nav-styles('stories-slider__nav', 'stories-slider__button-prev', 'stories-slider__button-next');
+
+    .stories-slider__nav {
+      @include bp.mq(mobile-xl) {
+        top: 260px;
+      }
+    }
+
+    @include bp.mq(mobile-xl) {
+      margin-right: -20px;
+      padding-right: 0;
+    }
+    @include bp.mq(mobile-l) {
+      margin-right: -15px;
+    }
 
     .swiper {
       padding: 10px 8px;
+
+      .swiper-slide {
+        height: auto;
+        display: flex;
+      }
+    }
+  }
+
+  &__footer {
+    .border-block {
+      @include mix.border-block;
+      max-width: 188px;
+      margin: 0 auto;
+
+      @include bp.mq(mobile-l) {
+        max-width: 328px;
+      }
+    }
+
+    a {
+      @include mix.button-gradient(24px 40px);
+      max-width: 100%;
+
+      &:hover {
+        text-decoration: none;
+      }
     }
   }
 }

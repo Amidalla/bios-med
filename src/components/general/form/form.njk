@@ -8,7 +8,7 @@
             <label class="label">Ваше имя</label>
             {{ input(
                 type="text",
-                id="entry-name",
+                id="",
                 name="name",
                 placeholder="Ваше имя",
                 autocomplete="name",
@@ -22,7 +22,7 @@
             <label class="label">Телефон</label>
             {{ input(
                 type="tel",
-                id="entry-phone",
+                id="",
                 name="phone",
                 placeholder="Телефон",
                 autocomplete="tel",
@@ -35,7 +35,7 @@
             <label class="label">Предполагаемая дата</label>
             {{ input(
                 type="date",
-                id="entry-date",
+                id="",
                 name="date",
                 placeholder="Предполагаемая дата",
                 required=true,
@@ -45,7 +45,7 @@
         </div>
         <div class="field-consent">
             {{ consentCheckbox(
-                id="entry-consent",
+                id="",
                 class="variant",
                 data={"error": "Необходимо отметить"},
                 required=true

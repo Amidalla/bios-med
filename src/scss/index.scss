@@ -43,6 +43,7 @@
 @use "../components/general/specialist-card/specialist-card";
 @use "../components/general/review-card/review-card";
 @use "../components/general/video-review-card/video-review-card";
+@use "../components/general/article-card/article-card";
 @use "../components/general/border-wrapper/border-wrapper";
 /*@use "../components/general/breadcrumbs/breadcrumbs";
 @use "../components/general/search-form/search-form";
@@ -61,6 +62,7 @@
 @use "../components/common/contacts-header/contacts-header";
 @use "../components/common/contacts-footer/contacts-footer";
 @use "../components/common/socials-footer/socials-footer";
+@use "../components/common/socials-form/socials-form";
 /*@use "../components/common/catalog-dropdown/catalog-dropdown";
 @use "../components/common/file-header/file-header";
 @use "../components/common/mini-cart/mini-cart";
@@ -116,6 +118,8 @@
 @use "../blocks/common/about-short/about-short";
 @use "../blocks/common/reviews-short/reviews-short";
 @use "../blocks/common/stories-short/stories-short";
+@use "../blocks/common/article-short/article-short";
+@use "../blocks/common/main-form/main-form";
 /*@use "../blocks/common/about-short/about-short";
 @use "../blocks/common/about-hero/about-hero";
 @use "../blocks/common/about-benefits/about-benefits";

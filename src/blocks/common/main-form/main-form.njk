@@ -1,0 +1,57 @@
+{# blocks/common/main-form/main-form.njk #}
+
+<section class="main-form section">
+<div class="form-bg"></div>
+        <div class="main-form__wrapper">
+            <div class="main-form__form">
+
+                {% set title = {
+                    text: "записаться
+                           на консультацию",
+                    tag: "h2",
+                    class: "section-title"
+                } %}
+                {% include "components/general/title/title.njk" %}
+                {% include "components/general/form/form-main.njk" %}
+                <div class="form-social">
+                    <div class="form-social__wrapper">
+                    <p><span>или свяжитесь с нами </span><a href="tel:84957961145,">8&nbsp;(495)&nbsp;796-11-45</a></p>
+                    <p><a href="mailto:bios-med@yandex.ru">bios-med@yandex.ru</a></p>
+                    </div>
+                    <div class="form-social__wrapper">
+                         {% include "components/common/socials-form/socials-form.njk" %}
+                    </div>
+                </div>
+            </div>
+            <div class="main-form__content">
+                <div class="main-form__map">
+
+                         <div class="map-decor"></div>
+                         <div class="map-decor"></div>
+                         <div class="map-decor"></div>
+                         <div class="map-decor"></div>
+
+                    <iframe
+                        data-src="https://yandex.ru/map-widget/v1/?um=constructor%3Afdb0ab16e6bf784fedf4adf2885fb55ca72a3132d56c8317a17e7da689d2d517&amp;source=constructor"
+                        width="1280"
+                        height="720"
+                        frameborder="0"
+                        class="lazy">
+                    </iframe>
+
+                </div>
+                <div class="main-form__contacts">
+                    <div>
+                        <p>Москва,  Иваньковское шоссе, д. 7</p>
+                        <a href="#" class="address-link">Как добраться</a>
+                        <p>Бесплатная охраняемая парковка</p>
+                    </div>
+                    <div>
+                         <div class="border-block">
+                         <a href="#" class="map-link"><span>Перейти</span></a>
+                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>

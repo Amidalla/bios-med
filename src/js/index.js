@@ -12,6 +12,8 @@ import { tabs } from "../components/general/tabs/tabs.js";
 import { specialistsShort } from "../blocks/common/specialists-short/specialists-short.js";
 import { reviewsShort } from "../blocks/common/reviews-short/reviews-short.js";
 import { storiesShort } from "../blocks/common/stories-short/stories-short.js";
+import { initReadMoreButtons } from "../components/general/video-review-card/video-review-card.js";
+import { articleShort } from "../blocks/common/article-short/article-short.js";
 
 const components = [
     consentNotice,
@@ -26,8 +28,9 @@ const components = [
     tabs,
     specialistsShort,
     reviewsShort,
-    storiesShort
-
+    storiesShort,
+    initReadMoreButtons,
+    articleShort
 ];
 
 function init(context = document) {

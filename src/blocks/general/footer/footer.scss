@@ -8,6 +8,7 @@ footer.footer {
   gap: 99px;
   padding: 67px 0 45px;
   background: linear-gradient(34deg, #4A3323 45.04%, #A88460 78.48%);
+  margin-top: -1px;
 ;
 
   @include bp.mq(laptop) {

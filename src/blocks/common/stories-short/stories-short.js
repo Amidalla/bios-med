@@ -15,27 +15,64 @@ export function storiesShort() {
         }
 
         swiperInstance = new Swiper(sliderEl, {
-            slidesPerView: 1,
-            spaceBetween: 20,
+            slidesPerView: 1.2,
+            spaceBetween: 18,
             breakpoints: {
-                640: {
+                479: {
+                    slidesPerView: 1.5,
+                    spaceBetween: 16,
+                },
+                759: {
                     slidesPerView: 2,
-                    spaceBetween: 20,
+                    spaceBetween: 18,
                 },
-                992: {
+                1310: {
                     slidesPerView: 3,
-                    spaceBetween: 24,
+                    spaceBetween: 22,
                 },
-            },
-            navigation: {
-                nextEl: '.stories-slider__button-next',
-                prevEl: '.stories-slider__button-prev',
             },
         });
+
+
+        bindNavigation();
     }
 
-    initSwiper();
-    window.addEventListener('resize', () => initSwiper());
+    function bindNavigation() {
+        const prevBtn = document.querySelector('.stories-slider__button-prev');
+        const nextBtn = document.querySelector('.stories-slider__button-next');
+
+        if (!prevBtn || !nextBtn || !swiperInstance) return;
+
+        // Клонируем, чтобы убрать старые обработчики
+        const newPrev = prevBtn.cloneNode(true);
+        const newNext = nextBtn.cloneNode(true);
+        prevBtn.parentNode.replaceChild(newPrev, prevBtn);
+        nextBtn.parentNode.replaceChild(newNext, nextBtn);
+
+        const finalPrev = document.querySelector('.stories-slider__button-prev');
+        const finalNext = document.querySelector('.stories-slider__button-next');
+
+        finalPrev.addEventListener('click', () => swiperInstance.slidePrev());
+        finalNext.addEventListener('click', () => swiperInstance.slideNext());
+
+        const updateButtons = () => {
+            if (swiperInstance.isBeginning) {
+                finalPrev.classList.add('swiper-button-disabled');
+            } else {
+                finalPrev.classList.remove('swiper-button-disabled');
+            }
+
+            if (swiperInstance.isEnd) {
+                finalNext.classList.add('swiper-button-disabled');
+            } else {
+                finalNext.classList.remove('swiper-button-disabled');
+            }
+        };
+
+        swiperInstance.on('init', updateButtons);
+        swiperInstance.on('slideChange', updateButtons);
+        updateButtons();
+    }
 
     function initVideoPlayers() {
         const previewContainers = document.querySelectorAll('.video-review-card__preview-container');
@@ -54,7 +91,6 @@ export function storiesShort() {
                     e.preventDefault();
                     e.stopPropagation();
                 }
-
 
                 if (container.querySelector('.video-review-card__iframe')) return;
 
@@ -75,14 +111,12 @@ export function storiesShort() {
         });
     }
 
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initVideoPlayers);
-    } else {
-        initVideoPlayers();
-    }
 
-    if (swiperInstance) {
-        swiperInstance.on('init', initVideoPlayers);
-        swiperInstance.on('slideChange', initVideoPlayers);
-    }
+    initSwiper();
+    initVideoPlayers();
+
+
+    window.addEventListener('resize', () => {
+        initSwiper();
+    });
 }
