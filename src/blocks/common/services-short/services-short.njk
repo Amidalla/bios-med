@@ -1,0 +1,55 @@
+{% from "components/general/service-card/service-card.njk" import serviceCard %}
+
+<section class="services section">
+    <div class="container">
+        <div class="services__header">
+            {% set title = {
+                text: "<span>наши</span> услуги",
+                tag: "h2",
+                class: "section-title"
+            } %}
+            {% include "components/general/title/title.njk" %}
+        </div>
+
+        <div class="services__list">
+            {% set items = [
+                {
+                    icon: "/assets/images/content/service1.png",
+                    title_first: "Подтяжка",
+                    title_second: "лица",
+                    url: "#"
+                },
+                {
+                    icon: "/assets/images/content/service2.png",
+                    title_first: "Пластика",
+                    title_second: "век",
+                    url: "#"
+                },
+                {
+                    icon: "/assets/images/content/service3.png",
+                    title_first: "Пластика",
+                    title_second: "груди",
+                    url: "#"
+                },
+                {
+                    icon: "/assets/images/content/service4.png",
+                    title_first: "Пластика",
+                    title_second: "тела",
+                    url: "#"
+                }
+            ] %}
+
+            {% for item in items %}
+                {{ serviceCard(item.icon, item.title_first, item.title_second, item.alt) }}
+            {% endfor %}
+        </div>
+
+        <div class="services__footer">
+            <div class="border-block">
+                <a href="/services" class="link--all-services">
+                    <span>Все услуги</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>

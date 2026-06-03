@@ -1,0 +1,11 @@
+{% macro advantageCard(icon, title, text) %}
+<div class="advantage-card">
+    <div class="advantage-card__content">
+        <div class="advantage-card__icon">
+            <img class="lazy" src="{{ icon }}" alt="{{ title }}" loading="lazy">
+        </div>
+        <h3 class="advantage-card__title">{{ title | safe }}</h3>
+        <div class="advantage-card__text">{{ text }}</div>
+    </div>
+</div>
+{% endmacro %}

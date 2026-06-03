@@ -1,0 +1,64 @@
+{# blocks/common/before-after-short/before-after-short.njk #}
+
+{% from "components/general/before-after-card/before-after-card.njk" import beforeAfterCard %}
+{% from "components/general/tabs/tabs.njk" import render as tabsRender, panel %}
+
+<section class="before-after-short section">
+    <div class="container">
+        <div class="before-after-short__header">
+            {% set title = {
+                text: "результаты до/после",
+                tag: "h2",
+                class: "section-title"
+            } %}
+            {% include "components/general/title/title.njk" %}
+        </div>
+
+        {% call tabsRender({
+            face: 'Лицо',
+            breast: 'Грудь',
+            body: 'Тело'
+        }, 'face') %}
+
+            {% call panel('face', true) %}
+                <div class="before-after-short__grid">
+                    {{ beforeAfterCard(
+                        '/assets/images/content/before-face-1.jpg',
+                        '/assets/images/content/after-face-1.jpg'
+                    ) }}
+                    {{ beforeAfterCard(
+                        '/assets/images/content/before-face-2.jpg',
+                        '/assets/images/content/after-face-2.jpg'
+                    ) }}
+                </div>
+            {% endcall %}
+
+            {% call panel('breast') %}
+                <div class="before-after-short__grid">
+                    {{ beforeAfterCard(
+                       '/assets/images/content/before-face-1.jpg',
+                        '/assets/images/content/after-face-1.jpg'
+                    ) }}
+                </div>
+            {% endcall %}
+
+            {% call panel('body') %}
+                <div class="before-after-short__grid">
+                     {{ beforeAfterCard(
+                        '/assets/images/content/before-face-2.jpg',
+                        '/assets/images/content/after-face-2.jpg'
+                     ) }}
+                </div>
+            {% endcall %}
+
+        {% endcall %}
+
+        <div class="before-after-short__footer">
+            <div class="border-block">
+                <a href="/before-after" class="link-all-results">
+                    <span>Все результаты</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>

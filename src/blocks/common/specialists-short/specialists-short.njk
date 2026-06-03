@@ -1,0 +1,75 @@
+{# blocks/common/specialists-short/specialists-short.njk #}
+
+{% from "components/general/border-wrapper/border-wrapper.njk" import borderWrapper %}
+{% from "components/general/specialist-card/specialist-card.njk" import specialistCard %}
+
+<section class="specialists-short section">
+    {% call borderWrapper('специалисты', 'h2', 'section-title', true, '/specialists', 'Все специалисты') %}
+        <div class="container">
+            <div class="specialists-short__slider">
+                <div class="swiper specialists-slider">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            {{ specialistCard(
+                                '/assets/images/content/specialist1.jpg',
+                                'Ворошкевич
+                                 Андрей Альбертович',
+                                'пластический хирург'
+                            ) }}
+                        </div>
+
+                        <div class="swiper-slide">
+                            {{ specialistCard(
+                                '/assets/images/content/specialist2.jpg',
+                                'Тменова
+                                 Марьяна Владимировна',
+                                'пластический хирург'
+                            ) }}
+                        </div>
+
+                        <div class="swiper-slide">
+                            {{ specialistCard(
+                                '/assets/images/content/specialist3.jpg',
+                                'Бозоров
+                                 Хуршид Хамзаевич',
+                                'дерматолог, косметолог'
+                            ) }}
+                        </div>
+
+                        <div class="swiper-slide">
+                            {{ specialistCard(
+                                '/assets/images/content/specialist4.jpg',
+                                'Убилава
+                                 Темур Мерабович',
+                                'челюстно-лицевой хирург'
+                            ) }}
+                        </div>
+
+                        <div class="swiper-slide">
+                            {{ specialistCard(
+                                '/assets/images/content/specialist1.jpg',
+                                'Васильева
+                                 Ольга Игоревна',
+                                'эндокринолог'
+                            ) }}
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Навигация -->
+                <div class="specialists-slider__nav">
+                    <div class="specialists-slider__button-prev">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M14 6L8.34315 11.6569L14 17.3137" stroke="#BE9158" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="specialists-slider__button-next">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 6L15.6569 11.6569L10 17.3137" stroke="#BE9158" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endcall %}
+</section>

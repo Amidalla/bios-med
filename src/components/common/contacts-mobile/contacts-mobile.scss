@@ -1,0 +1,104 @@
+@use "core/breakpoints" as bp;
+@use "core/mixins" as mixin;
+
+.contacts-mobile {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  margin-bottom: 84px;
+
+  &__wrapper {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 31px;
+
+    @include bp.mq(mobile-xl) {
+      flex-direction: column;
+      align-items: start;
+    }
+    @include bp.mq(mobile-m) {
+     align-items: center;
+    }
+  }
+
+  .item {
+    display: flex;
+    gap: 9px;
+    align-items: center;
+    font-size: 26px;
+    font-weight: 600;
+    line-height: 96%;
+    white-space: nowrap;
+
+    &.socials {
+      gap: 15px;
+    }
+
+    &.address {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      align-items: flex-start;
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 120%;
+      color: var(--color-white);
+
+      p {
+        margin-top: 32px;
+        margin-bottom: 0;
+      }
+
+      a {
+        line-height: 136%;
+        color: var(--color-white);
+        text-decoration: underline;
+      }
+    }
+
+    &.entry {
+
+      @include bp.mq(mobile-m) {
+        justify-content: center;
+        width: 100%;
+      }
+
+      button {
+        @include mixin.button-gradient;
+      }
+    }
+
+    svg {
+      margin-top: -1px;
+    }
+
+    a {
+      display: flex;
+      color: var(--color-2);
+
+      &:hover {
+        color: var(--color-primary-dark);
+        text-decoration: none;
+      }
+    }
+
+    &.phones {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: flex-start;
+
+      @include bp.mq(mobile-m) {
+        justify-content: center;
+      }
+
+      a {
+        display: flex;
+        flex-direction: column;
+        transition: all 0.3s;
+      }
+    }
+  }
+}

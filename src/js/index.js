@@ -1,0 +1,48 @@
+import lozad from "lozad";
+import { consentNotice } from "../components/general/consent-notice/consent-notice.js";
+import { header } from "../blocks/general/header/header.js";
+import { popupEntry } from "../components/common/popup-entry/popup-entry.js";
+import { popupConsultation } from "../components/common/popup-consultation/popup-consultation.js";
+import { form } from "../components/general/form/form.js";
+import { input } from "../components/general/input/input.js";
+import { menu } from "../components/general/menu/menu.js";
+import { navigationMobile } from "../components/general/navigation-mobile/navigation-mobile.js";
+import { hero } from "../blocks/common/hero/hero.js";
+import { tabs } from "../components/general/tabs/tabs.js";
+import { specialistsShort } from "../blocks/common/specialists-short/specialists-short.js";
+import { reviewsShort } from "../blocks/common/reviews-short/reviews-short.js";
+import { storiesShort } from "../blocks/common/stories-short/stories-short.js";
+import { initReadMoreButtons } from "../components/general/video-review-card/video-review-card.js";
+import { articleShort } from "../blocks/common/article-short/article-short.js";
+
+const components = [
+    consentNotice,
+    header,
+    popupEntry,
+    popupConsultation,
+    form,
+    input,
+    menu,
+    navigationMobile,
+    hero,
+    tabs,
+    specialistsShort,
+    reviewsShort,
+    storiesShort,
+    initReadMoreButtons,
+    articleShort
+];
+
+function init(context = document) {
+    components.forEach((fn) => fn(context));
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    lozad(".lazy", {
+        rootMargin: "1200px 1200px",
+        threshold: 0.1,
+        enableAutoReload: true
+    }).observe();
+
+    init();
+});

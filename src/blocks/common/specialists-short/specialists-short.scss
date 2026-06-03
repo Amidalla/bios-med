@@ -1,0 +1,43 @@
+@use "core/mixins" as mix;
+@use "core/breakpoints" as bp;
+
+.specialists-short {
+  padding-top: 57px;
+  background: var(--color-8);
+
+  @include bp.mq(mobile-xl) {
+    padding-bottom: 75px;
+  }
+
+  @include bp.mq(tablet-xl) {
+    padding-top: 22px;
+  }
+
+  @include bp.mq(mobile-l) {
+    padding-bottom: 32px;
+  }
+
+  &__slider {
+    @include mix.swiper-nav-styles('specialists-slider__nav', 'specialists-slider__button-prev', 'specialists-slider__button-next');
+
+    .swiper-wrapper {
+      @include bp.mq(mobile-xl) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 35px 12px;
+
+        .swiper-slide {
+          &:nth-child(n+5) {
+            display: none;
+          }
+        }
+      }
+    }
+
+    .specialists-slider__nav {
+      @include bp.mq(mobile-xl) {
+        display: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{# components/general/video-review-card/video-review-card.njk #}
+
+{% macro videoReviewCard(videoUrl, previewImage, name, reviewText, text, stars = 5) %}
+<div class="video-review-card">
+    <div class="video-review-card__inner">
+        <div class="video-review-card__media">
+            <div class="video-review-card__preview-container" data-video-url="{{ videoUrl }}">
+                <img src="{{ previewImage }}" alt="{{ name }}" class="video-review-card__preview">
+                <button class="video-review-card__play" aria-label="Воспроизвести видео">
+                    <img
+                        class="lazy"
+                        src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='1'%20height='1'/%3E"
+                        data-src="/assets/images/content/video-btn.png"
+                        alt="Кнопка видео">
+                </button>
+            </div>
+        </div>
+        <div class="video-review-card__content">
+            <div class="video-review-card__stars">
+                {% for i in range(stars) %}
+                <svg width="22" height="21" viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9.93295 0.392186C10.1692 -0.130649 10.9117 -0.130647 11.148 0.392188L13.7273 6.09985C13.8243 6.31449 14.0273 6.46201 14.2614 6.48793L20.4868 7.17724C21.0571 7.24038 21.2865 7.94652 20.8623 8.33279L16.231 12.5496C16.0568 12.7082 15.9793 12.9469 16.027 13.1776L17.2951 19.3112C17.4113 19.8731 16.8106 20.3095 16.3122 20.0254L10.8706 16.9239C10.666 16.8073 10.415 16.8073 10.2103 16.9239L4.76875 20.0254C4.27029 20.3095 3.66961 19.8731 3.78578 19.3112L5.05395 13.1776C5.10164 12.9469 5.02409 12.7082 4.84993 12.5496L0.218668 8.33279C-0.205566 7.94652 0.0238733 7.24038 0.594131 7.17724L6.8195 6.48793C7.0536 6.46201 7.25665 6.31449 7.35364 6.09985L9.93295 0.392186Z" fill="#C59F6B"/>
+                </svg>
+                {% endfor %}
+            </div>
+            <div class="video-review-card__name">{{ name }}</div>
+            <div class="video-review-card__review-wrapper">
+                <div class="video-review-card__review">{{ reviewText | safe }}</div>
+                <button class="video-review-card__read-more" data-expanded="false">Читать больше</button>
+            </div>
+            <div class="video-review-card__text">{{ text | safe }}</div>
+        </div>
+    </div>
+</div>
+{% endmacro %}

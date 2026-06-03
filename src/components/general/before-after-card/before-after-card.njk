@@ -1,0 +1,18 @@
+{% macro beforeAfterCard(beforeImage, afterImage, beforeText = 'До', afterText = 'После') %}
+    <div class="card-ba">
+        <div class="card-ba__inner">
+            <div class="card-ba__col">
+                <div class="card-ba__image">
+                    <img class="lazy" src="{{ beforeImage }}" alt="{{ beforeText }}">
+                    <span class="card-ba__label">{{ beforeText }}</span>
+                </div>
+            </div>
+            <div class="card-ba__col">
+                <div class="card-ba__image">
+                    <img class="lazy" src="{{ afterImage }}" alt="{{ afterText }}">
+                    <span class="card-ba__label">{{ afterText }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endmacro %}

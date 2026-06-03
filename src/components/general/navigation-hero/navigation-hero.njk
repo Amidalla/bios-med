@@ -1,0 +1,16 @@
+              {% macro render(items) %}
+                  <nav class="navigation-hero">
+                      <ul class="navigation-hero__list">
+                          {% for item in items %}
+                              <li class="navigation-hero__item">
+                                  <a href="{{ item.href }}" class="navigation-hero__link">
+                                      {{ item.title }}
+                                  </a>
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="21" viewBox="0 0 12 21" fill="none">
+                                    <path d="M0.530334 0.530334L10.0303 10.0303L0.530334 19.5303" stroke="#DEC6B0" stroke-width="1.5"/>
+                                  </svg>
+                              </li>
+                          {% endfor %}
+                      </ul>
+                  </nav>
+              {% endmacro %}

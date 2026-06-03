@@ -1,0 +1,179 @@
+@use "core/breakpoints" as bp;
+@use "core/mixins" as mix;
+
+.advantages {
+  position: relative;
+  padding-top: 0;
+  padding-bottom: 54px;
+  margin-top: -150px;
+
+  @include bp.mq(tablet-xl) {
+    margin-top: 0;
+  }
+
+  @include bp.mq(mobile-xl) {
+    padding-bottom: 0;
+  }
+
+  &__bg {
+    position: absolute;
+    inset: 150px 0 0;
+    background: linear-gradient(180deg, #F7F8F2 0%, #F6EFE5 100%);
+
+    @include bp.mq(tablet-xl) {
+      top: 0;
+    }
+  }
+
+  .container {
+    position: relative;
+    z-index: 2;
+  }
+
+  &__decor {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    left: 0;
+    z-index: 1;
+    height: 223px;
+    background: linear-gradient(180deg, #F7F8F2 0%, #F6EFE5 100%);
+    filter: blur(77.9000px);
+
+    @include bp.mq(laptop-m) {
+      right: -20%;
+      left: -20%;
+      filter: blur(50.9000px);
+    }
+
+    @include bp.mq(tablet-xl) {
+      top: -120px;
+      filter: blur(45.9000px);
+    }
+
+    @include bp.mq(mobile-xl) {
+      top: -90px;
+      filter: blur(40.9000px);
+    }
+
+    @include bp.mq(mobile-m) {
+      top: -50px;
+      filter: blur(44.9000px);
+    }
+  }
+
+  &__header {
+    display: flex;
+    justify-content: center;
+
+    @include bp.mq(mobile-m) {
+      margin-right: -12px;
+      margin-left: -12px;
+    }
+
+
+    h2 {
+      margin-bottom: 22.5px;
+      color: transparent;
+      background: linear-gradient(89deg, #FFF 31.15%, #FFEBCD 99.32%);
+      -webkit-background-clip: text;
+      background-clip: text;
+
+      @include bp.mq(tablet-xl) {
+        background: var(--bg-headlane, linear-gradient(89deg, #967252 31.15%, #CEB48C 99.32%));
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      &::after {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        display: block;
+        width: 100%;
+        max-width: 860px;
+        height: 28px;
+        content: "";
+        background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='860' height='28' viewBox='0 0 860 28' fill='none'%3E%3Cpath d='M33.5 0.5H15C15 0.5 0.5 0.5 0.5 15C0.5 27 16.5 27 16.5 27H838.5C838.5 27 859.285 27 859.285 15C859.285 3 848.5 0.5 848.5 0.5H831.5' stroke='%23FFF2D9'/%3E%3C/svg%3E") no-repeat center;
+        background-size: 100% 100%;
+        transform: translateX(-50%);
+
+        @include bp.mq(tablet-xl) {
+          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='603' height='28' viewBox='0 0 603 28' fill='none'%3E%3Cpath d='M23.6327 0.5H10.6644C10.6644 0.5 0.5 0.5 0.5 15.2736C0.5 27.5 11.7159 27.5 11.7159 27.5H587.93C587.93 27.5 602.5 27.5 602.5 15.2736C602.5 3.04717 594.94 0.5 594.94 0.5H583.023' stroke='%23967252'/%3E%3C/svg%3E");
+          background-size: 100% 100%;
+        }
+      }
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 48px;
+    margin-bottom: 34px;
+
+    @include bp.mq(tablet-xl) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+    }
+
+    @include bp.mq(mobile-xl) {
+      grid-template-columns: repeat(1, 1fr);
+      gap: 10px;
+    }
+  }
+
+  &__footer {
+    padding-right: 11px;
+    padding-left: 11px;
+    border: 1px solid #BE9158;
+    border-radius: 20px;
+
+    @include bp.mq(mobile-xl) {
+      padding: 0;
+      border: none;
+    }
+
+    .border-container {
+      padding-top: 11px;
+      padding-bottom: 11px;
+      margin-top: -11px;
+      margin-bottom: -11px;
+      border: 1px solid #BE9158;
+      border-radius: 20px;
+
+      @include bp.mq(mobile-xl) {
+        padding-bottom: 0;
+        margin-right: -20px;
+        margin-bottom: 0;
+        margin-left: -20px;
+        border-radius: 20px 20px 0 0;
+      }
+
+      @include bp.mq(mobile-l) {
+        margin-right: -15px;
+        margin-left: -15px;
+      }
+    }
+  }
+
+  &__text {
+    padding: 28px 42px;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%;
+    color: var(--color-white);
+    text-align: center;
+    background: var(--bg-frame, linear-gradient(89deg, #967252 15.33%, #CEB48D 97.83%));
+    border-radius: 20px;
+
+    @include bp.mq(mobile-xl) {
+      padding: 36px 20px;
+      font-size: 18px;
+      text-align: left;
+      border-radius: 20px 20px 0 0;
+    }
+  }
+}

@@ -1,0 +1,146 @@
+@use "core/breakpoints" as bp;
+
+@mixin reset-child-outer-margins {
+    > *:first-child {
+        margin-top: 0;
+    }
+
+    > *:last-child {
+        margin-bottom: 0;
+    }
+}
+
+@mixin line-clamp($lines: 3) {
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: $lines;
+    -webkit-box-orient: vertical;
+}
+
+
+@mixin button-gradient($padding: 16px 38px) {
+    position: relative;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    padding: $padding;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1;
+    color: var(--color-brown);
+    cursor: pointer;
+    background: linear-gradient(96deg, rgb(190 145 88 / 74%) 12.36%, rgb(247 224 170 / 74%) 53.53%, rgb(190 145 88 / 74%) 91.65%);
+    border: 1px solid #DEC294;
+    border-radius: 49px;
+    box-shadow: 3px 3px 6px 0 rgb(123 75 9 / 30%);
+    backdrop-filter: blur(2px);
+    transition: all 0.3s;
+
+    &::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 0;
+        width: 100%;
+        height: 100%;
+        content: '';
+        background: linear-gradient(276deg, rgb(190 145 88 / 74%) 12.36%, rgb(247 224 170 / 74%) 53.53%, rgb(190 145 88 / 74%) 91.65%);
+        border-radius: 49px;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    &:hover {
+        transform: translateY(-2px);
+
+        &::before {
+            opacity: 1;
+        }
+    }
+
+    > * {
+        position: relative;
+        z-index: 1;
+    }
+
+    @include bp.mq(laptop-l) {
+        padding: 10px 38px;
+    }
+}
+
+@mixin border-block {
+    max-width: 330px;
+    padding: 4px;
+    background: transparent;
+    border: 1px solid #C0A97F;
+    border-radius: 49px;
+
+    &:hover {
+        transform: translateY(-2px);
+        transition: all 0.3s ease;
+
+        a {
+            transform: translateY(-2px);
+
+            &:hover {
+                transform: none;
+            }
+        }
+    }
+}
+
+@mixin swiper-nav-styles($nav-class: 'swiper-custom-nav', $prev-class: 'swiper-custom-nav-prev', $next-class: 'swiper-custom-nav-next') {
+    position: relative;
+    padding-right: 2.3%;
+    padding-left: 2.3%;
+    margin-right: -2.3%;
+    margin-left: -2.3%;
+
+    @include bp.mq(laptop-xl) {
+        padding-right: 1%;
+        padding-left: 1%;
+        margin-right: -1%;
+        margin-left: -1%;
+    }
+
+    .#{$nav-class} {
+        position: absolute;
+        top: 36%;
+        left: 0;
+        z-index: 10;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        pointer-events: none;
+
+        & > div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 34px;
+            height: 34px;
+            pointer-events: auto;
+            cursor: pointer;
+            background: transparent;
+            border: 1px solid #BE9158;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+
+            &.swiper-button-disabled {
+                pointer-events: none;
+                cursor: not-allowed;
+                opacity: 0.5;
+            }
+
+            &:hover:not(.swiper-button-disabled) {
+                background: #BE9158;
+
+                svg path {
+                    stroke: #fff;
+                }
+            }
+        }
+    }
+}

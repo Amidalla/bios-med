@@ -1,0 +1,85 @@
+{# blocks/common/stories-short/stories-short.njk #}
+
+{% from "components/general/video-review-card/video-review-card.njk" import videoReviewCard %}
+
+<section class="stories-short section">
+    <div class="container">
+        <div class="stories-short__header">
+            {% set title = {
+                text: "<span>истории</span> пациентов",
+                tag: "h2",
+                class: "section-title"
+            } %}
+            {% include "components/general/title/title.njk" %}
+        </div>
+
+        <div class="stories-short__slider">
+            <div class="swiper stories-slider">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        {{ videoReviewCard(
+                            "https://rutube.ru/embed/video/a949b2d2150a6f95adc6e6436d5bc037/",
+                            "/assets/images/content/stories1.png",
+                            "Анна Иванова",
+                            "Самая лучшая операция. Все прошло легко, спокойно и безболезненно",
+                            "Верхняя и нижняя блефаропластика, <b>Доктор Варданян Микаел Каренович</b>",
+                            5
+                        ) }}
+                    </div>
+                    <div class="swiper-slide">
+                        {{ videoReviewCard(
+                            "https://rutube.ru/embed/video/a949b2d2150a6f95adc6e6436d5bc037/",
+                            "/assets/images/content/stories2.png",
+                            "Екатерина Смирнова",
+                            "“Результат просто шикарный. Получился Вау-эффект когда смотрю в зеркало на себя. Очень довольна операцией”",
+                            "Верхняя и нижняя блефаропластика, <b>Доктор Варданян Микаел Каренович</b>",
+                            5
+                        ) }}
+                    </div>
+                    <div class="swiper-slide">
+                        {{ videoReviewCard(
+                            "https://rutube.ru/embed/video/a949b2d2150a6f95adc6e6436d5bc037/",
+                            "/assets/images/content/stories3.png",
+                            "Мария Петрова",
+                            "Теперь я снова уверена в себе",
+                            "Верхняя и нижняя блефаропластика, <b>Доктор Варданян Микаел Каренович</b>",
+                            5
+                        ) }}
+                    </div>
+                    <div class="swiper-slide">
+                        {{ videoReviewCard(
+                            "https://rutube.ru/embed/video/a949b2d2150a6f95adc6e6436d5bc037/",
+                            "/assets/images/content/stories1.png",
+                            "Ольга Сидорова",
+                            "Лучшая клиника в городе",
+                            "Верхняя и нижняя блефаропластика, <b>Доктор Варданян Микаел Каренович</b>",
+                            5
+                        ) }}
+                    </div>
+                </div>
+            </div>
+
+            <!-- Навигация -->
+            <div class="stories-slider__nav">
+                <div class="stories-slider__button-prev">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14 6L8.34315 11.6569L14 17.3137" stroke="#BE9158" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <div class="stories-slider__button-next">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 6L15.6569 11.6569L10 17.3137" stroke="#BE9158" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <div class="stories-short__footer">
+            <div class="border-block">
+                <a href="/reviews" class="link--all-reviews">
+                    <span>Все отзывы</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>

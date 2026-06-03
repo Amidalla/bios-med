@@ -1,0 +1,47 @@
+{% macro render(
+    id="",
+    name="agree",
+    required=false,
+    text='Нажимая на кнопку %s, Вы выражаете согласие на условия <a href="policy.html">персональной обработки данных.</a>',
+    buttonText='Записаться',
+    class="",
+    variant="",
+    data={},
+    aria={}
+) %}
+{% set consentClasses = "consent-checkbox field-consent" %}
+{% if class %}{% set consentClasses = consentClasses + " " + class + " " + variant %}{% endif %}
+
+{# Генерируем уникальный ID, если не передан или пустой #}
+{% set finalId = id %}
+{% if not finalId or finalId == "" %}
+    {% set finalId = "consent-" + (range(100000, 999999) | random | string) %}
+{% endif %}
+
+{% set finalText = text | replace("%s", buttonText) %}
+
+<div class="{{ consentClasses }}"
+    {% if data %}
+        {% for key, val in data %}
+            data-{{ key | replace("_", "-") }}="{{ val }}"
+        {% endfor %}
+    {% endif %}
+>
+    <input
+        type="checkbox"
+        id="{{ finalId }}"
+        {% if name %}name="{{ name }}"{% endif %}
+        {% if required %}required{% endif %}
+        data-error="{{ data.error | default('Необходимо подтвердить согласие') }}"
+        {% if aria %}
+            {% for key, val in aria %}
+                aria-{{ key | replace("_", "-") }}="{{ val }}"
+            {% endfor %}
+        {% endif %}
+    >
+    <label for="{{ finalId }}">
+        <span class="checkbox"></span>
+        <span class="value">{{ finalText | safe }}</span>
+    </label>
+</div>
+{% endmacro %}

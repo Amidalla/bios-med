@@ -1,0 +1,129 @@
+@use "core/breakpoints" as bp;
+@use "core/mixins" as mix;
+
+.breadcrumbs {
+  // Component variables
+  --breadcrumbs-font-size-sm: 16px;
+  --breadcrumbs-font-size-md: 18px;
+  --breadcrumbs-font-size-lg: 20px;
+  --breadcrumbs-gap-sm: 0.25rem;
+  --breadcrumbs-gap-md: 0.375rem;
+  --breadcrumbs-gap-lg: 0.5rem;
+
+  @include bp.mq(laptop) {
+    --breadcrumbs-font-size-sm: 15px;
+  }
+
+  // Base styles
+  display: block;
+  width: 100%;
+
+  // --------------------------------------
+  // List
+  // --------------------------------------
+
+  .list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--breadcrumbs-gap-md);
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    font-size: var(--breadcrumbs-font-size-md);
+    line-height: 1.5;
+    list-style: none;
+  }
+
+  // --------------------------------------
+  // Item
+  // --------------------------------------
+
+  .item {
+    display: inline-flex;
+    gap: var(--breadcrumbs-gap-md);
+    align-items: center;
+  }
+
+  // --------------------------------------
+  // Link
+  // --------------------------------------
+
+  .link {
+    display: inline-flex;
+    align-items: center;
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  // --------------------------------------
+  // Current Page
+  // --------------------------------------
+
+  .current-page {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  // --------------------------------------
+  // Separator
+  // --------------------------------------
+
+  .separator {
+    display: inline-flex;
+    align-items: center;
+    user-select: none;
+
+    svg {
+      display: block;
+      width: 1em;
+      height: 1em;
+    }
+
+    &.chevron svg {
+      width: 1em;
+      height: 1em;
+    }
+  }
+
+  // --------------------------------------
+  // Sizes
+  // --------------------------------------
+
+  &.sm {
+    .list {
+      gap: var(--breadcrumbs-gap-sm);
+      font-size: var(--breadcrumbs-font-size-sm);
+    }
+
+    .item {
+      gap: var(--breadcrumbs-gap-sm);
+    }
+  }
+
+  &.md {
+    .list {
+      gap: var(--breadcrumbs-gap-md);
+      font-size: var(--breadcrumbs-font-size-md);
+    }
+
+    .item {
+      gap: var(--breadcrumbs-gap-md);
+    }
+  }
+
+  &.lg {
+    .list {
+      gap: var(--breadcrumbs-gap-lg);
+      font-size: var(--breadcrumbs-font-size-lg);
+    }
+
+    .item {
+      gap: var(--breadcrumbs-gap-lg);
+    }
+  }
+}

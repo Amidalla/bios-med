@@ -1,0 +1,132 @@
+@use "core/breakpoints" as bp;
+@use "core/mixins" as mix;
+
+
+.hero {
+  position: relative;
+  min-height: 958px;
+  padding-top: 194px;
+  padding-bottom: 101px;
+
+  @include bp.mq(tablet-xl) {
+    padding-bottom: 59px;
+  }
+
+  @include bp.mq(mobile-xl) {
+    padding-bottom: 0;
+  }
+
+  .container {
+    position: relative;
+    z-index: 1;
+  }
+
+  &__bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background: url('../assets/images/content/hero-bg.png') no-repeat center;
+    background-size: cover;
+
+    @include bp.mq(laptop-m) {
+      background: url('../assets/images/content/hero-bg-laptop.png') no-repeat center;
+      background-size: cover;
+    }
+
+    @include bp.mq(tablet-xl) {
+      background: url('../assets/images/content/hero-bg-tablet.png') no-repeat center;
+      background-size: cover;
+    }
+
+    @include bp.mq(mobile-xl) {
+      background: url('../assets/images/content/hero-bg-mobile.png') no-repeat center;
+      background-size: cover;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 699px;
+    margin-bottom: 20px;
+
+    @include bp.mq(mobile-xl) {
+      gap: 27px;
+      align-items: center;
+      margin-bottom: 88px;
+    }
+  }
+
+  &__title {
+    @include bp.mq(mobile-xl) {
+      max-width: 325px;
+      margin: 0 auto;
+      text-align: center;
+    }
+  }
+
+  &__text {
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 96%;
+    color: var(--color-white);
+
+    @include bp.mq(mobile-xl) {
+      font-size: 16px;
+    }
+  }
+
+  .border-block {
+    @include mix.border-block;
+  }
+
+  &__btn {
+    @include mix.button-gradient;
+
+    width: 100%;
+    backdrop-filter: blur(2px);
+
+    &:hover {
+      transform: none;
+    }
+  }
+
+  .slider {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    z-index: 3;
+    width: calc(100% - 56%);
+    max-width: 44%;
+    overflow: hidden;
+    transform: translateY(-50%);
+
+    @include bp.mq(laptop-m) {
+      max-width: 725px;
+    }
+
+    @include bp.mq(laptop) {
+      max-width: 580px;
+    }
+
+    @include bp.mq(tablet-xl) {
+      position: relative;
+      width: 100%;
+      max-width: 100%;
+      padding-left: 24px;
+      transform: none;
+    }
+
+    .swiper-wrapper {
+      display: flex;
+    }
+
+    .swiper-slide {
+      flex-shrink: 0;
+      width: auto;
+      height: auto;
+    }
+  }
+}

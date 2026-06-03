@@ -1,0 +1,78 @@
+@use "core/breakpoints" as bp;
+@use "core/mixins" as mix;
+
+:root {
+    // --------------------------------------
+    // -- Base Сolors
+    // --------------------------------------
+    --color-white: #fff;
+    --color-black: #000;
+    --color-brown: #6D3F00;
+    --color-brown-dark: #25170E;
+    --color-gold: #DEC6B0;
+
+    // --------------------------------------
+    // -- Brand Сolors
+    // --------------------------------------
+    --color-primary: #FCE6B5;
+
+    // --------------------------------------
+    // -- Others Сolors
+    // --------------------------------------
+    --color-1: #25170E;
+    --color-2: #FBEDD6;
+    --color-3: #BE9158;
+    --color-4: #DDC9A8;
+    --color-5: #AA7735;
+    --color-6: #967252;
+    --color-7: #965E2D;
+    --color-8: #F6EFE5;
+    --color-9: #39251C;
+    --color-10: #AD8D6A;
+    --color-11: #844F24;
+    --color-12: #845830;
+    --color-13: #E9D7C3;
+    --color-14: #F9BF75;
+    --color-15: #C0A97F;
+    --color-16: #4B3323;
+
+    // --------------------------------------
+    // -- Fonts
+    // --------------------------------------
+    --font-family-primary: "Montserrat", sans-serif;
+    --font-family-secondary: "Bona Nova", serif;
+    --font-family-commissioner: "Commissioner", sans-serif;
+
+    // --------------------------------------
+    // -- Sizes
+    // --------------------------------------
+    --container-width: 1638px;
+    --container-padding: 77px;
+    --header-main-height: 95px;
+    --header-height: var(--header-main-height);
+    --section-pt: 72px;
+    --section-pb: 60px;
+
+    @include bp.mq(laptop-l) {
+        --container-padding: 24px;
+
+    }
+
+    @include bp.mq(tablet-xl) {
+        --header-main-height: 71px;
+    }
+
+    @include bp.mq(tablet) {
+        --container-padding: 20px;
+    }
+
+    @include bp.mq(mobile-xl) {
+        --header-main-height: 49px;
+        --section-pt: 51px;
+        --section-pb: 51px;
+    }
+
+    @include bp.mq(mobile-l) {
+        --container-padding: 15px;
+    }
+}

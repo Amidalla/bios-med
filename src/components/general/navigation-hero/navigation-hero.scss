@@ -1,0 +1,52 @@
+@use "core/breakpoints" as bp;
+@use "core/mixins" as mix;
+
+.hero__navigation {
+  max-width: 699px;
+  margin-top: 42px;
+  margin-bottom: 55px;
+
+  @include bp.mq(tablet-l) {
+    margin-bottom: 99px;
+  }
+
+  @include bp.mq(mobile-xl) {
+    display: none;
+  }
+
+  .navigation-hero {
+    &__list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px 45px;
+      padding-left: 0;
+      list-style-type: none;
+    }
+
+    &__item {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      transition: all 0.3s ease;
+
+      &:hover {
+        transform: translateX(5px);
+      }
+    }
+
+    &__link {
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 96%;
+      color: var(--color-gold);
+      text-transform: uppercase;
+      transition: all 0.3s ease;
+
+      &:hover {
+        color: var(--color-white);
+        text-decoration: none;
+      }
+    }
+  }
+}

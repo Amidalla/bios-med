@@ -1,0 +1,40 @@
+{% macro render(
+    items=[],
+    class="",
+    ariaLabel="Мобильная навигация"
+) %}
+{% set navClasses = "navigation-mobile" %}
+{% if class %}{% set navClasses = navClasses + " " + class %}{% endif %}
+
+<nav class="{{ navClasses }}" aria-label="{{ ariaLabel }}" data-navigation-mobile>
+    {{ renderList(items, 1) }}
+</nav>
+{% endmacro %}
+
+{% macro renderList(items, level) %}
+<ul data-level="{{ level }}">
+    {% for item in items %}
+        {% set hasChildren = item.children and item.children.length > 0 %}
+        {% set itemText = item.text or item.title %}
+        <li class="{{ item.class if item.class else '' }}{% if hasChildren %} has-children{% endif %}">
+            <div class="item">
+                <a href="{{ item.href }}"{% if itemText %} title="{{ itemText }}"{% endif %}{% if item.target %} target="{{ item.target }}"{% endif %}{% if item.ariaCurrent %} aria-current="{{ item.ariaCurrent }}"{% endif %}>
+                    {{ itemText }}
+                </a>
+                {% if hasChildren %}
+                    <button class="toggle" type="button" aria-expanded="false" data-toggle-submenu>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                          <path d="M10.9902 16L10.9893 9.55175M10.9893 9.5425L10.9893 2.5425M18 9.5425L11.928 15.6143C11.6819 15.8603 11.3481 15.9986 11 15.9986C10.6519 15.9986 10.3181 15.8603 10.072 15.6143L4 9.5425" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                {% endif %}
+            </div>
+            {% if hasChildren %}
+                <div class="submenu">
+                    {{ renderList(item.children, level + 1) }}
+                </div>
+            {% endif %}
+        </li>
+    {% endfor %}
+</ul>
+{% endmacro %}
