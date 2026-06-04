@@ -1,0 +1,138 @@
+{% from "components/general/service-category-card/service-category-card.njk" import serviceCategoryCard %}
+
+<section class="services-categories section">
+    <div class="services-categories__bg"></div>
+    <div class="services-categories__decor"></div>
+    <div class="container">
+        <div class="services-categories__header">
+            {% set title = {
+                text: "Операции на лице",
+                tag: "h2",
+                class: "section-title"
+            } %}
+            {% include "components/general/title/title.njk" %}
+            <p class="services-subtitle">Современные методы омоложения и гармонизации лица</p>
+        </div>
+
+        <div class="services-categories__slider-wrapper">
+            <div class="swiper services-slider">
+                <div class="swiper-wrapper">
+                    {% set categories = [
+                        {
+                            icon: "/assets/images/content/service-category1.jpg",
+                            imageMobile: "/assets/images/content/service-category1-mobile.jpg",
+                            title: "Блефаропластика",
+                            items: [
+                                { text: "коррекция век и «мешков»" },
+                                { text: "устранение нависания" },
+                                { text: "открытый взгляд" },
+                                { text: "быстрая реабилитация" }
+                            ],
+                            linkUrl: "/services/blefaroplastika",
+                            linkText: "Подробнее"
+                        },
+                        {
+                            icon: "/assets/images/content/service-category2.jpg",
+                            imageMobile: "/assets/images/content/service-category3-mobile.jpg",
+                            title: "Ринопластика",
+                            items: [
+                                { text: "коррекция формы носа" },
+                                { text: "восстановление дыхания" },
+                                { text: "устранение дефектов" },
+                                { text: "естественный результат" }
+                            ],
+                            linkUrl: "/services/rinoplastika",
+                            linkText: "Подробнее"
+                        },
+                        {
+                            icon: "/assets/images/content/service-category3.jpg",
+                            imageMobile: "/assets/images/content/service-category3-mobile.jpg",
+                            title: "Подтяжка лица",
+                            items: [
+                                { text: "круговая подтяжка лица" },
+                                { text: "СМАС-лифтинг" },
+                                { text: "подтяжка средней зоны" },
+                                { text: "подтяжка шеи" }
+                            ],
+                            linkUrl: "/services/facelift",
+                            linkText: "Подробнее"
+                        },
+                        {
+                            icon: "/assets/images/content/service-category4.jpg",
+                            imageMobile: "/assets/images/content/service-category1-mobile.jpg",
+                            title: "Отопластика",
+                            items: [
+                                { text: "коррекция ушных раковин" },
+                                { text: "уменьшение ушей" },
+                                { text: "исправление лопоухости" },
+                                { text: "эстетическая форма" }
+                            ],
+                            linkUrl: "/services/otoplastika",
+                            linkText: "Подробнее"
+                        },
+                        {
+                            icon: "/assets/images/content/service-category5.jpg",
+                            imageMobile: "/assets/images/content/service-category3-mobile.jpg",
+                            title: "Пластика губ",
+                            items: [
+                                { text: "увеличение губ" },
+                                { text: "коррекция формы" },
+                                { text: "восстановление контура" },
+                                { text: "омоложение губ" }
+                            ],
+                            linkUrl: "/services/plastika-gub",
+                            linkText: "Подробнее"
+                        },
+                        {
+                            icon: "/assets/images/content/service-category6.png",
+                            imageMobile: "/assets/images/content/service-category1-mobile.jpg",
+                            title: "Пластика подбородка",
+                            items: [
+                                { text: "коррекция формы" },
+                                { text: "увеличение подбородка" },
+                                { text: "уменьшение подбородка" },
+                                { text: "профиль лица" }
+                            ],
+                            linkUrl: "/services/plastika-podborodka",
+                            linkText: "Подробнее"
+                        }
+                    ] %}
+
+                    {% for category in categories %}
+                        <div class="swiper-slide">
+                            {{ serviceCategoryCard(
+                                icon=category.icon,
+                                imageMobile=category.imageMobile,
+                                title=category.title,
+                                items=category.items,
+                                linkUrl=category.linkUrl,
+                                linkText=category.linkText
+                            ) }}
+                        </div>
+                    {% endfor %}
+                </div>
+
+                <div class="services-slider__nav">
+                    <div class="services-slider__button-prev">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M14 6L8.34315 11.6569L14 17.3137" stroke="#BE9158" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="services-slider__button-next">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 6L15.6569 11.6569L10 17.3137" stroke="#BE9158" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="services-categories__footer">
+            <div class="border-block">
+                <a href="/services/face" class="link--all-categories">
+                    <span>Все операции на лице</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>

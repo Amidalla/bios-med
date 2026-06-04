@@ -1,0 +1,125 @@
+@use "core/breakpoints" as bp;
+@use "core/mixins" as mix;
+
+
+@include mix.decorated-section(".services-categories");
+
+
+.services-categories {
+  margin-top: -190px;
+
+  @include bp.mq(tablet-xl) {
+    margin-top: 0;
+  }
+
+  @include bp.mq(mobile-xl) {
+    margin-top: -140px;
+    padding-bottom: 34px;
+  }
+
+  .services-subtitle {
+    text-align: center;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 136%;
+    color: var(--color-white);
+    margin-bottom: 30px;
+
+    @include bp.mq(tablet-xl) {
+      color: var(--color-brown-dark);
+    }
+  }
+
+  .services-slider__nav {
+    display: none;
+
+    @include bp.mq(mobile-xl) {
+      display: flex;
+    }
+  }
+
+  &__decor {
+    filter: blur(40.9px);
+    right: -20%;
+    left: -20%;
+    top: 65px;
+
+    @include bp.mq(tablet-xl) {
+      top: -90px;
+    }
+
+    @include bp.mq(mobile-xl) {
+      top: -90px;
+    }
+  }
+
+  .services-subtitle {
+    margin-top: 10px;
+  }
+
+  &__slider-wrapper {
+    @include bp.mq(mobile-xl) {
+      margin-right: -20px;
+    }
+
+    @include bp.mq(mobile-l) {
+      margin-right: -15px;
+    }
+  }
+
+  .services-slider {
+    padding: 20px;
+    margin: -20px;
+    margin-bottom: 24px;
+
+    @include bp.mq(mobile-xl) {
+      @include mix.swiper-nav-styles('services-slider__nav', 'services-slider__button-prev', 'services-slider__button-next');
+    }
+
+    .swiper-wrapper {
+
+      @include bp.mq(mobile-xl) {
+        align-items: stretch;
+      }
+    }
+
+    .swiper-slide {
+      padding: 3px 13px;
+      border-radius: 20px;
+      background: var(--fill-place, linear-gradient(180deg, #F7F8F2 0%, #F6EFE5 100%));
+      box-shadow: 0 4px 20px 0 rgba(132, 79, 36, 0.25);
+
+      @include bp.mq(tablet-xl) {
+        padding: 3px 8px;
+      }
+
+      @include bp.mq(mobile-xl) {
+        height: auto;
+      }
+    }
+  }
+
+  &__footer {
+    .border-block {
+      @include mix.border-block;
+
+      max-width: 282px;
+      margin: 0 auto;
+
+      @include bp.mq(mobile-l) {
+        max-width: 328px;
+      }
+
+      a {
+        @include mix.button-gradient(24px 40px);
+
+        max-width: 100%;
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}

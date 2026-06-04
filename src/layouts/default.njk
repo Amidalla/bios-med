@@ -16,13 +16,18 @@
                 {% set page = page | default({}) %}
                 {% set page = {
                     breadcrumbs: page.breadcrumbs | default(true),
-                    heading: page.heading | default(true)
+                    heading: page.heading | default(true),
+                    breadcrumbsSeparator: page.breadcrumbsSeparator | default("line-gradient")
                 } %}
 
                 {% if page.breadcrumbs or page.heading %}
                     <div class="page-header">
-                        {% if page.breadcrumbs %}
-                            {{ breadcrumbsComponent(items=breadcrumbs.items, size="sm", separator="slash") }}
+                        {% if page.breadcrumbs and breadcrumbs.items %}
+                            {{ breadcrumbsComponent(
+                                items=breadcrumbs.items,
+                                size="sm",
+                                separator=page.breadcrumbsSeparator
+                            ) }}
                         {% endif %}
                         {% if page.heading %}
                             {% include "components/general/heading/heading.njk" %}

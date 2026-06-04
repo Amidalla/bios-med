@@ -1,0 +1,42 @@
+{% set meta = { title: "Услуги" } %}
+{% set breadcrumbs = {
+    items: [
+        { title: "Главная", url: "/" },
+        { title: "Услуги" }
+    ]
+} %}
+{% set page = {
+    heading: false,
+    after_content: true,
+    breadcrumbsSeparator: "line-gradient"
+} %}
+{% extends "layouts/default.njk" %}
+
+{% block content %}
+    {# Hero с кастомными параметрами для страницы услуг #}
+    {% set hero = {
+        title: "Услуги клиники BIOS",
+        subtitle: "",
+        showButton: false,
+        buttonText: "",
+        buttonPopup: "",
+        showNavigation: false,
+        showSlider: true,
+        class: "hero-services"
+    } %}
+    {% include "blocks/common/hero/hero.njk" %}
+
+    {% include "blocks/common/services-categories/services-categories.njk" %}
+    {% include "blocks/common/services-short/services-short.njk" %}
+    {% include "blocks/common/before-after-short/before-after-short.njk" %}
+    {% include "blocks/common/specialists-short/specialists-short.njk" %}
+    {% include "blocks/common/selection-operation/selection-operation.njk" %}
+    {% include "blocks/common/about-short/about-short.njk" %}
+    {% include "blocks/common/reviews-short/reviews-short.njk" %}
+    {% include "blocks/common/stories-short/stories-short.njk" %}
+    {% include "blocks/common/article-short/article-short.njk" %}
+    {% include "blocks/common/main-form/main-form.njk" %}
+{% endblock %}
+
+{% block after_content %}
+{% endblock %}
