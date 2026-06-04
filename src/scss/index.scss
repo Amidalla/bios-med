@@ -45,10 +45,14 @@
 @use "../components/general/video-review-card/video-review-card";
 @use "../components/general/article-card/article-card";
 @use "../components/general/service-category-card/service-category-card";
+@use "../components/general/service-variants-card/service-variants-card";
+@use "../components/general/preparing-card/preparing-card";
+@use "../components/general/information-card/information-card";
 @use "../components/general/border-wrapper/border-wrapper";
 
 @use "../components/general/breadcrumbs/breadcrumbs";
-/*@use "../components/general/search-form/search-form";
+
+/* @use "../components/general/search-form/search-form";
 @use "../components/general/pagination/pagination";
 @use "../components/general/accordion/accordion";
 @use "../components/general/tabs/tabs"; */
@@ -128,6 +132,12 @@
 @use "../blocks/common/article-short/article-short";
 @use "../blocks/common/main-form/main-form";
 @use "../blocks/common/services-categories/services-categories";
+@use "../blocks/common/mammoplasty-short/mammoplasty-short";
+@use "../blocks/common/body-plastic-short/body-plastic-short";
+@use "../blocks/common/preparing-surgery/preparing-surgery";
+@use "../blocks/common/sub-advantages/sub-advantages";
+@use "../blocks/common/find-more/find-more";
+
 /* @use "../blocks/common/about-short/about-short";
 @use "../blocks/common/about-hero/about-hero";
 @use "../blocks/common/about-benefits/about-benefits";

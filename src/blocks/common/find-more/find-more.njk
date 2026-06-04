@@ -1,0 +1,52 @@
+{% from "components/general/information-card/information-card.njk" import informationCard %}
+
+<section class="find-more section">
+    <div class="container">
+        <div class="find-more__header">
+            {% set title = {
+                text: "<span>узнайте больше</span>",
+                tag: "h2",
+                class: "section-title"
+            } %}
+            {% include "components/general/title/title.njk" %}
+            <p class="find-more-subtitle">Важная информация для пациентов</p>
+        </div>
+
+        <div class="find-more__list">
+            {% set items = [
+                {
+                    icon: "/assets/images/content/find-more1.png",
+                    title: "О клинике BIOS",
+                    text: "Ознакомьтесь с опытом и квалификацией наших хирургов и врачей",
+                    linkUrl: "/about",
+                    showLink: true
+                },
+                {
+                    icon: "/assets/images/content/find-more2.png",
+                    title: "Услуги",
+                    text: "Изучите широкий спектр процедур по пластической хирургии и косметологии",
+                    linkUrl: "/services",
+                    showLink: true
+                },
+                {
+                    icon: "/assets/images/content/find-more3.png",
+                    title: "Цены",
+                    text: "Получите информацию о стоимости процедур и специальных предложениях",
+                    linkUrl: "/prices",
+                    showLink: true
+                }
+            ] %}
+
+            {% for item in items %}
+                {{ informationCard(
+                    icon=item.icon,
+                    title=item.title,
+                    text=item.text,
+                    linkUrl=item.linkUrl,
+                    linkText="Узнать больше",
+                    showLink=item.showLink
+                ) }}
+            {% endfor %}
+        </div>
+    </div>
+</section>

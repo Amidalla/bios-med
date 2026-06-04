@@ -1,0 +1,82 @@
+{% from "components/general/preparing-card/preparing-card.njk" import preparingCard %}
+
+<section class="preparing-surgery section">
+    <div class="container">
+        <div class="preparing-surgery__header">
+            {% set title = {
+                text: "<span>подготовка к операции</span>",
+                tag: "h2",
+                class: "section-title"
+            } %}
+            {% include "components/general/title/title.njk" %}
+            <p class="preparing-subtitle">Важные этапы подготовки к пластической операции для вашей безопасности и комфорта</p>
+        </div>
+
+        <div class="preparing-surgery__slider-wrapper">
+            <div class="swiper preparing-slider">
+                <div class="swiper-wrapper">
+                    {% set items = [
+                        {
+                            icon: "/assets/images/content/preparing1.png",
+                            title: "Наркоз",
+                            text: "Современные методы анестезии для вашего комфорта и безопасности во время операции",
+                            items: [
+                                { text: "Клиника лицензирована на применение наркотических препаратов, что обеспечивает высокий уровень качества наркоза" },
+                                { text: "Операции проводятся на базе ЦКБ ГА с центральной подачей медицинских газов и кислорода." },
+                                { text: "Возможность выполнения длительных и комплексных операций с поддержкой реанимации" }
+                            ],
+                            url: "#"
+                        },
+                        {
+                            icon: "/assets/images/content/preparing2.png",
+                            title: "Стационар",
+                            text: "Комфортное пребывание в стационаре под круглосуточным наблюдением медицинского персонала",
+                            items: [
+                                { text: "анализы крови и мочи" },
+                                { text: "ЭКГ, флюорография" },
+                                { text: "консультации узких специалистов" }
+                            ],
+                            url: "#"
+                        },
+                        {
+                            icon: "/assets/images/content/preparing3.png",
+                            title: "Рекомендации перед операцией",
+                            text: "Важные правила подготовки в домашний период для безопасного проведения операции.",
+                            items: [
+                                { text: "отказ от вредных привычек" },
+                                { text: "коррекция принимаемых препаратов" },
+                                { text: "соблюдение диеты" }
+                            ],
+                            url: "#"
+                        }
+                    ] %}
+
+                    {% for item in items %}
+                        <div class="swiper-slide">
+                            {{ preparingCard(
+                                icon=item.icon,
+                                title=item.title,
+                                text=item.text,
+                                items=item.items,
+                                url=item.url
+                            ) }}
+                        </div>
+                    {% endfor %}
+                </div>
+
+                <div class="preparing-slider__nav">
+                    <div class="preparing-slider__button-prev">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M14 6L8.34315 11.6569L14 17.3137" stroke="#BE9158" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="preparing-slider__button-next">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 6L15.6569 11.6569L10 17.3137" stroke="#BE9158" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

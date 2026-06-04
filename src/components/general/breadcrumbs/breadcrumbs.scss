@@ -17,11 +17,12 @@
     --breadcrumbs-font-size-sm: 15px;
   }
 
+  position: absolute;
+  top: 123px;
+
   // Base styles
   display: block;
   width: 100%;
-  position: absolute;
-  top: 123px;
 
   @include bp.mq(tablet-xl) {
     top: 90px;
@@ -74,7 +75,6 @@
     transition: color 0.2s ease-in-out;
 
     &:hover {
-
       color: var(--color-primary);
     }
   }

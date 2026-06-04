@@ -1,0 +1,75 @@
+{% from "components/general/service-variants-card/service-variants-card.njk" import serviceVariantsCard %}
+
+<section class="mammoplasty-short section">
+    <div class="container">
+        <div class="mammoplasty-short__header">
+            {% set title = {
+                text: "<span>маммопластика</span>",
+                tag: "h2",
+                class: "section-title"
+            } %}
+            {% include "components/general/title/title.njk" %}
+            <p class="mammoplasty-subtitle">Современная пластическая хирургия молочных желез для естественного и гармоничного результата</p>
+        </div>
+
+        <div class="mammoplasty-short__list">
+            {% set items = [
+                {
+                    icon: "/assets/images/content/mammoplasty1.png",
+                    title: "Пластика груди",
+                    text: "Эстетические решения для красоты и гармонии груди",
+                    url: "#"
+                },
+                {
+                    icon: "/assets/images/content/mammoplasty2.png",
+                    title: "Увеличение груди",
+                    items: [
+                        { text: "восстановление формы" },
+                        { text: "увеличение объема" },
+                        { text: "коррекция асимметрии" }
+                    ],
+                    url: "#"
+                },
+                {
+                    icon: "/assets/images/content/mammoplasty3.png",
+                    title: "Подтяжка груди",
+                    items: [
+                        { text: "снижение веса груди" },
+                        { text: "устранение дискомфорта" },
+                        { text: "пропорциональная форма" }
+                    ],
+                    url: "#"
+                },
+                {
+                    icon: "/assets/images/content/mammoplasty4.png",
+                    title: "Коррекция мужской груди (Гинекомастия)",
+                    items: [
+                        { text: "замена имплантов" },
+                        { text: "коррекция осложнений" },
+                        { text: "обновление формы" },
+                        { text: "минимальные рубцы и быстрая реабилитация" }
+                    ],
+                    url: "#"
+                }
+            ] %}
+
+            {% for item in items %}
+                {{ serviceVariantsCard(
+                    icon=item.icon,
+                    title=item.title,
+                    text=item.text,
+                    items=item.items,
+                    url=item.url
+                ) }}
+            {% endfor %}
+        </div>
+
+        <div class="mammoplasty-short__footer">
+            <div class="border-block">
+                <a href="/services/mammoplasty" class="link--all-mammoplasty">
+                    <span>Все услуги</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>

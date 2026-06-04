@@ -1,0 +1,19 @@
+{# Карточка информации #}
+{% macro informationCard(icon, title, text, linkUrl="", linkText="Узнать больше", showLink=false) %}
+<div class="information-card">
+    <div class="information-card__inner">
+        <div class="information-card__icon">
+            <img class="lazy" data-src="{{ icon }}" alt="{{ title }}" loading="lazy">
+        </div>
+        <h3 class="information-card__title">{{ title }}</h3>
+        <p class="information-card__text">{{ text }}</p>
+        {% if showLink and linkUrl %}
+          <div class="border-block">
+            <a href="{{ linkUrl }}" class="information-card__link">
+                <span>{{ linkText }}</span>
+            </a>
+         </div>
+        {% endif %}
+    </div>
+</div>
+{% endmacro %}

@@ -1,0 +1,89 @@
+{% from "components/general/service-variants-card/service-variants-card.njk" import serviceVariantsCard %}
+
+<section class="body-plastic-short section">
+    <div class="container">
+        <div class="body-plastic-short__header">
+            {% set title = {
+                text: "<span>пластика тела</span>",
+                tag: "h2",
+                class: "section-title"
+            } %}
+            {% include "components/general/title/title.njk" %}
+            <p class="body-plastic-subtitle">Эстетическая коррекция и омоложение для гармоничного преображения</p>
+        </div>
+
+        <div class="body-plastic-short__slider-wrapper">
+            <div class="swiper body-plastic-slider">
+                <div class="swiper-wrapper">
+                    {% set items = [
+                        {
+                            icon: "/assets/images/content/body-plastic1.png",
+                            title: "Абдоминопластика - пластика живота",
+                            items: [
+                                { text: "удаление избытков кожи и жира" },
+                                { text: "восстановление мышц живота" },
+                                { text: "устранение диастаза" },
+                                { text: "коррекция формы живота" }
+                            ],
+                            url: "#"
+                        },
+                        {
+                            icon: "/assets/images/content/body-plastic2.png",
+                            title: "Брахиопластика - пластика рук",
+                            items: [
+                                { text: "удаление локальных жировых отложений" },
+                                { text: "моделирование контуров тела" },
+                                { text: "коррекция зон: живот, бедра, ягодицы" },
+                                { text: "устойчивый результат" }
+                            ],
+                            url: "#"
+                        },
+                        {
+                            icon: "/assets/images/content/body-plastic3.png",
+                            title: "Феморопластика - подтяжка бедер",
+                            items: [
+                                { text: "подтяжка рук" },
+                                { text: "подтяжка бедер" },
+                                { text: "подтяжка ягодиц" },
+                                { text: "устранение дряблости кожи" }
+                            ],
+                            url: "#"
+                        }
+                    ] %}
+
+                    {% for item in items %}
+                        <div class="swiper-slide">
+                            {{ serviceVariantsCard(
+                                icon=item.icon,
+                                title=item.title,
+                                items=item.items,
+                                url=item.url
+                            ) }}
+                        </div>
+                    {% endfor %}
+                </div>
+
+                <div class="body-plastic-slider__nav">
+                    <div class="body-plastic-slider__button-prev">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M14 6L8.34315 11.6569L14 17.3137" stroke="#BE9158" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="body-plastic-slider__button-next">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 6L15.6569 11.6569L10 17.3137" stroke="#BE9158" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="body-plastic-short__footer">
+            <div class="border-block">
+                <a href="/services/body-plastic" class="link--all-body-plastic">
+                    <span>Все услуги</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>

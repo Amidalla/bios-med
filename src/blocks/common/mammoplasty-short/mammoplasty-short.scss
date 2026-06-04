@@ -1,0 +1,84 @@
+@use "core/mixins" as mix;
+@use "core/breakpoints" as bp;
+
+.mammoplasty-short {
+  background: url('../assets/images/content/services-bg.jpg') no-repeat center;
+  background-size: cover;
+
+  @include bp.mq(tablet-xl) {
+    padding-top: 70px;
+    padding-bottom: 44px;
+  }
+  @include bp.mq(mobile-xl) {
+    padding-top: 40px;
+    padding-bottom: 32px;
+  }
+
+
+  h2 {
+    @include bp.mq(mobile-xl) {
+      padding-right: 0;
+      padding-left: 0;
+    }
+
+    @include bp.mq(mobile-m) {
+      margin-right: -10px;
+      margin-left: -10px;
+    }
+  }
+
+  .mammoplasty-subtitle {
+    max-width: 754px;
+    margin: 16px auto 0;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 136%;
+    color: var(--color-brown-dark);
+    text-align: center;
+
+    @include bp.mq(mobile-xl) {
+      font-size: 18px;
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 21px;
+    margin-top: 23px;
+    margin-bottom: 21px;
+
+    @include bp.mq(tablet-xl) {
+      gap: 16px;
+    }
+
+    @include bp.mq(mobile-xl) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 9px;
+    }
+  }
+
+  &__footer {
+    .border-block {
+      @include mix.border-block;
+
+      max-width: 182px;
+      margin: 0 auto;
+
+      @include bp.mq(mobile-l) {
+        max-width: 328px;
+      }
+    }
+
+    a {
+      @include mix.button-gradient(24px 40px);
+
+      max-width: 100%;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}

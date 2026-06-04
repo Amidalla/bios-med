@@ -1,0 +1,72 @@
+@use "core/mixins" as mix;
+@use "core/breakpoints" as bp;
+
+.preparing-surgery {
+  padding-bottom: 18px;
+  background: var(--color-8);
+
+  @include bp.mq(tablet-xl) {
+    padding-top: 70px;
+    padding-bottom: 44px;
+  }
+  @include bp.mq(mobile-xl) {
+    padding-top: 40px;
+    padding-bottom: 32px;
+  }
+
+  .preparing-slider__nav {
+    display: none;
+
+    @include bp.mq(mobile-xl) {
+      display: flex;
+    }
+  }
+
+  .preparing-slider {
+
+    @include bp.mq(mobile-xl) {
+      @include mix.swiper-nav-styles('preparing-slider__nav', 'preparing-slider__button-prev', 'preparing-slider__button-next');
+    }
+
+    .swiper-wrapper {
+
+      @include bp.mq(mobile-xl) {
+        align-items: stretch;
+      }
+    }
+
+    .swiper-slide {
+
+      @include bp.mq(mobile-xl) {
+        height: auto;
+      }
+    }
+  }
+
+  .preparing-subtitle {
+    max-width: 754px;
+    margin: 16px auto 0;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 136%;
+    color: var(--color-brown-dark);
+    text-align: center;
+
+    @include bp.mq(mobile-xl) {
+      font-size: 18px;
+    }
+  }
+
+  &__slider-wrapper {
+    margin-top: 26px;
+
+    @include bp.mq(mobile-xl) {
+      margin-right: -20px;
+    }
+
+    @include bp.mq(mobile-l) {
+      margin-right: -15px;
+    }
+  }
+}

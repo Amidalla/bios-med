@@ -1,0 +1,25 @@
+{# Карточка вариантов услуг #}
+{% macro serviceVariantsCard(icon, title, text="", items=[], url="#") %}
+<div class="service-variants-card">
+    <div class="service-variants-card__image">
+        <img class="lazy" data-src="{{ icon }}" alt="{{ title }}" loading="lazy">
+    </div>
+    <div class="service-variants-card__content">
+        <h3 class="service-variants-card__title">{{ title }}</h3>
+
+        {% if items | length > 0 %}
+            <ul class="service-variants-card__list">
+                {% for item in items %}
+                    <li>{{ item.text }}</li>
+                {% endfor %}
+            </ul>
+        {% elif text %}
+            <p class="service-variants-card__text">{{ text }}</p>
+        {% endif %}
+
+        <a href="{{ url }}" class="service-variants-card__link">
+            <span>Узнать больше</span>
+        </a>
+    </div>
+</div>
+{% endmacro %}

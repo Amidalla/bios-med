@@ -1,0 +1,44 @@
+{% from "components/general/information-card/information-card.njk" import informationCard %}
+
+<section class="sub-advantages section">
+    <div class="container">
+        <div class="sub-advantages__header">
+            {% set title = {
+                text: "<span>почему выбирают нас</span>",
+                tag: "h2",
+                class: "section-title"
+            } %}
+            {% include "components/general/title/title.njk" %}
+            <p class="sub-advantages-subtitle">Почему пациенты выбирают клинику BIOS</p>
+        </div>
+
+        <div class="sub-advantages__list">
+            {% set items = [
+                {
+                    icon: "/assets/images/content/advantages1.png",
+                    title: "Высокое качество",
+                    text: "Мы используем передовые технологии и материалы для обеспечения долгосрочных и надежных результатов для каждого пациента"
+                },
+                {
+                    icon: "/assets/images/content/advantages2.png",
+                    title: "Индивидуальный подход",
+                    text: "Каждый план лечения уникален, разработан с учетом ваших потребностей, здоровья и эстетических целей"
+                },
+                {
+                    icon: "/assets/images/content/advantages3.png",
+                    title: "Команда экспертов",
+                    text: "Наши врачи - высококвалифицированные специалисты с многолетним опытом, постоянно совершенствующие свои навыки"
+                }
+            ] %}
+
+            {% for item in items %}
+                {{ informationCard(
+                    icon=item.icon,
+                    title=item.title,
+                    text=item.text,
+                    showLink=false
+                ) }}
+            {% endfor %}
+        </div>
+    </div>
+</section>

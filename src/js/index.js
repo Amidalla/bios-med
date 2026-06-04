@@ -15,6 +15,8 @@ import { storiesShort } from "../blocks/common/stories-short/stories-short.js";
 import { initReadMoreButtons } from "../components/general/video-review-card/video-review-card.js";
 import { articleShort } from "../blocks/common/article-short/article-short.js";
 import { servicesCategories } from "../blocks/common/services-categories/services-categories.js";
+import { bodyPlasticShort } from "../blocks/common/body-plastic-short/body-plastic-short.js";
+import { preparingSurgery } from "../blocks/common/preparing-surgery/preparing-surgery.js";
 
 const components = [
     consentNotice,
@@ -32,7 +34,9 @@ const components = [
     storiesShort,
     initReadMoreButtons,
     articleShort,
-    servicesCategories
+    servicesCategories,
+    bodyPlasticShort,
+    preparingSurgery
 ];
 
 function init(context = document) {

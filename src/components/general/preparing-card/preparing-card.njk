@@ -1,0 +1,25 @@
+{# Карточка подготовки к операции #}
+{% macro preparingCard(icon, title, text="", items=[], url="#") %}
+<div class="preparing-card">
+    <div class="preparing-card__image">
+        <img class="lazy" data-src="{{ icon }}" alt="{{ title }}" loading="lazy">
+    </div>
+    <div class="preparing-card__content">
+        <h3 class="preparing-card__title">{{ title }}</h3>
+
+        <p class="preparing-card__text">{{ text }}</p>
+
+        {% if items | length > 0 %}
+            <ul class="preparing-card__list">
+                {% for item in items %}
+                    <li><span>{{ item.text }}</span></li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        <a href="{{ url }}" class="preparing-card__link">
+            <span>Узнать больше</span>
+        </a>
+    </div>
+</div>
+{% endmacro %}
