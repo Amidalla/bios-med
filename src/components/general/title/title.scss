@@ -2,9 +2,9 @@
 @use "core/mixins" as mix;
 
 .title:is(h1) {
-  margin: 0;
+    margin: 0;
 
-  &.center {
-    text-align: center;
-  }
+    &.center {
+        text-align: center;
+    }
 }

@@ -3,26 +3,26 @@
 // --------------------------------------
 
 @font-face {
-    font-family: 'Bona Nova';
+    font-family: "Bona Nova";
     font-style: normal;
     font-weight: 400;
-    src: url('../assets/fonts/BonaNova-Regular.ttf') format('truetype');
+    src: url("../assets/fonts/BonaNova-Regular.ttf") format("truetype");
     font-display: swap;
 }
 
 @font-face {
-    font-family: 'Bona Nova';
+    font-family: "Bona Nova";
     font-style: italic;
     font-weight: 400;
-    src: url('../assets/fonts/BonaNova-Italic.ttf') format('truetype');
+    src: url("../assets/fonts/BonaNova-Italic.ttf") format("truetype");
     font-display: swap;
 }
 
 @font-face {
-    font-family: 'Bona Nova';
+    font-family: "Bona Nova";
     font-style: normal;
     font-weight: 700;
-    src: url('../assets/fonts/BonaNova-Bold.ttf') format('truetype');
+    src: url("../assets/fonts/BonaNova-Bold.ttf") format("truetype");
     font-display: swap;
 }
 
@@ -34,7 +34,7 @@
     font-family: Montserrat;
     font-style: normal;
     font-weight: 100 900;
-    src: url('../assets/fonts/Montserrat-VariableFont_wght.ttf') format('truetype');
+    src: url("../assets/fonts/Montserrat-VariableFont_wght.ttf") format("truetype");
     font-display: swap;
 }
 
@@ -42,7 +42,7 @@
     font-family: Montserrat;
     font-style: italic;
     font-weight: 100 900;
-    src: url('../assets/fonts/Montserrat-Italic-VariableFont_wght.ttf') format('truetype');
+    src: url("../assets/fonts/Montserrat-Italic-VariableFont_wght.ttf") format("truetype");
     font-display: swap;
 }
 
@@ -54,6 +54,6 @@
     font-family: Commissioner;
     font-style: normal;
     font-weight: 100 900;
-    src: url('../assets/fonts/Commissioner-VariableFont_FLAR,VOLM,slnt,wght.ttf') format('truetype-variations');
+    src: url("../assets/fonts/Commissioner-VariableFont_FLAR,VOLM,slnt,wght.ttf") format("truetype-variations");
     font-display: swap;
 }

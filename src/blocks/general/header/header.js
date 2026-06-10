@@ -11,29 +11,22 @@ export function header(context = document) {
     window.addEventListener("scroll", toggleSticky, { passive: true });
     toggleSticky();
 
-
-
     const syncHeaderWithBody = () => {
-
         const bodyWidth = getComputedStyle(document.body).width;
         const bodyMarginRight = getComputedStyle(document.body).marginRight;
-
 
         root.style.width = bodyWidth;
         root.style.marginRight = bodyMarginRight;
 
-
-        root.style.left = 'auto';
-        root.style.right = 'auto';
+        root.style.left = "auto";
+        root.style.right = "auto";
     };
-
 
     const observer = new MutationObserver(syncHeaderWithBody);
     observer.observe(document.body, {
         attributes: true,
-        attributeFilter: ['style', 'class']
+        attributeFilter: ["style", "class"]
     });
-
 
     const domObserver = new MutationObserver(syncHeaderWithBody);
     domObserver.observe(document.documentElement, {
@@ -41,8 +34,7 @@ export function header(context = document) {
         subtree: true
     });
 
-    window.addEventListener('resize', syncHeaderWithBody);
-
+    window.addEventListener("resize", syncHeaderWithBody);
 
     syncHeaderWithBody();
 
@@ -55,10 +47,10 @@ export function header(context = document) {
             domObserver.disconnect();
 
             // Сбрасываем стили
-            root.style.width = '';
-            root.style.marginRight = '';
-            root.style.left = '';
-            root.style.right = '';
+            root.style.width = "";
+            root.style.marginRight = "";
+            root.style.left = "";
+            root.style.right = "";
         },
         { once: true }
     );

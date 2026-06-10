@@ -1,0 +1,73 @@
+{% from "components/general/border-card/border-card.njk" import borderCard %}
+
+<section class="rehabilitation-rhinoplasty section">
+    <div class="container">
+        <div class="rehabilitation-rhinoplasty__header">
+            {% set title = {
+                text: "<span>Реабилитация после ринопластики</span>",
+                tag: "h2",
+                class: "section-title"
+            } %}
+            {% include "components/general/title/title.njk" %}
+        </div>
+
+        <div class="rehabilitation-rhinoplasty__grid">
+            {% set cards = [
+                {
+                    title: "Современный послеоперационный комфорт",
+                    type: "list",
+                    items: ["Покой с приподнятым изголовьем", "Холодные компрессы на область носа", "Обезболивающие по назначению врача", "Питьевой режим, жидкая пища"]
+                },
+                {
+                    title: "Первые дни после операции",
+                    type: "list",
+                    items: ["Ношение гипсовой шины", "Удаление тампонов из носа", "Обработка швов антисептиками", "Ограничение физической активности"]
+                },
+                {
+                    title: "Снятие лангеты и сплинтов",
+                    type: "list",
+                    items: ["Снятие швов и гипса", "Назначение физиопроцедур", "Массаж для уменьшения отёков", "Возвращение к лёгкой работе"]
+                },
+                {
+                    title: "Период восстановления",
+                    type: "list",
+                    items: ["Отёки становятся малозаметными", "Разрешение на лёгкие нагрузки", "Запрет на очки и солнечные ванны", "Контрольный осмотр хирурга"]
+                },
+                {
+                    title: "Ограничения",
+                    type: "list",
+                    items: ["Основные отёки проходят", "Форма носа приближается к итоговой", "Разрешение на спорт (кроме контактного)", "Продолжение массажа при необходимости"]
+                },
+                {
+                    title: "Контроль и рекомендации",
+                    type: "text",
+                    items: { content: "В течение всего восстановительного периода избегайте травм носа, перегревов (баня, сауна, солярий), не носите тяжёлые очки. Полностью результат оценивается через 6-12 месяцев." }
+                }
+            ] %}
+
+            {% for card in cards %}
+                {{ borderCard(
+                    title=card.title,
+                    textItems=card.items,
+                    type=card.type
+                ) }}
+            {% endfor %}
+        </div>
+
+        <div class="rehabilitation-rhinoplasty__button">
+            <div class="border-block">
+                <button class="rehabilitation-rhinoplasty__btn" data-src="popup-rehabilitation">
+                    <span>Реабилитация</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="rehabilitation-rhinoplasty__footer">
+            <div class="border-container">
+                <div class="rehabilitation-rhinoplasty__text">
+                    Важно: Чуствительность и онемение могут сохраняться до года. Избегать травм и перегрева
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

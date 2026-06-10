@@ -2,55 +2,55 @@
 @use "core/mixins" as mixin;
 
 .contacts-header {
-  display: flex;
-  gap: 24px;
-  align-items: center;
-
-  @include bp.mq(laptop-l) {
     display: flex;
-    flex-direction: column;
-    gap: 9px;
-  }
+    gap: 24px;
+    align-items: center;
 
-  @include bp.mq(tablet-xl) {
-    flex-direction: row;
-    gap: 23px;
-  }
-
-  @include bp.mq(mobile-xl) {
-    gap: 0;
-  }
-
-  .item {
-    font-size: 20px;
-    font-weight: 600;
-    line-height: 96%;
-    white-space: nowrap;
-
-    @include bp.mq(mobile-l) {
-      font-size: 14px;
-    }
-
-    &.phones {
-      a {
+    @include bp.mq(laptop-l) {
         display: flex;
         flex-direction: column;
-        color: var(--color-2);
-        transition: all 0.3s;
+        gap: 9px;
+    }
 
-        &:hover {
-          color: var(--color-white);
-          text-decoration: none;
+    @include bp.mq(tablet-xl) {
+        flex-direction: row;
+        gap: 23px;
+    }
+
+    @include bp.mq(mobile-xl) {
+        gap: 0;
+    }
+
+    .item {
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 96%;
+        white-space: nowrap;
+
+        @include bp.mq(mobile-l) {
+            font-size: 14px;
         }
-      }
-    }
 
-    button {
-      @include mixin.button-gradient;
+        &.phones {
+            a {
+                display: flex;
+                flex-direction: column;
+                color: var(--color-2);
+                transition: all 0.3s;
 
-      @include bp.mq(mobile-xl) {
-        display: none;
-      }
+                &:hover {
+                    color: var(--color-white);
+                    text-decoration: none;
+                }
+            }
+        }
+
+        button {
+            @include mixin.button-gradient;
+
+            @include bp.mq(mobile-xl) {
+                display: none;
+            }
+        }
     }
-  }
 }

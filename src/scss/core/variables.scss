@@ -7,36 +7,36 @@
     // --------------------------------------
     --color-white: #fff;
     --color-black: #000;
-    --color-brown: #6D3F00;
-    --color-brown-dark: #25170E;
-    --color-gold: #DEC6B0;
+    --color-brown: #6d3f00;
+    --color-brown-dark: #25170e;
+    --color-gold: #dec6b0;
 
     // --------------------------------------
     // -- Brand Сolors
     // --------------------------------------
-    --color-primary: #FCE6B5;
+    --color-primary: #fce6b5;
 
     // --------------------------------------
     // -- Others Сolors
     // --------------------------------------
-    --color-1: #25170E;
-    --color-2: #FBEDD6;
-    --color-3: #BE9158;
-    --color-4: #DDC9A8;
-    --color-5: #AA7735;
+    --color-1: #25170e;
+    --color-2: #fbedd6;
+    --color-3: #be9158;
+    --color-4: #ddc9a8;
+    --color-5: #aa7735;
     --color-6: #967252;
-    --color-7: #965E2D;
-    --color-8: #F6EFE5;
-    --color-9: #39251C;
-    --color-10: #AD8D6A;
-    --color-11: #844F24;
+    --color-7: #965e2d;
+    --color-8: #f6efe5;
+    --color-9: #39251c;
+    --color-10: #ad8d6a;
+    --color-11: #844f24;
     --color-12: #845830;
-    --color-13: #E9D7C3;
-    --color-14: #F9BF75;
-    --color-15: #C0A97F;
-    --color-16: #4B3323;
-    --color-17: #977E52;
-
+    --color-13: #e9d7c3;
+    --color-14: #f9bf75;
+    --color-15: #c0a97f;
+    --color-16: #4b3323;
+    --color-17: #977e52;
+    --color-18: #F7E0AA;
 
     // --------------------------------------
     // -- Fonts
@@ -57,7 +57,6 @@
 
     @include bp.mq(laptop-l) {
         --container-padding: 24px;
-
     }
 
     @include bp.mq(tablet-xl) {

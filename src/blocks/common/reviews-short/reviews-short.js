@@ -1,9 +1,9 @@
-import Swiper from 'swiper';
-import 'swiper/css';
-import 'swiper/css/navigation';
+import Swiper from "swiper";
+import "swiper/css";
+import "swiper/css/navigation";
 
 export function reviewsShort() {
-    const sliderEl = document.querySelector('.reviews-slider');
+    const sliderEl = document.querySelector(".reviews-slider");
     if (!sliderEl) return;
 
     let swiperInstance = null;
@@ -14,8 +14,8 @@ export function reviewsShort() {
             swiperInstance = null;
         }
 
-        const prevBtn = document.querySelector('.reviews-slider__button-prev');
-        const nextBtn = document.querySelector('.reviews-slider__button-next');
+        const prevBtn = document.querySelector(".reviews-slider__button-prev");
+        const nextBtn = document.querySelector(".reviews-slider__button-next");
 
         swiperInstance = new Swiper(sliderEl, {
             slidesPerView: 1.3,
@@ -23,53 +23,51 @@ export function reviewsShort() {
             breakpoints: {
                 479: {
                     slidesPerView: 1.5,
-                    spaceBetween: 16,
+                    spaceBetween: 16
                 },
                 759: {
                     slidesPerView: 2,
-                    spaceBetween: 18,
+                    spaceBetween: 18
                 },
                 1310: {
                     slidesPerView: 3,
-                    spaceBetween: 22,
-                },
-            },
+                    spaceBetween: 22
+                }
+            }
         });
 
-
         if (prevBtn && nextBtn) {
-
             const oldPrev = prevBtn.cloneNode(true);
             const oldNext = nextBtn.cloneNode(true);
             prevBtn.parentNode.replaceChild(oldPrev, prevBtn);
             nextBtn.parentNode.replaceChild(oldNext, nextBtn);
 
-            const newPrev = document.querySelector('.reviews-slider__button-prev');
-            const newNext = document.querySelector('.reviews-slider__button-next');
+            const newPrev = document.querySelector(".reviews-slider__button-prev");
+            const newNext = document.querySelector(".reviews-slider__button-next");
 
-            newPrev.addEventListener('click', () => swiperInstance.slidePrev());
-            newNext.addEventListener('click', () => swiperInstance.slideNext());
+            newPrev.addEventListener("click", () => swiperInstance.slidePrev());
+            newNext.addEventListener("click", () => swiperInstance.slideNext());
 
             const updateButtons = () => {
                 if (swiperInstance.isBeginning) {
-                    newPrev.classList.add('swiper-button-disabled');
+                    newPrev.classList.add("swiper-button-disabled");
                 } else {
-                    newPrev.classList.remove('swiper-button-disabled');
+                    newPrev.classList.remove("swiper-button-disabled");
                 }
 
                 if (swiperInstance.isEnd) {
-                    newNext.classList.add('swiper-button-disabled');
+                    newNext.classList.add("swiper-button-disabled");
                 } else {
-                    newNext.classList.remove('swiper-button-disabled');
+                    newNext.classList.remove("swiper-button-disabled");
                 }
             };
 
-            swiperInstance.on('init', updateButtons);
-            swiperInstance.on('slideChange', updateButtons);
+            swiperInstance.on("init", updateButtons);
+            swiperInstance.on("slideChange", updateButtons);
             updateButtons();
         }
     }
 
     initSwiper();
-    window.addEventListener('resize', () => initSwiper());
+    window.addEventListener("resize", () => initSwiper());
 }

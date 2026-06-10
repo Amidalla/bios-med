@@ -2,148 +2,149 @@
 @use "core/breakpoints" as bp;
 
 .service-variants-card {
-  display: flex;
-  flex-direction: column;
-  min-width: 0;
-  height: 100%;
-  padding: 12px 10px 25px;
-  background: rgb(255 255 255 / 40%);
-  border: 1px solid #BE9158;
-  border-radius: 20px;
-
-  @include bp.mq(tablet-xl) {
-    padding: 0 0 25px;
-  }
-
-  &__image {
-    height: 341px;
-    margin-bottom: 30px;
-    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    height: 100%;
+    padding: 12px 10px 25px;
+    background: rgb(255 255 255 / 40%);
+    border: 1px solid #be9158;
     border-radius: 20px;
 
     @include bp.mq(tablet-xl) {
-      height: 240px;
+        padding: 0 0 25px;
     }
 
-    @include bp.mq(mobile-xl) {
-      height: 341px;
-    }
+    &__image {
+        height: 341px;
+        margin-bottom: 30px;
+        overflow: hidden;
+        border-radius: 20px;
 
-    @include bp.mq(mobile-l) {
-      height: 240px;
-    }
-
-    @include bp.mq(mobile-m) {
-      height: 185px;
-    }
-
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-  }
-
-  &__content {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    padding-right: 19px;
-    padding-left: 30px;
-
-    @include bp.mq(laptop) {
-      padding-right: 5px;
-      padding-left: 5px;
-    }
-
-    @include bp.mq(tablet-xl) {
-      padding-right: 10px;
-      padding-left: 10px;
-    }
-
-    p, ul {
-      font-family: var(--font-family-secondary);
-      font-size: 18px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: 96%;
-      color: var(--color-brown-dark);
-
-      @include bp.mq(tablet-xl) {
-        word-break: normal;
-        overflow-wrap: break-word;
-      }
-
-      @include bp.mq(mobile-xl) {
-        font-size: 16px;
-      }
-    }
-
-    ul {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-      padding-left: 0;
-      margin-top: 0;
-      list-style: none;
-
-      li {
-        position: relative;
-        padding-left: 10px;
-
-        &::before {
-          position: absolute;
-          top: 10px;
-          left: 0;
-          width: 3px;
-          height: 3px;
-          content: "";
-          background: var(--color-brown-dark);
-          border-radius: 50%;
+        @include bp.mq(tablet-xl) {
+            height: 240px;
         }
-      }
-    }
-  }
 
-  &__title {
-    margin-bottom: 14px;
-    font-family: var(--font-family-secondary);
-    font-size: 30px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 100%;
-    color: var(--color-brown-dark);
-    text-transform: uppercase;
+        @include bp.mq(mobile-xl) {
+            height: 341px;
+        }
 
-    @include bp.mq(tablet-xl) {
-      font-size: 28px;
-      word-break: normal;
-      overflow-wrap: break-word;
-    }
+        @include bp.mq(mobile-l) {
+            height: 240px;
+        }
 
-    @include bp.mq(mobile-xl) {
-      font-size: 26px;
+        @include bp.mq(mobile-m) {
+            height: 185px;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
     }
 
-    @include bp.mq(mobile-l) {
-      font-size: 20px;
-    }
-  }
+    &__content {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        padding-right: 19px;
+        padding-left: 30px;
 
-  &__link {
-    display: inline-flex;
-    gap: 8px;
-    align-items: center;
-    margin-top: auto;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 120%;
-    color: var(--color-3);
-    text-decoration: none;
+        @include bp.mq(laptop) {
+            padding-right: 5px;
+            padding-left: 5px;
+        }
 
-    &:hover {
-     text-decoration: underline;
+        @include bp.mq(tablet-xl) {
+            padding-right: 10px;
+            padding-left: 10px;
+        }
+
+        p,
+        ul {
+            font-family: var(--font-family-secondary);
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 96%;
+            color: var(--color-brown-dark);
+
+            @include bp.mq(tablet-xl) {
+                word-break: normal;
+                overflow-wrap: break-word;
+            }
+
+            @include bp.mq(mobile-xl) {
+                font-size: 16px;
+            }
+        }
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+            padding-left: 0;
+            margin-top: 0;
+            list-style: none;
+
+            li {
+                position: relative;
+                padding-left: 10px;
+
+                &::before {
+                    position: absolute;
+                    top: 10px;
+                    left: 0;
+                    width: 3px;
+                    height: 3px;
+                    content: "";
+                    background: var(--color-brown-dark);
+                    border-radius: 50%;
+                }
+            }
+        }
     }
-  }
+
+    &__title {
+        margin-bottom: 14px;
+        font-family: var(--font-family-secondary);
+        font-size: 30px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 100%;
+        color: var(--color-brown-dark);
+        text-transform: uppercase;
+
+        @include bp.mq(tablet-xl) {
+            font-size: 28px;
+            word-break: normal;
+            overflow-wrap: break-word;
+        }
+
+        @include bp.mq(mobile-xl) {
+            font-size: 26px;
+        }
+
+        @include bp.mq(mobile-l) {
+            font-size: 20px;
+        }
+    }
+
+    &__link {
+        display: inline-flex;
+        gap: 8px;
+        align-items: center;
+        margin-top: auto;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 120%;
+        color: var(--color-3);
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
 }

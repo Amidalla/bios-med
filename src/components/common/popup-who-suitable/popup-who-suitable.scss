@@ -1,0 +1,7 @@
+@use "core/popup" as *;
+@use "core/breakpoints" as bp;
+@use "core/mixins" as mixin;
+
+.popup-who-suitable {
+  @include mixin.text-popup;
+}

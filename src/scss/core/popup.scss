@@ -8,9 +8,8 @@
     width: 100%;
     max-width: $max-width;
     padding: 66px 76px 58px;
-    background: linear-gradient(96deg, #967252 12.36%, #CEB48C 53.53%, #967252 91.65%);
+    background: linear-gradient(96deg, #967252 12.36%, #ceb48c 53.53%, #967252 91.65%);
     box-shadow: 0 4px 16.8px 0 rgb(0 0 0 / 10%);
-
 
     @include bp.mq(mobile-xl) {
         padding: 33px 35px 24px;

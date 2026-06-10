@@ -2,181 +2,179 @@
 @use "core/mixins" as mix;
 
 .breadcrumbs {
-  // Component variables
-  --breadcrumbs-font-size-sm: 16px;
-  --breadcrumbs-font-size-md: 18px;
-  --breadcrumbs-font-size-lg: 20px;
-  --breadcrumbs-gap-sm: 0.25rem;
-  --breadcrumbs-gap-md: 0.375rem;
-  --breadcrumbs-gap-lg: 0.5rem;
-  --breadcrumbs-line-width: 20px;
-  --breadcrumbs-line-height: 1px;
-
-
-  @include bp.mq(laptop) {
-    --breadcrumbs-font-size-sm: 15px;
-  }
-
-  position: absolute;
-  top: 123px;
-
-  // Base styles
-  display: block;
-  width: 100%;
-
-  @include bp.mq(tablet-xl) {
-    top: 90px;
-  }
-
-  @include bp.mq(mobile-xl) {
-    top: 65px;
-  }
-
-  @include bp.mq(mobile-l) {
-    top: 55px;
-  }
-
-
-  // --------------------------------------
-  // List
-  // --------------------------------------
-
-  .list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--breadcrumbs-gap-md);
-    align-items: center;
-    padding: 0;
-    margin: 0;
-    font-size: var(--breadcrumbs-font-size-md);
-    line-height: 1.5;
-    list-style: none;
-  }
-
-  // --------------------------------------
-  // Item
-  // --------------------------------------
-
-  .item {
-    display: inline-flex;
-    gap: var(--breadcrumbs-gap-md);
-    align-items: center;
-  }
-
-  // --------------------------------------
-  // Link
-  // --------------------------------------
-
-  .link {
-    display: inline-flex;
-    align-items: center;
-    color: var(--color-17);
-    text-decoration: none;
-    transition: color 0.2s ease-in-out;
-
-    &:hover {
-      color: var(--color-primary);
-    }
-  }
-
-  // --------------------------------------
-  // Current Page
-  // --------------------------------------
-
-  .current-page {
-    display: inline-flex;
-    align-items: center;
-    color: var(--color-17);
-  }
-
-  // --------------------------------------
-  // Separator
-  // --------------------------------------
-
-  .separator {
-    display: inline-flex;
-    align-items: center;
-    user-select: none;
-
-    svg {
-      display: block;
-      width: 1em;
-      height: 1em;
-    }
-
-    &.chevron svg {
-      width: 1em;
-      height: 1em;
-    }
-
-    // Градиентная линия
-    &.line-gradient {
-      margin: 0 4px;
-
-      .separator-line {
-        display: inline-block;
-        width: var(--breadcrumbs-line-width);
-        height: var(--breadcrumbs-line-height);
-        background: linear-gradient(89deg, #967252 15.33%, #CEB48D 97.83%);
-      }
-    }
-  }
-
-  // --------------------------------------
-  // Sizes
-  // --------------------------------------
-
-  &.sm {
-    --breadcrumbs-line-width: 16px;
-    --breadcrumbs-line-height: 1px;
-
-    .list {
-      gap: var(--breadcrumbs-gap-sm);
-      font-size: var(--breadcrumbs-font-size-sm);
-    }
-
-    .item {
-      gap: var(--breadcrumbs-gap-sm);
-    }
-  }
-
-  &.md {
+    // Component variables
+    --breadcrumbs-font-size-sm: 16px;
+    --breadcrumbs-font-size-md: 18px;
+    --breadcrumbs-font-size-lg: 20px;
+    --breadcrumbs-gap-sm: 0.25rem;
+    --breadcrumbs-gap-md: 0.375rem;
+    --breadcrumbs-gap-lg: 0.5rem;
     --breadcrumbs-line-width: 20px;
     --breadcrumbs-line-height: 1px;
 
-    .list {
-      gap: var(--breadcrumbs-gap-md);
-      font-size: var(--breadcrumbs-font-size-md);
+    @include bp.mq(laptop) {
+        --breadcrumbs-font-size-sm: 15px;
     }
+
+    position: absolute;
+    top: 123px;
+
+    // Base styles
+    display: block;
+    width: 100%;
+
+    @include bp.mq(tablet-xl) {
+        top: 90px;
+    }
+
+    @include bp.mq(mobile-xl) {
+        top: 65px;
+    }
+
+    @include bp.mq(mobile-l) {
+        top: 55px;
+    }
+
+    // --------------------------------------
+    // List
+    // --------------------------------------
+
+    .list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--breadcrumbs-gap-md);
+        align-items: center;
+        padding: 0;
+        margin: 0;
+        font-size: var(--breadcrumbs-font-size-md);
+        line-height: 1.5;
+        list-style: none;
+    }
+
+    // --------------------------------------
+    // Item
+    // --------------------------------------
 
     .item {
-      gap: var(--breadcrumbs-gap-md);
-    }
-  }
-
-  &.lg {
-    --breadcrumbs-line-width: 24px;
-    --breadcrumbs-line-height: 2px;
-
-    .list {
-      gap: var(--breadcrumbs-gap-lg);
-      font-size: var(--breadcrumbs-font-size-lg);
+        display: inline-flex;
+        gap: var(--breadcrumbs-gap-md);
+        align-items: center;
     }
 
-    .item {
-      gap: var(--breadcrumbs-gap-lg);
+    // --------------------------------------
+    // Link
+    // --------------------------------------
+
+    .link {
+        display: inline-flex;
+        align-items: center;
+        color: var(--color-17);
+        text-decoration: none;
+        transition: color 0.2s ease-in-out;
+
+        &:hover {
+            color: var(--color-primary);
+        }
     }
-  }
+
+    // --------------------------------------
+    // Current Page
+    // --------------------------------------
+
+    .current-page {
+        display: inline-flex;
+        align-items: center;
+        color: var(--color-17);
+    }
+
+    // --------------------------------------
+    // Separator
+    // --------------------------------------
+
+    .separator {
+        display: inline-flex;
+        align-items: center;
+        user-select: none;
+
+        svg {
+            display: block;
+            width: 1em;
+            height: 1em;
+        }
+
+        &.chevron svg {
+            width: 1em;
+            height: 1em;
+        }
+
+        // Градиентная линия
+        &.line-gradient {
+            margin: 0 4px;
+
+            .separator-line {
+                display: inline-block;
+                width: var(--breadcrumbs-line-width);
+                height: var(--breadcrumbs-line-height);
+                background: linear-gradient(89deg, #967252 15.33%, #ceb48d 97.83%);
+            }
+        }
+    }
+
+    // --------------------------------------
+    // Sizes
+    // --------------------------------------
+
+    &.sm {
+        --breadcrumbs-line-width: 16px;
+        --breadcrumbs-line-height: 1px;
+
+        .list {
+            gap: var(--breadcrumbs-gap-sm);
+            font-size: var(--breadcrumbs-font-size-sm);
+        }
+
+        .item {
+            gap: var(--breadcrumbs-gap-sm);
+        }
+    }
+
+    &.md {
+        --breadcrumbs-line-width: 20px;
+        --breadcrumbs-line-height: 1px;
+
+        .list {
+            gap: var(--breadcrumbs-gap-md);
+            font-size: var(--breadcrumbs-font-size-md);
+        }
+
+        .item {
+            gap: var(--breadcrumbs-gap-md);
+        }
+    }
+
+    &.lg {
+        --breadcrumbs-line-width: 24px;
+        --breadcrumbs-line-height: 2px;
+
+        .list {
+            gap: var(--breadcrumbs-gap-lg);
+            font-size: var(--breadcrumbs-font-size-lg);
+        }
+
+        .item {
+            gap: var(--breadcrumbs-gap-lg);
+        }
+    }
 }
 
 // Мобильная адаптация
 @include bp.mq(mobile-xl) {
-  .breadcrumbs {
-    &.sm,
-    &.md,
-    &.lg {
-      --breadcrumbs-line-width: 14px;
-      --breadcrumbs-line-height: 1px;
+    .breadcrumbs {
+        &.sm,
+        &.md,
+        &.lg {
+            --breadcrumbs-line-width: 14px;
+            --breadcrumbs-line-height: 1px;
+        }
     }
-  }
 }

@@ -2,90 +2,86 @@
 @use "core/mixins" as mixin;
 
 footer.footer {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 99px;
-  padding: 67px 0 45px;
-  margin-top: -1px;
-  background: linear-gradient(34deg, #4A3323 45.04%, #A88460 78.48%);
-;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 99px;
+    padding: 67px 0 45px;
+    margin-top: -1px;
+    background: linear-gradient(34deg, #4a3323 45.04%, #a88460 78.48%);
+    @include bp.mq(laptop) {
+        padding: 63px 0 60px;
+    }
+    @include bp.mq(tablet-xl) {
+        gap: 41px;
+    }
+    @include bp.mq(mobile-xl) {
+        padding: 31px 0;
+    }
 
-  @include bp.mq(laptop) {
-     padding: 63px 0 60px;
-  }
-  @include bp.mq(tablet-xl) {
-      gap: 41px;
-  }
-  @include bp.mq(mobile-xl) {
-    padding: 31px 0;
-  }
+    .footer-main {
+        .block {
+            display: grid;
+            grid-template-columns: 8fr 3fr 4fr 4fr;
+            gap: 30px;
 
-
-  .footer-main {
-    .block {
-      display: grid;
-      grid-template-columns: 8fr 3fr 4fr 4fr;
-      gap: 30px;
-
-      @include bp.mq(laptop) {
-        grid-template-columns: 10fr 3fr 4fr 3fr;
-      }
-      @include bp.mq(tablet-xl) {
-        grid-template-columns: 1fr 1fr 323px;
-      }
-
-      @include bp.mq(mobile-xl) {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .column {
-        display: flex;
-        flex-direction: column;
-        grid-row: span 2;
-        gap: 32.5px;
-
-        @include bp.mq(tablet-xl) {
-          flex-direction: column;
-          grid-column: span 3;
-          gap: 15px;
-          align-items: center;
-        }
-
-        @include bp.mq(mobile-xl) {
-          grid-column: span 2;
-        }
-
-        .wrap {
-
-          @include bp.mq(tablet-xl) {
-            flex: 1;
-          }
-
-          .logo {
+            @include bp.mq(laptop) {
+                grid-template-columns: 10fr 3fr 4fr 3fr;
+            }
             @include bp.mq(tablet-xl) {
-              width: 316px;
+                grid-template-columns: 1fr 1fr 323px;
             }
 
             @include bp.mq(mobile-xl) {
-              width: 215px;
+                grid-template-columns: 1fr 1fr;
             }
-          }
-        }
-      }
 
-      > *:nth-child(4) {
-        margin-top: calc(54px - 30px);
+            .column {
+                display: flex;
+                flex-direction: column;
+                grid-row: span 2;
+                gap: 32.5px;
 
-        @include bp.mq(tablet-xl) {
-          margin-top: 75px;
-        }
+                @include bp.mq(tablet-xl) {
+                    flex-direction: column;
+                    grid-column: span 3;
+                    gap: 15px;
+                    align-items: center;
+                }
 
-        @include bp.mq(mobile-xl) {
-          grid-column: 1 / -1;
-          margin-top: 0;
+                @include bp.mq(mobile-xl) {
+                    grid-column: span 2;
+                }
+
+                .wrap {
+                    @include bp.mq(tablet-xl) {
+                        flex: 1;
+                    }
+
+                    .logo {
+                        @include bp.mq(tablet-xl) {
+                            width: 316px;
+                        }
+
+                        @include bp.mq(mobile-xl) {
+                            width: 215px;
+                        }
+                    }
+                }
+            }
+
+            > *:nth-child(4) {
+                margin-top: calc(54px - 30px);
+
+                @include bp.mq(tablet-xl) {
+                    margin-top: 75px;
+                }
+
+                @include bp.mq(mobile-xl) {
+                    grid-column: 1 / -1;
+                    margin-top: 0;
+                }
+            }
         }
-      }
     }
-  }
 }

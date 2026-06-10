@@ -2,86 +2,86 @@
 @use "core/mixins" as mix;
 
 .textarea {
-  // Component variables
-  --textarea-font-size-sm: 14px;
-  --textarea-font-size-md: 16px;
-  --textarea-font-size-lg: 18px;
-  --textarea-padding-sm: 8px;
-  --textarea-padding-md: 10px;
-  --textarea-padding-lg: 12px;
+    // Component variables
+    --textarea-font-size-sm: 14px;
+    --textarea-font-size-md: 16px;
+    --textarea-font-size-lg: 18px;
+    --textarea-padding-sm: 8px;
+    --textarea-padding-md: 10px;
+    --textarea-padding-lg: 12px;
 
-  @include bp.mq(laptop) {
-    --textarea-font-size-md: 15px;
-  }
-
-  // Base styles
-  display: block;
-  width: 100%;
-  font-family: var(--font-family-primary);
-  font-size: var(--textarea-font-size-md);
-  line-height: 1.5;
-  color: var(--color-white);
-  resize: vertical;
-  outline: none;
-  background: rgb(255 255 255 / 2%);
-  border: 1px solid #FFF;
-  border-radius: 5px;
-  box-shadow: 0 0 15px 0 #FFE29D inset;
-  backdrop-filter: blur(12.1999px);
-  transition: all 0.2s ease-in-out;
-
-  &::placeholder {
-    color: var(--color-white);
-    opacity: 1;
-  }
-
-  // Focus state
-  &:focus,
-  &:focus-within:not(:read-only) {
-    border-color: var(--color-brown);
-  }
-
-  // Disabled state
-  &:disabled {
-    cursor: not-allowed;
-    opacity: 0.6;
-  }
-
-  // Readonly state
-  &:read-only {
-    cursor: default;
-    opacity: 0.6;
-  }
-
-  // Error state
-  &.error {
-    border-color: var(--color-red);
-
-    &:focus {
-      border-color: var(--color-red);
+    @include bp.mq(laptop) {
+        --textarea-font-size-md: 15px;
     }
 
-    &:hover {
-      border-color: var(--color-red) !important;
-    }
-  }
-
-  // --------------------------------------
-  // Sizes
-  // --------------------------------------
-
-  &.sm {
-    padding: var(--textarea-padding-sm);
-    font-size: var(--textarea-font-size-sm);
-  }
-
-  &.md {
-    padding: var(--textarea-padding-md);
+    // Base styles
+    display: block;
+    width: 100%;
+    font-family: var(--font-family-primary);
     font-size: var(--textarea-font-size-md);
-  }
+    line-height: 1.5;
+    color: var(--color-white);
+    resize: vertical;
+    outline: none;
+    background: rgb(255 255 255 / 2%);
+    border: 1px solid #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 15px 0 #ffe29d inset;
+    backdrop-filter: blur(12.1999px);
+    transition: all 0.2s ease-in-out;
 
-  &.lg {
-    padding: var(--textarea-padding-lg);
-    font-size: var(--textarea-font-size-lg);
-  }
+    &::placeholder {
+        color: var(--color-white);
+        opacity: 1;
+    }
+
+    // Focus state
+    &:focus,
+    &:focus-within:not(:read-only) {
+        border-color: var(--color-brown);
+    }
+
+    // Disabled state
+    &:disabled {
+        cursor: not-allowed;
+        opacity: 0.6;
+    }
+
+    // Readonly state
+    &:read-only {
+        cursor: default;
+        opacity: 0.6;
+    }
+
+    // Error state
+    &.error {
+        border-color: var(--color-red);
+
+        &:focus {
+            border-color: var(--color-red);
+        }
+
+        &:hover {
+            border-color: var(--color-red) !important;
+        }
+    }
+
+    // --------------------------------------
+    // Sizes
+    // --------------------------------------
+
+    &.sm {
+        padding: var(--textarea-padding-sm);
+        font-size: var(--textarea-font-size-sm);
+    }
+
+    &.md {
+        padding: var(--textarea-padding-md);
+        font-size: var(--textarea-font-size-md);
+    }
+
+    &.lg {
+        padding: var(--textarea-padding-lg);
+        font-size: var(--textarea-font-size-lg);
+    }
 }

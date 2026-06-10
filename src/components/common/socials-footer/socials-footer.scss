@@ -2,39 +2,37 @@
 @use "core/mixins" as mixin;
 
 .socials-wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 51px;
+    display: flex;
+    flex-direction: column;
+    gap: 51px;
 
-  @include bp.mq(tablet-xl) {
-    gap: 27px;
-  }
-
-  @include bp.mq(mobile-xl) {
-    align-items: center;
-  }
-
-  .item {
-    &.entry {
-      button {
-        @include mixin.button-gradient;
-      }
+    @include bp.mq(tablet-xl) {
+        gap: 27px;
     }
 
-    &.socials {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
+    @include bp.mq(mobile-xl) {
+        align-items: center;
+    }
 
-
-
-      a {
-        transition: all 0.3s ease;
-
-        &:hover {
-          transform: translateY(-2px);
+    .item {
+        &.entry {
+            button {
+                @include mixin.button-gradient;
+            }
         }
-      }
+
+        &.socials {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+
+            a {
+                transition: all 0.3s ease;
+
+                &:hover {
+                    transform: translateY(-2px);
+                }
+            }
+        }
     }
-  }
 }

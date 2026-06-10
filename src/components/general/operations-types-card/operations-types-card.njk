@@ -1,0 +1,41 @@
+{% macro operationsTypesCard(icon, title, textItems, buttons = [], showReadMore = false) %}
+<div class="operations-types-card">
+    <div class="operations-types-card__double-border">
+        <div class="operations-types-card__icon-wrapper">
+            {{ icon | safe }}
+        </div>
+        <div class="operations-types-card__content">
+            <h3 class="operations-types-card__title">{{ title }}</h3>
+            <div class="operations-types-card__text-wrapper">
+                <div class="operations-types-card__text">
+                    {% for item in textItems %}
+                        {% if item.type == 'paragraph' %}
+                            <p>{{ item.content }}</p>
+                        {% elif item.type == 'list' %}
+                            <ul>
+                                {% for li in item.items %}
+                                    <li>{{ li }}</li>
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                {% if showReadMore %}
+                    <button class="operations-types-card__read-more">Читать все</button>
+                {% endif %}
+            </div>
+            <div class="operations-types-card__buttons">
+                {% for button in buttons %}
+                    {% if button.show %}
+                        <div class="border-block">
+                            <button class="operations-types-card__btn operations-types-card__btn--{{ button.type }}" data-src="{{ button.modal }}">
+                                {{ button.text }}
+                            </button>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endmacro %}

@@ -2,58 +2,58 @@
 @use "core/mixins" as mix;
 
 .form {
-  .grid.col-2 {
-    columns: 2;
-    column-gap: var(--form-gap);
+    .grid.col-2 {
+        columns: 2;
+        column-gap: var(--form-gap);
 
-    @include bp.mq(tablet) {
-      columns: 1;
-    }
-  }
-
-  .field {
-    width: 100%;
-    min-width: 0;
-    margin-bottom: 30px;
-
-    &:nth-child(3) {
-      margin-bottom: 0;
+        @include bp.mq(tablet) {
+            columns: 1;
+        }
     }
 
-    .label {
-      display: none;
+    .field {
+        width: 100%;
+        min-width: 0;
+        margin-bottom: 30px;
+
+        &:nth-child(3) {
+            margin-bottom: 0;
+        }
+
+        .label {
+            display: none;
+        }
+
+        .input-wrapper {
+            position: relative;
+            display: flex;
+
+            .input-icon {
+                position: absolute;
+                top: 50%;
+                left: 24px;
+                z-index: 3;
+                transform: translateY(-50%);
+            }
+        }
     }
 
-    .input-wrapper {
-      position: relative;
-      display: flex;
-
-      .input-icon {
-        position: absolute;
-        top: 50%;
-        left: 24px;
-        z-index: 3;
-        transform: translateY(-50%);
-      }
+    .field-error {
+        display: block;
+        margin-top: 6px;
+        font-size: 12px;
+        line-height: 1.4;
+        color: var(--color-brown);
     }
-  }
 
-  .field-error {
-    display: block;
-    margin-top: 6px;
-    font-size: 12px;
-    line-height: 1.4;
-    color: var(--color-brown);
-  }
-
-  .field-consent {
-    margin-top: 13px;
-    margin-bottom: 13px;
-  }
-
-  .actions {
-    .button {
-      width: 100%;
+    .field-consent {
+        margin-top: 13px;
+        margin-bottom: 13px;
     }
-  }
+
+    .actions {
+        .button {
+            width: 100%;
+        }
+    }
 }

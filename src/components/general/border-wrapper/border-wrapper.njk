@@ -1,4 +1,4 @@
-{% macro borderWrapper(title = '', titleTag = 'h2', titleClass = 'section-title', button = false, buttonUrl = '', buttonText = '') %}
+{% macro borderWrapper(title = '', titleTag = 'h2', titleClass = 'section-title', button = false, buttonUrl = '', buttonText = '', subtitle = '') %}
     <div class="border-wrapper">
         <div class="border-wrapper__outer"></div>
         <div class="border-wrapper__inner"></div>
@@ -9,6 +9,9 @@
                     <{{ titleTag }} class="{{ titleClass }}">
                         {{ title | safe }}
                     </{{ titleTag }}>
+                    {% if subtitle %}
+                        <p class="border-wrapper__subtitle">{{ subtitle }}</p>
+                    {% endif %}
                 </div>
             </div>
         {% endif %}

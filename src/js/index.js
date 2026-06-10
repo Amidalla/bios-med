@@ -17,6 +17,14 @@ import { articleShort } from "../blocks/common/article-short/article-short.js";
 import { servicesCategories } from "../blocks/common/services-categories/services-categories.js";
 import { bodyPlasticShort } from "../blocks/common/body-plastic-short/body-plastic-short.js";
 import { preparingSurgery } from "../blocks/common/preparing-surgery/preparing-surgery.js";
+import { popupFindMore } from "../components/common/popup-find-more/popup-find-more.js";
+import { popupWhatThis } from "../components/common/popup-what-this/popup-what-this.js";
+import { popupWhoSuitable } from "../components/common/popup-who-suitable/popup-who-suitable.js";
+import {
+    popupReconstructiveRhinoplasty
+} from "../components/common/popup-reconstructive-rhinoplasty/popup-reconstructive-rhinoplasty.js";
+import { initExpandButtons } from "../components/general/operations-types-card/operations-types-card.js";
+import { popupRehabilitation } from "../components/common/popup-rehabilitation/popup-rehabilitation.js";
 
 const components = [
     consentNotice,
@@ -36,7 +44,13 @@ const components = [
     articleShort,
     servicesCategories,
     bodyPlasticShort,
-    preparingSurgery
+    preparingSurgery,
+    popupFindMore,
+    popupWhatThis,
+    popupWhoSuitable,
+    popupReconstructiveRhinoplasty,
+    initExpandButtons,
+    popupRehabilitation
 ];
 
 function init(context = document) {

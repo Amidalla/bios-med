@@ -1,78 +1,78 @@
 @use "core/breakpoints" as bp;
 @use "core/mixins" as mix;
 
-// Применяем миксин для базовых стилей
+
 @include mix.decorated-section(".advantages");
 
-// Добавляем уникальные стили только для этой секции
+
 .advantages {
-  &__list {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 48px;
-    margin-bottom: 34px;
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 48px;
+        margin-bottom: 34px;
 
-    @include bp.mq(tablet-xl) {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 8px;
+        @include bp.mq(tablet-xl) {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px;
+        }
+
+        @include bp.mq(mobile-xl) {
+            grid-template-columns: repeat(1, 1fr);
+            gap: 10px;
+        }
     }
 
-    @include bp.mq(mobile-xl) {
-      grid-template-columns: repeat(1, 1fr);
-      gap: 10px;
+    &__footer {
+        padding-right: 11px;
+        padding-left: 11px;
+        border: 1px solid #be9158;
+        border-radius: 20px;
+
+        @include bp.mq(mobile-xl) {
+            padding: 0;
+            border: none;
+        }
+
+        .border-container {
+            padding-top: 11px;
+            padding-bottom: 11px;
+            margin-top: -11px;
+            margin-bottom: -11px;
+            border: 1px solid #be9158;
+            border-radius: 20px;
+
+            @include bp.mq(mobile-xl) {
+                padding-bottom: 0;
+                margin-right: -20px;
+                margin-bottom: 0;
+                margin-left: -20px;
+                border-radius: 20px 20px 0 0;
+            }
+
+            @include bp.mq(mobile-l) {
+                margin-right: -15px;
+                margin-left: -15px;
+            }
+        }
     }
-  }
 
-  &__footer {
-    padding-right: 11px;
-    padding-left: 11px;
-    border: 1px solid #BE9158;
-    border-radius: 20px;
+    &__text {
+        padding: 28px 42px;
+        font-size: 22px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 130%;
+        color: var(--color-white);
+        text-align: center;
+        background: var(--bg-frame, linear-gradient(89deg, #967252 15.33%, #ceb48d 97.83%));
+        border-radius: 20px;
 
-    @include bp.mq(mobile-xl) {
-      padding: 0;
-      border: none;
+        @include bp.mq(mobile-xl) {
+            padding: 36px 20px;
+            font-size: 18px;
+            text-align: left;
+            border-radius: 20px 20px 0 0;
+        }
     }
-
-    .border-container {
-      padding-top: 11px;
-      padding-bottom: 11px;
-      margin-top: -11px;
-      margin-bottom: -11px;
-      border: 1px solid #BE9158;
-      border-radius: 20px;
-
-      @include bp.mq(mobile-xl) {
-        padding-bottom: 0;
-        margin-right: -20px;
-        margin-bottom: 0;
-        margin-left: -20px;
-        border-radius: 20px 20px 0 0;
-      }
-
-      @include bp.mq(mobile-l) {
-        margin-right: -15px;
-        margin-left: -15px;
-      }
-    }
-  }
-
-  &__text {
-    padding: 28px 42px;
-    font-size: 22px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 130%;
-    color: var(--color-white);
-    text-align: center;
-    background: var(--bg-frame, linear-gradient(89deg, #967252 15.33%, #CEB48D 97.83%));
-    border-radius: 20px;
-
-    @include bp.mq(mobile-xl) {
-      padding: 36px 20px;
-      font-size: 18px;
-      text-align: left;
-      border-radius: 20px 20px 0 0;
-    }
-  }
 }

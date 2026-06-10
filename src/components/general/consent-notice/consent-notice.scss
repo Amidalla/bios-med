@@ -1,108 +1,108 @@
 @use "core/breakpoints" as bp;
 
 .consent-notice {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  z-index: 100;
-  display: none;
-  width: 100%;
-  padding: 30px 0;
-  overflow: hidden;
-  background: linear-gradient(82deg, #F6EFE5 45.8%, #EADBC6 93.97%);
-  border-radius: 10px 10px 0 0;
-  box-shadow: 0 -14px 47px 0 rgb(0 0 0 / 10%);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    display: none;
+    width: 100%;
+    padding: 30px 0;
+    overflow: hidden;
+    background: linear-gradient(82deg, #f6efe5 45.8%, #eadbc6 93.97%);
+    border-radius: 10px 10px 0 0;
+    box-shadow: 0 -14px 47px 0 rgb(0 0 0 / 10%);
 
-  @include bp.mq(laptop) {
-    padding: 20px 0;
-  }
-
-  // --------------------------------------
-  // Состояния
-  // --------------------------------------
-
-  &.is-visible {
-    display: flex;
-  }
-
-  // --------------------------------------
-  // Элементы
-  // --------------------------------------
-
-  .block {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    @include bp.mq(tablet) {
-      flex-wrap: wrap;
+    @include bp.mq(laptop) {
+        padding: 20px 0;
     }
 
-    .box {
-      display: flex;
-      gap: 10px;
-      align-items: center;
-      padding-right: 20px;
+    // --------------------------------------
+    // Состояния
+    // --------------------------------------
 
-      @include bp.mq(tablet) {
-        margin-bottom: 20px;
-      }
-
-      .image {
+    &.is-visible {
         display: flex;
-        flex: 0 0 auto;
-        max-width: 106px;
-
-        @include bp.mq(laptop) {
-          max-width: 66px;
-        }
-
-        @include bp.mq(tablet) {
-          max-width: 56px;
-        }
-      }
-
-      .text {
-        max-width: 845px;
-        font-size: 18px;
-        font-weight: 500;
-        line-height: 136%;
-        color: var(--color-brown-dark);
-
-        @include bp.mq(laptop) {
-          max-width: 678px;
-          font-size: 16px;
-        }
-
-        @include bp.mq(tablet) {
-          max-width: unset;
-          font-size: 15px;
-        }
-
-        a {
-          color: var(--color-brown-dark);
-          text-decoration: underline;
-
-          &:hover {
-            text-decoration: none;
-          }
-        }
-      }
     }
 
-    .button {
-      width: 100%;
-      max-width: 183px;
-      height: 42px;
-      font-size: 16px;
+    // --------------------------------------
+    // Элементы
+    // --------------------------------------
 
-      @include bp.mq(laptop) {
-        max-width: 264px;
-      }
+    .block {
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
-      @include bp.mq(tablet) {
-        max-width: unset;
-      }
+        @include bp.mq(tablet) {
+            flex-wrap: wrap;
+        }
+
+        .box {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            padding-right: 20px;
+
+            @include bp.mq(tablet) {
+                margin-bottom: 20px;
+            }
+
+            .image {
+                display: flex;
+                flex: 0 0 auto;
+                max-width: 106px;
+
+                @include bp.mq(laptop) {
+                    max-width: 66px;
+                }
+
+                @include bp.mq(tablet) {
+                    max-width: 56px;
+                }
+            }
+
+            .text {
+                max-width: 845px;
+                font-size: 18px;
+                font-weight: 500;
+                line-height: 136%;
+                color: var(--color-brown-dark);
+
+                @include bp.mq(laptop) {
+                    max-width: 678px;
+                    font-size: 16px;
+                }
+
+                @include bp.mq(tablet) {
+                    max-width: unset;
+                    font-size: 15px;
+                }
+
+                a {
+                    color: var(--color-brown-dark);
+                    text-decoration: underline;
+
+                    &:hover {
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+
+        .button {
+            width: 100%;
+            max-width: 183px;
+            height: 42px;
+            font-size: 16px;
+
+            @include bp.mq(laptop) {
+                max-width: 264px;
+            }
+
+            @include bp.mq(tablet) {
+                max-width: unset;
+            }
+        }
     }
-  }
 }

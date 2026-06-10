@@ -1,0 +1,41 @@
+{# Hero для деталок услуг #}
+
+{# Параметры по умолчанию #}
+{% set heroTitle = hero.title | default("Ринопластика: Искусство и наука преображения") %}
+{% set heroLabel = hero.label | default("Ринопластика") %}
+{% set heroDescription = hero.description | default("Ринопластика считается одной из самых древних хирургических операций. Первые упоминания о восстановлении носа относятся к древней Индии — ещё более 2000 лет назад врачи выполняли реконструкцию носа с использованием кожных лоскутов.") %}
+{% set heroButtonText = hero.buttonText | default("узнать больше о процедуре") %}
+{% set heroButtonPopup = hero.buttonPopup | default("popup-find-more") %}
+{% set heroLinkText = hero.linkText | default("Результаты до/после") %}
+{% set heroLinkUrl = hero.linkUrl | default("#before-after-short") %}
+{% set heroShowRating = hero.showRating | default(true) %}
+{% set heroClass = hero.class | default("") %}
+
+<section class="hero section {{ heroClass }}">
+    <div class="container">
+        <div class="hero__content">
+            <div class="section-label">{{ heroLabel }}</div>
+
+            <h1 class="hero__title">{{ heroTitle }}</h1>
+
+            <div class="hero__description">
+                {{ heroDescription }}
+            </div>
+
+            <div class="hero__actions">
+                <div class="border-block">
+                    <button class="hero__btn" data-src="{{ heroButtonPopup }}">
+                        <span>{{ heroButtonText }}</span>
+                    </button>
+                </div>
+                <div class="border-block">
+                    <a href="{{ heroLinkUrl }}" class="hero__link">
+                        <span>{{ heroLinkText }}</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="hero__bg"></div>
+</section>

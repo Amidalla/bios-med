@@ -48,6 +48,8 @@
 @use "../components/general/service-variants-card/service-variants-card";
 @use "../components/general/preparing-card/preparing-card";
 @use "../components/general/information-card/information-card";
+@use "../components/general/operations-types-card/operations-types-card";
+@use "../components/general/border-card/border-card";
 @use "../components/general/border-wrapper/border-wrapper";
 
 @use "../components/general/breadcrumbs/breadcrumbs";
@@ -100,7 +102,11 @@
 @use "../components/common/popup-order/popup-order"; */
 @use "../components/common/popup-entry/popup-entry";
 @use "../components/common/popup-consultation/popup-consultation";
-
+@use "../components/common/popup-find-more/popup-find-more";
+@use "../components/common/popup-what-this/popup-what-this";
+@use "../components/common/popup-who-suitable/popup-who-suitable";
+@use "../components/common/popup-reconstructive-rhinoplasty/popup-reconstructive-rhinoplasty";
+@use "../components/common/popup-rehabilitation/popup-rehabilitation";
 /* @use "../components/common/popup-callback-success/popup-callback-success";
 @use "../components/common/popup-feedback/popup-feedback";
 @use "../components/common/popup-feedback-success/popup-feedback-success";
@@ -137,7 +143,10 @@
 @use "../blocks/common/preparing-surgery/preparing-surgery";
 @use "../blocks/common/sub-advantages/sub-advantages";
 @use "../blocks/common/find-more/find-more";
-
+@use "../blocks/common/rhinoplasty-description/rhinoplasty-description";
+@use "../blocks/common/operations-types/rhinoplasty-types";
+@use "../blocks/common/undergoing-surgery/undergoing-surgery";
+@use "../blocks/common/rehabilitation-rhinoplasty/rehabilitation-rhinoplasty";
 /* @use "../blocks/common/about-short/about-short";
 @use "../blocks/common/about-hero/about-hero";
 @use "../blocks/common/about-benefits/about-benefits";

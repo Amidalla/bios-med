@@ -1,0 +1,20 @@
+{% macro borderCard(title, textItems = [], type = 'list') %}
+<div class="border-card">
+    <div class="border-card__inner">
+        <h3 class="border-card__title">{{ title }}</h3>
+        <div class="border-card__content">
+            {% if type == 'list' %}
+                <ul class="border-card__list">
+                    {% for item in textItems %}
+                        <li>{{ item }}</li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <div class="border-card__text">
+                    <p>{{ textItems.content }}</p>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endmacro %}

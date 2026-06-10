@@ -1,0 +1,59 @@
+{# blocks/common/undergoing-surgery/undergoing-surgery.njk #}
+
+{% from "components/general/border-wrapper/border-wrapper.njk" import borderWrapper %}
+{% from "components/general/operations-types-card/operations-types-card.njk" import operationsTypesCard %}
+
+<section class="undergoing-surgery section">
+    {% call borderWrapper(
+        title='Как проходит операция',
+        titleTag='h2',
+        titleClass='section-title'
+    ) %}
+        <div class="undergoing-surgery__subtitle-wrapper">
+            <div class="container">
+                <p class="undergoing-surgery__subtitle">Процесс ринопластики проходит в несколько структурированных этапов для достижения наилучшего результата</p>
+            </div>
+        </div>
+
+        <div class="undergoing-surgery__list">
+            <div class="container">
+                <div class="undergoing-surgery__grid">
+                    {% set cards = [
+                        {
+                            icon: '<span>01</span>',
+                            title: "Консультация и планирование",
+                            textItems: [
+                                { type: "list", items: ["3D-моделирование будущего результата", "Обсуждение техники операции", "Назначение анализов и обследований"] }
+                            ]
+                        },
+                        {
+                            icon: '<span>02</span>',
+                            title: "Проведение операции",
+                            textItems: [
+                                { type: "paragraph", content: "Операция выполняется под общим наркозом и длится от 1 до 3 часов в зависимости от сложности." },
+                                { type: "list", items: ["Доступ через разрезы внутри носа или на колумелле", "Коррекция хрящевой и костной ткани", "Наложение косметических швов"] }
+                            ]
+                        },
+                        {
+                            icon: '<span>03</span>',
+                            title: "Реабилитация и результат",
+                            textItems: [
+                                { type: "list", items: ["Снятие швов на 7-10 день", "Использование шины и лейкопластыря", "Контрольные осмотры хирурга"] }
+                            ]
+                        }
+                    ] %}
+
+                    {% for card in cards %}
+                        {{ operationsTypesCard(
+                            icon=card.icon,
+                            title=card.title,
+                            textItems=card.textItems,
+                            buttons=[],
+                            showReadMore=false
+                        ) }}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    {% endcall %}
+</section>
