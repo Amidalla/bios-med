@@ -27,8 +27,20 @@ export function form(context = document) {
                 return value.replace(/\D/g, "").length === 11;
             }
 
-            if (field.type === "date") {
-                return value !== "";
+            if (field.dataset.mask === "date") {
+                const dateMatch = value.match(/^(\d{2})\.(\d{2})\.(\d{4})$/);
+                if (!dateMatch) return false;
+
+                const day = Number(dateMatch[1]);
+                const month = Number(dateMatch[2]);
+                const year = Number(dateMatch[3]);
+                const date = new Date(year, month - 1, day);
+
+                return (
+                    date.getFullYear() === year &&
+                    date.getMonth() === month - 1 &&
+                    date.getDate() === day
+                );
             }
 
             if (field.minLength > 0 && value.length < field.minLength) {

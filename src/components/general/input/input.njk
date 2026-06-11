@@ -23,10 +23,14 @@
 ) %}
 {% set inputWrapperClasses = "input-wrapper" %}
 {% if icon %}{% set inputWrapperClasses = inputWrapperClasses + " input-wrapper--has-icon" %}{% endif %}
+{% if type == "date" %}{% set inputWrapperClasses = inputWrapperClasses + " input-wrapper--date" %}{% endif %}
 
 {% set inputClasses = "input " + size %}
 {% if error %}{% set inputClasses = inputClasses + " error" %}{% endif %}
+{% if type == "date" %}{% set inputClasses = inputClasses + " input--date" %}{% endif %}
 {% if class %}{% set inputClasses = inputClasses + " " + class %}{% endif %}
+
+{% set renderType = "text" if type == "date" else type %}
 
 {# Генерируем уникальный ID, если не передан или пустой #}
 {% set finalId = id %}
@@ -41,7 +45,7 @@
         </span>
     {% endif %}
     <input
-        type="{{ type }}"
+        type="{{ renderType }}"
         class="{{ inputClasses }}"
         id="{{ finalId }}"
         {% if name %}name="{{ name }}"{% endif %}
@@ -54,14 +58,16 @@
         {% if minlength %}minlength="{{ minlength }}"{% endif %}
         {% if autocomplete %}autocomplete="{{ autocomplete }}"{% endif %}
         {% if pattern %}pattern="{{ pattern }}"{% endif %}
-        {% if min %}min="{{ min }}"{% endif %}
-        {% if max %}max="{{ max }}"{% endif %}
+        {% if min and type != "date" %}min="{{ min }}"{% endif %}
+        {% if max and type != "date" %}max="{{ max }}"{% endif %}
         {% if step %}step="{{ step }}"{% endif %}
+        {% if type == "date" %}inputmode="numeric" autocomplete="off"{% endif %}
         {% if data %}
             {% for key, val in data %}
                 data-{{ key | replace("_", "-") }}="{{ val }}"
             {% endfor %}
         {% endif %}
+        {% if type == "date" %}data-mask="date"{% endif %}
         {% if aria %}
             {% for key, val in aria %}
                 aria-{{ key | replace("_", "-") }}="{{ val }}"
