@@ -1,0 +1,93 @@
+{% from "components/general/video-review-card/video-review-subcard.njk" import videoReviewSubcard %}
+
+<section class="expert-advice section">
+    <div class="container">
+        <div class="expert-advice__header">
+            <div class="section-label">Видеоблог доктора</div>
+            {% set title = {
+                text: "<span>Экспертные советы и рекомендации</span>",
+                tag: "h2",
+                class: "section-title"
+            } %}
+            {% include "components/general/title/title.njk" %}
+            <p class="expert-advice__subtitle">Доктор Иванов делится профессиональным мнением о пластической хирургии</p>
+        </div>
+
+        <!-- Слайдер -->
+        <div class="expert-advice__slider">
+            <div class="swiper expert-advice-slider">
+                <div class="swiper-wrapper">
+                    <!-- Слайд 1 -->
+                    <div class="swiper-slide">
+                        {{ videoReviewSubcard(
+                            "https://rutube.ru/embed/video/a949b2d2150a6f95adc6e6436d5bc037/",
+                            "/assets/images/content/expert-advice1.png",
+                            "Как выбрать импланты для маммопластики",
+                            "Самая лучшая операция. Все прошло легко, спокойно и безболезненно",
+                            "12,5К",
+                            "2 дня назад",
+                            "Верхняя и нижняя блефаропластика, <b>Доктор Варданян Микаел Каренович</b>",
+                            5
+                        ) }}
+                    </div>
+
+                    <!-- Слайд 2 -->
+                    <div class="swiper-slide">
+                        {{ videoReviewSubcard(
+                            "https://rutube.ru/embed/video/a949b2d2150a6f95adc6e6436d5bc037/",
+                            "/assets/images/content/expert-advice2.png",
+                            "Как выбрать импланты для маммопластики",
+                            "Доктор Иванов обьясняет различия между круглыми и анатомическими имплантами, их безопасность и долговечность",
+                            "12,5К",
+                            "2 дня назад",
+                            "Верхняя и нижняя блефаропластика, <b>Доктор Варданян Микаел Каренович</b>",
+                            5
+                        ) }}
+                    </div>
+
+                    <!-- Слайд 3 -->
+                    <div class="swiper-slide">
+                        {{ videoReviewSubcard(
+                            "https://rutube.ru/embed/video/a949b2d2150a6f95adc6e6436d5bc037/",
+                            "/assets/images/content/expert-advice3.png",
+                            "Ринопластика мифы и реальность",
+                            "Доктор Иванов обьясняет различия между круглыми и анатомическими имплантами, их безопасность и долговечность",
+                            "12,5К",
+                            "1 неделя назад",
+                            "Верхняя и нижняя блефаропластика, <b>Доктор Варданян Микаел Каренович</b>",
+                            5
+                        ) }}
+                    </div>
+
+                    <!-- Слайд 4 -->
+                    <div class="swiper-slide">
+                        {{ videoReviewSubcard(
+                            "https://rutube.ru/embed/video/a949b2d2150a6f95adc6e6436d5bc037/",
+                            "/assets/images/content/expert-advice1.png",
+                            "Омоложение лица: комплексный подход",
+                            "Профессионалы своего дела",
+                            "12,5К",
+                            "5 дней назад",
+                            "Верхняя и нижняя блефаропластика, <b>Доктор Варданян Микаел Каренович</b>",
+                            5
+                        ) }}
+                    </div>
+                </div>
+            </div>
+
+            <!-- Навигация -->
+            <div class="expert-advice-slider__nav">
+                <div class="expert-advice-slider__button-prev">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14 6L8.34315 11.6569L14 17.3137" stroke="#BE9158" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <div class="expert-advice-slider__button-next">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 6L15.6569 11.6569L10 17.3137" stroke="#BE9158" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

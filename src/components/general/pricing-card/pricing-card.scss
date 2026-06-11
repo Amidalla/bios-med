@@ -1,0 +1,133 @@
+@use "core/mixins" as mix;
+@use "core/breakpoints" as bp;
+
+.pricing-card {
+    padding: 10px 13px;
+    background: var(--fill-place, linear-gradient(180deg, #f7f8f2 0%, #f6efe5 100%));
+    border-radius: 20px;
+    box-shadow: 0 4px 20px 0 rgb(132 79 36 / 25%);
+
+    @include bp.mq(tablet-xl) {
+        padding: 7px;
+    }
+    @include bp.mq(mobile-xl) {
+        padding: 4px;
+    }
+
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        padding: 57px 31px 39px;
+        border: 1px solid var(--bg, #be9158);
+        border-radius: 20px;
+
+        @include bp.mq(tablet-xl) {
+            padding: 19px 9px 26px;
+        }
+        @include bp.mq(mobile-xl) {
+            padding: 19px 5px 15px;
+        }
+    }
+
+    &__title {
+        margin-bottom: 17px;
+        font-family: var(--font-family-secondary);
+        font-size: 40px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 100%;
+        color: var(--color-brown-dark);
+        text-align: center;
+
+        @include bp.mq(tablet-xl) {
+            font-size: 24px;
+            word-break: normal;
+            overflow-wrap: break-word;
+        }
+        @include bp.mq(mobile-xl) {
+            font-size: 22px;
+        }
+    }
+
+    &__price {
+        position: relative;
+        padding-bottom: 17px;
+        margin-bottom: 17px;
+        font-family: var(--font-family-secondary);
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 100%;
+        color: var(--color-brown-dark);
+        text-align: center;
+
+        &::after {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 132px;
+            height: 2px;
+            content: "";
+            background: var(--color-3);
+            transform: translateX(-50%);
+        }
+
+        span {
+            font-size: 40px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 100%;
+
+            @include bp.mq(mobile-xl) {
+                font-size: 23px;
+            }
+        }
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+        margin-bottom: 39px;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 120%;
+        color: var(--color-brown);
+        list-style: none;
+
+        @include bp.mq(mobile-xl) {
+            font-size: 14px;
+        }
+
+        li {
+            text-align: center;
+
+            @include bp.mq(mobile-xl) {
+                word-break: normal;
+                overflow-wrap: break-word;
+            }
+        }
+    }
+
+    .border-block {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        padding: 4px;
+        margin-top: auto;
+        border: 1px solid #c0a97f;
+        border-radius: 49px;
+        backdrop-filter: blur(2px);
+
+        .pricing-card__btn {
+            @include mix.button-gradient(20px 40px);
+
+            width: 100%;
+            border: 1px solid #c0a97f;
+        }
+    }
+}

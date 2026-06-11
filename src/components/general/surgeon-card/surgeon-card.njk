@@ -1,0 +1,51 @@
+{% macro surgeonCard(image, imageMobile, name, stats, description, buttonText = "Подробнее о враче") %}
+<div class="surgeon-card">
+    <div class="surgeon-card__image">
+        <div class="surgeon-card__image-inner">
+            <picture>
+                <source media="(max-width: 1309.98px)" srcset="{{ imageMobile }}">
+                <source media="(min-width: 1310px)" srcset="{{ image }}">
+                <img class="lazy" data-src="{{ image }}" alt="{{ name }}" loading="lazy">
+            </picture>
+        </div>
+        <div class="surgeon-card__image-content">
+            <p class="surgeon-card__name">{{ name }}</p>
+            <div class="surgeon-card__stats">
+                <div class="surgeon-card__stat">
+                    <span class="surgeon-card__stat-value">{{ stats.years }}</span>
+                    <span class="surgeon-card__stat-label">лет опыта</span>
+                </div>
+                <div class="surgeon-card__stat">
+                    <span class="surgeon-card__stat-value">{{ stats.operations }}</span>
+                    <span class="surgeon-card__stat-label">операций</span>
+                </div>
+                <div class="surgeon-card__stat">
+                    <span class="surgeon-card__stat-value">
+                        {{ stats.rating }}
+                        <svg width="16" height="16" viewBox="0 0 27 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12.787 0.392186C13.0233 -0.130649 13.7658 -0.130648 14.002 0.392187L17.4172 7.94948C17.5142 8.16411 17.7173 8.31164 17.9514 8.33756L26.1941 9.25024C26.7644 9.31339 26.9938 10.0195 26.5696 10.4058L20.4375 15.9891C20.2633 16.1477 20.1858 16.3864 20.2335 16.6171L21.9126 24.7384C22.0288 25.3003 21.4281 25.7367 20.9296 25.4526L13.7246 21.346C13.52 21.2294 13.269 21.2294 13.0644 21.346L5.85942 25.4526C5.36096 25.7367 4.76028 25.3003 4.87645 24.7384L6.55558 16.6171C6.60327 16.3864 6.52571 16.1477 6.35156 15.9891L0.219491 10.4058C-0.204743 10.0195 0.024696 9.31339 0.594954 9.25024L8.83771 8.33756C9.07181 8.31164 9.27486 8.16411 9.37185 7.94948L12.787 0.392186Z" fill="#D9AA6F"/>
+                        </svg>
+                    </span>
+                    <span class="surgeon-card__stat-label">отзывы</span>
+                </div>
+                <div class="surgeon-card__stat">
+                    <span class="surgeon-card__stat-value">{{ stats.satisfied }}</span>
+                    <span class="surgeon-card__stat-label">довольных клиентов</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="surgeon-card__info">
+        <div class="section-label">Наши хирурги</div>
+        <h3 class="surgeon-card__title">Пластические хирурги BIOS</h3>
+        <div class="surgeon-card__description">
+            {% for paragraph in description %}
+                <p>{{ paragraph }}</p>
+            {% endfor %}
+        </div>
+        <div class="border-block">
+            <button class="surgeon-card__btn">{{ buttonText }}</button>
+        </div>
+    </div>
+</div>
+{% endmacro %}

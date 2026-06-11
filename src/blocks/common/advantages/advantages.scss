@@ -1,9 +1,7 @@
 @use "core/breakpoints" as bp;
 @use "core/mixins" as mix;
 
-
 @include mix.decorated-section(".advantages");
-
 
 .advantages {
     &__list {

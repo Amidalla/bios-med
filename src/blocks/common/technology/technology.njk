@@ -1,0 +1,54 @@
+{% from "components/general/information-card/information-card.njk" import informationCard %}
+
+<section class="technology section">
+    <div class="container">
+        <div class="technology__header">
+            {% set title = {
+                text: "<span>технология и безопасность</span>",
+                tag: "h2",
+                class: "section-title"
+            } %}
+            {% include "components/general/title/title.njk" %}
+            <p class="technology__subtitle">Современное оборудование и строгие стандарты качества</p>
+        </div>
+
+        <div class="technology__grid">
+            {% set items = [
+                {
+                    icon: "/assets/images/content/technology1.png",
+                    title: "Современное оборудование",
+                    text: "Операционные оснащены аппаратурой экспертного класса для точных и безопасных вмешательств"
+                },
+                {
+                    icon: "/assets/images/content/technology1.png",
+                    title: "Стерильность и безопасность",
+                    text: "Многоступенчатая система контроля стерильности и инфекционной безопасности"
+                },
+                {
+                    icon: "/assets/images/content/technology1.png",
+                    title: "Анестезиологическое обеспечение",
+                    text: "Клиника лицензирована на применение наркотических препаратов, что обеспечивает высокий уровень качества наркоза"
+                },
+                {
+                    icon: "/assets/images/content/technology1.png",
+                    title: "Круглосуточный стационар",
+                    text: "Комфортное пребывание в стационаре под круглосуточным наблюдением медицинского персонала"
+                },
+                {
+                    icon: "/assets/images/content/technology1.png",
+                    title: "Стандарты качества",
+                    text: "Соблюдение международных протоколов лечения и реабилитации пациентов"
+                }
+            ] %}
+
+            {% for item in items %}
+                {{ informationCard(
+                    icon=item.icon,
+                    title=item.title,
+                    text=item.text,
+                    showLink=false
+                ) }}
+            {% endfor %}
+        </div>
+    </div>
+</section>

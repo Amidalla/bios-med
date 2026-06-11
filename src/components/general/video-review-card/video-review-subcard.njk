@@ -1,0 +1,29 @@
+{% macro videoReviewSubcard(videoUrl, previewImage, name, reviewText, views, date, text, stars = 5) %}
+<div class="video-review-card video-review-subcard">
+    <div class="video-review-card__inner">
+        <div class="video-review-card__media">
+            <div class="video-review-card__preview-container" data-video-url="{{ videoUrl }}">
+                <img src="{{ previewImage }}" alt="{{ name }}" class="video-review-card__preview">
+                <button class="video-review-card__play" aria-label="Воспроизвести видео">
+                    <img
+                        class="lazy"
+                        src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='1'%20height='1'/%3E"
+                        data-src="/assets/images/content/video-btn.png"
+                        alt="Кнопка видео">
+                </button>
+            </div>
+        </div>
+        <div class="video-review-card__content">
+            <div class="video-review-card__name">{{ name }}</div>
+            <div class="video-review-card__review-wrapper">
+                <div class="video-review-card__review">{{ reviewText | safe }}</div>
+                <button class="video-review-card__read-more" data-expanded="false">Читать больше</button>
+            </div>
+            <div class="video-review-card__footer">
+                <div class="video-review-card__views">{{ views }} просмотров</div>
+                <div class="video-review-card__date">{{ date }}</div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endmacro %}

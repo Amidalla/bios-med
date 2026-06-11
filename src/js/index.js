@@ -20,11 +20,12 @@ import { preparingSurgery } from "../blocks/common/preparing-surgery/preparing-s
 import { popupFindMore } from "../components/common/popup-find-more/popup-find-more.js";
 import { popupWhatThis } from "../components/common/popup-what-this/popup-what-this.js";
 import { popupWhoSuitable } from "../components/common/popup-who-suitable/popup-who-suitable.js";
-import {
-    popupReconstructiveRhinoplasty
-} from "../components/common/popup-reconstructive-rhinoplasty/popup-reconstructive-rhinoplasty.js";
+import { popupReconstructiveRhinoplasty } from "../components/common/popup-reconstructive-rhinoplasty/popup-reconstructive-rhinoplasty.js";
 import { initExpandButtons } from "../components/general/operations-types-card/operations-types-card.js";
 import { popupRehabilitation } from "../components/common/popup-rehabilitation/popup-rehabilitation.js";
+import { surgeons } from "../blocks/common/surgeons/surgeons.js";
+import { expertAdvice } from "../blocks/common/expert-advice/expert-advice.js";
+import { questions } from "../blocks/common/questions/questions.js";
 
 const components = [
     consentNotice,
@@ -50,7 +51,10 @@ const components = [
     popupWhoSuitable,
     popupReconstructiveRhinoplasty,
     initExpandButtons,
-    popupRehabilitation
+    popupRehabilitation,
+    surgeons,
+    expertAdvice,
+    questions
 ];
 
 function init(context = document) {

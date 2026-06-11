@@ -1,0 +1,83 @@
+{% from "components/general/video-review-card/video-review-card.njk" import videoReviewCard %}
+
+<section class="reviews-short section reviews-short-sub">
+    <div class="container">
+        <div class="reviews-short__header">
+            {% set title = {
+                text: "<span>Что говорят наши клиенты</span>",
+                tag: "h2",
+                class: "section-title"
+            } %}
+            {% include "components/general/title/title.njk" %}
+        </div>
+
+        <!-- Слайдер -->
+        <div class="reviews-short__slider">
+            <div class="swiper reviews-slider">
+                <div class="swiper-wrapper">
+                    <!-- Слайд 1 -->
+                    <div class="swiper-slide">
+                         {{ videoReviewCard(
+                             "https://rutube.ru/embed/video/a949b2d2150a6f95adc6e6436d5bc037/",
+                             "/assets/images/content/reviews-short-sub1.png",
+                             "Анна Иванова",
+                             "Самая лучшая операция. Все прошло легко, спокойно и безболезненно",
+                             "Верхняя и нижняя блефаропластика, <b>Доктор Варданян Микаел Каренович</b>",
+                             5
+                         ) }}
+                    </div>
+
+                    <!-- Слайд 2 -->
+                    <div class="swiper-slide">
+                        {{ videoReviewCard(
+                            "https://rutube.ru/embed/video/a949b2d2150a6f95adc6e6436d5bc037/",
+                            "/assets/images/content/reviews-short-sub2.png",
+                            "Анна",
+                            "Лучший врач в своей области",
+                            "Верхняя и нижняя блефаропластика, <b>Доктор Варданян Микаел Каренович</b>",
+                            5
+                        ) }}
+                    </div>
+
+                    <!-- Слайд 3 -->
+                    <div class="swiper-slide">
+                        {{ videoReviewCard(
+                            "https://rutube.ru/embed/video/a949b2d2150a6f95adc6e6436d5bc037/",
+                            "/assets/images/content/reviews-short-sub3.png",
+                            "Елена",
+                            "Спасибо за новый взгляд на жизнь",
+                            "Верхняя и нижняя блефаропластика, <b>Доктор Варданян Микаел Каренович</b>",
+                            5
+                        ) }}
+                    </div>
+
+                    <!-- Слайд 4 -->
+                    <div class="swiper-slide">
+                        {{ videoReviewCard(
+                            "https://rutube.ru/embed/video/a949b2d2150a6f95adc6e6436d5bc037/",
+                            "/assets/images/content/reviews-short-sub1.png",
+                            "Дмитрий",
+                            "Профессионалы своего дела",
+                            "Верхняя и нижняя блефаропластика, <b>Доктор Варданян Микаел Каренович</b>",
+                            5
+                        ) }}
+                    </div>
+                </div>
+            </div>
+
+            <!-- Навигация -->
+            <div class="reviews-slider__nav">
+                <div class="reviews-slider__button-prev">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14 6L8.34315 11.6569L14 17.3137" stroke="#BE9158" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <div class="reviews-slider__button-next">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 6L15.6569 11.6569L10 17.3137" stroke="#BE9158" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,35 @@
+{# blocks/common/before-after-short/before-after-short.njk #}
+
+{% from "components/general/before-after-card/before-after-card.njk" import beforeAfterCard %}
+
+<section class="before-after-short section" id="before-after-short">
+    <div class="container">
+        <div class="before-after-short__header">
+            {% set title = {
+                text: "результаты до/после",
+                tag: "h2",
+                class: "section-title"
+            } %}
+            {% include "components/general/title/title.njk" %}
+        </div>
+
+        <div class="before-after-short__grid">
+            {{ beforeAfterCard(
+                '/assets/images/content/rhinoplasty1.png',
+                '/assets/images/content/rhinoplasty2.png'
+            ) }}
+            {{ beforeAfterCard(
+                '/assets/images/content/rhinoplasty3.png',
+                '/assets/images/content/rhinoplasty4.png'
+            ) }}
+        </div>
+
+        <div class="before-after-short__footer">
+            <div class="border-block">
+                <a href="/before-after" class="link-all-results">
+                    <span>Все результаты</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>

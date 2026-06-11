@@ -1,0 +1,16 @@
+{% macro pricingCard(title, price, items, buttonText = "Выбрать") %}
+<div class="pricing-card">
+    <div class="pricing-card__inner">
+        <h3 class="pricing-card__title">{{ title }}</h3>
+        <div class="pricing-card__price">{{ price | safe }}</div>
+        <ul class="pricing-card__list">
+            {% for item in items %}
+                <li>{{ item }}</li>
+            {% endfor %}
+        </ul>
+        <div class="border-block">
+            <button class="pricing-card__btn"><span>{{ buttonText }}</span></button>
+        </div>
+    </div>
+</div>
+{% endmacro %}

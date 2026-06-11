@@ -3,5 +3,5 @@
 @use "core/mixins" as mixin;
 
 .popup-what-this {
-  @include mixin.text-popup;
+    @include mixin.text-popup;
 }

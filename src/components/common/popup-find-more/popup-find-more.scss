@@ -3,5 +3,5 @@
 @use "core/mixins" as mixin;
 
 .popup-find-more {
-  @include mixin.text-popup;
+    @include mixin.text-popup;
 }

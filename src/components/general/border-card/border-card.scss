@@ -2,76 +2,76 @@
 @use "core/mixins" as mix;
 
 .border-card {
-  border-radius: 20px;
-  background: linear-gradient(89deg, #967252 15.33%, #CEB48D 97.83%);
-  box-shadow: 0 4px 20px 0 rgba(132, 79, 36, 0.25);
-  padding-top: 9px;
-
-  &__inner {
+    padding-top: 9px;
+    background: linear-gradient(89deg, #967252 15.33%, #ceb48d 97.83%);
     border-radius: 20px;
-    background: var(--fill-place, linear-gradient(180deg, #F7F8F2 0%, #F6EFE5 100%));
-    height: 100%;
-    padding: 39px 50px 50px 50px;
+    box-shadow: 0 4px 20px 0 rgb(132 79 36 / 25%);
 
-    @include bp.mq(tablet-xl) {
-      padding: 39px 20px 50px 20px;
-    }
-  }
+    &__inner {
+        height: 100%;
+        padding: 39px 50px 50px;
+        background: var(--fill-place, linear-gradient(180deg, #f7f8f2 0%, #f6efe5 100%));
+        border-radius: 20px;
 
-  &__title {
-    font-family: var(--font-family-secondary);
-    color: var(--color-brown-dark);
-    font-size: 34px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 100%;
-    padding-bottom: 18px;
-    margin-bottom: 18px;
-    position: relative;
-    text-align: center;
-
-    @include bp.mq(mobile-xl) {
-      font-size: 22px;
-    }
-
-    &::after {
-      content: "";
-      width: 132px;
-      height: 2px;
-      background: var(--color-3);
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-  }
-  &__content {
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 120%;
-    color: var(--color-brown);
-
-    @include bp.mq(mobile-xl) {
-      font-size: 16px;
-    }
-
-
-    ul {
-      list-style: none;
-      padding-left: 0;
-
-      li {
-        position: relative;
-        padding-left: 25px;
-
-        &::before {
-          content: "—";
-          position: absolute;
-          left: 0;
-          color: inherit;
+        @include bp.mq(tablet-xl) {
+            padding: 39px 20px 50px;
         }
-      }
     }
-  }
+
+    &__title {
+        position: relative;
+        padding-bottom: 18px;
+        margin-bottom: 18px;
+        font-family: var(--font-family-secondary);
+        font-size: 34px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 100%;
+        color: var(--color-brown-dark);
+        text-align: center;
+
+        @include bp.mq(mobile-xl) {
+            font-size: 22px;
+        }
+
+        &::after {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 132px;
+            height: 2px;
+            content: "";
+            background: var(--color-3);
+            transform: translateX(-50%);
+        }
+    }
+
+    &__content {
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 120%;
+        color: var(--color-brown);
+
+        @include bp.mq(mobile-xl) {
+            font-size: 16px;
+        }
+
+        ul {
+            padding-left: 0;
+            list-style: none;
+
+            li {
+                position: relative;
+                padding-left: 25px;
+
+                &::before {
+                    position: absolute;
+                    left: 0;
+                    color: inherit;
+                    content: "—";
+                }
+            }
+        }
+    }
 }

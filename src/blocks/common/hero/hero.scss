@@ -190,46 +190,46 @@
     }
 
     .hero__content {
-        max-width: 920px;
         gap: 0;
+        max-width: 920px;
     }
 
     h1 {
+        margin: 0 0 29px;
         font-size: 60px;
         text-align: left;
-        margin: 0 0 29px 0;
 
         @include bp.mq(mobile-xl) {
-            font-size: 38px;
-            text-align: left;
-            margin-bottom: 13px;
             max-width: 100%;
             margin-right: 0;
+            margin-bottom: 13px;
             margin-left: 0;
+            font-size: 38px;
+            text-align: left;
         }
     }
 
     .hero__description {
+        margin-bottom: 36px;
         font-size: 18px;
         font-style: normal;
         font-weight: 500;
         line-height: 136%;
         color: var(--color-white);
-        margin-bottom: 36px;
         text-align: left;
 
         @include bp.mq(mobile-xl) {
+            margin-bottom: 21px;
             font-size: 16px;
             text-align: left;
-            margin-bottom: 21px;
         }
     }
 
     .hero__actions {
         display: flex;
         gap: 10px;
-        margin-bottom: 75px;
         align-items: center;
+        margin-bottom: 75px;
 
         @include bp.mq(mobile-xl) {
             flex-direction: column;
@@ -248,13 +248,14 @@
 
         .hero__link {
             @include mix.button-gradient;
+
+            color: var(--color-18);
             background: transparent;
             backdrop-filter: blur(2px);
-            color: var(--color-18);
 
             &:hover {
-                transform: none;
                 text-decoration: none;
+                transform: none;
             }
         }
     }

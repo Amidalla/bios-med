@@ -34,12 +34,12 @@
         h2 {
             padding-right: 0;
             padding-left: 0;
-            text-align: left;
             margin-bottom: 30px;
+            text-align: left;
 
             @include bp.mq(mobile-xl) {
-                text-align: center;
                 margin-bottom: 20px;
+                text-align: center;
             }
 
             &::after {

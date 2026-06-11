@@ -1,0 +1,98 @@
+{% from "components/general/border-wrapper/border-wrapper.njk" import borderWrapper %}
+{% from "components/general/surgeon-card/surgeon-card.njk" import surgeonCard %}
+
+<section class="surgeons section">
+    {% call borderWrapper('Наши хирурги', 'h2', 'section-title', false) %}
+        <div class="container">
+            <div class="surgeons__slider">
+                <div class="swiper surgeons-slider">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            {{ surgeonCard(
+                                image="/assets/images/content/surgeon1.jpg",
+                                imageMobile="/assets/images/content/surgeon1-mobile.png",
+                                name="Ворошкевич Андрей Альбертович",
+                                stats={
+                                    years: "15+",
+                                    operations: "1000+",
+                                    rating: "4,9",
+                                    satisfied: "98%"
+                                },
+                                description=[
+                                    "Доктор с опытом работы 15 лет. Специализируется на ринопластике и септопластике. Реконструктивной повторной ринопластике",
+                                    "Доктор оперирует закрытым методом"
+                                ]
+                            ) }}
+                        </div>
+                        <div class="swiper-slide">
+                            {{ surgeonCard(
+                                image="/assets/images/content/surgeon2.jpg",
+                                imageMobile="/assets/images/content/surgeon1-mobile.png",
+                                name="Тменова Марьяна Владимировна",
+                                stats={
+                                    years: "20+",
+                                    operations: "1500+",
+                                    rating: "5,0",
+                                    satisfied: "99%"
+                                },
+                                description=[
+                                    "Доктор с опытом работы 20 лет. Специализируется на эстетической и реконструктивной хирургии лица.",
+                                    "Применяет современные малоинвазивные техники"
+                                ]
+                            ) }}
+                        </div>
+                        <div class="swiper-slide">
+                            {{ surgeonCard(
+                                image="/assets/images/content/surgeon1.jpg",
+                                imageMobile="/assets/images/content/surgeon1-mobile.png",
+                                name="Бозоров Хуршид Хамзаевич",
+                                stats={
+                                    years: "10+",
+                                    operations: "800+",
+                                    rating: "4,8",
+                                    satisfied: "97%"
+                                },
+                                description=[
+                                    "Доктор с опытом работы 10 лет. Специализируется на ринопластике и отопластике.",
+                                    "Выполняет операции как открытым, так и закрытым методом"
+                                ]
+                            ) }}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="surgeons-slider__nav">
+                    <div class="surgeons-slider__button-prev">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M14 6L8.34315 11.6569L14 17.3137" stroke="#BE9158" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="surgeons-slider__button-next">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 6L15.6569 11.6569L10 17.3137" stroke="#BE9158" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <div class="surgeons__footer">
+                <div class="border-container">
+                    <div class="surgeons__footer-grid">
+                        <div class="surgeons__footer-item">
+                            <h4 class="surgeons__footer-title">Эксперт по септопластике</h4>
+                            <p class="surgeons__footer-text">Наши врачи - эксперты, специализирующиеся на всех методиках увеличения и коррекции формы носа, включая открытую и закрытую ринопластику</p>
+                        </div>
+                        <div class="surgeons__footer-item">
+                            <h4 class="surgeons__footer-title">Индивидуальный подход</h4>
+                            <p class="surgeons__footer-text">Разработка уникального плана операции с учетом анатомии, пожелания и образа жизни каждого пациента для достижения естественного и гармоничного результата</p>
+                        </div>
+                        <div class="surgeons__footer-item">
+                            <h4 class="surgeons__footer-title">Безопасность и результат</h4>
+                            <p class="surgeons__footer-text">Использование только сертифицированных материалов и передовых технологий для обеспечения максимальной безопасности и долгосрочного эстетического эффекта</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endcall %}
+</section>

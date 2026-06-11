@@ -1,0 +1,61 @@
+{% from "components/general/pricing-card/pricing-card.njk" import pricingCard %}
+
+<section class="pricing section">
+    <div class="container">
+        <div class="pricing__header">
+            {% set title = {
+                text: "<span>Прозрачное ценообразование</span>",
+                tag: "h2",
+                class: "section-title"
+            } %}
+            {% include "components/general/title/title.njk" %}
+            <p class="pricing__subtitle">Процесс ринопластики проходит в несколько структурированных этапов для достижения наилучшего результата</p>
+        </div>
+
+        <div class="pricing__grid">
+            {% set cards = [
+                {
+                    title: "Эстетическая коррекция",
+                    price: "от <span>250 000 ₽</span>",
+                    items: [
+                        "Консультация",
+                        "Операция",
+                        "Наркоз",
+                        "Стационар",
+                        "Послеоперационные перевязки и осмотры"
+                    ]
+                },
+                {
+                    title: "Риносептопластика",
+                    price: "от <span>350 000 ₽</span>",
+                    items: [
+                        "Консультация",
+                        "Операция",
+                        "Наркоз",
+                        "Стационар",
+                        "Послеоперационные перевязки и осмотры"
+                    ]
+                },
+                {
+                    title: "Реконструктивная ринопластика",
+                    price: "от <span>450 000 ₽</span>",
+                    items: [
+                        "Консультация",
+                        "Операция",
+                        "Наркоз",
+                        "Стационар",
+                        "Послеоперационные перевязки и осмотры"
+                    ]
+                }
+            ] %}
+
+            {% for card in cards %}
+                {{ pricingCard(
+                    title=card.title,
+                    price=card.price,
+                    items=card.items
+                ) }}
+            {% endfor %}
+        </div>
+    </div>
+</section>

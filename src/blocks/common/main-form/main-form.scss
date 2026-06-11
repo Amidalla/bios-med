@@ -36,15 +36,15 @@
         }
 
         .section-title {
+            position: relative;
             max-width: 611px;
             padding-right: 0;
             padding-left: 0;
             color: var(--color-white);
             background: none;
-            -webkit-text-fill-color: var(--color-white);
-            background-clip: unset;
             -webkit-background-clip: unset;
-            position: relative;
+            background-clip: unset;
+            -webkit-text-fill-color: var(--color-white);
 
             @include bp.mq(tablet-xl) {
                 text-align: left;
