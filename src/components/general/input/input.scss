@@ -8,7 +8,7 @@
     --input-font-size-sm: 16px;
     --input-font-size-lg: 18px;
     --input-padding-sm: 34px;
-    --input-padding-md: 68px;
+    --input-padding-md: 65px;
 
     @include bp.mq(laptop) {
         --input-height: 52px;
@@ -263,7 +263,7 @@
     }
 
     &.flatpickr-calendar--in-fancybox {
-        z-index: 30;
         left: auto !important;
+        z-index: 30;
     }
 }

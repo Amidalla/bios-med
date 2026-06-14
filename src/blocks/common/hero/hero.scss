@@ -285,3 +285,65 @@
         }
     }
 }
+
+
+.buttock-enlargement-hero {
+    .hero__bg {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        background: url("../assets/images/content/enlargement-bg.png") no-repeat center;
+        background-size: cover;
+
+        @include bp.mq(laptop-m) {
+            background: url("../assets/images/content/enlargement-bg-laptop.png") no-repeat center;
+            background-size: cover;
+        }
+
+        @include bp.mq(tablet-xl) {
+            background: url("../assets/images/content/enlargement-bg-tablet.png") no-repeat center;
+            background-size: cover;
+        }
+
+        @include bp.mq(mobile-xl) {
+            background: url("../assets/images/content/enlargement-bg-mobile.png") no-repeat center;
+            background-size: cover;
+        }
+    }
+}
+
+.about-hero {
+    .hero__content {
+        max-width: 1103px;
+    }
+
+   .hero__title {
+       font-size: 80px;
+       font-style: normal;
+       font-weight: 400;
+       line-height: 102%;
+   }
+
+    .hero__bg {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        background: url("../assets/images/content/about-bg.png") no-repeat center;
+        background-size: cover;
+
+        @include bp.mq(laptop-m) {
+            background: url("../assets/images/content/enlargement-bg-laptop.png") no-repeat center;
+            background-size: cover;
+        }
+
+        @include bp.mq(tablet-xl) {
+            background: url("../assets/images/content/enlargement-bg-tablet.png") no-repeat center;
+            background-size: cover;
+        }
+
+        @include bp.mq(mobile-xl) {
+            background: url("../assets/images/content/enlargement-bg-mobile.png") no-repeat center;
+            background-size: cover;
+        }
+    }
+}

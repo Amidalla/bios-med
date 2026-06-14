@@ -124,6 +124,10 @@
     }
 
     &__buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+
         .border-block {
             display: inline-flex;
             align-items: center;
@@ -150,6 +154,10 @@
                 border-radius: 49px;
                 backdrop-filter: blur(2px);
 
+                @include bp.mq(laptop-l) {
+                    padding: 10px 38px;
+                }
+
                 @include bp.mq(mobile-xl) {
                     width: 100%;
                     padding: 10px 38px;
@@ -173,5 +181,9 @@
             background: transparent;
             border: none;
         }
+    }
+
+    .section-label {
+        padding: 8px 15px;
     }
 }

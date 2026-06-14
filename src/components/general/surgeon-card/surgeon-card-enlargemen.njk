@@ -1,0 +1,34 @@
+{# components/general/surgeon-card/surgeon-card-enlargemen.njk #}
+
+{% macro surgeonCardEnlargemen(image, imageMobile, name, stats, description, linkText = "Подробнее о враче", linkUrl = "#") %}
+<div class="surgeon-card-enlargemen">
+    <div class="surgeon-card-enlargemen__image">
+        <picture>
+            <source media="(max-width: 1309.98px)" srcset="{{ imageMobile }}">
+            <source media="(min-width: 768px)" srcset="{{ image }}">
+            <img src="{{ image }}" alt="{{ name }}" loading="lazy">
+        </picture>
+    </div>
+    <div class="surgeon-card-enlargemen__content">
+        <div class="surgeon-card-enlargemen__stats">
+            <div class="surgeon-card-enlargemen__stat">
+                <span class="surgeon-card-enlargemen__stat-value">{{ stats.years }}</span>
+                <span class="surgeon-card-enlargemen__stat-label">лет опыта</span>
+            </div>
+            <div class="surgeon-card-enlargemen__stat">
+                <span class="surgeon-card-enlargemen__stat-value">{{ stats.operations }}</span>
+                <span class="surgeon-card-enlargemen__stat-label">операций</span>
+            </div>
+        </div>
+        <h3 class="surgeon-card-enlargemen__name">{{ name }}</h3>
+        <ul class="surgeon-card-enlargemen__list">
+            {% for item in description %}
+                <li class="surgeon-card-enlargemen__list-item">{{ item }}</li>
+            {% endfor %}
+        </ul>
+        <div class="border-block">
+            <a href="{{ linkUrl }}" class="surgeon-card-enlargemen__link">{{ linkText }}</a>
+        </div>
+    </div>
+</div>
+{% endmacro %}

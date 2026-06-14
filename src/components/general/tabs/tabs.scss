@@ -9,6 +9,7 @@
         margin-bottom: 40px;
 
         @include bp.mq(mobile-xl) {
+            flex-wrap: wrap;
             gap: 5px;
         }
     }

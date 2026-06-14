@@ -9,6 +9,41 @@
         padding-bottom: 25px;
     }
 
+    &.pricing-enlargemen {
+        .pricing__grid {
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+
+            @include bp.mq(tablet-xl) {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 4px;
+
+                .pricing-card {
+                    &:last-child {
+                        grid-column: auto;
+                    }
+                }
+            }
+        }
+
+        .pricing-card__title {
+            font-size: 34px;
+
+            @include bp.mq(laptop-xl) {
+                word-break: normal;
+                overflow-wrap: break-word;
+            }
+
+            @include bp.mq(tablet-xl) {
+                font-size: 24px;
+            }
+
+            @include bp.mq(mobile-xl) {
+                font-size: 20px;
+            }
+        }
+
+    }
+
     .section-title {
         span {
             &::after {
@@ -24,8 +59,11 @@
             }
 
             @include bp.mq(mobile-xl) {
+                display: inline-block;
+                max-width: 100%;
                 word-break: normal;
                 overflow-wrap: break-word;
+                white-space: normal;
             }
         }
     }

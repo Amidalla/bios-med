@@ -53,6 +53,7 @@
 @use "../components/general/border-card/border-card";
 @use "../components/general/pricing-card/pricing-card";
 @use "../components/general/surgeon-card/surgeon-card";
+@use "../components/general/surgeon-card/surgeon-card-enlargemen";
 @use "../components/general/border-wrapper/border-wrapper";
 
 @use "../components/general/breadcrumbs/breadcrumbs";
@@ -110,6 +111,10 @@
 @use "../components/common/popup-who-suitable/popup-who-suitable";
 @use "../components/common/popup-reconstructive-rhinoplasty/popup-reconstructive-rhinoplasty";
 @use "../components/common/popup-rehabilitation/popup-rehabilitation";
+@use "../components/common/popup-increase/popup-increase";
+@use "../components/common/popup-lipofilling/popup-lipofilling";
+@use "../components/common/popup-gluteoplasty/popup-gluteoplasty";
+@use "../components/common/popup-butterfly/popup-butterfly";
 
 /* @use "../components/common/popup-callback-success/popup-callback-success";
 @use "../components/common/popup-feedback/popup-feedback";
@@ -156,6 +161,9 @@
 @use "../blocks/common/surgeons/surgeons";
 @use "../blocks/common/expert-advice/expert-advice";
 @use "../blocks/common/questions/questions";
+@use "../blocks/common/enlargement-description/enlargement-description";
+@use "../blocks/common/operations-types/magnification-types";
+@use "../blocks/common/surgeons-enlargemen/surgeons-enlargemen";
 
 /* @use "../blocks/common/about-short/about-short";
 @use "../blocks/common/about-hero/about-hero";

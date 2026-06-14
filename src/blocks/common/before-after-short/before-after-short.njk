@@ -12,42 +12,65 @@
                 class: "section-title"
             } %}
             {% include "components/general/title/title.njk" %}
+
+            {# Подзаголовок - выводится только если передан showSubtitle = true #}
+            {% if showSubtitle | default(false) %}
+                <div class="before-after-short__subtitle">
+                    <p>{{ subtitleText | default("Смотрите реальные результаты наших пациентов") }}</p>
+                </div>
+            {% endif %}
         </div>
 
-        {% call tabsRender({
-            face: 'Лицо',
-            breast: 'Грудь',
-            body: 'Тело'
-        }, 'face') %}
+        {%
+            set tabsLabels = tabsLabels | default({
+                face: "Лицо",
+                breast: "Грудь",
+                body: "Тело"
+            })
+        %}
 
-            {% call panel('face', true) %}
+        {%
+            set defaultTab = defaultTab | default("face")
+        %}
+
+        {%
+            set images = images | default({
+                face: [
+                    { before: "/assets/images/content/before-face-1.jpg", after: "/assets/images/content/after-face-1.jpg" },
+                    { before: "/assets/images/content/before-face-2.jpg", after: "/assets/images/content/after-face-2.jpg" }
+                ],
+                breast: [
+                    { before: "/assets/images/content/before-face-1.jpg", after: "/assets/images/content/after-face-1.jpg" }
+                ],
+                body: [
+                    { before: "/assets/images/content/before-face-2.jpg", after: "/assets/images/content/after-face-2.jpg" }
+                ]
+            })
+        %}
+
+        {% call tabsRender(tabsLabels, defaultTab) %}
+
+            {% call panel("face", defaultTab == "face") %}
                 <div class="before-after-short__grid">
-                    {{ beforeAfterCard(
-                        '/assets/images/content/before-face-1.jpg',
-                        '/assets/images/content/after-face-1.jpg'
-                    ) }}
-                    {{ beforeAfterCard(
-                        '/assets/images/content/before-face-2.jpg',
-                        '/assets/images/content/after-face-2.jpg'
-                    ) }}
+                    {% for img in images.face %}
+                        {{ beforeAfterCard(img.before, img.after) }}
+                    {% endfor %}
                 </div>
             {% endcall %}
 
-            {% call panel('breast') %}
+            {% call panel("breast", defaultTab == "breast") %}
                 <div class="before-after-short__grid">
-                    {{ beforeAfterCard(
-                       '/assets/images/content/before-face-1.jpg',
-                        '/assets/images/content/after-face-1.jpg'
-                    ) }}
+                    {% for img in images.breast %}
+                        {{ beforeAfterCard(img.before, img.after) }}
+                    {% endfor %}
                 </div>
             {% endcall %}
 
-            {% call panel('body') %}
+            {% call panel("body", defaultTab == "body") %}
                 <div class="before-after-short__grid">
-                     {{ beforeAfterCard(
-                        '/assets/images/content/before-face-2.jpg',
-                        '/assets/images/content/after-face-2.jpg'
-                     ) }}
+                    {% for img in images.body %}
+                        {{ beforeAfterCard(img.before, img.after) }}
+                    {% endfor %}
                 </div>
             {% endcall %}
 
@@ -55,8 +78,8 @@
 
         <div class="before-after-short__footer">
             <div class="border-block">
-                <a href="/before-after" class="link-all-results">
-                    <span>Все результаты</span>
+                <a href="{{ buttonLink | default('/before-after') }}" class="link-all-results">
+                    <span>{{ buttonText | default("Все результаты") }}</span>
                 </a>
             </div>
         </div>

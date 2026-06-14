@@ -1,0 +1,70 @@
+{% from "components/general/pricing-card/pricing-card.njk" import pricingCard %}
+
+<section class="pricing section pricing-enlargemen">
+    <div class="container">
+        <div class="pricing__header">
+            {% set title = {
+                text: "<span>Стоимость увеличения ягодиц</span>",
+                tag: "h2",
+                class: "section-title"
+            } %}
+            {% include "components/general/title/title.njk" %}
+        </div>
+
+        <div class="pricing__grid">
+            {% set cards = [
+                {
+                    title: "Увеличение ягодиц филлерами",
+                    price: "<span>150 000Р</span>",
+                    items: [
+                        "Консультация",
+                        "Анестезия",
+                        "Филлеры",
+                        "Осмотры после процедуры"
+                    ]
+                },
+                {
+                    title: "Липомоделирование +липофилинг ягодиц",
+                    price: "<span>350 000 ₽</span>",
+                    items: [
+                        "Консультация",
+                        "Операция",
+                        "Наркоз",
+                        "Стационар",
+                        "Послеоперационные перевязки и осмотры"
+                    ]
+                },
+                {
+                    title: "Глютеопластика",
+                    price: "от <span>300 000 ₽</span>",
+                    items: [
+                        "Консультация",
+                        "Операция",
+                        "Наркоз",
+                        "Стационар",
+                        "Послеоперационные перевязки и осмотры"
+                    ]
+                },
+                {
+                                    title: "Пластика ягодиц методом baterfly",
+                                    price: "<span>250 000Р</span>",
+                                    items: [
+                                        "Консультация",
+                                        "Операция",
+                                        "Наркоз",
+                                        "Стационар",
+                                        "Послеоперационные перевязки и осмотры"
+                                    ]
+                                }
+            ] %}
+
+            {% for card in cards %}
+                {{ pricingCard(
+                    title=card.title,
+                    price=card.price,
+                    items=card.items
+                ) }}
+            {% endfor %}
+        </div>
+    </div>
+</section>

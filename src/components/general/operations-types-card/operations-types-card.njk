@@ -1,10 +1,21 @@
-{% macro operationsTypesCard(icon, title, textItems, buttons = [], showReadMore = false) %}
+{% macro operationsTypesCard(icon, title, textItems, buttons = [], showReadMore = false, labels = [], footerLinks = [], isImage = false) %}
 <div class="operations-types-card">
     <div class="operations-types-card__double-border">
         <div class="operations-types-card__icon-wrapper">
-            {{ icon | safe }}
+            {% if isImage %}
+                <img class="lazy" data-src="{{ icon }}" alt="{{ title }}" loading="lazy">
+            {% else %}
+                {{ icon | safe }}
+            {% endif %}
         </div>
         <div class="operations-types-card__content">
+            {% if labels.length %}
+                <div class="operations-types-card__labels">
+                    {% for label in labels %}
+                        <div class="section-label">{{ label }}</div>
+                    {% endfor %}
+                </div>
+            {% endif %}
             <h3 class="operations-types-card__title">{{ title }}</h3>
             <div class="operations-types-card__text-wrapper">
                 <div class="operations-types-card__text">
@@ -25,6 +36,15 @@
                 {% endif %}
             </div>
             <div class="operations-types-card__buttons">
+                {% if footerLinks.length %}
+                    {% for link in footerLinks %}
+                        {% if link.show %}
+                            <div class="border-block">
+                                <a href="{{ link.url }}" class="operations-types-card__link"><span>{{ link.text }}</span></a>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
                 {% for button in buttons %}
                     {% if button.show %}
                         <div class="border-block">

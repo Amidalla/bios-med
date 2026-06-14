@@ -304,7 +304,7 @@
         color: var(--color-brown-dark);
     }
 
-    p {
+    p, div {
         margin: 0;
         font-size: 18px;
         font-style: normal;
@@ -332,6 +332,7 @@
 
     ul {
         padding-left: 0;
+        margin: 0;
         list-style: none;
 
         li {

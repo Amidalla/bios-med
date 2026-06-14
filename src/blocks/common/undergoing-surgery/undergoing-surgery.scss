@@ -2,8 +2,94 @@
 @use "core/mixins" as mix;
 
 .undergoing-surgery {
-    padding-top: 115px;
+    padding-top: 100px;
     background: var(--color-8);
+
+    @include bp.mq(mobile-xl) {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    &.undergoing-surgery-sub {
+        .undergoing-surgery__grid {
+            grid-template-columns: repeat(5, 1fr);
+            gap: 24px;
+
+            @include bp.mq(laptop-l) {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            @include bp.mq(tablet-xl) {
+                flex-direction: row;
+                gap: 12px;
+            }
+        }
+
+        .information-card {
+            position: relative;
+            background: var(--fill-place, linear-gradient(180deg, #F7F8F2 0%, #F6EFE5 100%));
+            border: none;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px 0 rgb(132 79 36 / 25%);
+
+            @include bp.mq(laptop-l) {
+                width: 30%;
+            }
+
+            @include bp.mq(tablet-xl) {
+                width: calc(50% - 12px);
+            }
+
+            &:not(:last-child) {
+                &::after {
+                    position: absolute;
+                    top: 50%;
+                    right: -23px;
+                    width: 20px;
+                    height: 21px;
+                    content: "";
+                    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='21' height='22' viewBox='0 0 21 22' fill='none'%3E%3Cpath d='M0 11.1321H20M13.7662 0.375977L20 11.1321L13.7662 21.376' stroke='%23967252' stroke-width='1.5'/%3E%3C/svg%3E");
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: contain;
+                    transform: translateY(-50%);
+
+                    @include bp.mq(mobile-xl) {
+                        right: -11px;
+                        width: 10px;
+                        height: 11px;
+                    }
+                }
+            }
+
+            &__title {
+                font-size: 26px;
+
+                @include bp.mq(mobile-xl) {
+                    font-size: 18px;
+                }
+            }
+
+            &__icon {
+                width: 71px;
+                height: 71px;
+                margin: 0 auto 17px;
+
+                @include bp.mq(mobile-xl) {
+                    width: 34.45px;
+                    height: 34.45px;
+                }
+            }
+
+            &__text {
+                @include bp.mq(mobile-xl) {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
 
     h2 {
         white-space: nowrap;
@@ -21,7 +107,7 @@
             left: 0;
             margin-right: -20px;
             margin-left: -20px;
-            border: 1px solid #be9158;
+            border: none;
         }
     }
 
@@ -32,13 +118,14 @@
             left: 0;
             margin-right: -20px;
             margin-left: -20px;
-            border: 1px solid #be9158;
+            border: none;
         }
     }
 
     &__subtitle-wrapper {
         .container {
             padding-bottom: 30px;
+
         }
     }
 
@@ -65,6 +152,7 @@
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 24px;
+        margin-top: 24px;
 
         @include bp.mq(tablet-xl) {
             display: flex;

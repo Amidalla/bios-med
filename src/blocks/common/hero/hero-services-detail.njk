@@ -2,38 +2,49 @@
 
 {# Параметры по умолчанию #}
 {% set heroTitle = hero.title | default("Ринопластика: Искусство и наука преображения") %}
-{% set heroLabel = hero.label | default("Ринопластика") %}
-{% set heroDescription = hero.description | default("Ринопластика считается одной из самых древних хирургических операций. Первые упоминания о восстановлении носа относятся к древней Индии — ещё более 2000 лет назад врачи выполняли реконструкцию носа с использованием кожных лоскутов.") %}
-{% set heroButtonText = hero.buttonText | default("узнать больше о процедуре") %}
-{% set heroButtonPopup = hero.buttonPopup | default("popup-find-more") %}
-{% set heroLinkText = hero.linkText | default("Результаты до/после") %}
-{% set heroLinkUrl = hero.linkUrl | default("#before-after-short") %}
-{% set heroShowRating = hero.showRating | default(true) %}
+{% set heroLabel = hero.label | default(null) %}
+{% set heroDescription = hero.description | default(null) %}
+{% set heroButtonText = hero.buttonText | default(null) %}
+{% set heroButtonPopup = hero.buttonPopup | default(null) %}
+{% set heroLinkText = hero.linkText | default(null) %}
+{% set heroLinkUrl = hero.linkUrl | default(null) %}
+{% set heroShowRating = hero.showRating | default(false) %}
 {% set heroClass = hero.class | default("") %}
 
 <section class="hero section {{ heroClass }}">
     <div class="container">
         <div class="hero__content">
+            {% if heroLabel %}
             <div class="section-label">{{ heroLabel }}</div>
+            {% endif %}
 
-            <h1 class="hero__title">{{ heroTitle }}</h1>
+            <h1 class="hero__title">{{ heroTitle | safe }}</h1>
 
+            {% if heroDescription %}
             <div class="hero__description">
                 {{ heroDescription }}
             </div>
+            {% endif %}
 
+            {% if heroButtonText and heroButtonPopup or heroLinkText and heroLinkUrl %}
             <div class="hero__actions">
+                {% if heroButtonText and heroButtonPopup %}
                 <div class="border-block">
                     <button class="hero__btn" data-src="{{ heroButtonPopup }}">
                         <span>{{ heroButtonText }}</span>
                     </button>
                 </div>
+                {% endif %}
+
+                {% if heroLinkText and heroLinkUrl %}
                 <div class="border-block">
                     <a href="{{ heroLinkUrl }}" class="hero__link">
                         <span>{{ heroLinkText }}</span>
                     </a>
                 </div>
+                {% endif %}
             </div>
+            {% endif %}
         </div>
     </div>
 

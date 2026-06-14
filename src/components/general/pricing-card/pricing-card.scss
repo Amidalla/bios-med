@@ -106,8 +106,11 @@
             text-align: center;
 
             @include bp.mq(mobile-xl) {
+                display: inline-block;
+                max-width: 100%;
                 word-break: normal;
                 overflow-wrap: break-word;
+                white-space: normal;
             }
         }
     }

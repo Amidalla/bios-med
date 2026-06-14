@@ -1,0 +1,159 @@
+@use "core/mixins" as mix;
+@use "core/breakpoints" as bp;
+
+.surgeons-enlargemen {
+  padding-top: 100px;
+  background: var(--color-8);
+
+  @include bp.mq(mobile-xl) {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    margin-bottom: -25px;
+  }
+
+  &__footer {
+    padding-right: 11px;
+    padding-left: 11px;
+    margin-top: 20px;
+    border: 1px solid #be9158;
+    border-radius: 20px;
+
+    @include bp.mq(mobile-xl) {
+      padding: 0;
+      border: none;
+    }
+
+    .border-container {
+      padding-top: 11px;
+      padding-bottom: 11px;
+      margin-top: -11px;
+      margin-bottom: -11px;
+      border: 1px solid #be9158;
+      border-radius: 20px;
+
+      @include bp.mq(mobile-xl) {
+        padding-bottom: 0;
+        margin-right: -20px;
+        margin-bottom: 0;
+        margin-left: -20px;
+        border-radius: 20px 20px 0 0;
+      }
+
+      @include bp.mq(mobile-l) {
+        margin-right: -15px;
+        margin-left: -15px;
+      }
+    }
+  }
+
+  &__footer-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 26px 18px 54px;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%;
+    color: var(--color-white);
+    text-align: center;
+    background: var(--bg-frame, linear-gradient(89deg, #967252 15.33%, #ceb48d 97.83%));
+    border-radius: 20px;
+
+    @include bp.mq(mobile-xl) {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      padding: 25px 11px 28px;
+      font-size: 18px;
+      text-align: left;
+      border-radius: 20px 20px 0 0;
+    }
+  }
+
+  &__footer-item {
+    &:not(:last-child) {
+      padding-right: 29px;
+      margin-right: 29px;
+      border-right: 1px solid var(--color-white);
+
+      @include bp.mq(mobile-xl) {
+        padding: 0;
+        margin: 0;
+        border: none;
+      }
+    }
+  }
+
+  &__footer-title {
+    font-family: var(--font-family-secondary);
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%;
+    text-align: center;
+
+    @include bp.mq(tablet-xl) {
+      font-size: 26px;
+    }
+  }
+
+  &__footer-text {
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 136%;
+    text-align: center;
+
+    @include bp.mq(tablet-xl) {
+      font-size: 16px;
+    }
+  }
+
+  &__slider {
+    @include mix.swiper-nav-styles(
+                    "surgeons-enlargemen-slider__nav",
+                    "surgeons-enlargemen-slider__button-prev",
+                    "surgeons-enlargemen-slider__button-next"
+    );
+
+    .swiper-wrapper {
+      align-items: stretch;
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+
+    .swiper-slide {
+      display: flex;
+      flex-direction: column;
+      height: auto;
+      padding: 10px;
+      background: var(--fill-place, linear-gradient(180deg, #f7f8f2 0%, #f6efe5 100%));
+      border-radius: 20px;
+      box-shadow: 0 4px 20px 0 rgb(132 79 36 / 25%);
+    }
+  }
+
+  .border-wrapper__content {
+    .container {
+      @include bp.mq(laptop-l) {
+        padding-right: 0;
+        margin-right: 0;
+      }
+
+      @include bp.mq(mobile-l) {
+        padding: 0 var(--container-padding);
+        margin: 0 auto;
+      }
+    }
+  }
+
+  .surgeons-enlargemen-slider__nav {
+    @include bp.mq(laptop-l) {
+      padding-right: 30px;
+    }
+    @include bp.mq(mobile-l) {
+      padding-right: 0;
+    }
+
+  }
+}

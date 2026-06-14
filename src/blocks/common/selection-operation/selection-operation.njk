@@ -1,48 +1,26 @@
 {# blocks/common/selection-operation/selection-operation.njk #}
 
-<section class="selection-operation section">
+<section class="selection-operation section {{ class | default('') }}">
     <div class="container">
         <div class="selection-operation__wrapper">
             <div class="selection-operation__grid">
-                <!-- Первый блок - контент -->
                 <div class="selection-operation__content">
                     <h2 class="selection-operation__title">
-                        Онлайн подбор операции
-                        <span class="selection-operation__highlight">для иногородних пациентов</span>
+                        {{ title | default('Онлайн подбор операции') }}
+                        {% if highlightText %}
+                            <span class="selection-operation__highlight">{{ highlightText }}</span>
+                        {% endif %}
                     </h2>
                     <p class="selection-operation__text">
-                        Подберем для вас оптимальные процедуры на основе ваших индивидуальных потребностей
+                        {{ description | default('Подберем для вас оптимальные процедуры на основе ваших индивидуальных потребностей') }}
                     </p>
                     <div class="border-block">
-                        <button class="selection-operation__button" data-src="popup-consultation">
-                            Отправить заявку
+                        <button class="selection-operation__button" data-src="{{ buttonPopup | default('popup-consultation') }}">
+                            {{ buttonText | default('Отправить заявку') }}
                         </button>
-                    </div>
-                </div>
-
-                <!-- Второй блок - картинка -->
-                <div class="selection-operation__image" data-animate="fade-right">
-                    <div class="selection-operation__image-wrapper lazy-loader">
-                        <img
-                            class="lazy selection-operation__img selection-operation__img--desktop"
-                            src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='1'%20height='1'/%3E"
-                            data-src="/assets/images/content/operation-consultation.png"
-                            alt="Консультация по операции">
-                        <img
-                            class="lazy selection-operation__img selection-operation__img--tablet"
-                            src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='1'%20height='1'/%3E"
-                            data-src="/assets/images/content/operation-consultation-tb.png"
-                            alt="Консультация по операции">
-                        <img
-                            class="lazy selection-operation__img selection-operation__img--mobile"
-                            src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='1'%20height='1'/%3E"
-                            data-src="/assets/images/content/operation-consultation-mb.png"
-                            alt="Консультация по операции">
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Декоративный элемент -->
-    <div class="selection-operation__decor"></div>
 </section>

@@ -1,0 +1,83 @@
+{% from "components/general/review-card/review-card.njk" import reviewCard %}
+
+<section class="stories-short section">
+    <div class="container">
+        <div class="stories-short__header">
+            {% set title = {
+                text: "<span>истории пациентов</span>",
+                tag: "h2",
+                class: "section-title"
+            } %}
+            {% include "components/general/title/title.njk" %}
+        </div>
+
+        <div class="stories-short__slider">
+            <div class="swiper stories-slider">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        {{ reviewCard(
+                            image='/assets/images/content/stories-sub-4.jpg',
+                            badgeText='“Самый лучший доктор! Доверяйте только профессионалам!”',
+                            badgeName='Анна',
+                            reviewText='Увеличение ягодиц имплантами в комплексе с липофилингом',
+                            authorName='Шемонаева Ольга Михайловна',
+                            coAuthorName=''
+                        ) }}
+                    </div>
+                    <div class="swiper-slide">
+                        {{ reviewCard(
+                            image='/assets/images/content/stories-sub-5.jpg',
+                            badgeText='“Тот момент, когда твой хирург понимает тебя с полуслова…”',
+                            badgeName='Екатерина',
+                            reviewText='Липомоделирование с липофилингом ягодиц',
+                            authorName='Шемонаева Ольга Михайловна',
+                            coAuthorName=''
+                        ) }}
+                    </div>
+                    <div class="swiper-slide">
+                        {{ reviewCard(
+                            image='/assets/images/content/stories-sub-6.jpg',
+                            badgeText='“Всегда получаю комплименты насчет своей фигуры”',
+                            badgeName='Мария',
+                            reviewText='Липомоделирование с липофилингом ягодиц',
+                            authorName='Шемонаева Ольга Михайловна',
+                            coAuthorName=''
+                        ) }}
+                    </div>
+                    <div class="swiper-slide">
+                        {{ reviewCard(
+                            image='/assets/images/content/stories-sub-4.jpg',
+                            badgeText='Лучшая клиника в городе',
+                            badgeName='Ольга Сидорова',
+                            reviewText='Верхняя и нижняя блефаропластика',
+                            authorName='Шемонаева Ольга Михайловна',
+                            coAuthorName=''
+                        ) }}
+                    </div>
+                </div>
+            </div>
+
+            <!-- Навигация -->
+            <div class="stories-slider__nav">
+                <div class="stories-slider__button-prev">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14 6L8.34315 11.6569L14 17.3137" stroke="#BE9158" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <div class="stories-slider__button-next">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 6L15.6569 11.6569L10 17.3137" stroke="#BE9158" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <div class="stories-short__footer">
+            <div class="border-block">
+                <a href="/reviews" class="link--all-reviews">
+                    <span>Все отзывы</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>

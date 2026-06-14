@@ -28,9 +28,10 @@
         width: 354.5px;
         height: 421px;
         margin-bottom: 13px;
+        overflow: hidden;
         border-radius: 20px;
 
-        @include bp.mq(mobile-xl) {
+        @include bp.mq(tablet-xl) {
             position: relative;
             width: 174px;
             height: 165px;

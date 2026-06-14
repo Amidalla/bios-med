@@ -1,10 +1,19 @@
-{% macro surgeonCard(image, imageMobile, name, stats, description, buttonText = "Подробнее о враче") %}
+{% macro surgeonCard(image, imageMobile, name, stats, description, buttonText = "Подробнее о враче", imageTablet = null, imageDesktop = null, breakpointTablet = "1309.98px", breakpointDesktop = "1310px") %}
 <div class="surgeon-card">
     <div class="surgeon-card__image">
         <div class="surgeon-card__image-inner">
             <picture>
-                <source media="(max-width: 1309.98px)" srcset="{{ imageMobile }}">
-                <source media="(min-width: 1310px)" srcset="{{ image }}">
+                {% if imageMobile %}
+                    <source media="(max-width: {{ breakpointTablet }})" srcset="{{ imageMobile }}">
+                {% endif %}
+                {% if imageTablet %}
+                    <source media="(min-width: {{ breakpointTablet }}) and (max-width: {{ breakpointDesktop }})" srcset="{{ imageTablet }}">
+                {% endif %}
+                {% if imageDesktop %}
+                    <source media="(min-width: {{ breakpointDesktop }})" srcset="{{ imageDesktop }}">
+                {% else %}
+                    <source media="(min-width: {{ breakpointDesktop }})" srcset="{{ image }}">
+                {% endif %}
                 <img class="lazy" data-src="{{ image }}" alt="{{ name }}" loading="lazy">
             </picture>
         </div>

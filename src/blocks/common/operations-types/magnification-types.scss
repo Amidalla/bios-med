@@ -1,0 +1,93 @@
+@use "core/breakpoints" as bp;
+@use "core/mixins" as mix;
+
+.magnification-types {
+  background: url("../assets/images/content/services-bg.jpg") no-repeat center;
+  background-size: cover;
+
+  @include bp.mq(tablet-xl) {
+    padding-top: 70px;
+    padding-bottom: 44px;
+  }
+  @include bp.mq(mobile-xl) {
+    padding-top: 40px;
+    padding-bottom: 32px;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 40px;
+
+    @include bp.mq(tablet-xl) {
+      display: flex;
+      flex-direction: column;
+      margin-top: 20px;
+    }
+
+    @include bp.mq(mobile-l) {
+      margin-right: -15px;
+      margin-left: -15px;
+    }
+  }
+
+  .operations-types-card__link {
+    @include mix.button-gradient(16px 40px);
+
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: none;
+    }
+
+    @include bp.mq(mobile-xl) {
+      width: 100%;
+      padding: 10px 30px;
+    }
+  }
+
+  .operations-types-card__content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .operations-types-card__buttons {
+    margin-top: auto;
+  }
+
+  .operations-types-card__double-border {
+    @include bp.mq(mobile-xl) {
+      display: grid;
+      grid-template-columns: 50px 1fr;
+      gap: 13px;
+      padding: 12px;
+    }
+  }
+
+  .operations-types-card__text-wrapper {
+    @include bp.mq(mobile-xl) {
+      display: none;
+    }
+  }
+
+  .operations-types-card__labels {
+    @include bp.mq(mobile-xl) {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 18px;
+
+      .section-label {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .operations-types-card__btn {
+    @include bp.mq(mobile-xl) {
+      padding: 10px 30px;
+    }
+  }
+}

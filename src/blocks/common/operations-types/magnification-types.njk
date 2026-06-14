@@ -1,0 +1,79 @@
+{% from "components/general/operations-types-card/operations-types-card.njk" import operationsTypesCard %}
+
+<section class="magnification-types section">
+    <div class="container">
+        <div class="magnification-types__header">
+            <h2 class="section-title"><span>Наши услуги</span></h2>
+        </div>
+
+        <div class="magnification-types__list">
+            {% set cards = [
+                {
+                    icon: "/assets/images/content/magnification-types1.png",
+                    title: "Увеличение ягодиц филлерами",
+                    textItems: [
+                        { type: "list", items: ["Консультация ", "Анестезия", "Филлеры ", "Осмотры после процедуры"] }
+                    ],
+                    labels: ["Без операции", "Без наркоза"],
+                    buttons: [{ text: "Реабилитация", type: "primary", show: true, modal: "popup-increase" }],
+                    footerLinks: [{ text: "Подробнее об услуге", url: "#", show: true }],
+                    showReadMore: true,
+                    isImage: true
+                },
+                {
+                    icon: "/assets/images/content/magnification-types2.png",
+                    title: "Липолифтинг ягодиц",
+                    textItems: [
+                        { type: "list", items: ["Консультация", "Общая анестезия", "Стационар 1 сутки ", "Перевязки ", "Послеоперационное наблюдение"] }
+                    ],
+                    labels: ["Собственный жир", "Наркоз"],
+                    buttons: [{ text: "Реабилитация", type: "primary", show: true, modal: "popup-lipofilling" }],
+                    footerLinks: [{ text: "Подробнее об услуге", url: "#", show: true }],
+                    showReadMore: true,
+                    isImage: true
+                },
+                {
+                    icon: "/assets/images/content/magnification-types3.png",
+                    title: "Глютеопластика (имплантация)",
+                    textItems: [
+                        { type: "paragraph", content: "Устранение птоза и улучшение контуров ягодиц для подтянутого и упругого вида." },
+                        { type: "list", items: ["Коррекция возрастных изменений", "Устранение дряблости кожи", "Лифтинг-эффект", "Улучшение качества кожи"] },
+                        { type: "paragraph", content: "Рекомендуется после значительной потери веса или с возрастом" }
+                    ],
+                    labels: ["Импланты", "Наркоз"],
+                    buttons: [{ text: "Реабилитация", type: "primary", show: true, modal: "popup-gluteoplasty" }],
+                    footerLinks: [{ text: "Подробнее об услуге", url: "#", show: true }],
+                    showReadMore: true,
+                    isImage: true
+                },
+                {
+                    icon: "/assets/images/content/magnification-types4.png",
+                    title: "Подтяжка ягодиц методом Butterfly lift",
+                    textItems: [
+                        { type: "paragraph", content: "Сочетание липолифтинга и имплантации для достижения максимального результата." },
+                        { type: "list", items: ["Индивидуальный план операции", "Максимальный объем", "Естественная форма", "Долгосрочный результат"] },
+                        { type: "paragraph", content: "Оптимальное решение для сложных клинических случаев" }
+                    ],
+                    labels: ["Максимальный результат"],
+                    buttons: [{ text: "Реабилитация", type: "primary", show: true, modal: "popup-butterfly" }],
+                    footerLinks: [{ text: "Подробнее об услуге", url: "#", show: true }],
+                    showReadMore: true,
+                    isImage: true
+                }
+            ] %}
+
+            {% for card in cards %}
+                {{ operationsTypesCard(
+                    icon=card.icon,
+                    title=card.title,
+                    textItems=card.textItems,
+                    labels=card.labels,
+                    buttons=card.buttons,
+                    footerLinks=card.footerLinks,
+                    showReadMore=card.showReadMore,
+                    isImage=card.isImage
+                ) }}
+            {% endfor %}
+        </div>
+    </div>
+</section>

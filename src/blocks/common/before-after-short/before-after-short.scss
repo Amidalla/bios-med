@@ -16,6 +16,20 @@
         margin-bottom: 27.5px;
     }
 
+    &__subtitle {
+        margin: 16px auto 0;
+        font-size: 22px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 136%;
+        color: var(--color-brown-dark);
+        text-align: center;
+
+        @include bp.mq(mobile-xl) {
+            font-size: 18px;
+        }
+    }
+
     &__grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -34,7 +48,7 @@
         .border-block {
             @include mix.border-block;
 
-            max-width: 221px;
+            max-width: 236px;
             margin: 0 auto;
 
             @include bp.mq(mobile-l) {

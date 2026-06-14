@@ -1,0 +1,84 @@
+{% set meta = { title: "Увеличение ягодиц" } %}
+{% set breadcrumbs = {
+    items: [
+        { title: "Главная", url: "/" },
+        { title: "Услуги", url: "/services.html" },
+        { title: "Увеличение ягодиц" }
+    ]
+} %}
+{% set page = {
+    heading: false,
+    after_content: true,
+    breadcrumbsSeparator: "line-gradient"
+} %}
+{% extends "layouts/default.njk" %}
+
+{% block content %}
+    {# Hero с кастомными параметрами для страницы увеличение ягодиц #}
+    {% set hero = {
+        title: "Увеличение ягодиц в клинике BIOS",
+        label: "Идеальные формы без компромиссов",
+        description: "Естественные и гармоничные пропорции тела благодаря передовым методикам пластической хирургии и опыту наших ведущих специалистов",
+        buttonText: "Получить консультацию",
+        buttonPopup: "popup-entry",
+        linkText: "Результаты до/после",
+        linkUrl: "#before-after-short",
+        showRating: true,
+        class: "hero-services-detail buttock-enlargement-hero"
+    } %}
+    {% include "blocks/common/hero/hero-services-detail.njk" %}
+
+    {% include "blocks/common/enlargement-description/enlargement-description.njk" %}
+    {% include "blocks/common/operations-types/magnification-types.njk" %}
+
+    {# Переопределяем переменные для before-after-short #}
+    {% set showSubtitle = true %}
+    {% set subtitleText = "Ваше преображение - наша гордость" %}
+    {% set buttonTextBeforeAfter = "Смотреть работы" %}
+    {% set buttonLink = "/buttock-before-after" %}
+
+    {% set tabsLabels = {
+        face: "Имплантация",
+        breast: "Подтяжка",
+        body: "Липолифтинг"
+    } %}
+
+    {% set defaultTab = "face" %}
+
+    {% set images = {
+        face: [
+            { before: "/assets/images/content/enlargemen-before-1.jpg", after: "/assets/images/content/enlargemen-after-1.jpg" },
+            { before: "/assets/images/content/enlargemen-before-2.jpg", after: "/assets/images/content/enlargemen-after-2.jpg" }
+        ],
+        breast: [
+            { before: "/assets/images/content/enlargemen-before-1.jpg", after: "/assets/images/content/enlargemen-after-1.jpg" }
+        ],
+        body: [
+            { before: "/assets/images/content/enlargemen-before-2.jpg", after: "/assets/images/content/enlargemen-after-2.jpg" }
+        ]
+    } %}
+
+    {% set buttonText = buttonTextBeforeAfter %}
+    {% include "blocks/common/before-after-short/before-after-short.njk" %}
+
+    {# Переопределяем переменные для selection-operation #}
+    {% set class = "selection-operation--enlargemen" %}
+    {% set title = "Записаться на консультацию" %}
+    {% set description = "Консультация бесплатно при проведении операции в BIOS Clinic." %}
+    {% set buttonText = "Записаться" %}
+    {% set buttonPopup = "popup-entry" %}
+
+    {% include "blocks/common/selection-operation/selection-operation.njk" %}
+
+    {% include "blocks/common/surgeons-enlargemen/surgeons-enlargemen.njk" %}
+    {% include "blocks/common/pricing/pricing-enlargemen.njk" %}
+    {% include "blocks/common/undergoing-surgery/undergoing-surgery-sub.njk" %}
+     {% include "blocks/common/expert-advice/expert-advice.njk" %}
+    {% include "blocks/common/advantages/advantages-sub.njk" %}
+
+    {% include "blocks/common/questions/questions.njk" %}
+    {% include "blocks/common/main-form/main-form.njk" %}
+{% endblock %}
+
+{% block after_content %}
+{% endblock %}

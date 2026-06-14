@@ -8,10 +8,11 @@
     "div",
     "span"
 ] %}
+
 {% if title.tag in allowedTags %}
     <{{ title.tag }} class="{{ title.class }}">
         {{ title.text | safe }}
     </{{ title.tag }}>
 {% else %}
-    <div class="{{ title.class }}">{{ title.text }}</div>
+    <div class="{{ title.class }}">{{ title.text | safe }}</div>
 {% endif %}

@@ -1,0 +1,142 @@
+{% from "components/general/border-wrapper/border-wrapper.njk" import borderWrapper %}
+{% from "components/general/surgeon-card/surgeon-card-enlargemen.njk" import surgeonCardEnlargemen %}
+
+<section class="surgeons-enlargemen section">
+    {% call borderWrapper('Наши хирурги', 'h2', 'section-title', false) %}
+        <div class="container">
+            <div class="surgeons-enlargemen__slider">
+                <div class="swiper surgeons-enlargemen-slider">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            {{ surgeonCardEnlargemen(
+                                image="/assets/images/content/specialist1.jpg",
+                                imageMobile="/assets/images/content/sub-surgeon1-mobile.png",
+                                name="Ворошкевич Андрей Альбертович",
+                                stats={
+                                    years: "15+",
+                                    operations: "1000+"
+                                },
+                                description=[
+                                    "Доктор с опытом работы 15 лет",
+                                    "Специализируется на ринопластике",
+                                    "Реконструктивная повторная ринопластика",
+                                    "Оперирует закрытым методом"
+                                ],
+                                linkText="Подробнее о враче",
+                                linkUrl="/doctors/voroshkevich"
+                            ) }}
+                        </div>
+                        <div class="swiper-slide">
+                            {{ surgeonCardEnlargemen(
+                                image="/assets/images/content/specialist2.jpg",
+                                imageMobile="/assets/images/content/sub-surgeon2-mobile.png",
+                                name="Тменова Марьяна Владимировна",
+                                stats={
+                                    years: "20+",
+                                    operations: "1500+"
+                                },
+                                description=[
+                                    "Доктор с опытом работы 20 лет",
+                                    "Специализируется на эстетической хирургии лица",
+                                    "Реконструктивная хирургия",
+                                    "Применяет малоинвазивные техники"
+                                ],
+                                linkText="Подробнее о враче",
+                                linkUrl="/doctors/tmenova"
+                            ) }}
+                        </div>
+                        <div class="swiper-slide">
+                            {{ surgeonCardEnlargemen(
+                                image="/assets/images/content/specialist3.jpg",
+                                imageMobile="/assets/images/content/sub-surgeon1-mobile.png",
+                                name="Бозоров Хуршид Хамзаевич",
+                                stats={
+                                    years: "10+",
+                                    operations: "800+"
+                                },
+                                description=[
+                                    "Доктор с опытом работы 10 лет",
+                                    "Специализируется на ринопластике",
+                                    "Отопластика",
+                                    "Открытый и закрытый методы"
+                                ],
+                                linkText="Подробнее о враче",
+                                linkUrl="/doctors/bozorov"
+                            ) }}
+                        </div>
+                        <div class="swiper-slide">
+                            {{ surgeonCardEnlargemen(
+                                image="/assets/images/content/specialist4.jpg",
+                                imageMobile="/assets/images/content/sub-surgeon2-mobile.png",
+                                name="Иванова Екатерина Дмитриевна",
+                                stats={
+                                    years: "12+",
+                                    operations: "1200+"
+                                },
+                                description=[
+                                    "Доктор с опытом работы 12 лет",
+                                    "Специализируется на маммопластике",
+                                    "Подтяжка и редукция груди",
+                                    "Использует современные импланты"
+                                ],
+                                linkText="Подробнее о враче",
+                                linkUrl="/doctors/ivanova"
+                            ) }}
+                        </div>
+                        <div class="swiper-slide">
+                            {{ surgeonCardEnlargemen(
+                                image="/assets/images/content/specialist1.jpg",
+                                imageMobile="/assets/images/content/surgeon1-mobile.png",
+                                name="Петров Петр Петрович",
+                                stats={
+                                    years: "8+",
+                                    operations: "600+"
+                                },
+                                description=[
+                                    "Доктор с опытом работы 8 лет",
+                                    "Специализируется на блефаропластике",
+                                    "Пластика век",
+                                    "Малоинвазивные методы"
+                                ],
+                                linkText="Подробнее о враче",
+                                linkUrl="/doctors/petrov"
+                            ) }}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="surgeons-enlargemen-slider__nav">
+                    <div class="surgeons-enlargemen-slider__button-prev">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M14 6L8.34315 11.6569L14 17.3137" stroke="#BE9158" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="surgeons-enlargemen-slider__button-next">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 6L15.6569 11.6569L10 17.3137" stroke="#BE9158" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <div class="surgeons-enlargemen__footer">
+                <div class="border-container">
+                    <div class="surgeons-enlargemen__footer-grid">
+                        <div class="surgeons-enlargemen__footer-item">
+                            <h4 class="surgeons-enlargemen__footer-title">Эксперт по септопластике</h4>
+                            <p class="surgeons-enlargemen__footer-text">Наши врачи - эксперты, специализирующиеся на всех методиках увеличения и коррекции формы носа, включая открытую и закрытую ринопластику</p>
+                        </div>
+                        <div class="surgeons-enlargemen__footer-item">
+                            <h4 class="surgeons-enlargemen__footer-title">Индивидуальный подход</h4>
+                            <p class="surgeons-enlargemen__footer-text">Разработка уникального плана операции с учетом анатомии, пожелания и образа жизни каждого пациента для достижения естественного и гармоничного результата</p>
+                        </div>
+                        <div class="surgeons-enlargemen__footer-item">
+                            <h4 class="surgeons-enlargemen__footer-title">Безопасность и результат</h4>
+                            <p class="surgeons-enlargemen__footer-text">Использование только сертифицированных материалов и передовых технологий для обеспечения максимальной безопасности и долгосрочного эстетического эффекта</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endcall %}
+</section>

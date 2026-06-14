@@ -5,77 +5,57 @@
     position: relative;
     padding-top: unset;
     padding-bottom: unset;
-    background: linear-gradient(96deg, #967252 12.36%, #ceb48c 53.53%, #967252 91.65%);
+    background: url("../assets/images/content/selection-operation-bg.jpg") no-repeat center;
+    background-size: cover;
     backdrop-filter: blur(2px);
 
-    &::before {
-        position: absolute;
-        inset: 0 8% 28px 0;
-        z-index: -1;
-        content: "";
-        background: url("../assets/images/content/selection-operation1.png") no-repeat center;
-        background-size: 100% 100%;
+    @include bp.mq(laptop-xl) {
+        background: url("../assets/images/content/selection-operation-bg-laptop.jpg") no-repeat center;
+        background-size: cover;
+    }
+
+    @include bp.mq(tablet-m) {
+        background: url("../assets/images/content/selection-operation-bg-tablet.jpg") no-repeat center;
+        background-size: cover;
+    }
+
+    @include bp.mq(mobile-xl) {
+        padding-bottom: 50px;
+    }
+
+    @include bp.mq(mobile-m) {
+        padding-bottom: 300px;
+        background: url("../assets/images/content/selection-operation-bg-mobile.jpg") no-repeat center;
+        background-size: cover;
+    }
+
+    &.selection-operation--enlargemen {
+        background: url("../assets/images/content/selection-operation-bg2.jpg") no-repeat center;
+        background-size: cover;
 
         @include bp.mq(laptop-xl) {
-            right: 2%;
+            background: url("../assets/images/content/selection-operation-bg-laptop2.jpg") no-repeat center;
+            background-size: cover;
+        }
+
+        @include bp.mq(tablet-m) {
+            background: url("../assets/images/content/selection-operation-bg-tablet2.jpg") no-repeat center;
+            background-size: cover;
         }
 
         @include bp.mq(mobile-xl) {
-            background: url("../assets/images/content/selection-operation1-tb.png") no-repeat center;
-            background-size: 100% 100%;
+            padding-bottom: 50px;
+        }
+
+        @include bp.mq(mobile-m) {
+            padding-bottom: 300px;
+            background: url("../assets/images/content/selection-operation-bg-mobile2.jpg") no-repeat center;
+            background-size: cover;
         }
     }
 
-    &::after {
-        position: absolute;
-        inset: 0 8.5% 18px 0;
-        z-index: -1;
-        content: "";
-        background: url("../assets/images/content/selection-operation2.png") no-repeat center;
-        background-size: 100% 100%;
-
-        @include bp.mq(laptop-xl) {
-            right: 2.7%;
-        }
-
-        @include bp.mq(mobile-xl) {
-            right: 3.7%;
-            background: url("../assets/images/content/selection-operation2-tb.png") no-repeat center;
-            background-size: 100% 100%;
-        }
-        @include bp.mq(mobile-l) {
-            right: 4.7%;
-        }
-    }
-
-    &__decor {
-        position: absolute;
-        right: 9%;
-        bottom: 40px;
-        z-index: -1;
-        width: 63px;
-        height: 63px;
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='65' height='65' viewBox='0 0 65 65' fill='none'%3E%3Cpath d='M7.89431 56.697C12.4407 35.7436 40.5849 14.4026 57.9045 33.5841C75.224 55.6163 49.4612 72.8977 39.9354 58.4251C34.7396 47.4086 48.3787 42.2244 52.2756 46.9766C53.0973 47.9786 53.6013 49.0191 53.8405 50.0007M53.8405 50.0007C54.7357 53.6746 50.5437 56.913 48.1622 53.4568C46.2138 49.5687 52.591 47.1926 53.8405 50.0007ZM7.81884 56.4804C28.8194 51.9442 50.2084 23.8631 30.9837 6.58244C8.90197 -10.6982 -8.41823 15.0068 6.08688 24.5111C17.1281 29.6953 22.324 16.0868 17.5611 12.1987C16.5568 11.3788 15.5141 10.8759 14.5302 10.6373M14.5302 10.6373C10.848 9.74413 7.6024 13.9267 11.0663 16.3028C14.9632 18.2469 17.3446 11.884 14.5302 10.6373Z' stroke='%23BE9158' stroke-width='1.5'/%3E%3C/svg%3E");
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: contain;
-        transform: rotate(-95deg);
-
-        @include bp.mq(laptop-xl) {
-            right: 3.7%;
-        }
-
-        @include bp.mq(mobile-xl) {
-            right: 4.7%;
-        }
-
-        @include bp.mq(mobile-l) {
-            right: 5.7%;
-        }
-    }
 
     &__grid {
-        position: relative;
         display: grid;
         grid-template-columns: 970px 1fr;
 
@@ -88,6 +68,14 @@
         }
 
         @include bp.mq(mobile-xl) {
+            grid-template-columns: 400px 1fr;
+        }
+
+        @include bp.mq(mobile-l) {
+            grid-template-columns: 300px 1fr;
+        }
+
+        @include bp.mq(mobile-m) {
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -128,7 +116,8 @@
         }
 
         picture {
-            display: block;
+            display: flex;
+            align-items: end;
             width: 100%;
             height: 100%;
         }
@@ -191,6 +180,9 @@
         }
         @include bp.mq(mobile-xl) {
             font-size: 32px;
+        }
+
+        @include bp.mq(mobile-m) {
             text-align: center;
         }
     }
@@ -204,6 +196,8 @@
 
         @include bp.mq(mobile-xl) {
             font-size: 20px;
+        }
+        @include bp.mq(mobile-m) {
             text-align: center;
         }
     }
@@ -222,6 +216,9 @@
 
         @include bp.mq(mobile-xl) {
             font-size: 16px;
+        }
+
+        @include bp.mq(mobile-m) {
             text-align: center;
         }
     }
@@ -233,7 +230,7 @@
         border: 1px solid #c0a97f;
         border-radius: 49px;
 
-        @include bp.mq(mobile-xl) {
+        @include bp.mq(mobile-m) {
             margin: 0 auto;
         }
 
@@ -247,6 +244,7 @@
         }
 
         button {
+            width: 100%;
             padding: 24px 40px;
             font-size: 20px;
             font-style: normal;
@@ -274,3 +272,5 @@
         }
     }
 }
+
+

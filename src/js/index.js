@@ -26,6 +26,11 @@ import { popupRehabilitation } from "../components/common/popup-rehabilitation/p
 import { surgeons } from "../blocks/common/surgeons/surgeons.js";
 import { expertAdvice } from "../blocks/common/expert-advice/expert-advice.js";
 import { questions } from "../blocks/common/questions/questions.js";
+import { popupIncrease } from "../components/common/popup-increase/popup-increase.js";
+import { popupLipofilling } from "../components/common/popup-lipofilling/popup-lipofilling.js";
+import { popupGluteoplasty } from "../components/common/popup-gluteoplasty/popup-gluteoplasty.js";
+import { popupButterfly } from "../components/common/popup-butterfly/popup-butterfly.js";
+import { surgeonsEnlargemen } from "../blocks/common/surgeons-enlargemen/surgeons-enlargemen.js";
 
 const components = [
     consentNotice,
@@ -54,7 +59,12 @@ const components = [
     popupRehabilitation,
     surgeons,
     expertAdvice,
-    questions
+    questions,
+    popupIncrease,
+    popupLipofilling,
+    popupGluteoplasty,
+    popupButterfly,
+    surgeonsEnlargemen
 ];
 
 function init(context = document) {
