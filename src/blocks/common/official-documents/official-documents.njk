@@ -1,0 +1,56 @@
+{% from "components/general/service-variants-card/service-variants-card.njk" import serviceVariantsCard %}
+
+<section class="official-documents section">
+    <div class="container">
+        <div class="official-documents__header">
+            {% set title = {
+                text: "<span>официальные документы</span>",
+                tag: "h2",
+                class: "section-title"
+            } %}
+            {% include "components/general/title/title.njk" %}
+            <p class="official-documents__subtitle">
+                В этом разделе представлены официальные лицензии, сертификаты и другие правоустанавливающие документы,
+                подтверждающие право BIOS Plastic Surgery Clinic на осуществление медицинской деятельности и оказание услуг
+                в области пластической хирургии и косметологии. Мы работаем открыто и прозрачно для вашего доверия.
+            </p>
+        </div>
+
+        <!-- Слайдер на мобилке, сетка на десктопе -->
+        <div class="official-documents__slider">
+            <div class="swiper official-documents-slider">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <a href="/assets/images/content/official-documents1.jpg" data-fancybox="documents" class="official-documents__link">
+                            <img class="lazy" data-src="/assets/images/content/official-documents1.jpg" alt="Лицензия" loading="lazy">
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="/assets/images/content/official-documents2.jpg" data-fancybox="documents" class="official-documents__link">
+                            <img class="lazy" data-src="/assets/images/content/official-documents2.jpg" alt="Сертификат" loading="lazy">
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="/assets/images/content/official-documents3.jpg" data-fancybox="documents" class="official-documents__link">
+                            <img class="lazy" data-src="/assets/images/content/official-documents3.jpg" alt="Лицензия" loading="lazy">
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Навигация слайдера -->
+                <div class="official-documents-slider__nav">
+                    <div class="official-documents-slider__button-prev">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M14 6L8.34315 11.6569L14 17.3137" stroke="#BE9158" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="official-documents-slider__button-next">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 6L15.6569 11.6569L10 17.3137" stroke="#BE9158" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

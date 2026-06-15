@@ -1,0 +1,82 @@
+{% from "components/general/service-variants-card/service-variants-card.njk" import serviceVariantsCard %}
+
+<section class="about-excellence section">
+    <div class="container">
+        <div class="about-excellence__header">
+            {% set title = {
+                text: "<span>преимущества клиники биос</span>",
+                tag: "h2",
+                class: "section-title"
+            } %}
+            {% include "components/general/title/title.njk" %}
+            <p class="about-excellence__subtitle">Эстетическая коррекция и омоложение для гармоничного преображения</p>
+        </div>
+
+        <!-- Слайдер на мобилке, сетка на десктопе -->
+        <div class="about-excellence__slider">
+            <div class="swiper about-excellence-slider">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        {{ serviceVariantsCard(
+                            icon="/assets/images/content/preparing1.png",
+                            title="Команда экспертов",
+                            items=[
+                                { text: "Ведущие хирурги с международной практикой" },
+                                { text: "Регулярное повышение квалификации" },
+                                { text: "Участие в международных конференциях" },
+                                { text: "Членство в профессиональных ассоциациях" }
+                            ],
+                            showLink=true,
+                            linkText="Узнать больше",
+                            url="/doctors"
+                        ) }}
+                    </div>
+                    <div class="swiper-slide">
+                        {{ serviceVariantsCard(
+                            icon="/assets/images/content/preparing2.png",
+                            title="Современные технологии",
+                            items=[
+                                { text: "Оборудование экспертного класса" },
+                                { text: "Малоинвазивные методики" },
+                                { text: "3D-моделирование результата" },
+                                { text: "Сертифицированные импланты и материалы" }
+                            ],
+                            showLink=true,
+                            linkText="Узнать больше",
+                            url="/technology"
+                        ) }}
+                    </div>
+                    <div class="swiper-slide">
+                        {{ serviceVariantsCard(
+                            icon="/assets/images/content/preparing3.png",
+                            title="Комплексный подход",
+                            items=[
+                                { text: "От консультации до реабилитации" },
+                                { text: "Индивидуальный план лечения" },
+                                { text: "Сопровождение личным координатором" },
+                                { text: "Контроль на всех этапах" }
+                            ],
+                            showLink=true,
+                            linkText="Узнать больше",
+                            url="/services"
+                        ) }}
+                    </div>
+                </div>
+
+                <!-- Навигация слайдера -->
+                <div class="about-excellence-slider__nav">
+                    <div class="about-excellence-slider__button-prev">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M14 6L8.34315 11.6569L14 17.3137" stroke="#BE9158" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="about-excellence-slider__button-next">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 6L15.6569 11.6569L10 17.3137" stroke="#BE9158" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

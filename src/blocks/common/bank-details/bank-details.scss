@@ -1,0 +1,185 @@
+@use "core/breakpoints" as bp;
+@use "core/mixins" as mix;
+
+.bank-details {
+  background: var(--color-8);
+
+  @include bp.mq(mobile-xl) {
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+
+  &__grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__info {
+    margin-bottom: 28px;
+  }
+
+  &__block-icon {
+    flex-shrink: 0;
+
+    @include bp.mq(tablet-xl) {
+      width: 79px;
+      height: 79px;
+    }
+    @include bp.mq(mobile-xl) {
+      width: 59px;
+      height: 59px;
+    }
+
+
+    svg {
+      @include bp.mq(tablet-xl) {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  &__item-text {
+    margin: 0;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 146%;
+    color: var(--color-brown-dark);
+    text-align: center;
+
+    @include bp.mq(mobile-xl) {
+      font-size: 16px;
+    }
+
+    .bank-details__link {
+      font-size: 22px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 146%;
+      color: var(--color-brown-dark);
+      text-decoration: underline;
+
+      @include bp.mq(mobile-xl) {
+        font-size: 16px;
+      }
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  &__footer {
+    width: 100%;
+    padding-right: 11px;
+    padding-left: 11px;
+    margin-top: 20px;
+    border: 1px solid #be9158;
+    border-radius: 20px;
+
+    .border-container {
+      padding-top: 11px;
+      padding-bottom: 11px;
+      margin-top: -11px;
+      margin-bottom: -11px;
+      border: 1px solid #be9158;
+      border-radius: 20px;
+    }
+  }
+
+  &__blocks {
+    display: flex;
+    justify-content: space-between;
+    padding: 25px 50px 24px;
+    background: var(--bg-frame, linear-gradient(89deg, #967252 15.33%, #ceb48d 97.83%));
+    border-radius: 20px;
+
+    @include bp.mq(tablet-xl) {
+      padding: 39px 20px 37px;
+    }
+
+    @include bp.mq(mobile-xl) {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: flex-start;
+      padding: 22px 7.5px 26px;
+    }
+  }
+
+  &__block {
+    display: flex;
+    color: var(--color-white);
+
+    &:first-child {
+      gap: 43px;
+
+      @include bp.mq(tablet-xl) {
+        gap: 17px;
+      }
+
+      @include bp.mq(mobile-xl) {
+        gap: 8px;
+      }
+    }
+
+    &:last-child {
+      gap: 23px;
+
+      @include bp.mq(tablet-xl) {
+        gap: 17px;
+      }
+
+      @include bp.mq(mobile-xl) {
+        flex-direction: row-reverse;
+        gap: 8px;
+      }
+
+      .bank-details__block-text {
+        max-width: 232px;
+        margin-top: 20px;
+        color: var(--color-18);
+      }
+
+      .bank-details__block-content {
+        text-align: right;
+
+        @include bp.mq(mobile-xl) {
+          text-align: left;
+        }
+      }
+    }
+  }
+
+  &__block-title {
+    margin-top: 0;
+    margin-bottom: 9px;
+    font-family: var(--font-family-secondary);
+    font-size: 42px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%;
+
+    @include bp.mq(tablet-xl) {
+      font-size: 32px;
+    }
+
+    @include bp.mq(mobile-xl) {
+      font-size: 24px;
+    }
+  }
+
+  &__block-text {
+    margin: 0;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 136%;
+
+    @include bp.mq(tablet-xl) {
+      font-size: 16px;
+    }
+  }
+}

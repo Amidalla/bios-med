@@ -1,0 +1,72 @@
+{% from "components/general/border-wrapper/border-wrapper.njk" import borderWrapper %}
+
+<section class="bank-details section">
+
+    {% call borderWrapper('Реквизиты', 'h2', 'section-title', false, false) %}
+        <div class="container">
+            <div class="bank-details__grid">
+                <!-- Левый блок - реквизиты -->
+                <div class="bank-details__info">
+                    <div class="bank-details__item">
+                        <div class="bank-details__item-content">
+                            <p class="bank-details__item-text">ООО «БИОС»</p>
+                            <p class="bank-details__item-text">Юридический адрес: 125367, г.Москва, Иваньковское шоссе, д.7</p>
+                            <p class="bank-details__item-text">Место нахождения: 125367, г.Москва, Иваньковское шоссе, д.7</p>
+                        </div>
+                    </div>
+
+                    <div class="bank-details__item">
+                        <div class="bank-details__item-content">
+                            <p class="bank-details__item-text">ИНН 7731247567</p>
+                            <p class="bank-details__item-text">КПП 773301001</p>
+                            <p class="bank-details__item-text">ОГРН 1157746366920</p>
+                            <p class="bank-details__item-text">ОКПО 28919868</p>
+                        </div>
+                    </div>
+
+                    <div class="bank-details__item">
+                        <div class="bank-details__item-content">
+                            <p class="bank-details__item-text">
+                                Тел.: <a href="tel:+74957961145" class="bank-details__link">+7 (495) 796-11-45</a>
+                            </p>
+                            <p class="bank-details__item-text">
+                                E-mail: <a href="mailto:bios-med@yandex.ru" class="bank-details__link">bios-med@yandex.ru</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="bank-details__footer">
+                    <div class="border-container">
+                    <div class="bank-details__blocks">
+                        <div class="bank-details__block">
+                          <div class="bank-details__block-icon">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="112" height="112" viewBox="0 0 112 112" fill="none">
+                                                  <path d="M94.8172 18.5828L57.6516 5.91719C57.2031 5.76406 56.6016 5.6875 56 5.6875C55.3984 5.6875 54.7969 5.76406 54.3484 5.91719L17.1828 18.5828C16.275 18.8891 15.5312 19.9391 15.5312 20.9016V73.6641C15.5312 74.6266 16.1547 75.8953 16.9094 76.4969L54.6109 105.875C54.9937 106.17 55.4859 106.323 55.9891 106.323C56.4922 106.323 56.9953 106.17 57.3672 105.875L95.0687 76.4969C95.8234 75.9062 96.4469 74.6375 96.4469 73.6641V20.9016C96.4688 19.9391 95.725 18.9 94.8172 18.5828ZM88.5938 71.5641L56 96.9609L23.4062 71.5641V24.7953L56 13.6828L88.5938 24.7953V71.5641ZM44.2094 49.5797C43.8813 49.1312 43.3563 48.8578 42.7875 48.8578H36.75C36.0391 48.8578 35.6234 49.6672 36.0391 50.2469L49.8641 69.2781C50.0275 69.5019 50.2415 69.6839 50.4886 69.8094C50.7356 69.9348 51.0088 70.0002 51.2859 70.0002C51.563 70.0002 51.8362 69.9348 52.0833 69.8094C52.3304 69.6839 52.5443 69.5019 52.7078 69.2781L75.9609 37.2641C76.3766 36.6844 75.9609 35.875 75.25 35.875H69.2125C68.6547 35.875 68.1187 36.1484 67.7906 36.5969L51.2859 59.325L44.2094 49.5797Z" fill="#C0A97F"/>
+                                                </svg>
+                            </div>
+                            <div class="bank-details__block-content">
+                                <p class="bank-details__block-title">Лицензии клиники</p>
+                                <p class="bank-details__block-text">Все документы актуальны и соответствуют законодательству РФ</p>
+                            </div>
+                        </div>
+
+                        <div class="bank-details__block">
+                            <div class="bank-details__block-content">
+                                <p class="bank-details__block-text">Гарантия безопасности
+                                                                    и качества!</p>
+                            </div>
+                            <div class="bank-details__block-icon">
+                               <svg xmlns="http://www.w3.org/2000/svg" width="71" height="103" viewBox="0 0 71 103" fill="none">
+                                 <path d="M42.2473 94.1513C45.4197 94.1513 51.7645 92.2431 51.7645 84.6101C51.7645 76.9771 43.8335 75.864 39.868 76.2616H15.6783C12.3737 76.5266 5.76455 74.9894 5.76455 66.7203C5.76455 58.4513 13.6956 57.4441 17.6611 57.9742H47.0059C54.5404 56.6491 69.6094 49.3077 69.6094 30.5433C69.6094 11.7789 52.9542 3.11203 42.2473 3.90736M42.2473 3.90736C41.4542 -3.24879 20.5956 1.76059 22.8163 10.6657C25.5921 18.2192 46.6094 9.47306 42.2473 3.90736ZM29.1611 47.6167C29.553 47.6308 29.9495 47.638 30.3508 47.638C50.0197 47.638 57.0519 30.4108 58.1094 21.7972H0.609375C2.29271 30.2351 10.3437 46.9387 29.1611 47.6167ZM29.1611 47.6167V92.5612M29.1611 92.5612C33.9197 92.561 39.2335 95.5031 39.868 102.5C33.5232 102.5 25.5921 102.5 17.6611 102.5C17.9255 99.1871 20.5956 92.5612 29.1611 92.5612Z" stroke="#F7E0AA"/>
+                               </svg>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endcall %}
+</section>

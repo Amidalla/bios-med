@@ -29,6 +29,31 @@
         background-size: cover;
     }
 
+    &.selection-operation--about {
+        background: url("../assets/images/content/selection-operation--about-bg.jpg") no-repeat center;
+        background-size: cover;
+
+        @include bp.mq(laptop-xl) {
+            background: url("../assets/images/content/selection-operation--about-bg-laptop.jpg") no-repeat center;
+            background-size: cover;
+        }
+
+        @include bp.mq(tablet-m) {
+            background: url("../assets/images/content/selection-operation--about-bg-tablet.jpg") no-repeat center;
+            background-size: cover;
+        }
+
+        @include bp.mq(mobile-xl) {
+            padding-bottom: 50px;
+        }
+
+        @include bp.mq(mobile-m) {
+            padding-bottom: 300px;
+            background: url("../assets/images/content/selection-operation--about-bg-mobile.jpg") no-repeat center;
+            background-size: cover;
+        }
+    }
+
     &.selection-operation--enlargemen {
         background: url("../assets/images/content/selection-operation-bg2.jpg") no-repeat center;
         background-size: cover;

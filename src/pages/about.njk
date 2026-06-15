@@ -19,57 +19,30 @@
         class: "hero-services-detail about-hero"
     } %}
     {% include "blocks/common/hero/hero-services-detail.njk" %}
-
-    {# Блоки, которые не нужны на странице О клинике - закомментированы #}
-    {# {% include "blocks/common/enlargement-description/enlargement-description.njk" %} #}
-    {# {% include "blocks/common/operations-types/magnification-types.njk" %} #}
-
-    {# Переопределяем переменные для before-after-short #}
-    {% set showSubtitle = true %}
-    {% set subtitleText = "Ваше преображение - наша гордость" %}
-    {% set buttonTextBeforeAfter = "Смотреть работы" %}
-    {% set buttonLink = "/buttock-before-after" %}
-
-    {% set tabsLabels = {
-        face: "Имплантация",
-        breast: "Подтяжка",
-        body: "Липолифтинг"
-    } %}
-
-    {% set defaultTab = "face" %}
-
-    {% set images = {
-        face: [
-            { before: "/assets/images/content/enlargemen-before-1.jpg", after: "/assets/images/content/enlargemen-after-1.jpg" },
-            { before: "/assets/images/content/enlargemen-before-2.jpg", after: "/assets/images/content/enlargemen-after-2.jpg" }
-        ],
-        breast: [
-            { before: "/assets/images/content/enlargemen-before-1.jpg", after: "/assets/images/content/enlargemen-after-1.jpg" }
-        ],
-        body: [
-            { before: "/assets/images/content/enlargemen-before-2.jpg", after: "/assets/images/content/enlargemen-after-2.jpg" }
-        ]
-    } %}
-
-    {% set buttonText = buttonTextBeforeAfter %}
-    {% include "blocks/common/before-after-short/before-after-short.njk" %}
+    {% include "blocks/common/advantages/about-advantages.njk" %}
+    {% set showButton = false %}
+    {% include "blocks/common/about-short/about-short.njk" %}
+    {% include "blocks/common/operating-activities/operating-activities.njk" %}
+    {% include "blocks/common/operational-examination/operational-examination.njk" %}
+    {% include "blocks/common/about-description/about-description.njk" %}
+    {% include "blocks/common/about-excellence/about-excellence.njk" %}
+    {% include "blocks/common/bank-details/bank-details.njk" %}
+    {% include "blocks/common/official-documents/official-documents.njk" %}
+    {% include "blocks/common/clinic-location/clinic-location.njk" %}
 
     {# Переопределяем переменные для selection-operation #}
-    {% set class = "selection-operation--enlargemen" %}
-    {% set title = "Записаться на консультацию" %}
-    {% set description = "Консультация бесплатно при проведении операции в BIOS Clinic." %}
-    {% set buttonText = "Записаться" %}
+    {% set class = "selection-operation--about" %}
+    {% set title = "онлайн подбор операции" %}
+    {% set highlightText = "для иногородних пациентов" %}
+    {% set description = "Подберем для вас оптимальные процедуры на основе ваших индивидуальных потребностей" %}
+    {% set buttonText = "Отправить заявку" %}
     {% set buttonPopup = "popup-entry" %}
 
     {% include "blocks/common/selection-operation/selection-operation.njk" %}
 
-    {% include "blocks/common/surgeons-enlargemen/surgeons-enlargemen.njk" %}
-    {% include "blocks/common/pricing/pricing-enlargemen.njk" %}
-    {% include "blocks/common/undergoing-surgery/undergoing-surgery-sub.njk" %}
-    {% include "blocks/common/expert-advice/expert-advice.njk" %}
-    {% include "blocks/common/advantages/advantages-sub.njk" %}
-
-    {% include "blocks/common/questions/questions.njk" %}
+    {% include "blocks/common/article-short/article-short.njk" %}
+    {% include "blocks/common/reviews-short/reviews-short.njk" %}
+    {% include "blocks/common/find-more/find-more.njk" %}
     {% include "blocks/common/main-form/main-form.njk" %}
 {% endblock %}
 

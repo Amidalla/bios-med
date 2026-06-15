@@ -1,0 +1,69 @@
+{% from "components/general/information-card/information-card.njk" import informationCard %}
+
+<section class="advantages section about-advantages">
+    <div class="advantages__bg"></div>
+    <div class="advantages__decor"></div>
+
+    <div class="container">
+        <div class="advantages__header">
+            {% set title = {
+                text: "<span>о клинике Биос</span>",
+                tag: "h2",
+                class: "section-title"
+            } %}
+            {% include "components/general/title/title.njk" %}
+            <p class="advantages__subtitle">Премиум клиника пластической хирургии в Москве</p>
+        </div>
+
+        <div class="advantages__list">
+            {% set items = [
+                {
+                    icon: "/assets/images/content/advantages1.png",
+                    title: "Наш опыт",
+                    text: "Команда ведущих хирургов с международной практикой"
+                },
+                {
+                    icon: "/assets/images/content/advantages2.png",
+                    title: "Новейшие технологии",
+                    text: "Использование передового оборудования и сертифицированных методик"
+                },
+                {
+                    icon: "/assets/images/content/advantages3.png",
+                    title: "Индивидуальный подход",
+                    text: "Безопасность, комфорт и персональная забота о каждом пациенте"
+                }
+            ] %}
+
+            {% for item in items %}
+                {{ informationCard(
+                    icon=item.icon,
+                    title=item.title,
+                    text=item.text,
+                    showLink=false
+                ) }}
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- Видео блок -->
+    <div class="advantages__video" data-video>
+        <div class="advantages__video-poster" data-video-poster>
+            <img class="lazy" data-src="/assets/images/content/video-poster.jpg" alt="Видео о клинике Биос" loading="lazy">
+            <button class="advantages__video-btn" data-video-play>
+                <svg width="121" height="121" viewBox="0 0 121 121" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M32.5168 90.4908C28.6009 86.7087 25.4774 82.1846 23.3287 77.1824C21.1799 72.1802 20.0489 66.8002 20.0015 61.3563C19.9542 55.9123 20.9916 50.5135 23.0531 45.4747C25.1146 40.436 28.159 35.8582 32.0086 32.0086C35.8582 28.159 40.436 25.1146 45.4747 23.0531C50.5135 20.9916 55.9123 19.9542 61.3563 20.0015C66.8002 20.0489 72.1802 21.1799 77.1824 23.3287C82.1846 25.4774 86.7087 28.6009 90.4908 32.5168C97.9593 40.2495 102.092 50.6062 101.998 61.3563C101.905 72.1063 97.5931 82.3896 89.9914 89.9914C82.3896 97.5931 72.1063 101.905 61.3563 101.998C50.6062 102.092 40.2495 97.9593 32.5168 90.4908ZM84.7098 84.7098C90.8644 78.5552 94.3221 70.2078 94.3221 61.5038C94.3221 52.7999 90.8644 44.4524 84.7098 38.2978C78.5552 32.1432 70.2078 28.6856 61.5038 28.6856C52.7999 28.6856 44.4524 32.1432 38.2978 38.2978C32.1432 44.4524 28.6856 52.7999 28.6856 61.5038C28.6856 70.2078 32.1432 78.5552 38.2978 84.7098C44.4524 90.8644 52.7999 94.3221 61.5038 94.3221C70.2078 94.3221 78.5552 90.8644 84.7098 84.7098ZM49.2038 45.1038L82.0038 61.5038L49.2038 77.9038V45.1038Z" fill="#FBE3B6"/>
+                </svg>
+            </button>
+        </div>
+        <div class="advantages__video-player" data-video-player style="display: none;">
+            <iframe
+                width="100%"
+                height="100%"
+                src="https://rutube.ru/play/embed/732e2a5bc49bb63248e641739413a410/"
+                frameborder="0"
+                allow="clipboard-write; autoplay"
+                allowfullscreen>
+            </iframe>
+        </div>
+    </div>
+</section>

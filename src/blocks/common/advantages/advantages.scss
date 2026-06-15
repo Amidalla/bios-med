@@ -73,6 +73,122 @@
         }
     }
 
+    &.about-advantages {
+        .advantages__decor {
+            margin-right: -20%;
+            margin-left: -20%;
+            filter: blur(40.9px);
+
+            @include bp.mq(tablet-xl) {
+                top: -160px;
+                filter: blur(33.9px);
+            }
+
+        }
+
+        .container {
+            @include bp.mq(tablet-xl) {
+                top: -110px;
+            }
+        }
+
+        .advantages__subtitle {
+            margin-top: 0;
+            font-size: 22px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 136%;
+            color: var(--color-white);
+            text-align: center;
+
+            @include bp.mq(tablet-xl) {
+                color: var(--color-brown);
+            }
+        }
+
+        .advantages__list {
+            grid-template-columns: repeat(3, 1fr);
+            margin-top: 20px;
+
+            @include bp.mq(mobile-xl) {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+
+        .advantages__video {
+            position: relative;
+            width: 100%;
+            height: 724px;
+            margin-top: 60px;
+
+            @include bp.mq(tablet-xl) {
+                top: -130px;
+                height: 490px;
+                margin-bottom: -200px;
+            }
+
+            @include bp.mq(mobile-xl) {
+                height: 380px;
+                margin-bottom: -130px;
+            }
+
+            &-poster {
+                position: relative;
+                height: 724px;
+                cursor: pointer;
+
+                @include bp.mq(tablet-xl) {
+                    height: 490px;
+                }
+
+                @include bp.mq(mobile-xl) {
+                    height: 380px;
+                }
+
+                img {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            &-btn {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                cursor: pointer;
+                background: transparent;
+                border: none;
+                transform: translate(-50%, -50%);
+                transition: transform 0.3s ease;
+
+                &:hover {
+                    transform: translate(-50%, -50%) scale(1.1);
+                }
+            }
+
+            &-player {
+                iframe {
+                    width: 100%;
+                    height: 724px;
+                    border: none;
+
+                    @include bp.mq(tablet-xl) {
+                        height: 490px;
+                    }
+
+                    @include bp.mq(mobile-xl) {
+                        height: 380px;
+                    }
+
+                }
+            }
+        }
+    }
+
     &__list {
         display: grid;
         grid-template-columns: repeat(4, 1fr);

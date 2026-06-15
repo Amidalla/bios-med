@@ -27,7 +27,7 @@
 
         @include bp.mq(mobile-l) {
             top: -110px;
-            filter: blur(44.9px);
+            filter: blur(21.9px);
         }
     }
 
@@ -245,6 +245,7 @@
         @include bp.mq(mobile-xl) {
             flex-direction: column;
             gap: 13px;
+            margin-top: -95px;
             margin-bottom: 10px;
         }
 

@@ -1,0 +1,80 @@
+{% from "components/general/service-variants-card/service-variants-card.njk" import serviceVariantsCard %}
+
+<section class="operational-examination section">
+    <div class="container">
+        <div class="operational-examination__header">
+            {% set title = {
+                text: "<span>Полное обследование перед операцией</span>",
+                tag: "h2",
+                class: "section-title"
+            } %}
+            {% include "components/general/title/title.njk" %}
+            <p class="operational-examination__subtitle">Перед операцией пациент проходит комплексную диагностику в клинике.</p>
+        </div>
+
+        <!-- Слайдер на мобилке, сетка на десктопе -->
+        <div class="operational-examination__slider">
+            <div class="swiper operational-examination-slider">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        {{ serviceVariantsCard(
+                            icon="/assets/images/content/operational-examination.jpg",
+                            title="Лабораторные анализы",
+                            items=[
+                                { text: "общий хирургический профиль " },
+                                { text: "кровь, моча" },
+                                { text: "биохимия" },
+                                { text: "коагулограмма" },
+                                { text: "группа крови и резус-фактор" },
+                                { text: "фенотипирование" }
+                            ],
+                            showLink=false
+                        ) }}
+                    </div>
+                    <div class="swiper-slide">
+                        {{ serviceVariantsCard(
+                            icon="/assets/images/content/operational-examination2.jpg",
+                            title="Инструментальная диагностика",
+                            items=[
+                                { text: "УЗИ (молочные железы, органы брюшной полости, УЗДГ)" },
+                                { text: "ЭКГ" },
+                                { text: "рентген" },
+                                { text: "КТ" }
+                            ],
+                            showLink=false
+                        ) }}
+                    </div>
+                    <div class="swiper-slide">
+                        {{ serviceVariantsCard(
+                            icon="/assets/images/content/operational-examination3.jpg",
+                            title="Консультация специалистов",
+                            items=[
+                                { text: "кардиолог" },
+                                { text: "офтальмолог" }
+                            ],
+                            showLink=false
+                        ) }}
+                    </div>
+                </div>
+
+                <!-- Навигация слайдера -->
+                <div class="operational-examination-slider__nav">
+                    <div class="operational-examination-slider__button-prev">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M14 6L8.34315 11.6569L14 17.3137" stroke="#BE9158" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="operational-examination-slider__button-next">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 6L15.6569 11.6569L10 17.3137" stroke="#BE9158" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="operational-examination__footer">
+            <p>Все обследования занимают 1,5–2 часа. После операций проводится контроль по ЦИТО на следующий день</p>
+        </div>
+    </div>
+</section>

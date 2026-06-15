@@ -313,8 +313,22 @@
 }
 
 .about-hero {
+    padding-top: 200px;
+
     .hero__content {
         max-width: 1103px;
+
+        @include bp.mq(laptop-xl) {
+            max-width: 969px;
+        }
+
+        @include bp.mq(tablet-xl) {
+            max-width: 729px;
+        }
+
+        @include bp.mq(mobile-xl) {
+            max-width: 330px;
+        }
     }
 
    .hero__title {
@@ -322,6 +336,18 @@
        font-style: normal;
        font-weight: 400;
        line-height: 102%;
+
+       @include bp.mq(laptop-xl) {
+           font-size: 70px;
+       }
+
+       @include bp.mq(tablet-xl) {
+           font-size: 60px;
+       }
+
+       @include bp.mq(mobile-xl) {
+           font-size: 38px;
+       }
    }
 
     .hero__bg {
@@ -332,17 +358,17 @@
         background-size: cover;
 
         @include bp.mq(laptop-m) {
-            background: url("../assets/images/content/enlargement-bg-laptop.png") no-repeat center;
+            background: url("../assets/images/content/about-bg-laptop.png") no-repeat center;
             background-size: cover;
         }
 
         @include bp.mq(tablet-xl) {
-            background: url("../assets/images/content/enlargement-bg-tablet.png") no-repeat center;
+            background: url("../assets/images/content/about-bg-tablet.png") no-repeat center;
             background-size: cover;
         }
 
         @include bp.mq(mobile-xl) {
-            background: url("../assets/images/content/enlargement-bg-mobile.png") no-repeat center;
+            background: url("../assets/images/content/about-bg-mobile.png") no-repeat center;
             background-size: cover;
         }
     }

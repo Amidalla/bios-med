@@ -1,0 +1,74 @@
+@use "core/mixins" as mix;
+@use "core/breakpoints" as bp;
+
+.operating-activities {
+  background: var(--color-8);
+
+  @include bp.mq(mobile-xl) {
+    padding-top: 15px;
+    padding-bottom: 0;
+  }
+
+
+  .border-wrapper__header {
+    .section-title {
+        padding: 0 5px;
+    }
+  }
+
+  .border-wrapper__content {
+    padding-top: 10px;
+  }
+
+  &__subtitle {
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 146%;
+    color: var(--color-brown-dark);
+    text-align: center;
+
+    @include bp.mq(mobile-xl) {
+      font-size: 18px;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 22px;
+    margin-bottom: 30px;
+
+    @include bp.mq(laptop-l) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    @include bp.mq(tablet-xl) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include bp.mq(mobile-xl) {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+  }
+
+  &__text {
+    max-width: 1526px;
+    margin: 0 auto;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 136%;
+    color: var(--color-brown);
+
+    @include bp.mq(mobile-xl) {
+      font-size: 16px;
+    }
+  }
+}

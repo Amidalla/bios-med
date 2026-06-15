@@ -10,6 +10,90 @@
     border: 1px solid #be9158;
     border-radius: 20px;
 
+    @include bp.mq(laptop-l) {
+        width: 30%;
+    }
+
+    @include bp.mq(tablet-xl) {
+        width: auto;
+    }
+
+    &.information-card-sub {
+        .information-card__icon {
+            width: 49.313px;
+            height: 49.786px;
+            margin: 0 auto 6px;
+        }
+
+        .information-card__title {
+            position: relative;
+            padding-bottom: 17px;
+            margin-bottom: 17px;
+            font-size: 28px;
+
+            @include bp.mq(mobile-xl) {
+                padding-bottom: 0;
+                margin-bottom: 10px;
+            }
+
+            &::after {
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                width: 132px;
+                height: 2px;
+                content: "";
+                background: var(--color-3);
+                transform: translateX(-50%);
+
+                @include bp.mq(mobile-xl) {
+                    display: none;
+                }
+            }
+
+            @include bp.mq(mobile-xl) {
+                font-size: 22px;
+            }
+        }
+
+        .information-card__list {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        .information-card__list-item {
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 136%;
+            color: var(--color-brown);
+            text-align: center;
+
+            span {
+                position: relative;
+                padding-left: 15px;
+
+                &::before {
+                    position: absolute;
+                    top: 11px;
+                    left: 0;
+                    width: 3px;
+                    height: 3px;
+                    color: inherit;
+                    content: "";
+                    background: var(--color-brown-dark);
+                    border-radius: 50%;
+                }
+            }
+
+            @include bp.mq(mobile-xl) {
+                font-size: 16px;
+            }
+        }
+
+    }
+
     &__inner {
         flex: 1;
         padding: 29px 30px 42px;

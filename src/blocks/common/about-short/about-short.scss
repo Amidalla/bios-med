@@ -2,6 +2,7 @@
 @use "core/mixins" as mix;
 
 .about-short {
+    position: relative;
     background: var(--color-8);
 
     @include bp.mq(tablet-xl) {
@@ -10,7 +11,7 @@
 
     @include bp.mq(mobile-xl) {
         padding-top: 32px;
-        padding-bottom: 38px;
+        padding-bottom: 25px;
     }
 
     &__grid {

@@ -1,0 +1,75 @@
+{% from "components/general/border-wrapper/border-wrapper.njk" import borderWrapper %}
+{% from "components/general/information-card/information-card-sub.njk" import informationCardSub %}
+
+<section class="operating-activities section">
+
+    {% call borderWrapper('Какие операции проводим', 'h2', 'section-title', false, '/operating-activities') %}
+        <div class="container">
+            <div class="operating-activities__header">
+                <p class="operating-activities__subtitle">Мы выполняем полный спектр пластических операций в Москве:</p>
+            </div>
+
+            <div class="operating-activities__grid">
+                {{ informationCardSub(
+                    icon="/assets/images/content/operating-activities1.png",
+                    title="Операции на лице",
+                    items=[
+                        "Индивидуальный прием",
+                        "Обсуждение пожеланий и составление плана операции",
+                        "Ответы на все ваши вопросы"
+                    ]
+                ) }}
+
+                {{ informationCardSub(
+                    icon="/assets/images/content/operating-activities1.png",
+                    title="Пластика груди",
+                    items=[
+                        "Сдача необходимых анализов и обследований",
+                        "Получение подробных рекомендаций по подготовке",
+                        "Операция в современном операционном блоке",
+                        "Контроль опытной бригады анестезиологов и хирургов"
+                    ]
+                ) }}
+
+                {{ informationCardSub(
+                    icon="/assets/images/content/operating-activities1.png",
+                    title="Пластика тела",
+                    items=[
+                        "Операция на современном операционном блоке",
+                        "Контроль опытной бригады анестезиологов и хирургов",
+                        "Максимальный комфорт и безопасность"
+                    ]
+                ) }}
+
+                {{ informationCardSub(
+                    icon="/assets/images/content/operating-activities1.png",
+                    title="Бариатрическая хирургия",
+                    items=[
+                        "Назначается расписание перевязок",
+                        "Послеоперационные осмотры",
+                        "Хирург дает подробные рекомендации",
+                        "Быстрое восстановление"
+                    ]
+                ) }}
+
+                {{ informationCardSub(
+                    icon="/assets/images/content/operating-activities1.png",
+                    title="Реконструктивная хирургия",
+                    items=[
+                        "Наблюдение окончательного результата",
+                        "Свежий и естественный образ",
+                        "Результат сохранится на долгие годы"
+                    ]
+                ) }}
+            </div>
+
+            <div class="operating-activities__footer">
+                <p class="operating-activities__text">
+                    Подбор операции проводится индивидуально на консультации с учётом анатомии и пожеланий пациента.
+                    В клинике представлен разный ценовой сегмент, что позволяет подобрать оптимальное решение.
+                    Консультации проводятся бесплатно — более 90% пациентов после консультации выбирают нашу клинику.
+                </p>
+            </div>
+        </div>
+    {% endcall %}
+</section>
