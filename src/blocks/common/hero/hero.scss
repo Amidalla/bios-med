@@ -20,6 +20,60 @@
         z-index: 1;
     }
 
+    &__subtitle {
+        margin-top: 32px;
+        margin-bottom: 18px;
+        font-family: var(--font-family-secondary);
+        font-size: 34px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 100%;
+        color: var(--color-white);
+    }
+
+    &.hero-before-after {
+        .hero__title {
+            @include bp.mq(tablet-xl) {
+                margin-bottom: 11px;
+            }
+        }
+
+        .hero__subtitle {
+            @include bp.mq(tablet-xl) {
+                margin-top: 0;
+            }
+        }
+
+        .hero__description {
+            @include bp.mq(tablet-xl) {
+                margin-bottom: 27px;
+            }
+        }
+
+        .hero__bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            background: url("../assets/images/content/hero-before-after-bg.png") no-repeat center;
+            background-size: cover;
+
+            @include bp.mq(laptop-m) {
+                background: url("../assets/images/content/hero-before-after-bg-laptop.png") no-repeat center;
+                background-size: cover;
+            }
+
+            @include bp.mq(tablet-xl) {
+                background: url("../assets/images/content/hero-before-after-bg-tablet.png") no-repeat center;
+                background-size: cover;
+            }
+
+            @include bp.mq(mobile-xl) {
+                background: url("../assets/images/content/hero-before-after-bg-mobile.png") no-repeat center;
+                background-size: cover;
+            }
+        }
+    }
+
     &.hero-services {
         min-height: 954px;
 

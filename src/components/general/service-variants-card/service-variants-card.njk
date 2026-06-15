@@ -1,8 +1,14 @@
 {# Карточка вариантов услуг #}
-{% macro serviceVariantsCard(icon, title, text="", items=[], url="#", showLink=true, linkText="Узнать больше") %}
+{% macro serviceVariantsCard(icon, title, text="", items=[], url="#", showLink=true, linkText="Узнать больше", imageMobile="") %}
 <div class="service-variants-card">
     <div class="service-variants-card__image">
-        <img class="lazy" data-src="{{ icon }}" alt="{{ title }}" loading="lazy">
+        <picture>
+            {% if imageMobile %}
+                <source media="(max-width: 759.98px)" srcset="{{ imageMobile }}">
+            {% endif %}
+            <source media="(min-width: 760px)" srcset="{{ icon }}">
+            <img class="lazy" data-src="{{ icon }}" alt="{{ title }}" loading="lazy">
+        </picture>
     </div>
     <div class="service-variants-card__content">
         <h3 class="service-variants-card__title">{{ title }}</h3>

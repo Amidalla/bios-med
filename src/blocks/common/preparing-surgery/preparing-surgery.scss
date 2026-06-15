@@ -2,7 +2,7 @@
 @use "core/breakpoints" as bp;
 
 .preparing-surgery {
-    padding-bottom: 18px;
+    padding-bottom: 38px;
     background: var(--color-8);
 
     @include bp.mq(tablet-xl) {

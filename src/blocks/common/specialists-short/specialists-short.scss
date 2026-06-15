@@ -2,7 +2,7 @@
 @use "core/breakpoints" as bp;
 
 .specialists-short {
-    padding-top: 57px;
+    padding-top: 95px;
     background: var(--color-8);
 
     @include bp.mq(mobile-xl) {

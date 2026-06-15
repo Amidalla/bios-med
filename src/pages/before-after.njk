@@ -1,0 +1,56 @@
+{% set meta = { title: "До/после" } %}
+{% set breadcrumbs = {
+    items: [
+        { title: "Главная", url: "/" },
+        { title: "До/после", url: "/before-after.html" }
+    ]
+} %}
+{% set page = {
+    heading: false,
+    after_content: true,
+    breadcrumbsSeparator: "line-gradient"
+} %}
+{% extends "layouts/default.njk" %}
+
+{% block content %}
+    {% set hero = {
+        title: "Фотоальбом операций",
+        subtitle: "Реальные результаты наших пациентов",
+        description: "<p>Каждая фотография - это история успешной трансформации. Мы гордимся качеством нашей работы и доверием, которое оказывают нам люди.</p><p>Этот раздел создан для того, чтобы вы могли оценить мастерство и профессионализм нашей команды.</p>",
+        buttonText: "Получить консультацию",
+        buttonPopup: "popup-entry",
+        class: "hero-services-detail hero-before-after"
+    } %}
+    {% include "blocks/common/hero/hero-services-detail.njk" %}
+    {% include "blocks/common/before-after-description/before-after-description.njk" %}
+    {% include "blocks/common/breast-before-after/breast-before-after.njk" %}
+    {% include "blocks/common/body-before-after/body-before-after.njk" %}
+    {% include "blocks/common/special-offer/special-offer.njk" %}
+
+    {# Переопределяем переменные для selection-operation #}
+    {% set class = "subscription" %}
+    {% set title = "Подписывайтесь на канал и узнавайте информацию первыми" %}
+    {% set description = "Также вас ждут обзоры, отзывы, чек листы, полезные материалы" %}
+    {% set buttonText = "Подписаться" %}
+    {% set buttonPopup = "" %}
+
+    {% include "blocks/common/selection-operation/selection-operation.njk" %}
+
+    {% include "blocks/common/specialists-short/specialists-short.njk" %}
+    {% include "blocks/common/preparing-surgery/preparing-surgery.njk" %}
+
+    {# Переопределяем переменные для selection-operation #}
+        {% set class = "selection-operation--enlargemen" %}
+        {% set title = "Записаться на консультацию" %}
+        {% set description = "Консультация бесплатно при проведении операции в BIOS Clinic." %}
+        {% set buttonText = "Записаться" %}
+        {% set buttonPopup = "popup-entry" %}
+
+        {% include "blocks/common/selection-operation/selection-operation.njk" %}
+
+    {% include "blocks/common/find-more/find-more.njk" %}
+    {% include "blocks/common/main-form/main-form.njk" %}
+{% endblock %}
+
+{% block after_content %}
+{% endblock %}

@@ -1,0 +1,135 @@
+{% from "components/general/service-variants-card/service-variants-card.njk" import serviceVariantsCard %}
+
+<section class="before-after-description section">
+    <div class="before-after-description__bg"></div>
+    <div class="before-after-description__decor"></div>
+
+    <div class="container">
+        <div class="before-after-description__wrapper">
+            <div class="border-container">
+                <div class="before-after-description__stats">
+                    <div class="before-after-description__stat">
+                        <div class="before-after-description__stat-number">40 000+</div>
+                        <div class="before-after-description__stat-label">успешных операций</div>
+                    </div>
+                    <div class="before-after-description__stat">
+                        <div class="before-after-description__stat-number">30+</div>
+                        <div class="before-after-description__stat-label">лет опыта</div>
+                    </div>
+                    <div class="before-after-description__stat">
+                        <div class="before-after-description__stat-number">100%</div>
+                        <div class="before-after-description__stat-label">уровень удовлетворенности</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="before-after-description__label">
+            <div class="section-label">Выберите категорию</div>
+        </div>
+
+        <div class="before-after-description__header">
+            <h2 class="section-title"><span>Лицо</span></h2>
+            <p class="before-after-description__subtitle">Ознакомьтесь с результатами наших операций</p>
+        </div>
+
+        <!-- Слайдер на мобилке, сетка на десктопе -->
+        <div class="before-after-description__slider">
+            <div class="swiper before-after-description-slider">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        {{ serviceVariantsCard(
+                            icon="/assets/images/content/before-after-1.jpg",
+                            imageMobile="/assets/images/content/before-after-1-mobile.jpg",
+                            title="Блефаропластика / пластика век ",
+                            text="30-90 минут, реабилитация 2 недели",
+                            showLink=true,
+                            linkText="Узнать подробнее",
+                            url="#"
+                        ) }}
+                    </div>
+                    <div class="swiper-slide">
+                        {{ serviceVariantsCard(
+                            icon="/assets/images/content/before-after-2.jpg",
+                            imageMobile="/assets/images/content/before-after-1-mobile.jpg",
+                            title="Эндоскопический лифтинг лобно-височный и средняя зона лица",
+                            text="45-90 минут, реабилитация 2 недели",
+                            showLink=true,
+                            linkText="Узнать подробнее",
+                            url="#"
+                        ) }}
+                    </div>
+                    <div class="swiper-slide">
+                        {{ serviceVariantsCard(
+                            icon="/assets/images/content/before-after-3.jpg",
+                            imageMobile="/assets/images/content/before-after-1-mobile.jpg",
+                            title="Фейслифтинг подтяжка лица и шеи",
+                            text="2-3 часа, реабилитация 2-3 недели",
+                            showLink=true,
+                            linkText="Узнать подробнее",
+                            url="#"
+                        ) }}
+                    </div>
+                    <div class="swiper-slide">
+                        {{ serviceVariantsCard(
+                            icon="/assets/images/content/before-after-4.jpg",
+                            imageMobile="/assets/images/content/before-after-1-mobile.jpg",
+                            title="Ринопластика, пластика носа",
+                            text="2-4 часа, реабилитация 10 дней  ",
+                            showLink=true,
+                            linkText="Узнать подробнее",
+                            url="#"
+                        ) }}
+                    </div>
+                    <div class="swiper-slide">
+                        {{ serviceVariantsCard(
+                            icon="/assets/images/content/before-after-5.jpg",
+                            imageMobile="/assets/images/content/before-after-1-mobile.jpg",
+                            title="Пластика подбородка",
+                            text="60 минут, реабилитация 7 дней",
+                            showLink=true,
+                            linkText="Узнать подробнее",
+                            url="#"
+                        ) }}
+                    </div>
+                    <div class="swiper-slide">
+                        {{ serviceVariantsCard(
+                            icon="/assets/images/content/before-after-6.jpg",
+                            imageMobile="/assets/images/content/before-after-1-mobile.jpg",
+                            title="Отопластика пластика ушей",
+                            text="1-2 часа,  реабилитация 2 недели",
+                            showLink=true,
+                            linkText="Узнать подробнее",
+                            url="#"
+                        ) }}
+                    </div>
+                    <div class="swiper-slide">
+                        {{ serviceVariantsCard(
+                            icon="/assets/images/content/before-after-7.jpg",
+                            imageMobile="/assets/images/content/before-after-1-mobile.jpg",
+                            title="Хейлопластика пластика губ",
+                            text="60-90 минут реабилитация 10 дней",
+                            showLink=true,
+                            linkText="Узнать подробнее",
+                            url="#"
+                        ) }}
+                    </div>
+                </div>
+
+                <!-- Навигация слайдера -->
+                <div class="before-after-description-slider__nav">
+                    <div class="before-after-description-slider__button-prev">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M14 6L8.34315 11.6569L14 17.3137" stroke="#BE9158" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="before-after-description-slider__button-next">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 6L15.6569 11.6569L10 17.3137" stroke="#BE9158" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

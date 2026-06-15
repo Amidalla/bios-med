@@ -5,15 +5,17 @@
         <div class="selection-operation__wrapper">
             <div class="selection-operation__grid">
                 <div class="selection-operation__content">
-                    <h2 class="selection-operation__title">
-                        {{ title | default('Онлайн подбор операции') }}
-                        {% if highlightText %}
-                            <span class="selection-operation__highlight">{{ highlightText }}</span>
-                        {% endif %}
-                    </h2>
-                    <p class="selection-operation__text">
-                        {{ description | default('Подберем для вас оптимальные процедуры на основе ваших индивидуальных потребностей') }}
-                    </p>
+                     <div>
+                        <h2 class="selection-operation__title">
+                            {{ title | default('Онлайн подбор операции') }}
+                            {% if highlightText %}
+                                <span class="selection-operation__highlight">{{ highlightText }}</span>
+                            {% endif %}
+                        </h2>
+                        <p class="selection-operation__text">
+                            {{ description | default('Подберем для вас оптимальные процедуры на основе ваших индивидуальных потребностей') }}
+                        </p>
+                    </div>
                     <div class="border-block">
                         <button class="selection-operation__button" data-src="{{ buttonPopup | default('popup-consultation') }}">
                             {{ buttonText | default('Отправить заявку') }}

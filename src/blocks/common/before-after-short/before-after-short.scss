@@ -2,11 +2,8 @@
 @use "core/mixins" as mix;
 
 .before-after-short {
+    padding-bottom: 27px;
     background: var(--color-8);
-
-    @include bp.mq(tablet-xl) {
-        padding-bottom: 37px;
-    }
 
     @include bp.mq(mobile-l) {
         padding-bottom: 33px;

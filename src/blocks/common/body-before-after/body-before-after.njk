@@ -1,0 +1,111 @@
+{% from "components/general/service-variants-card/service-variants-card.njk" import serviceVariantsCard %}
+
+<section class="body-before-after section">
+
+    <div class="container">
+
+        <div class="body-before-after__header">
+            <h2 class="section-title"><span>Тело</span></h2>
+            <p class="body-before-after__subtitle">Эстетическая коррекция и омоложение для гармоничного преображения</p>
+        </div>
+
+        <!-- Слайдер на мобилке, сетка на десктопе -->
+        <div class="body-before-after__slider">
+            <div class="swiper body-before-after-slider">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        {{ serviceVariantsCard(
+                            icon="/assets/images/content/body-before-after-1.jpg",
+                            imageMobile="/assets/images/content/body-before-after-1.jpg",
+                            title="Абдоминопластика, пластика живота",
+                            text=" 1,5 - 3 часа реабилитация 1 месяц",
+                            showLink=true,
+                            linkText="Узнать подробнее",
+                            url="#"
+                        ) }}
+                    </div>
+                    <div class="swiper-slide">
+                        {{ serviceVariantsCard(
+                            icon="/assets/images/content/body-before-after-2.jpg",
+                            imageMobile="/assets/images/content/body-before-after-2.jpg",
+                            title="Торсопластика, подтяжка ягодиц",
+                            text="3-5 часов, реабилитация 1,5 месяца",
+                            showLink=true,
+                            linkText="Узнать подробнее",
+                            url="#"
+                        ) }}
+                    </div>
+                    <div class="swiper-slide">
+                        {{ serviceVariantsCard(
+                            icon="/assets/images/content/body-before-after-3.jpg",
+                            imageMobile="/assets/images/content/body-before-after-3.jpg",
+                            title="Липомоделирование с липолифтингом ягодиц или груди. Увелицение собственным жиром",
+                            text="2-4 часа, реабилитация 1 месяц",
+                            showLink=true,
+                            linkText="Узнать подробнее",
+                            url="#"
+                        ) }}
+                    </div>
+                    <div class="swiper-slide">
+                        {{ serviceVariantsCard(
+                            icon="/assets/images/content/body-before-after-4.jpg",
+                            imageMobile="/assets/images/content/body-before-after-4.jpg",
+                            title="Увеличение ягодиц имплантами, глютеопластика",
+                            text="1,5-2  часа, реабилитация 1 месяц",
+                            showLink=true,
+                            linkText="Узнать подробнее",
+                            url="#"
+                        ) }}
+                    </div>
+                    <div class="swiper-slide">
+                        {{ serviceVariantsCard(
+                            icon="/assets/images/content/body-before-after-5.jpg",
+                            imageMobile="/assets/images/content/body-before-after-5.jpg",
+                            title="Липосакция",
+                            text="30 - 90 минут, реабилитация 1 месяц",
+                            showLink=true,
+                            linkText="Узнать подробнее",
+                            url="#"
+                        ) }}
+                    </div>
+                    <div class="swiper-slide">
+                        {{ serviceVariantsCard(
+                            icon="/assets/images/content/body-before-after-6.jpg",
+                            imageMobile="/assets/images/content/body-before-after-6.jpg",
+                            title="Уменьшение талии",
+                            text="30 - 60 минут,  реабилитация 1 месяц",
+                            showLink=true,
+                            linkText="Узнать подробнее",
+                            url="#"
+                        ) }}
+                    </div>
+                     <div class="swiper-slide">
+                                            {{ serviceVariantsCard(
+                                                icon="/assets/images/content/body-before-after-7.jpg",
+                                                imageMobile="/assets/images/content/body-before-after-7.jpg",
+                                                title="Брахиопластика, подтяжка рук и феморопластика, подтяжка бедер",
+                                                text="1 - 3 часа, реабилитация 1 месяц",
+                                                showLink=true,
+                                                linkText="Узнать подробнее",
+                                                url="#"
+                                            ) }}
+                                        </div>
+                </div>
+
+                <!-- Навигация слайдера -->
+                <div class="body-before-after-slider__nav">
+                    <div class="body-before-after-slider__button-prev">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M14 6L8.34315 11.6569L14 17.3137" stroke="#BE9158" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="body-before-after-slider__button-next">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 6L15.6569 11.6569L10 17.3137" stroke="#BE9158" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -3,6 +3,7 @@
 {# Параметры по умолчанию #}
 {% set heroTitle = hero.title | default("Ринопластика: Искусство и наука преображения") %}
 {% set heroLabel = hero.label | default(null) %}
+{% set heroSubtitle = hero.subtitle | default(null) %}
 {% set heroDescription = hero.description | default(null) %}
 {% set heroButtonText = hero.buttonText | default(null) %}
 {% set heroButtonPopup = hero.buttonPopup | default(null) %}
@@ -20,9 +21,13 @@
 
             <h1 class="hero__title">{{ heroTitle | safe }}</h1>
 
+            {% if heroSubtitle %}
+            <div class="hero__subtitle">{{ heroSubtitle }}</div>
+            {% endif %}
+
             {% if heroDescription %}
             <div class="hero__description">
-                {{ heroDescription }}
+                {{ heroDescription | safe }}
             </div>
             {% endif %}
 

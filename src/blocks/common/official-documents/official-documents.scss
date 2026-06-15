@@ -19,6 +19,15 @@
     line-height: 136%;
     color: var(--color-brown-dark);
     text-align: center;
+
+    @include bp.mq(tablet-xl) {
+      font-size: 18px;
+    }
+
+    @include bp.mq(mobile-xl) {
+      font-size: 16px;
+    }
+
   }
 
   .section-title {

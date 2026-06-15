@@ -29,6 +29,66 @@
         background-size: cover;
     }
 
+    &.subscription {
+        background: url("../assets/images/content/subscription-bg.png") no-repeat center;
+        background-size: cover;
+
+        @include bp.mq(laptop-xl) {
+            background: url("../assets/images/content/subscription-bg-laptop.jpg") no-repeat center;
+            background-size: cover;
+        }
+
+        @include bp.mq(tablet-xl) {
+            background: url("../assets/images/content/subscription-bg-tablet.jpg") no-repeat center;
+            background-size: cover;
+        }
+
+        @include bp.mq(mobile-xl) {
+            padding-bottom: 50px;
+        }
+
+        @include bp.mq(mobile-xl) {
+            padding-bottom: 0;
+            background: url("../assets/images/content/subscription-bg-mobile.jpg") no-repeat center;
+            background-size: cover;
+        }
+
+        .selection-operation__content {
+            display: grid;
+            grid-template-columns: 852px 1fr;
+            gap: 84px;
+            padding-top: 47px;
+            padding-bottom: 50px;
+
+            @include bp.mq(laptop-xl) {
+                gap: 20px;
+                padding-top: 32px;
+                padding-bottom: 33px;
+            }
+
+            @include bp.mq(tablet-xl) {
+                display: flex;
+                flex-direction: column;
+                grid-template-columns: 452px 1fr;
+                gap: 16px;
+                padding-top: 35px;
+                padding-bottom: 27px;
+            }
+
+            .border-block {
+                align-self: center;
+            }
+        }
+
+        .selection-operation__title {
+            font-size: 36px;
+
+            @include bp.mq(mobile-xl) {
+                font-size: 22px;
+            }
+        }
+    }
+
     &.selection-operation--about {
         background: url("../assets/images/content/selection-operation--about-bg.jpg") no-repeat center;
         background-size: cover;

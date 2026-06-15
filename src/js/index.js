@@ -35,6 +35,12 @@ import { advantagesVideo } from "../blocks/common/advantages/about-advantages.js
 import { operationalExaminationSlider } from "../blocks/common/operational-examination/operational-examination.js";
 import { aboutExcellenceSlider } from "../blocks/common/about-excellence/about-excellence.js";
 import { officialDocumentsSlider } from "../blocks/common/official-documents/official-documents.js";
+import {
+    beforeAfterDescriptionSlider
+} from "../blocks/common/before-after-description/before-after-description-slider.js";
+import { breastBeforeAfterSlider } from "../blocks/common/breast-before-after/breast-before-after.js";
+import { bodyBeforeAfterSlider } from "../blocks/common/body-before-after/body-before-after.js";
+import { specialOfferSlider } from "../blocks/common/special-offer/special-offer.js";
 
 const components = [
     consentNotice,
@@ -72,7 +78,11 @@ const components = [
     advantagesVideo,
     operationalExaminationSlider,
     aboutExcellenceSlider,
-    officialDocumentsSlider
+    officialDocumentsSlider,
+    beforeAfterDescriptionSlider,
+    breastBeforeAfterSlider,
+    bodyBeforeAfterSlider,
+    specialOfferSlider
 ];
 
 function init(context = document) {
