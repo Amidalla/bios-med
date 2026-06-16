@@ -31,6 +31,104 @@
         color: var(--color-white);
     }
 
+    &.hero-before-after.hero-before-after-detail {
+        @include bp.mq(tablet-xl) {
+            padding-top: 180px;
+        }
+        @include bp.mq(mobile-xl) {
+            padding-top: 120px;
+        }
+
+
+        .hero__card-ba {
+            position: absolute;
+            top: 50%;
+            right: 20px;
+            width: 637px;
+            height: 363px;
+            transform: translateY(-50%);
+
+            .card-ba {
+                padding: 12px;
+
+                &__label {
+                    @include bp.mq(tablet-xl) {
+                        top: 17px;
+                        right: 10px;
+                        font-size: 16px;
+                    }
+                }
+            }
+
+            @include bp.mq(laptop-m) {
+                width: 586px;
+                height: 334px;
+            }
+
+            @include bp.mq(tablet-xl) {
+                width: 436px;
+                height: 184px;
+            }
+
+            @include bp.mq(tablet-l) {
+                top: 70%;
+                width: 340px;
+                height: 188px;
+            }
+
+            @include bp.mq(mobile-xl) {
+                top: 130%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+
+        .hero__subtitle {
+            margin-top: 0;
+            margin-bottom: 41px;
+
+            @include bp.mq(laptop-m) {
+                max-width: 588px;
+            }
+
+            @include bp.mq(tablet-l) {
+                max-width: 485px;
+                font-size: 30px;
+            }
+
+            @include bp.mq(mobile-xl) {
+                margin-bottom: 24px;
+                font-size: 20px;
+            }
+        }
+
+        .hero__title {
+            @include bp.mq(mobile-xl) {
+                font-size: 32px;
+            }
+        }
+
+        .hero__bg {
+            background: url("../assets/images/content/hero-before-after-detail.png") no-repeat center;
+            background-size: cover;
+
+            @include bp.mq(laptop-m) {
+                background: url("../assets/images/content/hero-before-after-detail-laptop.png") no-repeat center;
+                background-size: cover;
+            }
+
+            @include bp.mq(tablet-xl) {
+                background: url("../assets/images/content/hero-before-after-detail-tablet.png") no-repeat center;
+                background-size: cover;
+            }
+
+            @include bp.mq(mobile-xl) {
+                background: url("../assets/images/content/hero-before-after-detail-mobile.png") no-repeat center;
+                background-size: cover;
+            }
+        }
+    }
+
     &.hero-before-after {
         .hero__title {
             @include bp.mq(tablet-xl) {

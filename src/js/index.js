@@ -41,6 +41,7 @@ import {
 import { breastBeforeAfterSlider } from "../blocks/common/breast-before-after/breast-before-after.js";
 import { bodyBeforeAfterSlider } from "../blocks/common/body-before-after/body-before-after.js";
 import { specialOfferSlider } from "../blocks/common/special-offer/special-offer.js";
+import { popupBeforeAfter } from "../components/common/popup-before-after/popup-before-after.js";
 
 const components = [
     consentNotice,
@@ -82,7 +83,8 @@ const components = [
     beforeAfterDescriptionSlider,
     breastBeforeAfterSlider,
     bodyBeforeAfterSlider,
-    specialOfferSlider
+    specialOfferSlider,
+    popupBeforeAfter
 ];
 
 function init(context = document) {

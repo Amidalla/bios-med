@@ -11,6 +11,10 @@
 {% set heroLinkUrl = hero.linkUrl | default(null) %}
 {% set heroShowRating = hero.showRating | default(false) %}
 {% set heroClass = hero.class | default("") %}
+{% set heroBeforeImage = hero.beforeImage | default(null) %}
+{% set heroAfterImage = hero.afterImage | default(null) %}
+{% set heroBeforeText = hero.beforeText | default("До") %}
+{% set heroAfterText = hero.afterText | default("После") %}
 
 <section class="hero section {{ heroClass }}">
     <div class="container">
@@ -51,6 +55,27 @@
             </div>
             {% endif %}
         </div>
+
+        {% if heroBeforeImage and heroAfterImage %}
+        <div class="hero__card-ba">
+            <div class="card-ba">
+                <div class="card-ba__inner">
+                    <div class="card-ba__col">
+                        <div class="card-ba__image">
+                            <img class="lazy" data-src="{{ heroBeforeImage }}" alt="{{ heroBeforeText }}">
+                            <span class="card-ba__label">{{ heroBeforeText }}</span>
+                        </div>
+                    </div>
+                    <div class="card-ba__col">
+                        <div class="card-ba__image">
+                            <img class="lazy" data-src="{{ heroAfterImage }}" alt="{{ heroAfterText }}">
+                            <span class="card-ba__label">{{ heroAfterText }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endif %}
     </div>
 
     <div class="hero__bg"></div>

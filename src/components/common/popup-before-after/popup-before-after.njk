@@ -1,0 +1,113 @@
+{% from "components/general/before-after-card/before-after-card.njk" import beforeAfterCard %}
+
+<div id="popup-before-after" class="popup-before-after" style="display: none;">
+    <div class="popup-before-after__container">
+        <h3 class="popup-before-after__title">Липолифтинг ягодиц</h3>
+
+        <!-- Основной слайдер -->
+        <div class="popup-before-after__main-slider">
+            <div class="swiper popup-main-slider">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        {{ beforeAfterCard(
+                            beforeImage="/assets/images/content/before-face-1.jpg",
+                            afterImage="/assets/images/content/after-face-1.jpg"
+                        ) }}
+                    </div>
+                    <div class="swiper-slide">
+                        {{ beforeAfterCard(
+                            beforeImage="/assets/images/content/before-face-1.jpg",
+                            afterImage="/assets/images/content/after-face-1.jpg"
+                        ) }}
+                    </div>
+                    <div class="swiper-slide">
+                        {{ beforeAfterCard(
+                            beforeImage="/assets/images/content/before-face-1.jpg",
+                            afterImage="/assets/images/content/after-face-1.jpg"
+                        ) }}
+                    </div>
+                    <div class="swiper-slide">
+                        {{ beforeAfterCard(
+                            beforeImage="/assets/images/content/before-face-1.jpg",
+                            afterImage="/assets/images/content/after-face-1.jpg"
+                        ) }}
+                    </div>
+                </div>
+
+                <!-- Навигация основного слайдера -->
+                <div class="popup-main-slider__nav">
+                    <div class="popup-main-slider__button-prev">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M14 6L8.34315 11.6569L14 17.3137" stroke="#BE9158" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="popup-main-slider__button-next">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 6L15.6569 11.6569L10 17.3137" stroke="#BE9158" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Миниатюры (слайдер) - отображаем изображение "До" -->
+        <div class="popup-before-after__thumb-slider">
+            <div class="swiper popup-thumb-slider">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="/assets/images/content/before-face-1.jpg" alt="До 1">
+
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="/assets/images/content/before-face-1.jpg" alt="До 2">
+
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="/assets/images/content/before-face-1.jpg" alt="До 3">
+
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="/assets/images/content/before-face-1.jpg" alt="До 4">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Описание -->
+        <div class="popup-before-after__description">
+            <h4 class="popup-before-after__description-title">Описание</h4>
+            <div class="popup-before-after__description-text">
+                <p>Реконструктивная ринопластика — это более сложный вид хирургического вмешательства, направленный не только на изменение формы носа, но и на восстановление его анатомической структуры и опорной функции.</p>
+                <p>В отличие от эстетической ринопластики, где хирург работает с сохранёнными тканями и корректирует их форму, при реконструкции часто приходится заново формировать каркас носа.</p>
+                <p>Это необходимо в случаях травм, выраженных деформаций или после ранее выполненных операций, когда собственные хрящевые структуры могут быть частично или полностью утрачены.</p>
+            </div>
+        </div>
+
+        <!-- Блок с изображением и хирургом -->
+        <div class="popup-before-after__info">
+            <div class="popup-before-after__image">
+                <div class="popup-before-after__image-decor">
+                    <img src="/assets/images/content/sub-surgeon1-mobile.png" alt="Хирург">
+                </div>
+                <div class="border-block">
+                    <a href="#" class="popup-before-after__image-link">Подробнее о враче</a>
+                </div>
+            </div>
+            <div class="popup-before-after__doctor">
+                <div class="section-label">Наши хирурги</div>
+                <h4 class="popup-before-after__doctor-name">Доктор<br>
+                                                            Шемонаева Ольга Михайловна</h4>
+                <p class="popup-before-after__doctor-text">Пластический хирург Биос</p>
+            </div>
+
+        </div>
+
+        <!-- Кнопка записи -->
+        <div class="border-block border-block_btn">
+            <button class="popup-before-after__btn" data-src="popup-entry">
+                <span>Записаться на консультацию</span>
+            </button>
+        </div>
+    </div>
+</div>

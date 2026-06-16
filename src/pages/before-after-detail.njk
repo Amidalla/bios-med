@@ -1,0 +1,48 @@
+{% set meta = { title: "До/после" } %}
+{% set breadcrumbs = {
+    items: [
+        { title: "Главная", url: "/" },
+        { title: "До/после", url: "/before-after.html" },
+        { title: "Блефаропластика / пластика век", url: "/before-after-detail.html" }
+    ]
+} %}
+{% set page = {
+    heading: false,
+    after_content: true,
+    breadcrumbsSeparator: "line-gradient"
+} %}
+{% extends "layouts/default.njk" %}
+
+{% block content %}
+    {% set hero = {
+        title: "Блефаропластика / пластика век",
+        subtitle: "Естесственные формы и гармоничные пропорции",
+        buttonText: "Подробнее об операции",
+        buttonPopup: "popup-entry",
+        class: "hero-services-detail hero-before-after hero-before-after-detail",
+        beforeImage: "/assets/images/content/before-face-1.jpg",
+        afterImage: "/assets/images/content/after-face-1.jpg",
+        beforeText: "До",
+        afterText: "После"
+    } %}
+    {% include "blocks/common/hero/hero-services-detail.njk" %}
+    {% include "blocks/common/before-after-description/before-after-description-sub.njk" %}
+    {% include "blocks/common/special-offer/special-offer.njk" %}
+
+     {# Переопределяем переменные для selection-operation #}
+        {% set class = "subscription" %}
+        {% set title = "Подписывайтесь на канал и узнавайте информацию первыми" %}
+        {% set description = "Также вас ждут обзоры, отзывы, чек листы, полезные материалы" %}
+        {% set buttonText = "Подписаться" %}
+        {% set buttonPopup = "" %}
+
+        {% include "blocks/common/selection-operation/selection-operation.njk" %}
+
+
+    {% include "blocks/common/stories-short/stories-short.njk" %}
+    {% include "blocks/common/find-more/find-more.njk" %}
+    {% include "blocks/common/main-form/main-form.njk" %}
+{% endblock %}
+
+{% block after_content %}
+{% endblock %}

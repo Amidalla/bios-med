@@ -1,0 +1,118 @@
+{% from "components/general/service-variants-card/service-variants-card.njk" import serviceVariantsCard %}
+{% from "components/general/before-after-card/before-after-card.njk" import beforeAfterCard %}
+
+<section class="before-after-description section before-after-description-sub">
+    <div class="before-after-description__bg"></div>
+    <div class="before-after-description__decor"></div>
+
+    <div class="container">
+        <div class="before-after-description__wrapper">
+            <div class="border-container">
+                <div class="before-after-description__stats">
+                    <div class="before-after-description__stat">
+                        <div class="before-after-description__stat-number">30-90</div>
+                        <div class="before-after-description__stat-label">минут время операции</div>
+                    </div>
+                    <div class="before-after-description__stat">
+                        <div class="before-after-description__stat-number">2</div>
+                        <div class="before-after-description__stat-label">недели реабилитация</div>
+                    </div>
+                    <div class="before-after-description__stat">
+                        <div class="before-after-description__stat-number">100%</div>
+                        <div class="before-after-description__stat-label">эффект от процедуры</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="before-after-description__header">
+            <h2 class="section-title"><span>Успешно проведенные операции</span></h2>
+        </div>
+
+        <div class="before-after-description__content">
+            <div class="before-after-description__item">
+                {{ beforeAfterCard(
+                    beforeImage="/assets/images/content/before-face-1.jpg",
+                    afterImage="/assets/images/content/after-face-1.jpg",
+                    beforeText="До",
+                    afterText="После"
+                ) }}
+                <div class="before-after-description__info">
+                    <div class="before-after-description__text">
+                        <p>Пластика верхних и нижних век  Бозоров Х.Х.</p>
+                    </div>
+                    <div class="before-after-description__btn">
+                        <div class="border-block">
+                            <button class="before-after-description__button" data-src="popup-before-after">
+                                <span>подробнее</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="before-after-description__item">
+                {{ beforeAfterCard(
+                    beforeImage="/assets/images/content/before-face-1.jpg",
+                    afterImage="/assets/images/content/after-face-1.jpg",
+                    beforeText="До",
+                    afterText="После"
+                ) }}
+                <div class="before-after-description__info">
+                    <div class="before-after-description__text">
+                        <p>Пластика верхних и нижних век  Бозоров Х.Х.</p>
+                    </div>
+                    <div class="before-after-description__btn">
+                        <div class="border-block">
+                            <button class="before-after-description__button" data-src="popup-before-after">
+                                <span>подробнее</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="before-after-description__item">
+                {{ beforeAfterCard(
+                    beforeImage="/assets/images/content/before-face-1.jpg",
+                    afterImage="/assets/images/content/after-face-1.jpg",
+                    beforeText="До",
+                    afterText="После"
+                ) }}
+                <div class="before-after-description__info">
+                    <div class="before-after-description__text">
+                        <p>Пластика верхних и нижних век  Бозоров Х.Х.</p>
+                    </div>
+                    <div class="before-after-description__btn">
+                        <div class="border-block">
+                            <button class="before-after-description__button" data-src="popup-before-after">
+                                <span>подробнее</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="before-after-description__item">
+                            {{ beforeAfterCard(
+                                beforeImage="/assets/images/content/before-face-1.jpg",
+                                afterImage="/assets/images/content/after-face-1.jpg",
+                                beforeText="До",
+                                afterText="После"
+                            ) }}
+                            <div class="before-after-description__info">
+                                <div class="before-after-description__text">
+                                    <p>Пластика верхних и нижних век  Бозоров Х.Х.</p>
+                                </div>
+                                <div class="before-after-description__btn">
+                                    <div class="border-block">
+                                        <button class="before-after-description__button" data-src="popup-before-after">
+                                            <span>подробнее</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+        </div>
+    </div>
+</section>
