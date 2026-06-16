@@ -1,0 +1,33 @@
+{# blocks/common/nav-section/nav-section.njk #}
+
+<section class="nav-section section {{ class | default('') }}">
+    <div class="container">
+        <div class="nav-section__wrapper">
+            <div class="nav-section__content">
+                <div>
+                    <h2 class="nav-section__title">
+                        {{ title | default('Ваш путь к совершенству начинается здесь') }}
+                        {% if highlightText %}
+                            <span class="nav-section__highlight">{{ highlightText }}</span>
+                        {% endif %}
+                    </h2>
+                    <p class="nav-section__text">
+                        {{ description | default('Запишитесь на консультацию к специалистам клиники «Биос». Мы подберём оптимальное решение и сопроводим вас на каждом этапе преображения — от первого визита до финального результата') }}
+                    </p>
+                </div>
+                <div class="nav-section__actions">
+                    <div class="border-block">
+                        <button class="nav-section__button" data-src="{{ buttonPopup | default('popup-entry') }}">
+                            <span>{{ buttonText | default('Записаться на прием') }}</span>
+                        </button>
+                    </div>
+                    <div class="border-block">
+                        <a href="{{ linkUrl | default('#') }}" class="nav-section__link">
+                            {{ linkText | default('Узнать больше') }}
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

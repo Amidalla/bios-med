@@ -1,0 +1,73 @@
+{% from "components/general/service-variants-card/service-variants-card.njk" import serviceVariantsCard %}
+
+<section class="payment-methods section">
+    <div class="container">
+        <div class="payment-methods__header">
+            {% set title = {
+                text: "<span>Способы оплаты</span>",
+                tag: "h2",
+                class: "section-title"
+            } %}
+            {% include "components/general/title/title.njk" %}
+            <p class="payment-methods__subtitle">Оплата наличными, кодом и картой</p>
+        </div>
+
+        <!-- Слайдер на мобилке, сетка на десктопе -->
+        <div class="payment-methods__slider">
+            <div class="swiper payment-methods-slider">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        {{ serviceVariantsCard(
+                            icon="/assets/images/content/payment-methods1.jpg",
+                            title="Оплата наличными",
+                            items=[
+                                { text: "Оплата в кассе клиники" },
+                                { text: "Выдача чека и документов" },
+                                { text: "Без комиссии" }
+                            ],
+                            showLink=false
+                        ) }}
+                    </div>
+                    <div class="swiper-slide">
+                        {{ serviceVariantsCard(
+                            icon="/assets/images/content/payment-methods2.jpg",
+                            title="Оплата кодом и картой",
+                            items=[
+                                { text: "Банковские карты Visa, Mastercard, МИР" },
+                                { text: "Оплата по QR-коду" },
+                                { text: "Безопасные онлайн-платежи" }
+                            ],
+                            showLink=false
+                        ) }}
+                    </div>
+                    <div class="swiper-slide">
+                        {{ serviceVariantsCard(
+                            icon="/assets/images/content/payment-methods3.jpg",
+                            title="Рассрочка 0%",
+                            items=[
+                                { text: "Оплата частями без переплаты" },
+                                { text: "На срок до 6 месяцев" },
+                                { text: "Без подтверждения дохода" }
+                            ],
+                            showLink=false
+                        ) }}
+                    </div>
+                </div>
+
+                <!-- Навигация слайдера -->
+                <div class="payment-methods-slider__nav">
+                    <div class="payment-methods-slider__button-prev">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M14 6L8.34315 11.6569L14 17.3137" stroke="#BE9158" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="payment-methods-slider__button-next">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 6L15.6569 11.6569L10 17.3137" stroke="#BE9158" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

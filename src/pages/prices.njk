@@ -1,0 +1,46 @@
+{% set meta = { title: "До/после" } %}
+{% set breadcrumbs = {
+    items: [
+        { title: "Главная", url: "/" },
+        { title: "Цены" }
+    ]
+} %}
+{% set page = {
+    heading: false,
+    after_content: true,
+    breadcrumbsSeparator: "line-gradient"
+} %}
+{% extends "layouts/default.njk" %}
+
+{% block content %}
+    {% set hero = {
+        title: "Цены на услуги",
+        subtitle: "Прозрачное ценообразование без скрытых платежей",
+        buttonText: "Получить консультацию",
+        buttonPopup: "popup-entry",
+        class: "hero-services-detail hero-before-after hero-prices"
+    } %}
+    {% include "blocks/common/hero/hero-services-detail.njk" %}
+    {% include "blocks/common/special-offer/special-offer-sub.njk" %}
+    {% include "blocks/common/what-price/what-price.njk" %}
+    {% include "blocks/common/nav-section/nav-section.njk" %}
+    {% include "blocks/common/price-list/price-list.njk" %}
+
+    {# Переопределяем переменные для selection-operation #}
+            {% set class = "selection-operation--enlargemen" %}
+            {% set title = "Записаться на консультацию" %}
+            {% set description = "Консультация бесплатно при проведении операции в BIOS Clinic." %}
+            {% set buttonText = "Записаться" %}
+            {% set buttonPopup = "popup-entry" %}
+
+            {% include "blocks/common/selection-operation/selection-operation.njk" %}
+
+    {% include "blocks/common/payment-methods/payment-methods.njk" %}
+    {% include "blocks/common/sub-advantages/sub-advantages.njk" %}
+    {% include "blocks/common/specialists-short/specialists-short.njk" %}
+    {% include "blocks/common/find-more/find-more.njk" %}
+    {% include "blocks/common/main-form/main-form.njk" %}
+{% endblock %}
+
+{% block after_content %}
+{% endblock %}

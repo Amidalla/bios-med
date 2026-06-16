@@ -42,6 +42,9 @@ import { breastBeforeAfterSlider } from "../blocks/common/breast-before-after/br
 import { bodyBeforeAfterSlider } from "../blocks/common/body-before-after/body-before-after.js";
 import { specialOfferSlider } from "../blocks/common/special-offer/special-offer.js";
 import { popupBeforeAfter } from "../components/common/popup-before-after/popup-before-after.js";
+import { priceList } from "../blocks/common/price-list/price-list.js";
+import { specialOfferSubSlider } from "../blocks/common/special-offer/special-offer-sub.js";
+import { paymentMethodsSlider } from "../blocks/common/payment-methods/payment-methods.js";
 
 const components = [
     consentNotice,
@@ -84,7 +87,10 @@ const components = [
     breastBeforeAfterSlider,
     bodyBeforeAfterSlider,
     specialOfferSlider,
-    popupBeforeAfter
+    popupBeforeAfter,
+    priceList,
+    specialOfferSubSlider,
+    paymentMethodsSlider
 ];
 
 function init(context = document) {

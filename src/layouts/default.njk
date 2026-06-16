@@ -10,9 +10,11 @@
     <body>
         <div class="site">
 
-            {% include "blocks/general/header/header.njk" %}
+            <header class="header {{ headerClass | default('') }}">
+                {% include "blocks/general/header/header.njk" %}
+            </header>
 
-            <main class="page">
+            <main class="page {{ mainClass | default('') }}">
                 {% set page = page | default({}) %}
                 {% set page = {
                     breadcrumbs: page.breadcrumbs | default(true),

@@ -1,0 +1,456 @@
+{# blocks/common/price-list/price-list.njk #}
+
+{% from "components/general/border-wrapper/border-wrapper.njk" import borderWrapper %}
+
+<section class="price-list section">
+
+    {% call borderWrapper('Прайс-лист', 'h2', 'section-title', false, '/price-list') %}
+        <div class="container">
+            <div class="price-list__header">
+                <p class="price-list__subtitle">Полный перечень услуг и цен клиники пластической хирургии БИОС</p>
+            </div>
+
+            <!-- Табы -->
+            <div class="price-list__tabs">
+                <div class="price-list__tabs-list">
+                    <button class="price-list__tab active" data-tab="face-neck">Пластика лица и шеи</button>
+                    <button class="price-list__tab" data-tab="breast">Пластика груди</button>
+                    <button class="price-list__tab" data-tab="nose">Пластика носа</button>
+                    <button class="price-list__tab" data-tab="intimate">Интимная пластика</button>
+                    <button class="price-list__tab" data-tab="lips">Пластика губ</button>
+                    <button class="price-list__tab" data-tab="ears">Пластика ушных раковин</button>
+                    <button class="price-list__tab" data-tab="body">Пластика тела</button>
+                    <button class="price-list__tab" data-tab="eyelids">Пластика век</button>
+                    <button class="price-list__tab" data-tab="analysis">Анализы</button>
+                    <button class="price-list__tab" data-tab="hospital">Стационар</button>
+                    <button class="price-list__tab" data-tab="anesthesia">Наркоз</button>
+                </div>
+            </div>
+
+            <!-- Контент табов -->
+            <div class="price-list__content">
+                <!-- Таб: Пластика лица и шеи -->
+                <div class="price-list__panel active" data-panel="face-neck">
+                    <h3 class="price-list__panel-title">Пластика лица и шеи</h3>
+                    <p class="price-list__panel-subtitle">Перечень услуг и цен клиники пластической хирургии БИОС</p>
+
+                    <div class="price-list__accordions">
+                        <!-- Аккордион 1 -->
+                        <div class="accordion">
+                            <div class="accordion__header">
+                                <button class="accordion__btn">
+                                    <svg width="49" height="49" viewBox="0 0 49 49" fill="none">
+                                        <path d="M24.4998 41.1601C15.2878 41.1601 7.83984 33.7121 7.83984 24.5001C7.83984 15.2881 15.2878 7.84009 24.4998 7.84009C33.7118 7.84009 41.1598 15.2881 41.1598 24.5001C41.1598 33.7121 33.7118 41.1601 24.4998 41.1601ZM24.4998 9.80009C16.3658 9.80009 9.79984 16.3661 9.79984 24.5001C9.79984 32.6341 16.3658 39.2001 24.4998 39.2001C32.6338 39.2001 39.1998 32.6341 39.1998 24.5001C39.1998 16.3661 32.6338 9.80009 24.4998 9.80009Z" fill="#BE9158"/>
+                                        <path d="M15.6797 23.5195H33.3197V25.4795H15.6797V23.5195Z" fill="#BE9158"/>
+                                        <path d="M23.5195 15.6797H25.4795V33.3197H23.5195V15.6797Z" fill="#BE9158"/>
+                                    </svg>
+                                </button>
+                                <div class="accordion__description">
+                                    <div class="accordion__description-inner">
+                                        <span class="accordion__title">Пластика лица и шеи SMAS (фейслифтинг)</span>
+                                        <span class="accordion__price">от 200 000₽</span>
+                                    </div>
+                                    <div class="accordion__btn-wrapper">
+                                        <div class="border-block">
+                                            <button class="accordion__btn-sign" data-src="popup-entry">Записаться</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion__body">
+                                <div class="price-list__item">
+                                    <div class="price-list__item-row">
+                                        <span class="price-list__item-name">Эндоскопический лобно-височный лифтинг 1 зона</span>
+                                        <span class="price-list__item-price">от 200 000₽</span>
+                                    </div>
+                                    <div class="price-list__item-row">
+                                        <span class="price-list__item-name">1 категория</span>
+                                        <span class="price-list__item-price">150 000₽</span>
+                                    </div>
+                                    <div class="price-list__item-row">
+                                        <span class="price-list__item-name">2 категория</span>
+                                        <span class="price-list__item-price">175 000₽</span>
+                                    </div>
+                                    <div class="price-list__item-row">
+                                        <span class="price-list__item-name">3 категория</span>
+                                        <span class="price-list__item-price">220 000₽</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Аккордион 2 -->
+                        <div class="accordion">
+                            <div class="accordion__header">
+                                <button class="accordion__btn">
+                                    <svg width="49" height="49" viewBox="0 0 49 49" fill="none">
+                                        <path d="M24.4998 41.1601C15.2878 41.1601 7.83984 33.7121 7.83984 24.5001C7.83984 15.2881 15.2878 7.84009 24.4998 7.84009C33.7118 7.84009 41.1598 15.2881 41.1598 24.5001C41.1598 33.7121 33.7118 41.1601 24.4998 41.1601ZM24.4998 9.80009C16.3658 9.80009 9.79984 16.3661 9.79984 24.5001C9.79984 32.6341 16.3658 39.2001 24.4998 39.2001C32.6338 39.2001 39.1998 32.6341 39.1998 24.5001C39.1998 16.3661 32.6338 9.80009 24.4998 9.80009Z" fill="#BE9158"/>
+                                        <path d="M15.6797 23.5195H33.3197V25.4795H15.6797V23.5195Z" fill="#BE9158"/>
+                                        <path d="M23.5195 15.6797H25.4795V33.3197H23.5195V15.6797Z" fill="#BE9158"/>
+                                    </svg>
+                                </button>
+                                <div class="accordion__description">
+                                    <div class="accordion__description-inner">
+                                        <span class="accordion__title">Эндоскопический лобно-височный лифтинг и эндоскопическая подтяжка средней зоны лица</span>
+                                        <span class="accordion__price">от 200 000₽</span>
+                                    </div>
+                                    <div class="accordion__btn-wrapper">
+                                        <div class="border-block">
+                                            <button class="accordion__btn-sign" data-src="popup-entry"><span>Записаться</span></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion__body">
+                                <div class="price-list__item">
+                                    <div class="price-list__item-row">
+                                        <span class="price-list__item-name">1 категория</span>
+                                        <span class="price-list__item-price">от 200 000₽</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Аккордион 3 -->
+                        <div class="accordion">
+                            <div class="accordion__header">
+                                <button class="accordion__btn">
+                                    <svg width="49" height="49" viewBox="0 0 49 49" fill="none">
+                                        <path d="M24.4998 41.1601C15.2878 41.1601 7.83984 33.7121 7.83984 24.5001C7.83984 15.2881 15.2878 7.84009 24.4998 7.84009C33.7118 7.84009 41.1598 15.2881 41.1598 24.5001C41.1598 33.7121 33.7118 41.1601 24.4998 41.1601ZM24.4998 9.80009C16.3658 9.80009 9.79984 16.3661 9.79984 24.5001C9.79984 32.6341 16.3658 39.2001 24.4998 39.2001C32.6338 39.2001 39.1998 32.6341 39.1998 24.5001C39.1998 16.3661 32.6338 9.80009 24.4998 9.80009Z" fill="#BE9158"/>
+                                        <path d="M15.6797 23.5195H33.3197V25.4795H15.6797V23.5195Z" fill="#BE9158"/>
+                                        <path d="M23.5195 15.6797H25.4795V33.3197H23.5195V15.6797Z" fill="#BE9158"/>
+                                    </svg>
+                                </button>
+                                <div class="accordion__description">
+                                    <div class="accordion__description-inner">
+                                        <span class="accordion__title">CHEEK LIFTING (скуловая подтяжка, нижняя блефаропластика)</span>
+                                        <span class="accordion__price">от 350 000₽</span>
+                                    </div>
+                                    <div class="accordion__btn-wrapper">
+                                        <div class="border-block">
+                                            <button class="accordion__btn-sign" data-src="popup-entry"><span>Записаться</span></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion__body">
+                                <div class="price-list__item">
+                                    <div class="price-list__item-row">
+                                        <span class="price-list__item-name">Категория 1</span>
+                                        <span class="price-list__item-price">от 350 000₽</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Аккордион 4 -->
+                        <div class="accordion">
+                            <div class="accordion__header">
+                                <button class="accordion__btn">
+                                    <svg width="49" height="49" viewBox="0 0 49 49" fill="none">
+                                        <path d="M24.4998 41.1601C15.2878 41.1601 7.83984 33.7121 7.83984 24.5001C7.83984 15.2881 15.2878 7.84009 24.4998 7.84009C33.7118 7.84009 41.1598 15.2881 41.1598 24.5001C41.1598 33.7121 33.7118 41.1601 24.4998 41.1601ZM24.4998 9.80009C16.3658 9.80009 9.79984 16.3661 9.79984 24.5001C9.79984 32.6341 16.3658 39.2001 24.4998 39.2001C32.6338 39.2001 39.1998 32.6341 39.1998 24.5001C39.1998 16.3661 32.6338 9.80009 24.4998 9.80009Z" fill="#BE9158"/>
+                                        <path d="M15.6797 23.5195H33.3197V25.4795H15.6797V23.5195Z" fill="#BE9158"/>
+                                        <path d="M23.5195 15.6797H25.4795V33.3197H23.5195V15.6797Z" fill="#BE9158"/>
+                                    </svg>
+                                </button>
+                                <div class="accordion__description">
+                                    <div class="accordion__description-inner">
+                                        <span class="accordion__title">Височный лифтинг</span>
+                                        <span class="accordion__price">от 70 000₽</span>
+                                    </div>
+                                    <div class="accordion__btn-wrapper">
+                                        <div class="border-block">
+                                            <button class="accordion__btn-sign" data-src="popup-entry"><span>Записаться</span></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion__body">
+                                <div class="price-list__item">
+                                    <div class="price-list__item-row">
+                                        <span class="price-list__item-name">Пластика лица нитями APTOS</span>
+                                        <span class="price-list__item-price">от 70 000₽</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Аккордион 5 -->
+                        <div class="accordion">
+                            <div class="accordion__header">
+                                <button class="accordion__btn">
+                                    <svg width="49" height="49" viewBox="0 0 49 49" fill="none">
+                                        <path d="M24.4998 41.1601C15.2878 41.1601 7.83984 33.7121 7.83984 24.5001C7.83984 15.2881 15.2878 7.84009 24.4998 7.84009C33.7118 7.84009 41.1598 15.2881 41.1598 24.5001C41.1598 33.7121 33.7118 41.1601 24.4998 41.1601ZM24.4998 9.80009C16.3658 9.80009 9.79984 16.3661 9.79984 24.5001C9.79984 32.6341 16.3658 39.2001 24.4998 39.2001C32.6338 39.2001 39.1998 32.6341 39.1998 24.5001C39.1998 16.3661 32.6338 9.80009 24.4998 9.80009Z" fill="#BE9158"/>
+                                        <path d="M15.6797 23.5195H33.3197V25.4795H15.6797V23.5195Z" fill="#BE9158"/>
+                                        <path d="M23.5195 15.6797H25.4795V33.3197H23.5195V15.6797Z" fill="#BE9158"/>
+                                    </svg>
+                                </button>
+                                <div class="accordion__description">
+                                    <div class="accordion__description-inner">
+                                        <span class="accordion__title">Удаление комков Биша</span>
+                                        <span class="accordion__price">от 150 000₽</span>
+                                    </div>
+                                    <div class="accordion__btn-wrapper">
+                                        <div class="border-block">
+                                            <button class="accordion__btn-sign" data-src="popup-entry"><span>Записаться</span></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion__body">
+                                <div class="price-list__item">
+                                    <div class="price-list__item-row">
+                                        <span class="price-list__item-name">Ментопластика (пластика подбородка имплантом)</span>
+                                        <span class="price-list__item-price">(без стоимости импланта) от 150 000₽</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Аккордион 6 -->
+                        <div class="accordion">
+                            <div class="accordion__header">
+                                <button class="accordion__btn">
+                                    <svg width="49" height="49" viewBox="0 0 49 49" fill="none">
+                                        <path d="M24.4998 41.1601C15.2878 41.1601 7.83984 33.7121 7.83984 24.5001C7.83984 15.2881 15.2878 7.84009 24.4998 7.84009C33.7118 7.84009 41.1598 15.2881 41.1598 24.5001C41.1598 33.7121 33.7118 41.1601 24.4998 41.1601ZM24.4998 9.80009C16.3658 9.80009 9.79984 16.3661 9.79984 24.5001C9.79984 32.6341 16.3658 39.2001 24.4998 39.2001C32.6338 39.2001 39.1998 32.6341 39.1998 24.5001C39.1998 16.3661 32.6338 9.80009 24.4998 9.80009Z" fill="#BE9158"/>
+                                        <path d="M15.6797 23.5195H33.3197V25.4795H15.6797V23.5195Z" fill="#BE9158"/>
+                                        <path d="M23.5195 15.6797H25.4795V33.3197H23.5195V15.6797Z" fill="#BE9158"/>
+                                    </svg>
+                                </button>
+                                <div class="accordion__description">
+                                    <div class="accordion__description-inner">
+                                        <span class="accordion__title">Липосакция подбородочной области и нижней трети</span>
+                                        <span class="accordion__price">от 90 000₽</span>
+                                    </div>
+                                    <div class="accordion__btn-wrapper">
+                                        <div class="border-block">
+                                            <button class="accordion__btn-sign" data-src="popup-entry"><span>Записаться</span></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion__body">
+                                <div class="price-list__item">
+                                    <div class="price-list__item-row">
+                                        <span class="price-list__item-name">Липосакция подбородочной области и нижней трети</span>
+                                        <span class="price-list__item-price">от 90 000₽</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="price-list__note">
+                        <p>* Указанная стоимость операций не включает стоимость наркоза,
+                           стационара, компрессионного белья, предоперационных обследований.
+                           Стоимость может изменяться.
+                           Категории цены зависит от выбранного Вами пластического хирурга</p>
+                    </div>
+                </div>
+
+                <!-- Таб: Интимная пластика -->
+                <div class="price-list__panel" data-panel="intimate">
+                    <h3 class="price-list__panel-title">Интимная пластика</h3>
+                    <p class="price-list__panel-subtitle">Перечень услуг и цен клиники пластической хирургии БИОС</p>
+
+                    <div class="price-list__accordions">
+                        <!-- Аккордион 1 -->
+                        <div class="accordion">
+                            <div class="accordion__header">
+                                <button class="accordion__btn">
+                                    <svg width="49" height="49" viewBox="0 0 49 49" fill="none">
+                                        <path d="M24.4998 41.1601C15.2878 41.1601 7.83984 33.7121 7.83984 24.5001C7.83984 15.2881 15.2878 7.84009 24.4998 7.84009C33.7118 7.84009 41.1598 15.2881 41.1598 24.5001C41.1598 33.7121 33.7118 41.1601 24.4998 41.1601ZM24.4998 9.80009C16.3658 9.80009 9.79984 16.3661 9.79984 24.5001C9.79984 32.6341 16.3658 39.2001 24.4998 39.2001C32.6338 39.2001 39.1998 32.6341 39.1998 24.5001C39.1998 16.3661 32.6338 9.80009 24.4998 9.80009Z" fill="#BE9158"/>
+                                        <path d="M15.6797 23.5195H33.3197V25.4795H15.6797V23.5195Z" fill="#BE9158"/>
+                                        <path d="M23.5195 15.6797H25.4795V33.3197H23.5195V15.6797Z" fill="#BE9158"/>
+                                    </svg>
+                                </button>
+                                <div class="accordion__description">
+                                    <div class="accordion__description-inner">
+                                        <span class="accordion__title">Лабиопластика (коррекция малых половых губ)</span>
+                                        <span class="accordion__price">от 150 000₽</span>
+                                    </div>
+                                    <div class="accordion__btn-wrapper">
+                                        <div class="border-block">
+                                            <button class="accordion__btn-sign" data-src="popup-entry">Записаться</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion__body">
+                                <div class="price-list__item">
+                                    <div class="price-list__item-row">
+                                        <span class="price-list__item-name">Лабиопластика</span>
+                                        <span class="price-list__item-price">от 150 000₽</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Аккордион 2 -->
+                        <div class="accordion">
+                            <div class="accordion__header">
+                                <button class="accordion__btn">
+                                    <svg width="49" height="49" viewBox="0 0 49 49" fill="none">
+                                        <path d="M24.4998 41.1601C15.2878 41.1601 7.83984 33.7121 7.83984 24.5001C7.83984 15.2881 15.2878 7.84009 24.4998 7.84009C33.7118 7.84009 41.1598 15.2881 41.1598 24.5001C41.1598 33.7121 33.7118 41.1601 24.4998 41.1601ZM24.4998 9.80009C16.3658 9.80009 9.79984 16.3661 9.79984 24.5001C9.79984 32.6341 16.3658 39.2001 24.4998 39.2001C32.6338 39.2001 39.1998 32.6341 39.1998 24.5001C39.1998 16.3661 32.6338 9.80009 24.4998 9.80009Z" fill="#BE9158"/>
+                                        <path d="M15.6797 23.5195H33.3197V25.4795H15.6797V23.5195Z" fill="#BE9158"/>
+                                        <path d="M23.5195 15.6797H25.4795V33.3197H23.5195V15.6797Z" fill="#BE9158"/>
+                                    </svg>
+                                </button>
+                                <div class="accordion__description">
+                                    <div class="accordion__description-inner">
+                                        <span class="accordion__title">Коррекция клиторального капюшона</span>
+                                        <span class="accordion__price">от 120 000₽</span>
+                                    </div>
+                                    <div class="accordion__btn-wrapper">
+                                        <div class="border-block">
+                                            <button class="accordion__btn-sign" data-src="popup-entry"><span>Записаться</span></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion__body">
+                                <div class="price-list__item">
+                                    <div class="price-list__item-row">
+                                        <span class="price-list__item-name">Коррекция клиторального капюшона</span>
+                                        <span class="price-list__item-price">от 120 000₽</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Аккордион 3 -->
+                        <div class="accordion">
+                            <div class="accordion__header">
+                                <button class="accordion__btn">
+                                    <svg width="49" height="49" viewBox="0 0 49 49" fill="none">
+                                        <path d="M24.4998 41.1601C15.2878 41.1601 7.83984 33.7121 7.83984 24.5001C7.83984 15.2881 15.2878 7.84009 24.4998 7.84009C33.7118 7.84009 41.1598 15.2881 41.1598 24.5001C41.1598 33.7121 33.7118 41.1601 24.4998 41.1601ZM24.4998 9.80009C16.3658 9.80009 9.79984 16.3661 9.79984 24.5001C9.79984 32.6341 16.3658 39.2001 24.4998 39.2001C32.6338 39.2001 39.1998 32.6341 39.1998 24.5001C39.1998 16.3661 32.6338 9.80009 24.4998 9.80009Z" fill="#BE9158"/>
+                                        <path d="M15.6797 23.5195H33.3197V25.4795H15.6797V23.5195Z" fill="#BE9158"/>
+                                        <path d="M23.5195 15.6797H25.4795V33.3197H23.5195V15.6797Z" fill="#BE9158"/>
+                                    </svg>
+                                </button>
+                                <div class="accordion__description">
+                                    <div class="accordion__description-inner">
+                                        <span class="accordion__title">Вагинопластика (уменьшение влагалища)</span>
+                                        <span class="accordion__price">от 300 000₽</span>
+                                    </div>
+                                    <div class="accordion__btn-wrapper">
+                                        <div class="border-block">
+                                            <button class="accordion__btn-sign" data-src="popup-entry"><span>Записаться</span></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion__body">
+                                <div class="price-list__item">
+                                    <div class="price-list__item-row">
+                                        <span class="price-list__item-name">Вагинопластика</span>
+                                        <span class="price-list__item-price">от 300 000₽</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Аккордион 4 -->
+                        <div class="accordion">
+                            <div class="accordion__header">
+                                <button class="accordion__btn">
+                                    <svg width="49" height="49" viewBox="0 0 49 49" fill="none">
+                                        <path d="M24.4998 41.1601C15.2878 41.1601 7.83984 33.7121 7.83984 24.5001C7.83984 15.2881 15.2878 7.84009 24.4998 7.84009C33.7118 7.84009 41.1598 15.2881 41.1598 24.5001C41.1598 33.7121 33.7118 41.1601 24.4998 41.1601ZM24.4998 9.80009C16.3658 9.80009 9.79984 16.3661 9.79984 24.5001C9.79984 32.6341 16.3658 39.2001 24.4998 39.2001C32.6338 39.2001 39.1998 32.6341 39.1998 24.5001C39.1998 16.3661 32.6338 9.80009 24.4998 9.80009Z" fill="#BE9158"/>
+                                        <path d="M15.6797 23.5195H33.3197V25.4795H15.6797V23.5195Z" fill="#BE9158"/>
+                                        <path d="M23.5195 15.6797H25.4795V33.3197H23.5195V15.6797Z" fill="#BE9158"/>
+                                    </svg>
+                                </button>
+                                <div class="accordion__description">
+                                    <div class="accordion__description-inner">
+                                        <span class="accordion__title">Инъекционная контурная пластика (филлеры)</span>
+                                        <span class="accordion__price">от 60 000₽</span>
+                                    </div>
+                                    <div class="accordion__btn-wrapper">
+                                        <div class="border-block">
+                                            <button class="accordion__btn-sign" data-src="popup-entry"><span>Записаться</span></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion__body">
+                                <div class="price-list__item">
+                                    <div class="price-list__item-row">
+                                        <span class="price-list__item-name">Инъекционная контурная пластика (филлеры)</span>
+                                        <span class="price-list__item-price">от 60 000₽</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="price-list__subtext">
+                        <p>Также в нашей клинике работает пластический хирург, который<br>
+                           специализируется на мужской интимной пластике, стоимость операций и процедур по запросу</p>
+                    </div>
+
+                    <div class="price-list__note">
+                        <p>* Указанная стоимость операций не включает стоимость наркоза,
+                           стационара, компрессионного белья, предоперационных обследований.
+                           Стоимость может изменяться.
+                           Категории цены зависит от выбранного Вами пластического хирурга</p>
+                    </div>
+                </div>
+
+                <!-- Остальные табы (заглушки) -->
+                <div class="price-list__panel" data-panel="breast">
+                    <h3 class="price-list__panel-title">Пластика груди</h3>
+                    <p class="price-list__panel-subtitle">Перечень услуг и цен клиники пластической хирургии БИОС</p>
+                    <p class="price-list__empty">Содержимое в разработке</p>
+                </div>
+
+                <div class="price-list__panel" data-panel="nose">
+                    <h3 class="price-list__panel-title">Пластика носа</h3>
+                    <p class="price-list__panel-subtitle">Перечень услуг и цен клиники пластической хирургии БИОС</p>
+                    <p class="price-list__empty">Содержимое в разработке</p>
+                </div>
+
+                <div class="price-list__panel" data-panel="lips">
+                    <h3 class="price-list__panel-title">Пластика губ</h3>
+                    <p class="price-list__panel-subtitle">Перечень услуг и цен клиники пластической хирургии БИОС</p>
+                    <p class="price-list__empty">Содержимое в разработке</p>
+                </div>
+
+                <div class="price-list__panel" data-panel="ears">
+                    <h3 class="price-list__panel-title">Пластика ушных раковин</h3>
+                    <p class="price-list__panel-subtitle">Перечень услуг и цен клиники пластической хирургии БИОС</p>
+                    <p class="price-list__empty">Содержимое в разработке</p>
+                </div>
+
+                <div class="price-list__panel" data-panel="body">
+                    <h3 class="price-list__panel-title">Пластика тела</h3>
+                    <p class="price-list__panel-subtitle">Перечень услуг и цен клиники пластической хирургии БИОС</p>
+                    <p class="price-list__empty">Содержимое в разработке</p>
+                </div>
+
+                <div class="price-list__panel" data-panel="eyelids">
+                    <h3 class="price-list__panel-title">Пластика век</h3>
+                    <p class="price-list__panel-subtitle">Перечень услуг и цен клиники пластической хирургии БИОС</p>
+                    <p class="price-list__empty">Содержимое в разработке</p>
+                </div>
+
+                <div class="price-list__panel" data-panel="analysis">
+                    <h3 class="price-list__panel-title">Анализы</h3>
+                    <p class="price-list__panel-subtitle">Перечень услуг и цен клиники пластической хирургии БИОС</p>
+                    <p class="price-list__empty">Содержимое в разработке</p>
+                </div>
+
+                <div class="price-list__panel" data-panel="hospital">
+                    <h3 class="price-list__panel-title">Стационар</h3>
+                    <p class="price-list__panel-subtitle">Перечень услуг и цен клиники пластической хирургии БИОС</p>
+                    <p class="price-list__empty">Содержимое в разработке</p>
+                </div>
+
+                <div class="price-list__panel" data-panel="anesthesia">
+                    <h3 class="price-list__panel-title">Наркоз</h3>
+                    <p class="price-list__panel-subtitle">Перечень услуг и цен клиники пластической хирургии БИОС</p>
+                    <p class="price-list__empty">Содержимое в разработке</p>
+                </div>
+            </div>
+        </div>
+    {% endcall %}
+</section>

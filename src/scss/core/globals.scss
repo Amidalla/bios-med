@@ -137,6 +137,27 @@ h6 {
     flex: 1 1 auto;
     flex-direction: column;
 
+    &.page--policy {
+        background: url("../assets/images/content/policy-bg.jpg") no-repeat center;
+        background-size: cover;
+
+        @include bp.mq(tablet-xl) {
+            background-position: top -100px center;
+        }
+
+        @include bp.mq(mobile-xl) {
+            background-position: top -200px center;
+        }
+
+        @include bp.mq(mobile-l) {
+            background-position: top -300px center;
+        }
+
+        @include bp.mq(mobile-m) {
+            background-position: top -400px center;
+        }
+    }
+
     .page-header {
         position: relative;
         z-index: 2;

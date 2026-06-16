@@ -1,0 +1,37 @@
+@use "core/breakpoints" as bp;
+@use "core/mixins" as mix;
+
+.policy {
+  padding-top: 196px;
+
+  @include bp.mq(tablet-xl) {
+    padding-top: 150px;
+  }
+
+  @include bp.mq(mobile-xl) {
+    padding-top: 120px;
+  }
+
+  .section-title {
+    margin-bottom: 26px;
+    hyphens: auto;
+    word-break: normal;
+    overflow-wrap: break-word;
+  }
+
+  &__block {
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__heading {
+     font-size: 16px;
+     font-weight: 400;
+  }
+
+  a {
+    color: var(--color-1);
+    text-decoration: underline;
+  }
+}
