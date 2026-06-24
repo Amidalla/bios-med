@@ -197,4 +197,60 @@
             }
         }
     }
+
+    &.undergoing-surgery-experts {
+        position: relative;
+        padding-top: 50px;
+
+        @include bp.mq(tablet-xl) {
+            padding-top: 25px;
+        }
+
+        .undergoing-surgery__label {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 47px;
+
+            @include bp.mq(mobile-xl) {
+                margin-bottom: 0;
+            }
+
+        }
+
+        .section-title {
+            @include bp.mq(laptop-l) {
+                white-space: unset;
+                min-width: 849px;
+            }
+            @include bp.mq(tablet-xl) {
+                min-width: 500px;
+            }
+            @include bp.mq(mobile-xl) {
+                margin-top: 0;
+                min-width: auto;
+
+            }
+
+            @include bp.mq(mobile-l) {
+                padding-left: 5px;
+                padding-right: 5px;
+            }
+
+            @include bp.mq(mobile-l) {
+                padding-left: 1px;
+                padding-right: 1px;
+            }
+
+        }
+
+       .border-wrapper__content {
+           @include bp.mq(laptop-l) {
+               padding-top: 80px;
+           }
+
+           @include bp.mq(mobile-xl) {
+               padding-top: 10px;
+           }
+       }
+    }
 }

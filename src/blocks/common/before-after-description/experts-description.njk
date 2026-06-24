@@ -1,0 +1,187 @@
+{# blocks/common/our-doctors/our-doctors.njk #}
+
+{% from "components/general/tabs/tabs.njk" import render as tabsRender, panel %}
+{% from "components/general/specialist-card/specialist-card-sub.njk" import specialistCard %}
+
+<section class="before-after-description section our-doctors">
+    <div class="before-after-description__bg"></div>
+    <div class="before-after-description__decor"></div>
+
+    <div class="container">
+        <div class="before-after-description__wrapper">
+            <div class="border-container">
+                <div class="before-after-description__stats">
+                    <div class="before-after-description__stat">
+                        <div class="before-after-description__stat-number">40 000+</div>
+                        <div class="before-after-description__stat-label">успешных операций</div>
+                    </div>
+                    <div class="before-after-description__stat">
+                        <div class="before-after-description__stat-number">30+</div>
+                        <div class="before-after-description__stat-label">лет опыта</div>
+                    </div>
+                    <div class="before-after-description__stat">
+                        <div class="before-after-description__stat-number">100%</div>
+                        <div class="before-after-description__stat-label">уровень удовлетворенности</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="before-after-description__header">
+            <h2 class="section-title"><span>Наши хирурги</span></h2>
+        </div>
+
+        {%
+            set tabsLabels = {
+                all: "Все",
+                face: "Лицо",
+                breast: "Грудь",
+                body: "Тело"
+            }
+        %}
+
+        {%
+            set defaultTab = "all"
+        %}
+
+        {%
+            set doctors = {
+                all: [
+                    {
+                        image: "/assets/images/content/doctor-1.jpg",
+                        title: "Михайлов Андрей Петрович",
+                        text: "Врач-хирург, стаж 15 лет",
+                        description: "Специализация: Лечение гинекомасти, пластика груди, мужская пластика"
+                    },
+                    {
+                        image: "/assets/images/content/doctor-2.jpg",
+                        title: "Петрова Мария Сергеевна",
+                        text: "Врач-хирург, стаж 12 лет",
+                        description: "Эксперт в области эстетической хирургии груди. Член международных ассоциаций пластических хирургов."
+                    },
+                    {
+                        image: "/assets/images/content/doctor-3.jpg",
+                        title: "Сидоров Алексей Викторович",
+                        text: "Врач-хирург, стаж 20 лет",
+                        description: "Ведущий специалист по пластике тела. Кандидат медицинских наук."
+                    },
+                    {
+                        image: "/assets/images/content/doctor-4.jpg",
+                        title: "Козлова Елена Дмитриевна",
+                        text: "Врач-хирург, стаж 8 лет",
+                        description: "Специалист по пластике носа и ушей. Автор методик малоинвазивной ринопластики."
+                    },
+                    {
+                        image: "/assets/images/content/doctor-5.jpg",
+                        title: "Михайлов Андрей Петрович",
+                        text: "Врач-хирург, стаж 18 лет",
+                        description: "Эксперт в области омолаживающих операций. Проводит сложные комбинированные вмешательства."
+                    },
+                    {
+                        image: "/assets/images/content/doctor-6.jpg",
+                        title: "Соколова Наталья Игоревна",
+                        text: "Врач-хирург, стаж 10 лет",
+                        description: "Специализируется на пластике тела после родов. Проводит абдоминопластику и липосакцию."
+                    },
+                    {
+                        image: "/assets/images/content/doctor-7.jpg",
+                        title: "Новиков Дмитрий Сергеевич",
+                        text: "Врач-хирург, стаж 14 лет",
+                        description: "Занимается комплексной подтяжкой лица и шеи. Использует современные эндоскопические методики."
+                    },
+                    {
+                        image: "/assets/images/content/doctor-8.jpg",
+                        title: "Морозова Анна Владимировна",
+                        text: "Врач-хирург, стаж 11 лет",
+                        description: "Специалист по пластике груди и ягодиц. Проводит операции с использованием биоимплантов."
+                    },
+                     {
+                         image: "/assets/images/content/doctor-9.jpg",
+                         title: "Морозова Анна Владимировна",
+                         text: "Врач-хирург, стаж 11 лет",
+                         description: "Специалист по пластике груди и ягодиц. Проводит операции с использованием биоимплантов."
+                     },
+                      {
+                         image: "/assets/images/content/doctor-10.jpg",
+                         title: "Морозова Анна Владимировна",
+                         text: "Врач-хирург, стаж 11 лет",
+                         description: "Специалист по пластике груди и ягодиц. Проводит операции с использованием биоимплантов."
+                      }
+                ],
+                face: [
+                    {
+                        image: "/assets/images/content/doctor-1.jpg",
+                        title: "Михайлов Андрей Петрович",
+                        text: "Врач-хирург, стаж 15 лет",
+                        description: "Специализируется на пластике лица и шеи. Провел более 2000 успешных операций."
+                    },
+                    {
+                        image: "/assets/images/content/doctor-4.jpg",
+                        title: "Козлова Елена Дмитриевна",
+                        text: "Врач-хирург, стаж 8 лет",
+                        description: "Специализация: Лечение гинекомасти, пластика груди, мужская пластика"
+                    },
+                    {
+                        image: "/assets/images/content/doctor-7.jpg",
+                        title: "Новиков Дмитрий Сергеевич",
+                        text: "Врач-хирург, стаж 14 лет",
+                        description: "Специализация: Лечение гинекомасти, пластика груди, мужская пластика"
+                    },
+                    {
+                        image: "/assets/images/content/doctor-5.jpg",
+                        title: "Михайлов Андрей Петрович",
+                        text: "Врач-хирург, стаж 18 лет",
+                        description: "Специализация: Пластика век, пластика груди, пластика тела"
+                    }
+                ],
+                breast: [
+                    {
+                        image: "/assets/images/content/doctor-2.jpg",
+                        title: "Петрова Мария Сергеевна",
+                        text: "Врач-хирург, стаж 12 лет",
+                        description: "Специализация: Пластика век, пластика груди, пластика тела"
+                    },
+                    {
+                        image: "/assets/images/content/doctor-8.jpg",
+                        title: "Морозова Анна Владимировна",
+                        text: "Врач-хирург, стаж 11 лет",
+                        description: "Специализация: Пластика век, пластика груди, пластика тела"
+                    }
+                ],
+                body: [
+                    {
+                        image: "/assets/images/content/doctor-3.jpg",
+                        title: "Сидоров Алексей Викторович",
+                        text: "Врач-хирург, стаж 20 лет",
+                        description: "Специализация: Пластика лица, пластика век, нитевые подтяжки, пластика груди"
+                    },
+                    {
+                        image: "/assets/images/content/doctor-6.jpg",
+                        title: "Соколова Наталья Игоревна",
+                        text: "Врач-хирург, стаж 10 лет",
+                        description: "Специализация: Пластика лица, пластика век, нитевые подтяжки, пластика груди"
+                    }
+                ]
+            }
+        %}
+
+        {% call tabsRender(tabsLabels, defaultTab) %}
+
+            {% for tabId, tabLabel in tabsLabels %}
+                {% call panel(tabId, defaultTab == tabId) %}
+                    <div class="before-after-description__grid">
+                        {% for doctor in doctors[tabId] %}
+                            {{ specialistCard(
+                                doctor.image,
+                                doctor.title,
+                                doctor.text,
+                                doctor.description
+                            ) }}
+                        {% endfor %}
+                    </div>
+                {% endcall %}
+            {% endfor %}
+
+        {% endcall %}
+    </div>
+</section>

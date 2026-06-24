@@ -44,6 +44,19 @@
         }
     }
 
+    .information-card {
+        @include bp.mq(laptop-l) {
+            width: 100%;
+        }
+
+        .border-block a {
+            @include bp.mq(laptop-l) {
+                width: 100%;
+                padding: 10px 20px;
+            }
+        }
+    }
+
     .information-card__icon {
         width: 81.977px;
         height: 77.739px;

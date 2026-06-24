@@ -1,0 +1,42 @@
+{% set meta = { title: "наши Специалисты" } %}
+{% set breadcrumbs = {
+    items: [
+        { title: "Главная", url: "/" },
+        { title: "Специалисты" }
+    ]
+} %}
+{% set page = {
+    heading: false,
+    after_content: true,
+    breadcrumbsSeparator: "line-gradient"
+} %}
+{% extends "layouts/default.njk" %}
+
+{% block content %}
+    {% set hero = {
+        title: "наши Специалисты",
+        subtitle: "Команда профессионалов с многолетним опытом",
+        buttonText: "Получить консультацию",
+        buttonPopup: "popup-entry",
+        class: "hero-services-detail hero-experts"
+    } %}
+    {% include "blocks/common/hero/hero-services-detail.njk" %}
+    {% include "blocks/common/before-after-description/experts-description.njk" %}
+    {% include "blocks/common/undergoing-surgery/undergoing-surgery-experts.njk" %}
+     {# Переопределяем переменные для selection-operation #}
+                {% set class = "selection-operation--enlargemen" %}
+                {% set title = "онлайн подбор операции" %}
+                {% set highlightText = "для иногородних пациентов" %}
+                {% set description = "Подберем для вас оптимальные процедуры на основе ваших индивидуальных потребностей" %}
+                {% set buttonText = "Отправить заявку" %}
+                {% set buttonPopup = "popup-entry" %}
+
+                {% include "blocks/common/selection-operation/selection-operation.njk" %}
+
+    {% include "blocks/common/special-offer/special-offer.njk" %}
+    {% include "blocks/common/find-more/find-more.njk" %}
+    {% include "blocks/common/main-form/main-form.njk" %}
+{% endblock %}
+
+{% block after_content %}
+{% endblock %}

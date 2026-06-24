@@ -31,6 +31,101 @@
         color: var(--color-white);
     }
 
+    &.hero-services-detail.hero-article {
+        padding-top: 300px;
+
+        .hero__bg {
+            background: url("../assets/images/content/documents-bg.png") no-repeat center;
+            background-size: cover;
+
+            @include bp.mq(laptop-m) {
+                background: url("../assets/images/content/article-bg-laptop.png") no-repeat center;
+                background-size: cover;
+            }
+
+            @include bp.mq(tablet-xl) {
+                background: url("../assets/images/content/article-bg-tablet.png") no-repeat center;
+                background-size: cover;
+            }
+
+            @include bp.mq(mobile-xl) {
+                background: url("../assets/images/content/article-bg-mobile.png") no-repeat center;
+                background-size: cover;
+            }
+        }
+    }
+
+    &.hero-services-detail.hero-documents {
+        padding-top: 300px;
+
+        .hero__bg {
+            background: url("../assets/images/content/documents-bg.png") no-repeat center;
+            background-size: cover;
+        }
+    }
+
+    &.hero-services-detail.hero-error {
+
+        .hero__bg {
+            background: url("../assets/images/content/error-bg.png") no-repeat center;
+            background-size: cover;
+        }
+
+        .hero__title {
+            font-size: 230px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 96%;
+            text-transform: uppercase;
+            background: linear-gradient(89deg, #CCA684 31.15%, #FFE0AF 99.32%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero__subtitle {
+            font-size: 22px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 120%;
+            font-family: var(--font-family-primary);
+            margin-bottom: 70px;
+
+            @include bp.mq(mobile-xl) {
+                text-align: center;
+                margin-bottom: 30px;
+                font-size: 20px;
+            }
+        }
+
+        .hero__description {
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 120%;
+
+            @include bp.mq(mobile-xl) {
+                text-align: center;
+            }
+        }
+
+        .border-block {
+            @include mix.border-block;
+        }
+
+        .hero__link {
+            @include mix.button-gradient;
+
+            width: 100%;
+            backdrop-filter: blur(2px);
+
+            &:hover {
+                transform: none;
+            }
+        }
+
+    }
+
     &.hero-before-after.hero-prices {
         padding-top: 210px;
 
@@ -246,6 +341,41 @@
 
         .slider {
             top: 44%;
+        }
+    }
+
+    &.hero-experts {
+        padding-top: 280px;
+
+        .hero__title {
+            margin-bottom: 0;
+        }
+
+        .hero__subtitle {
+            margin-bottom: 48px;
+        }
+
+        .hero__bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            background: url("../assets/images/content/hero-experts-bg.png") no-repeat center;
+            background-size: cover;
+
+            @include bp.mq(laptop-m) {
+                background: url("../assets/images/content/hero-experts-laptop.png") no-repeat center;
+                background-size: cover;
+            }
+
+            @include bp.mq(tablet-xl) {
+                background: url("../assets/images/content/hero-experts-tablet.png") no-repeat center;
+                background-size: cover;
+            }
+
+            @include bp.mq(mobile-xl) {
+                background: url("../assets/images/content/hero-experts-mobile.png") no-repeat center;
+                background-size: cover;
+            }
         }
     }
 

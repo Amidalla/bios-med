@@ -429,4 +429,47 @@
       }
     }
   }
+
+  &.our-doctors {
+    .section-title {
+        span {
+          &::after {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            height: 28px;
+            content: "";
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='860' height='28' viewBox='0 0 860 28' fill='none'%3E%3Cpath d='M33.5 0.5H15C15 0.5 0.5 0.5 0.5 15C0.5 27 16.5 27 16.5 27H838.5C838.5 27 859.285 27 859.285 15C859.285 3 848.5 0.5 848.5 0.5H831.5' stroke='%23C0A97F'/%3E%3C/svg%3E")
+            no-repeat center bottom;
+            background-size: 100% 100%;
+
+            @include bp.mq(tablet-xl) {
+              background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='603' height='28' viewBox='0 0 603 28' fill='none'%3E%3Cpath d='M23.6327 0.5H10.6644C10.6644 0.5 0.5 0.5 0.5 15.2736C0.5 27.5 11.7159 27.5 11.7159 27.5H587.93C587.93 27.5 602.5 27.5 602.5 15.2736C602.5 3.04717 594.94 0.5 594.94 0.5H583.023' stroke='%23967252'/%3E%3C/svg%3E");
+              background-size: 100% 100%;
+            }
+          }
+        }
+    }
+
+    .before-after-description__grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 30px;
+
+      @include bp.mq(tablet-xl) {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        column-gap: 13px;
+        row-gap: 30px;
+
+      }
+
+      @include bp.mq(mobile-xl) {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        column-gap: 10px;
+        row-gap: 35px;
+      }
+    }
+  }
 }

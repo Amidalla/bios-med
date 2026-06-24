@@ -1,0 +1,31 @@
+{% set meta = { title: "404" } %}
+{% set breadcrumbs = {
+    items: [
+        { title: "Главная", url: "/" },
+        { title: "404" }
+    ]
+} %}
+{% set page = {
+    heading: false,
+    after_content: true,
+    breadcrumbsSeparator: "line-gradient"
+} %}
+{% extends "layouts/default.njk" %}
+
+{% block content %}
+    {% set hero = {
+        title: "404",
+        subtitle: "Ошибка. Что-то пошло не так",
+        description: "Запрашиваемая страница была удалена или перенесена.<br>Вернитесь назад или воспользуйтесь меню",
+        linkText: "Главная",
+        linkUrl: "/",
+        class: "hero-services-detail hero-error"
+    } %}
+
+    {% include "blocks/common/hero/hero-services-detail.njk" %}
+
+    {% include "blocks/common/main-form/main-form.njk" %}
+{% endblock %}
+
+{% block after_content %}
+{% endblock %}

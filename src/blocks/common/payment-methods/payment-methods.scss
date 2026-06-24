@@ -41,6 +41,8 @@
   }
 
   .payment-methods-slider {
+    padding-bottom: 5px;
+
     @include bp.mq(tablet-xl) {
       @include mix.swiper-nav-styles(
                       "payment-methods-slider__nav",

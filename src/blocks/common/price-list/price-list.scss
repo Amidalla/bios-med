@@ -190,6 +190,7 @@
     justify-content: space-between;
     padding: 12px 0;
     border-bottom: none;
+    gap: 15px;
 
     &:last-child {
       border-bottom: none;
@@ -319,6 +320,7 @@
 
     @include bp.mq(mobile-xl) {
       padding: 16px 7px;
+      gap: 10px;
     }
   }
 
@@ -489,6 +491,10 @@
       font-style: normal;
       font-weight: 600;
       line-height: 136%;
+
+      @include bp.mq(mobile-xl) {
+        font-size: 18px;
+      }
     }
   }
 
@@ -500,5 +506,9 @@
   &.active &__body {
     max-height: 1000px;
     padding: 0 40px 24px;
+
+    @include bp.mq(mobile-xl) {
+      padding: 0 18px 18px;
+    }
   }
 }

@@ -1,0 +1,214 @@
+{# blocks/common/services-categories/services-categories.njk #}
+
+{% from "components/general/tabs/tabs.njk" import render as tabsRender, panel %}
+{% from "components/general/article-card/article-card.njk" import articleCard %}
+
+<section class="services-categories section services-categories-article">
+    <div class="services-categories__bg"></div>
+    <div class="services-categories__decor"></div>
+    <div class="container">
+        <!-- Лейбл -->
+        <div class="section-label">Полезные статьи</div>
+
+        <!-- Заголовок и подзаголовок -->
+        <div class="services-categories__header">
+            {% set title = {
+                text: "<span>Статьи о пластической хирургии</span>",
+                tag: "h2",
+                class: "section-title"
+            } %}
+            {% include "components/general/title/title.njk" %}
+            <p class="services-categories__subtitle">Экспертные материалы от наших хирургов</p>
+        </div>
+
+        {%
+            set tabsLabels = {
+                all: "Все",
+                face: "Лицо",
+                breast: "Грудь",
+                body: "Тело"
+            }
+        %}
+
+        {%
+            set defaultTab = "all"
+        %}
+
+        {%
+            set articles = {
+                all: [
+                    {
+                        image: "/assets/images/content/article1.jpg",
+                        category: "Пластическая хирургия",
+                        title: "Пластика после похудения: торсопластика, круговая абдоминопластика, подтяжка рук, подтяжка внутренней поверхности бедер",
+                        url: "/articles/article1"
+                    },
+                    {
+                        image: "/assets/images/content/article2.jpg",
+                        category: "Реконструктивная хирургия",
+                        title: "Подтяжка лица: эндоскопическая, СМАС, нитевая — сравнение методов",
+                        url: "/articles/article2"
+                    },
+                    {
+                        image: "/assets/images/content/article3.jpg",
+                        category: "Лазерная косметология",
+                        title: "Лазерное омоложение: как это работает и кому подходит",
+                        url: "/articles/article3"
+                    },
+                    {
+                        image: "/assets/images/content/article1.jpg",
+                        category: "Эстетическая хирургия",
+                        title: "Ринопластика: виды, показания, реабилитация",
+                        url: "/articles/article4"
+                    },
+                    {
+                        image: "/assets/images/content/article2.jpg",
+                        category: "Пластическая хирургия",
+                        title: "Блефаропластика: удаление грыж и подтяжка век",
+                        url: "/articles/article5"
+                    },
+                    {
+                        image: "/assets/images/content/article3.jpg",
+                        category: "Реконструктивная хирургия",
+                        title: "Реабилитация после маммопластики: что нужно знать",
+                        url: "/articles/article6"
+                    },
+                    {
+                        image: "/assets/images/content/article1.jpg",
+                        category: "Пластическая хирургия",
+                        title: "Липосакция: современные методы удаления жира",
+                        url: "/articles/article7"
+                    },
+                    {
+                        image: "/assets/images/content/article2.jpg",
+                        category: "Эстетическая хирургия",
+                        title: "Отопластика: коррекция ушных раковин",
+                        url: "/articles/article8"
+                    },
+                    {
+                        image: "/assets/images/content/article3.jpg",
+                        category: "Реконструктивная хирургия",
+                        title: "Послеоперационный уход: рекомендации хирургов",
+                        url: "/articles/article9"
+                    }
+                ],
+                face: [
+                    {
+                        image: "/assets/images/content/article2.jpg",
+                        category: "Реконструктивная хирургия",
+                        title: "Подтяжка лица: эндоскопическая, СМАС, нитевая — сравнение методов",
+                        url: "/articles/article2"
+                    },
+                    {
+                        image: "/assets/images/content/article1.jpg",
+                        category: "Эстетическая хирургия",
+                        title: "Ринопластика: виды, показания, реабилитация",
+                        url: "/articles/article4"
+                    },
+                    {
+                        image: "/assets/images/content/article2.jpg",
+                        category: "Пластическая хирургия",
+                        title: "Блефаропластика: удаление грыж и подтяжка век",
+                        url: "/articles/article5"
+                    },
+                    {
+                        image: "/assets/images/content/article3.jpg",
+                        category: "Эстетическая хирургия",
+                        title: "Подтяжка бровей и лба: эндоскопический метод",
+                        url: "/articles/article10"
+                    }
+                ],
+                breast: [
+                    {
+                        image: "/assets/images/content/article3.jpg",
+                        category: "Реконструктивная хирургия",
+                        title: "Реабилитация после маммопластики: что нужно знать",
+                        url: "/articles/article6"
+                    },
+                    {
+                        image: "/assets/images/content/article1.jpg",
+                        category: "Пластическая хирургия",
+                        title: "Эндопротезирование груди: выбор имплантов и методик",
+                        url: "/articles/article7"
+                    },
+                    {
+                        image: "/assets/images/content/article2.jpg",
+                        category: "Реконструктивная хирургия",
+                        title: "Подтяжка груди после родов и кормления",
+                        url: "/articles/article11"
+                    }
+                ],
+                body: [
+                    {
+                        image: "/assets/images/content/article1.jpg",
+                        category: "Пластическая хирургия",
+                        title: "Пластика после похудения: торсопластика, круговая абдоминопластика, подтяжка рук, подтяжка внутренней поверхности бедер",
+                        url: "/articles/article1"
+                    },
+                    {
+                        image: "/assets/images/content/article3.jpg",
+                        category: "Лазерная косметология",
+                        title: "Лазерное омоложение: как это работает и кому подходит",
+                        url: "/articles/article3"
+                    },
+                    {
+                        image: "/assets/images/content/article1.jpg",
+                        category: "Пластическая хирургия",
+                        title: "Абдоминопластика: удаление растяжек и лишней кожи",
+                        url: "/articles/article12"
+                    }
+                ]
+            }
+        %}
+
+        {% call tabsRender(tabsLabels, defaultTab) %}
+
+            {% for tabId, tabLabel in tabsLabels %}
+                {% call panel(tabId, defaultTab == tabId) %}
+                    {% set currentArticles = articles[tabId] %}
+                    {% set totalArticles = currentArticles|length %}
+
+                    <!-- Сетка карточек (показываем только первые 6) -->
+                    <div class="services-categories__grid">
+                        {% for article in currentArticles %}
+                            {% if loop.index <= 6 %}
+                                {{ articleCard(
+                                    article.image,
+                                    article.category,
+                                    article.title,
+                                    article.url
+                                ) }}
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+
+                    <!-- Пагинация показывается только если статей больше 6 -->
+                    {% if totalArticles > 6 %}
+                        <div class="services-categories__pagination">
+                            <button class="services-categories__pagination-btn services-categories__pagination-btn--prev" disabled>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="21" height="22" viewBox="0 0 21 22" fill="none">
+                                    <path opacity="0.3" d="M20.875 11.1321H0.875M7.10877 0.375977L0.875 11.1321L7.10877 21.376" stroke="#967252" stroke-width="1.5"/>
+                                </svg>
+                            </button>
+
+                            <ul class="services-categories__pagination-list">
+                                <li><a href="#" class="services-categories__pagination-link active">1</a></li>
+                                <li><a href="#" class="services-categories__pagination-link">2</a></li>
+                                <li><a href="#" class="services-categories__pagination-link">3</a></li>
+                                <li><span class="services-categories__pagination-dots">...</span></li>
+                                <li><a href="#" class="services-categories__pagination-link">8</a></li>
+                            </ul>
+
+                            <button class="services-categories__pagination-btn services-categories__pagination-btn--next">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="21" height="22" viewBox="0 0 21 22" fill="none">
+                                    <path d="M0 11.1321H20M13.7662 0.375977L20 11.1321L13.7662 21.376" stroke="#967252" stroke-width="1.5"/>
+                                </svg>
+                            </button>
+                        </div>
+                    {% endif %}
+                {% endcall %}
+            {% endfor %}
+
+        {% endcall %}
+    </div>
+</section>

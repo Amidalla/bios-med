@@ -12,7 +12,7 @@
     box-shadow: 0 4px 16.8px 0 rgb(0 0 0 / 10%);
 
     @include bp.mq(mobile-xl) {
-        padding: 33px 35px 24px;
+        padding: 33px 15px 15px;
     }
 
     .block {

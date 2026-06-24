@@ -1,30 +1,19 @@
 import { Fancybox } from "@fancyapps/ui/dist/fancybox/";
 
 export function popupEntry(context = document) {
-    const triggers = context.querySelectorAll('*[data-src="popup-entry"]');
-    if (!triggers.length) return;
 
-    triggers.forEach((item) => {
-        if (item.dataset.init === "true") return;
-        item.dataset.init = "true";
+    context.addEventListener('click', function(e) {
 
-        const controller = new AbortController();
-        const { signal } = controller;
+        const trigger = e.target.closest('*[data-src="popup-entry"]');
+        if (!trigger) return;
 
-        item.addEventListener(
-            "click",
-            (e) => {
-                e.preventDefault();
-                Fancybox.show([
-                    {
-                        src: "#popup-entry",
-                        type: "inline"
-                    }
-                ]);
-            },
-            { signal }
-        );
+        e.preventDefault();
 
-        item.addEventListener("destroy", () => controller.abort(), { once: true });
+        Fancybox.show([
+            {
+                src: "#popup-entry",
+                type: "inline"
+            }
+        ]);
     });
 }

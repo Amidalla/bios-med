@@ -15,6 +15,215 @@
         margin-top: -140px;
     }
 
+    &.services-categories-article {
+        padding-top: 100px;
+
+        @include bp.mq(tablet-xl) {
+            padding-top: 0;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .section-label {
+            margin: 0 auto 38px;
+        }
+
+        .section-title {
+            font-family: var(--font-family-secondary);
+            font-size: 60px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 96%;
+            text-align: center;
+            text-transform: uppercase;
+            background: var(--bg-headlane, linear-gradient(89deg, #967252 31.15%, #ceb48c 99.32%));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+
+
+            span {
+                position: relative;
+                display: inline-block;
+                padding: 0 39px 8.5px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 96%;
+                text-align: center;
+                text-transform: uppercase;
+                background: var(--bg-headlane, linear-gradient(89deg, #967252 31.15%, #ceb48c 99.32%));
+                -webkit-background-clip: text;
+                background-clip: text;
+                -webkit-text-fill-color: transparent;
+
+                @include bp.mq(mobile-l) {
+                    padding: 0 20px 12.5px;
+                }
+
+                &::after {
+                    position: absolute;
+                    bottom: 0;
+                    left: 50%;
+                    width: 100%;
+                    height: 28px;
+                    content: "";
+                    transform: translateX(-50%);
+                    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1270' height='28' viewBox='0 0 1270 28' fill='none'%3E%3Cpath d='M33.5 0.5H15C15 0.5 0.5 0.5 0.5 15C0.5 27 16.5 27 16.5 27H1248.5C1248.5 27 1269.28 27 1269.28 15C1269.28 3 1258.5 0.5 1258.5 0.5H1241.5' stroke='%23C0A97F'/%3E%3C/svg%3E")
+                    no-repeat center;
+                    background-size: 100% 100%;
+                    min-width: 100%;
+
+                    @include bp.mq(mobile-xl) {
+                        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='603' height='28' viewBox='0 0 603 28' fill='none'%3E%3Cpath d='M23.6327 0.5H10.6644C10.6644 0.5 0.5 0.5 0.5 15.2736C0.5 27.5 11.7159 27.5 11.7159 27.5H587.93C587.93 27.5 602.5 27.5 602.5 15.2736C602.5 3.04717 594.94 0.5 594.94 0.5H583.023' stroke='%23967252'/%3E%3C/svg%3E");
+                        background-size: 100% 100%;
+                        min-width: auto;
+                    }
+                }
+            }
+
+            @include bp.mq(tablet-xl) {
+                font-size: 42px;
+            }
+
+            @include bp.mq(mobile-xl) {
+                font-size: 36px;
+            }
+        }
+
+        .services-categories__subtitle {
+            text-align: center;
+            font-size: 22px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 136%;
+            color: var(--color-brown-dark);
+            margin-top: 0;
+
+            @include bp.mq(mobile-xl) {
+                font-size: 18px;
+            }
+        }
+
+        .services-categories__grid {
+            padding-top: 20px;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            column-gap: 22px;
+            row-gap: 52px;
+
+            @include bp.mq(tablet-xl) {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                column-gap: 14px;
+            }
+
+            @include bp.mq(mobile-xl) {
+                display: flex;
+                flex-direction: column;
+                gap: 33px;
+            }
+        }
+
+        .services-categories__pagination {
+            margin-top: 30px;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+        }
+
+        .services-categories__pagination-list {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            margin: 0;
+            padding-left: 20px;
+            padding-right: 20px;
+            align-items: center;
+
+            li {
+                a {
+                    font-family: var(--font-family-secondary);
+                    font-size: 24px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 96%;
+                    color: var(--color-brown-dark);
+                    transition: all 0.3s ease;
+
+                    &.active {
+                        color: var(--color-6);
+                    }
+
+                    &:hover {
+                        color: var(--color-6);
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+
+        .services-categories__pagination-btn {
+            border: none;
+            background: transparent;
+            transition: all 0.3s ease;
+
+            &:hover {
+                transform: scale(1.2);
+            }
+        }
+
+    }
+
+    &.services-categories-documents {
+        padding-bottom: 76px;
+
+        .services-categories__files {
+            max-width: 1262px;
+            padding-top: 100px;
+
+            @include bp.mq(tablet-xl) {
+                padding-top: 0;
+            }
+        }
+
+        .services-categories__file {
+            display: flex;
+            gap: 33px;
+            align-items: center;
+
+            &:not(:last-child) {
+                padding-bottom: 24px;
+                margin-bottom: 24px;
+                border-bottom: 1px solid var(--color-3);
+            }
+        }
+
+        .services-categories__file-icon {
+            width: 38.4px;
+            height: 48px;
+            flex-shrink: 0;
+
+            svg {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        .services-categories__file-content {
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 136%;
+            color: var(--color-brown-dark);
+
+            @include bp.mq(mobile-xl) {
+                font-size: 16px;
+            }
+        }
+    }
+
     .services-subtitle {
         margin-bottom: 30px;
         font-size: 22px;

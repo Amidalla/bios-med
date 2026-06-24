@@ -46,6 +46,25 @@
                 height: auto;
             }
         }
+
+        .review-card__badge {
+            @include bp.mq(tablet-xl) {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+        }
+
+        .review-card {
+            @include bp.mq(mobile-xl) {
+                width: 100%;
+            }
+        }
+
+        .review-card__badge-text {
+            @include bp.mq(mobile-l) {
+                font-size: 16px;
+            }
+        }
     }
 
     &__footer {

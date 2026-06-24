@@ -97,4 +97,99 @@
             font-size: 16px;
         }
     }
+
+    &.specialist-card-sub {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+
+        .specialist-card__description {
+            margin-top: 20px;
+            font-family: "Commissioner", sans-serif;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 120%;
+            color: var(--color-brown);
+            text-align: center;
+            margin-bottom: 24px;
+
+            @include bp.mq(tablet-xl) {
+                display: none;
+            }
+        }
+
+        .specialist-card__text {
+            @include bp.mq(tablet-xl) {
+                margin-bottom: 20px;
+            }
+        }
+
+        .specialist-card__actions {
+            margin-top: auto;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            gap: 10px;
+
+            .border-block {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                padding: 4px;
+                margin-top: auto;
+                border: 1px solid #c0a97f;
+                border-radius: 49px;
+                backdrop-filter: blur(2px);
+                transition: all 0.3s ease;
+
+                &:hover {
+                    transform: translateY(-2px);
+                }
+
+                .specialist-card__btn {
+                    @include mix.button-gradient(20px 40px);
+                    width: 100%;
+
+                    &:hover {
+                        transform: none;
+                    }
+
+                    @include bp.mq(mobile-xl) {
+                        padding: 10px;
+                    }
+                }
+
+                a {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 100%;
+                    padding: 16px 40px;
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: 120%;
+                    color: var(--color-brown);
+                    border: 1px solid #c0a97f;
+                    border-radius: 49px;
+                    backdrop-filter: blur(2px);
+
+                    @include bp.mq(laptop-l) {
+                        padding: 15px 20px;
+                    }
+                    @include bp.mq(mobile-xl) {
+                        padding: 6px 10px;
+                        text-align: center;
+                    }
+
+
+                    &:hover {
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
 }

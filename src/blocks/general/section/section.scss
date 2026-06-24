@@ -34,7 +34,7 @@
             -webkit-text-fill-color: transparent;
 
             @include bp.mq(mobile-l) {
-                padding: 0 20px 12.5px;
+                padding: 0 10px 12.5px;
             }
 
             &::after {

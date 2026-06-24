@@ -1,0 +1,25 @@
+{# components/general/specialist-card/specialist-card.njk #}
+
+{% macro specialistCard(image, title, text, description, alt = '') %}
+    <div class="specialist-card specialist-card-sub">
+        <div class="specialist-card__image">
+            <img class="lazy" src="{{ image }}" alt="{{ alt or title }}">
+        </div>
+        <div class="specialist-card__title">{{ title }}</div>
+        <div class="specialist-card__text">{{ text }}</div>
+        <div class="specialist-card__description">{{ description }}</div>
+
+        <div class="specialist-card__actions">
+            <div class="border-block">
+                <button class="specialist-card__btn" data-src="popup-entry" data-init="true">
+                    <span>Записаться на консультацию</span>
+                </button>
+            </div>
+            <div class="border-block">
+                <a href="#" class="specialist-card__link">
+                    <span>Подробнее о враче</span>
+                </a>
+            </div>
+        </div>
+    </div>
+{% endmacro %}
