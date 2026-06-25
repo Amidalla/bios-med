@@ -1,0 +1,98 @@
+{# blocks/common/before-after-short/before-after-short.njk #}
+
+{% from "components/general/before-after-card/before-after-card.njk" import beforeAfterCard %}
+{% from "components/general/tabs/tabs.njk" import render as tabsRender, panel %}
+
+<section class="before-after-short section before-after-doctor" id="before-after-short">
+    <div class="container">
+        <div class="before-after-short__header">
+            {% set title = {
+                text: "<span>работы доктора Ворошкевича</span>",
+                tag: "h2",
+                class: "section-title"
+            } %}
+            {% include "components/general/title/title.njk" %}
+
+            <div class="before-after-short__subtitle">
+                <p>Ваше преображение - наша гордость</p>
+            </div>
+        </div>
+
+        {%
+            set tabsLabels = {
+                all: "Все работы",
+                facelift: "Подтяжка лица",
+                blepharoplasty: "Подтяжка век",
+                endoscopic: "Эндоскопические подтяжки",
+                breast: "Пластика груди"
+            }
+        %}
+
+        {%
+            set defaultTab = "all"
+        %}
+
+        {%
+            set images = {
+                all: [
+                    { before: "/assets/images/content/before-face-1.jpg", after: "/assets/images/content/after-face-1.jpg" },
+                    { before: "/assets/images/content/before-face-2.jpg", after: "/assets/images/content/after-face-2.jpg" },
+                    { before: "/assets/images/content/before-face-1.jpg", after: "/assets/images/content/after-face-1.jpg" },
+                    { before: "/assets/images/content/before-face-2.jpg", after: "/assets/images/content/after-face-2.jpg" },
+                    { before: "/assets/images/content/before-face-1.jpg", after: "/assets/images/content/after-face-1.jpg" },
+                    { before: "/assets/images/content/before-face-2.jpg", after: "/assets/images/content/after-face-2.jpg" }
+                ],
+                facelift: [
+                    { before: "/assets/images/content/before-face-1.jpg", after: "/assets/images/content/after-face-1.jpg" },
+                    { before: "/assets/images/content/before-face-2.jpg", after: "/assets/images/content/after-face-2.jpg" },
+                    { before: "/assets/images/content/before-face-1.jpg", after: "/assets/images/content/after-face-1.jpg" }
+                ],
+                blepharoplasty: [
+                    { before: "/assets/images/content/before-face-2.jpg", after: "/assets/images/content/after-face-2.jpg" },
+                    { before: "/assets/images/content/before-face-1.jpg", after: "/assets/images/content/after-face-1.jpg" },
+                    { before: "/assets/images/content/before-face-2.jpg", after: "/assets/images/content/after-face-2.jpg" },
+                    { before: "/assets/images/content/before-face-1.jpg", after: "/assets/images/content/after-face-1.jpg" }
+                ],
+                endoscopic: [
+                    { before: "/assets/images/content/before-face-1.jpg", after: "/assets/images/content/after-face-1.jpg" },
+                    { before: "/assets/images/content/before-face-2.jpg", after: "/assets/images/content/after-face-2.jpg" }
+                ],
+                breast: [
+                    { before: "/assets/images/content/before-face-2.jpg", after: "/assets/images/content/after-face-2.jpg" },
+                    { before: "/assets/images/content/before-face-1.jpg", after: "/assets/images/content/after-face-1.jpg" },
+                    { before: "/assets/images/content/before-face-2.jpg", after: "/assets/images/content/after-face-2.jpg" }
+                ]
+            }
+        %}
+
+        {% call tabsRender(tabsLabels, defaultTab) %}
+
+            {% for tabId, tabLabel in tabsLabels %}
+                {% call panel(tabId, defaultTab == tabId) %}
+                    {% set currentImages = images[tabId] %}
+                    {% set totalImages = currentImages | length %}
+                    {% set initialCount = 2 %}
+
+                    <div class="before-after-short__grid" data-tab="{{ tabId }}">
+                        {% for img in currentImages %}
+                            <div class="before-after-short__grid-item {% if loop.index > initialCount %}hidden{% endif %}" data-index="{{ loop.index }}">
+                                {{ beforeAfterCard(img.before, img.after) }}
+                            </div>
+                        {% endfor %}
+                    </div>
+
+                    {% if totalImages > initialCount %}
+                        <div class="before-after-short__footer">
+                            <div class="border-block">
+                                <button class="before-after-short__show-more" data-tab="{{ tabId }}" data-initial="{{ initialCount }}">
+                                    <span>Смотреть работы</span>
+                                </button>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endcall %}
+            {% endfor %}
+
+        {% endcall %}
+    </div>
+</section>

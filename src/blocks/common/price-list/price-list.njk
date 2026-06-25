@@ -7,7 +7,7 @@
     {% call borderWrapper('Прайс-лист', 'h2', 'section-title', false, '/price-list') %}
         <div class="container">
             <div class="price-list__header">
-                <p class="price-list__subtitle">Полный перечень услуг и цен клиники пластической хирургии БИОС</p>
+                <p class="price-list__subtitle">{{ subtitle | default('Полный перечень услуг и цен клиники пластической хирургии БИОС') }}</p>
             </div>
 
             <!-- Табы -->

@@ -8,6 +8,26 @@ export function specialistsShort() {
 
     let swiperInstance = null;
 
+    function updateNavigationVisibility() {
+        if (!swiperInstance) return;
+
+        const prevBtn = document.querySelector(".specialists-slider__button-prev");
+        const nextBtn = document.querySelector(".specialists-slider__button-next");
+        const navWrapper = document.querySelector(".specialists-slider__nav");
+
+        if (!prevBtn || !nextBtn || !navWrapper) return;
+
+        const slidesCount = swiperInstance.slides.length;
+        const slidesPerView = swiperInstance.params.slidesPerView;
+
+        // Если слайдов меньше или равно количеству видимых - скрываем навигацию
+        if (slidesCount <= slidesPerView) {
+            navWrapper.style.display = "none";
+        } else {
+            navWrapper.style.display = "flex";
+        }
+    }
+
     function initSwiper() {
         const windowWidth = window.innerWidth;
 
@@ -31,6 +51,17 @@ export function specialistsShort() {
                         slidesPerView: 4,
                         spaceBetween: 30
                     }
+                },
+                on: {
+                    init: function() {
+                        updateNavigationVisibility();
+                    },
+                    slideChange: function() {
+                        updateNavigationVisibility();
+                    },
+                    resize: function() {
+                        updateNavigationVisibility();
+                    }
                 }
             });
 
@@ -50,6 +81,8 @@ export function specialistsShort() {
                     } else {
                         nextBtn.classList.remove("swiper-button-disabled");
                     }
+
+                    updateNavigationVisibility();
                 };
 
                 swiperInstance.on("init", updateButtons);

@@ -1,0 +1,226 @@
+{# blocks/common/reviews-short/reviews-all.njk #}
+
+{% from "components/general/border-wrapper/border-wrapper.njk" import borderWrapper %}
+{% from "components/general/review-card/review-card.njk" import reviewCard %}
+{% from "components/general/tabs/tabs.njk" import render as tabsRender, panel %}
+
+<section class="reviews-short section reviews-all">
+    <div class="container reviews-rating-container">
+        <div class="reviews-short__ratings">
+            <a href="#" class="reviews-short__rating-link">
+                Яндекс.карты
+                <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7.43695 0.549524C7.76806 -0.183195 8.8086 -0.183194 9.13972 0.549525L10.8551 4.34553C10.9911 4.64632 11.2756 4.85306 11.6037 4.88939L15.744 5.34783C16.5432 5.43632 16.8647 6.42593 16.2702 6.96726L13.1901 9.77176C12.946 9.99398 12.8373 10.3285 12.9042 10.6517L13.7476 14.7311C13.9104 15.5185 13.0686 16.1301 12.37 15.7319L8.75097 13.6692C8.4642 13.5058 8.11246 13.5058 7.82569 13.6692L4.20665 15.7319C3.50809 16.1301 2.66628 15.5185 2.82908 14.7311L3.6725 10.6517C3.73934 10.3285 3.63064 9.99398 3.38658 9.77176L0.30646 6.96726C-0.288076 6.42592 0.0334679 5.43632 0.832646 5.34783L4.97295 4.88939C5.30103 4.85306 5.58559 4.64632 5.72152 4.34553L7.43695 0.549524Z" fill="#BE9158"/>
+                </svg>
+                5,0
+            </a>
+            <a href="#" class="reviews-short__rating-link">
+                ПроДокторов
+                <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7.43695 0.549524C7.76806 -0.183195 8.8086 -0.183194 9.13972 0.549525L10.8551 4.34553C10.9911 4.64632 11.2756 4.85306 11.6037 4.88939L15.744 5.34783C16.5432 5.43632 16.8647 6.42593 16.2702 6.96726L13.1901 9.77176C12.946 9.99398 12.8373 10.3285 12.9042 10.6517L13.7476 14.7311C13.9104 15.5185 13.0686 16.1301 12.37 15.7319L8.75097 13.6692C8.4642 13.5058 8.11246 13.5058 7.82569 13.6692L4.20665 15.7319C3.50809 16.1301 2.66628 15.5185 2.82908 14.7311L3.6725 10.6517C3.73934 10.3285 3.63064 9.99398 3.38658 9.77176L0.30646 6.96726C-0.288076 6.42592 0.0334679 5.43632 0.832646 5.34783L4.97295 4.88939C5.30103 4.85306 5.58559 4.64632 5.72152 4.34553L7.43695 0.549524Z" fill="#BE9158"/>
+                </svg>
+                4,7
+            </a>
+            <a href="#" class="reviews-short__rating-link">
+                2GIS
+                <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7.43695 0.549524C7.76806 -0.183195 8.8086 -0.183194 9.13972 0.549525L10.8551 4.34553C10.9911 4.64632 11.2756 4.85306 11.6037 4.88939L15.744 5.34783C16.5432 5.43632 16.8647 6.42593 16.2702 6.96726L13.1901 9.77176C12.946 9.99398 12.8373 10.3285 12.9042 10.6517L13.7476 14.7311C13.9104 15.5185 13.0686 16.1301 12.37 15.7319L8.75097 13.6692C8.4642 13.5058 8.11246 13.5058 7.82569 13.6692L4.20665 15.7319C3.50809 16.1301 2.66628 15.5185 2.82908 14.7311L3.6725 10.6517C3.73934 10.3285 3.63064 9.99398 3.38658 9.77176L0.30646 6.96726C-0.288076 6.42592 0.0334679 5.43632 0.832646 5.34783L4.97295 4.88939C5.30103 4.85306 5.58559 4.64632 5.72152 4.34553L7.43695 0.549524Z" fill="#BE9158"/>
+                </svg>
+                4,7
+            </a>
+        </div>
+    </div>
+
+    <div class="reviews-short__bg"></div>
+    <div class="reviews-short__decor"></div>
+
+    {% call borderWrapper(
+        'Что говорят наши клиенты',
+        'h2',
+        'section-title',
+        false,
+        '/reviews',
+        '',
+        '',
+        'Отзывы наших клиентов'
+    ) %}
+        <div class="container">
+            <!-- Блок с процентами -->
+            <div class="reviews-short__stats">
+                <div class="reviews-short__stat">
+                    <span class="reviews-short__stat-value">98%</span>
+                </div>
+                <div class="reviews-short__stat">
+                    <span class="reviews-short__stat-text">пациентов рекомендуют нас друзьям</span>
+                </div>
+            </div>
+
+            {%
+                set tabsLabels = {
+                    all: "Все",
+                    face: "Лицо",
+                    breast: "Грудь",
+                    neck: "Шея"
+                }
+            %}
+
+            {%
+                set defaultTab = "all"
+            %}
+
+            {%
+                set reviews = {
+                    all: [
+                        {
+                            image: "/assets/images/content/review-card1.jpg",
+                            title: "Я смело могу рекомендовать каждому",
+                            author: "Мария",
+                            text: "Я не могла дышать САМА. Я перенесла тяжелую простуду, после которой начала пользоваться каплями от насморка и не могла без них. После операции дыхание восстановилось и также у меня красивый нос.",
+                            doctor1: "Шемонаева Ольга Михайловна",
+                            doctor2: null
+                        },
+                        {
+                            image: "/assets/images/content/review-card2.jpg",
+                            title: "Лучший врач в своей области",
+                            author: "Анна",
+                            text: "Очень благодарна доктору за профессионализм и чуткое отношение. Все прошло отлично, результат превзошел ожидания. Рекомендую всем!",
+                            doctor1: "Петрова Екатерина Андреевна",
+                            doctor2: null
+                        },
+                        {
+                            image: "/assets/images/content/review-card3.jpg",
+                            title: "Спасибо за новый взгляд на жизнь",
+                            author: "Елена",
+                            text: "Операция изменила мою жизнь к лучшему. Теперь я уверена в себе и не боюсь смотреть в зеркало. Огромное спасибо всей команде!",
+                            doctor1: "Иванова Татьяна Сергеевна",
+                            doctor2: "Сергеева Анна Владимировна"
+                        },
+                        {
+                            image: "/assets/images/content/review-card1.jpg",
+                            title: "Профессионалы своего дела",
+                            author: "Дмитрий",
+                            text: "Отличная клиника, внимательный персонал. Результатом очень доволен. Буду рекомендовать знакомым.",
+                            doctor1: "Кузнецов Андрей Владимирович",
+                            doctor2: null
+                        },
+                        {
+                            image: "/assets/images/content/review-card2.jpg",
+                            title: "Внимательное отношение и комфорт",
+                            author: "Ольга",
+                            text: "Очень переживала перед процедурой, но доктор и медсестры создали такую атмосферу, что я успокоилась. Спасибо за заботу!",
+                            doctor1: "Михайлова Светлана Игоревна",
+                            doctor2: null
+                        },
+                        {
+                            image: "/assets/images/content/review-card3.jpg",
+                            title: "Результат превзошел ожидания",
+                            author: "Екатерина",
+                            text: "Делала подтяжку лица. Результат потрясающий! Выгляжу на 10 лет моложе. Спасибо хирургу за золотые руки.",
+                            doctor1: "Алексеев Дмитрий Николаевич",
+                            doctor2: null
+                        }
+                    ],
+                    face: [
+                        {
+                            image: "/assets/images/content/review-card2.jpg",
+                            title: "Результат превзошел ожидания",
+                            author: "Екатерина",
+                            text: "Делала подтяжку лица. Результат потрясающий! Выгляжу на 10 лет моложе. Спасибо хирургу за золотые руки.",
+                            doctor1: "Алексеев Дмитрий Николаевич",
+                            doctor2: null
+                        },
+                        {
+                            image: "/assets/images/content/review-card1.jpg",
+                            title: "Идеальный контур лица",
+                            author: "Светлана",
+                            text: "Сделала нитевой лифтинг. Результат сразу виден, кожа подтянулась, овал лица стал четким. Очень довольна!",
+                            doctor1: "Шемонаева Ольга Михайловна",
+                            doctor2: null
+                        }
+                    ],
+                    breast: [
+                        {
+                            image: "/assets/images/content/review-card3.jpg",
+                            title: "Профессионалы своего дела",
+                            author: "Дмитрий",
+                            text: "Отличная клиника, внимательный персонал. Результатом очень доволен. Буду рекомендовать знакомым.",
+                            doctor1: "Кузнецов Андрей Владимирович",
+                            doctor2: null
+                        },
+                        {
+                            image: "/assets/images/content/review-card2.jpg",
+                            title: "Эстетичная маммопластика",
+                            author: "Ирина",
+                            text: "Долго выбирала хирурга и не пожалела. Грудь выглядит естественно, швы аккуратные. Спасибо доктору за внимание и профессионализм!",
+                            doctor1: "Петрова Екатерина Андреевна",
+                            doctor2: null
+                        }
+                    ],
+                    neck: [
+                        {
+                            image: "/assets/images/content/review-card1.jpg",
+                            title: "Молодая шея без хирургии",
+                            author: "Ольга",
+                            text: "Прошла курс по подтяжке шеи. Результат превзошел все ожидания. Кожа подтянулась, исчезли морщины. Огромное спасибо косметологам!",
+                            doctor1: "Михайлова Светлана Игоревна",
+                            doctor2: null
+                        },
+                        {
+                            image: "/assets/images/content/review-card3.jpg",
+                            title: "Пластика шеи",
+                            author: "Татьяна",
+                            text: "Сделала подтяжку шеи. Теперь выгляжу моложе. Доктор все подробно объяснил, операция прошла комфортно.",
+                            doctor1: "Иванова Татьяна Сергеевна",
+                            doctor2: "Сергеева Анна Владимировна"
+                        }
+                    ]
+                }
+            %}
+
+            <!-- Табы -->
+            {% call tabsRender(tabsLabels, defaultTab) %}
+
+                {% for tabId, tabLabel in tabsLabels %}
+                    {% call panel(tabId, defaultTab == tabId) %}
+                        {% set currentReviews = reviews[tabId] %}
+
+                        <!-- Слайдер -->
+                        <div class="reviews-short__slider">
+                            <div class="swiper reviews-slider">
+                                <div class="swiper-wrapper">
+                                    {% for review in currentReviews %}
+                                        <div class="swiper-slide">
+                                            {{ reviewCard(
+                                                review.image,
+                                                review.title,
+                                                review.author,
+                                                review.text,
+                                                review.doctor1,
+                                                review.doctor2
+                                            ) }}
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+
+                            <!-- Навигация -->
+                            <div class="reviews-slider__nav">
+                                <div class="reviews-slider__button-prev">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M14 6L8.34315 11.6569L14 17.3137" stroke="#BE9158" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <div class="reviews-slider__button-next">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M10 6L15.6569 11.6569L10 17.3137" stroke="#BE9158" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    {% endcall %}
+                {% endfor %}
+
+            {% endcall %}
+        </div>
+    {% endcall %}
+</section>

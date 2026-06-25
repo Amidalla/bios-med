@@ -1,0 +1,93 @@
+@use "core/breakpoints" as bp;
+@use "core/mixins" as mix;
+
+.career-path {
+  background: var(--color-8);
+  display: flex;
+  flex-direction: column;
+  gap: 45px;
+
+  @include bp.mq(mobile-xl) {
+    display: none;
+  }
+
+  .section-label {
+    margin: 0 auto 45px;
+  }
+
+  &__grid {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 1.6px;
+      background: #6D3F00;
+      transform: translateX(-50%);
+    }
+  }
+
+  &__item {
+    width: 50%;
+    position: relative;
+
+    &:nth-child(odd) {
+      margin-right: auto;
+      padding-right: 44px;
+      text-align: right;
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 18px;
+        right: -11px;
+        width: 22px;
+        height: 22px;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='22' viewBox='0 0 22 22' fill='none'%3E%3Ccircle cx='7' cy='7' r='7' transform='matrix(1 0 0 -1 4 18)' fill='%236D3F00'/%3E%3Ccircle cx='11' cy='11' r='10.5' transform='matrix(1 0 0 -1 0 22)' stroke='%236D3F00'/%3E%3C/svg%3E");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        z-index: 1;
+      }
+    }
+
+    &:nth-child(even) {
+      margin-left: auto;
+      padding-left: 44px;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 18px;
+        left: -11px;
+        width: 22px;
+        height: 22px;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='22' viewBox='0 0 22 22' fill='none'%3E%3Ccircle cx='7' cy='7' r='7' transform='matrix(1 0 0 -1 4 18)' fill='%236D3F00'/%3E%3Ccircle cx='11' cy='11' r='10.5' transform='matrix(1 0 0 -1 0 22)' stroke='%236D3F00'/%3E%3C/svg%3E");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        z-index: 1;
+      }
+    }
+  }
+
+  &__item-text {
+    margin: 0;
+    padding-top: 18px;
+    padding-bottom: 18px;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    color: var(--color-brown);
+
+    @include bp.mq(tablet-xl) {
+      font-size: 16px;
+    }
+  }
+}

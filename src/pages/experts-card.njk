@@ -1,0 +1,48 @@
+{% set meta = { title: "наши Специалисты" } %}
+{% set breadcrumbs = {
+    items: [
+        { title: "Главная", url: "/" },
+        { title: "Специалисты", url: "/experts.html" },
+        { title: "Ворошкевич А.А" }
+    ]
+} %}
+{% set page = {
+    heading: false,
+    after_content: true,
+    breadcrumbsSeparator: "line-gradient"
+} %}
+{% extends "layouts/default.njk" %}
+
+{% block content %}
+    {% set hero = {
+        title: "доктор<br> Ворошкевич А.А",
+        description: "Легенда пластической хирургии с опытом более 30 лет. Эксперт, которому доверяют самые сложные случаи. Владеет авторскими и эксклюзивными методиками, позволяющими добиваться безупречно естественного результата без «эффекта операции». Его ключевая особенность — ювелирная точность и сохранение индивидуальности пациента",
+        buttonText: "Получить консультацию",
+        buttonPopup: "popup-entry",
+        class: "hero-services-detail hero-doctor"
+    } %}
+    {% include "blocks/common/hero/hero-services-detail.njk" %}
+    {% include "blocks/common/before-after-description/doctor-description.njk" %}
+    {% include "blocks/common/before-after-short/before-after-doctor.njk" %}
+     {# Переопределяем переменные для selection-operation #}
+                {% set class = "selection-operation--enlargemen" %}
+                {% set title = "онлайн подбор операции" %}
+                {% set highlightText = "для иногородних пациентов" %}
+                {% set description = "Подберем для вас оптимальные процедуры на основе ваших индивидуальных потребностей" %}
+                {% set buttonText = "Отправить заявку" %}
+                {% set buttonPopup = "popup-entry" %}
+
+                {% include "blocks/common/selection-operation/selection-operation.njk" %}
+
+    {% include "blocks/common/career-path/career-path.njk" %}
+    {% include "blocks/common/expert-advice/expert-advice.njk" %}
+
+    {% set subtitle = "Полный перечень услуг и цен Ворошкевича Андрея Альбертовича" %}
+    {% include "blocks/common/price-list/price-list.njk" %}
+
+    {% include "blocks/common/find-more/find-more.njk" %}
+    {% include "blocks/common/main-form/main-form.njk" %}
+{% endblock %}
+
+{% block after_content %}
+{% endblock %}

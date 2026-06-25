@@ -45,6 +45,7 @@ import { popupBeforeAfter } from "../components/common/popup-before-after/popup-
 import { priceList } from "../blocks/common/price-list/price-list.js";
 import { specialOfferSubSlider } from "../blocks/common/special-offer/special-offer-sub.js";
 import { paymentMethodsSlider } from "../blocks/common/payment-methods/payment-methods.js";
+import { beforeAfterShowMore } from "../blocks/common/before-after-short/before-after-doctor.js";
 
 const components = [
     consentNotice,
@@ -90,7 +91,8 @@ const components = [
     popupBeforeAfter,
     priceList,
     specialOfferSubSlider,
-    paymentMethodsSlider
+    paymentMethodsSlider,
+    beforeAfterShowMore
 ];
 
 function init(context = document) {

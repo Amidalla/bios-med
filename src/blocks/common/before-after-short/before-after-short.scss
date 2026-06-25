@@ -63,4 +63,70 @@
             }
         }
     }
+
+    &.before-after-doctor {
+        .before-after-short__grid-item {
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .before-after-short__grid-item.hidden {
+            display: none;
+        }
+
+        .before-after-short__grid-item:not(.hidden) {
+            display: block;
+        }
+
+        .before-after-short__footer {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .before-after-short__show-more {
+            @include mix.button-gradient(24px 40px);
+            max-width: 100%;
+            width: 100%;
+
+            &:hover {
+                transform: none;
+            }
+
+            @include bp.mq(laptop-l) {
+                padding: 10px 38px;
+            }
+        }
+
+        .before-after-short__show-more span {
+            display: inline-block;
+            color: #967252;
+            font-weight: 500;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .before-after-short__show-more:hover span {
+            color: #7a5a3a;
+        }
+
+        .border-block {
+            @include mix.border-block;
+            max-width: 305px;
+        }
+
+        .section-title {
+            span {
+                &::after {
+                    width: 100%;
+                    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1346' height='28' viewBox='0 0 1346 28' fill='none'%3E%3Cpath d='M33.5 0.5H15C15 0.5 0.5 0.5 0.5 15C0.5 27 16.5 27 16.5 27H1324.5C1324.5 27 1345.28 27 1345.28 15C1345.28 3 1334.5 0.5 1334.5 0.5H1317.5' stroke='%23C0A97F'/%3E%3C/svg%3E")
+                    no-repeat center;
+                    background-size: 100% 100%;
+
+                    @include bp.mq(tablet-m) {
+                        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='603' height='28' viewBox='0 0 603 28' fill='none'%3E%3Cpath d='M23.6327 0.5H10.6644C10.6644 0.5 0.5 0.5 0.5 15.2736C0.5 27.5 11.7159 27.5 11.7159 27.5H587.93C587.93 27.5 602.5 27.5 602.5 15.2736C602.5 3.04717 594.94 0.5 594.94 0.5H583.023' stroke='%23967252'/%3E%3C/svg%3E");
+                        background-size: 100% 100%;
+                    }
+                }
+            }
+        }
+    }
 }

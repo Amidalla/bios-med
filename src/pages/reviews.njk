@@ -1,0 +1,34 @@
+{% set meta = { title: "Отзывы" } %}
+{% set breadcrumbs = {
+     items: [
+            { title: "Главная", url: "/" },
+            { title: "Отзывы" }
+        ]
+} %}
+{% set page = {
+    heading: false,
+    after_content: true,
+    breadcrumbsSeparator: "line-gradient"
+} %}
+{% extends "layouts/default.njk" %}
+
+{% block content %}
+    {% set hero = {
+        title: "Отзывы наших пациентов",
+        description: "Вдохновляющие истории преображения и искренние благодарности от тех, кто доверил нам свою красоту",
+          buttonText: "Записаться",
+         buttonPopup: "popup-entry",
+        class: "hero-services-detail hero-reviews"
+    } %}
+
+    {% include "blocks/common/hero/hero-services-detail.njk" %}
+    {% include "blocks/common/reviews-short/reviews-all.njk" %}
+    {% include "blocks/common/selection-operation/selection-operation.njk" %}
+    {% include "blocks/common/stories-short/stories-short-tabs.njk" %}
+    {% include "blocks/common/undergoing-surgery/undergoing-surgery-experts.njk" %}
+    {% include "blocks/common/find-more/find-more.njk" %}
+    {% include "blocks/common/main-form/main-form.njk" %}
+{% endblock %}
+
+{% block after_content %}
+{% endblock %}

@@ -30,7 +30,7 @@
         transition: color 0.3s ease;
 
         @include bp.mq(mobile-xl) {
-            padding: 12px 25px;
+            padding: 12px 20px;
             font-size: 16px;
         }
 

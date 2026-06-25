@@ -1,4 +1,6 @@
-{% macro borderWrapper(title = '', titleTag = 'h2', titleClass = 'section-title', button = false, buttonUrl = '', buttonText = '', subtitle = '') %}
+{# components/general/border-wrapper/border-wrapper.njk #}
+
+{% macro borderWrapper(title = '', titleTag = 'h2', titleClass = 'section-title', button = false, buttonUrl = '', buttonText = '', subtitle = '', label = '') %}
     <div class="border-wrapper">
         <div class="border-wrapper__outer"></div>
         <div class="border-wrapper__inner"></div>
@@ -6,6 +8,9 @@
         {% if title %}
             <div class="border-wrapper__header">
                 <div class="container">
+                    {% if label %}
+                        <div class="section-label">{{ label | safe }}</div>
+                    {% endif %}
                     <{{ titleTag }} class="{{ titleClass }}">
                         {{ title | safe }}
                     </{{ titleTag }}>

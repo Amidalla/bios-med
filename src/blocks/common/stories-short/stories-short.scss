@@ -15,6 +15,20 @@
         padding-bottom: 25px;
     }
 
+    &.stories-short-tabs {
+        .section-title {
+            margin-bottom: 25px;
+        }
+
+        .stories-short__slider {
+            margin-top: 0;
+        }
+
+        .tabs__content {
+            overflow: visible;
+        }
+    }
+
     &__slider {
         margin-top: 34px;
         margin-bottom: 28px;
