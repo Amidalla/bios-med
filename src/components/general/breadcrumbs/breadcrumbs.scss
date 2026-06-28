@@ -158,6 +158,8 @@
         .list {
             gap: var(--breadcrumbs-gap-sm);
             font-size: var(--breadcrumbs-font-size-sm);
+            padding-left: 10px;
+            padding-right: 10px;
         }
 
         .item {

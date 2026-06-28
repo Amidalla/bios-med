@@ -16,6 +16,12 @@
 {% set heroBeforeText = hero.beforeText | default("До") %}
 {% set heroAfterText = hero.afterText | default("После") %}
 
+{# Параметры фона #}
+{% set heroBg = hero.bg | default('/assets/images/content/hero-bg.png') %}
+{% set heroBgLaptop = hero.bgLaptop | default('/assets/images/content/hero-bg-laptop.png') %}
+{% set heroBgTablet = hero.bgTablet | default('/assets/images/content/hero-bg-tablet.png') %}
+{% set heroBgMobile = hero.bgMobile | default('/assets/images/content/hero-bg-mobile.png') %}
+
 <section class="hero section {{ heroClass }}">
     <div class="container">
         <div class="hero__content">
@@ -78,5 +84,21 @@
         {% endif %}
     </div>
 
-    <div class="hero__bg"></div>
+    <div class="hero__bg">
+        <picture>
+            <source
+                media="(max-width: 759.98px)"
+                srcset="{{ heroBgMobile }}">
+            <source
+                media="(max-width: 1309.98px)"
+                srcset="{{ heroBgTablet }}">
+            <source
+                media="(max-width: 1669.98px)"
+                srcset="{{ heroBgLaptop }}">
+            <img class="lazy"
+                src="{{ heroBg }}"
+                alt="Фон"
+                loading="lazy">
+        </picture>
+    </div>
 </section>

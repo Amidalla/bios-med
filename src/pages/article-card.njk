@@ -14,12 +14,17 @@
 {% extends "layouts/default.njk" %}
 
 {% block content %}
-    {% set hero = {
-        title: "Пластическая хиругия: возможности современной эстетической медицины",
-        label: "Экспертная статья",
-        class: "hero-services-detail hero-article article-card"
-    } %}
-    {% include "blocks/common/hero/hero-services-detail.njk" %}
+     {% set hero = {
+            title: "Пластическая хиругия: возможности современной эстетической медицины",
+            label: "Экспертная статья",
+            class: "hero-services-detail hero-article article-card",
+            bg: "/assets/images/content/documents-bg.png",
+            bgLaptop: "/assets/images/content/article-bg-laptop.png",
+            bgTablet: "/assets/images/content/article-bg-tablet.png",
+            bgMobile: "/assets/images/content/article-bg-mobile.png"
+        } %}
+
+     {% include "blocks/common/hero/hero-services-detail.njk" %}
     {% include "blocks/common/services-categories/services-categories-directions.njk" %}
     {% include "blocks/common/clinic-location/good-operation.njk" %}
     {% include "blocks/common/article-text/article-text.njk" %}

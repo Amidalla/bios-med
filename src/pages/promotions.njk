@@ -15,7 +15,11 @@
 {% block content %}
     {% set hero = {
             title: "Акции",
-            class: "hero-services-detail hero-promotions"
+            class: "hero-services-detail hero-promotions",
+            bg: "/assets/images/content/promotions-bg.png",
+            bgLaptop: "/assets/images/content/promotions-bg-laptop.png",
+            bgTablet: "/assets/images/content/promotions-bg-tablet.png",
+            bgMobile: "/assets/images/content/promotions-bg-mobile.png"
         } %}
 
         {% include "blocks/common/hero/hero-services-detail.njk" %}

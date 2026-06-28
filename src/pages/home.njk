@@ -3,7 +3,14 @@
 {% extends "layouts/default.njk" %}
 
 {% block content %}
+    {% set hero = {
+        bg: "/assets/images/content/hero-bg.png",
+        bgLaptop: "/assets/images/content/hero-bg-laptop.png",
+        bgTablet: "/assets/images/content/hero-bg-tablet.png",
+        bgMobile: "/assets/images/content/hero-bg-mobile.png"
+    } %}
     {% include "blocks/common/hero/hero.njk" %}
+
     {% include "blocks/common/advantages/advantages.njk" %}
     {% include "blocks/common/services-short/services-short.njk" %}
     {% include "blocks/common/before-after-short/before-after-short.njk" %}

@@ -28,6 +28,11 @@
     }
 
     &.undergoing-surgery-sub {
+
+        @include bp.mq(mobile-xl) {
+            padding-top: 25px;
+        }
+
         .undergoing-surgery__grid {
             grid-template-columns: repeat(5, 1fr);
             gap: 24px;

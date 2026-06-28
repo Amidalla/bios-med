@@ -15,7 +15,11 @@
 {% block content %}
     {% set hero = {
             title: "Контакты",
-            class: "hero-services-detail hero-contacts"
+            class: "hero-services-detail hero-contacts",
+            bg: "/assets/images/content/contacts-bg.png",
+            bgLaptop: "/assets/images/content/contacts-bg-laptop.png",
+            bgTablet: "/assets/images/content/contacts-bg-tablet.png",
+            bgMobile: "/assets/images/content/contacts-bg-mobile.png"
         } %}
 
     {% include "blocks/common/hero/hero-contacts.njk" %}

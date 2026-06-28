@@ -39,26 +39,6 @@
             flex-direction: column;
         }
 
-        .hero__bg {
-            background: url("../assets/images/content/contacts-bg.png") no-repeat center;
-            background-size: cover;
-
-            @include bp.mq(laptop-m) {
-                background: url("../assets/images/content/contacts-bg-laptop.png") no-repeat center;
-                background-size: cover;
-            }
-
-            @include bp.mq(tablet-xl) {
-                background: url("../assets/images/content/contacts-bg-tablet.png") no-repeat center;
-                background-size: cover;
-            }
-
-            @include bp.mq(mobile-xl) {
-                background: url("../assets/images/content/contacts-bg-mobile.png") no-repeat center;
-                background-size: cover;
-            }
-        }
-
         .hero__cards {
             position: absolute;
             top: 150px;
@@ -296,52 +276,19 @@
 
 
     &.hero-promotions {
-        padding-top: 300px;
 
-        .hero__bg {
-            background: url("../assets/images/content/promotions-bg.png") no-repeat center;
-            background-size: cover;
-
-            @include bp.mq(laptop-m) {
-                background: url("../assets/images/content/promotions-bg-laptop.png") no-repeat center;
-                background-size: cover;
-            }
-
-            @include bp.mq(tablet-xl) {
-                background: url("../assets/images/content/promotions-bg-tablet.png") no-repeat center;
-                background-size: cover;
-            }
-
-            @include bp.mq(mobile-xl) {
-                background: url("../assets/images/content/promotions-bg-mobile.png") no-repeat center;
-                background-size: cover;
-            }
+        @include bp.mq(mobile-xl) {
+           min-height: 671px;
         }
+
+        padding-top: 300px;
     }
 
     &.hero-services-detail.for-patient-hero {
 
         @include bp.mq(mobile-xl) {
-            padding-bottom: 100px;
-        }
-
-        .hero__bg {
-            background: url("../assets/images/content/patient-bg.png") no-repeat center;
-            background-size: cover;
-
-            @include bp.mq(laptop-m) {
-                background: url("../assets/images/content/patient-bg-laptop.png") no-repeat center;
-                background-size: cover;
-            }
-
-            @include bp.mq(tablet-xl) {
-                background: url("../assets/images/content/patient-bg-tablet.png") no-repeat center;
-                background-size: cover;
-            }
-
-            @include bp.mq(mobile-xl) {
-                background: url("../assets/images/content/patient-bg-mobile.png") no-repeat center;
-                background-size: cover;
+            .hero__content {
+                margin-bottom: 0;
             }
         }
     }
@@ -349,12 +296,21 @@
     &.hero-services-detail.hero-article.article-card {
         padding-top: 194px;
 
+        @include bp.mq(mobile-xl) {
+            padding-top: 150px;
+        }
+
         .hero__content {
            max-width: 1100px;
         }
     }
 
     &.hero-services-detail.hero-doctor {
+
+        @include bp.mq(mobile-xl) {
+            padding-top: 150px;
+        }
+
         .hero__description {
             font-family: var(--font-family-secondary);
             font-size: 22px;
@@ -367,26 +323,6 @@
             }
         }
 
-        .hero__bg {
-            background: url("../assets/images/content/doctor-bg.png") no-repeat center;
-            background-size: cover;
-
-            @include bp.mq(laptop-m) {
-                background: url("../assets/images/content/doctor-bg-laptop.png") no-repeat center;
-                background-size: cover;
-            }
-
-            @include bp.mq(tablet-xl) {
-                background: url("../assets/images/content/doctor-bg-tablet.png") no-repeat center;
-                background-size: cover;
-            }
-
-            @include bp.mq(mobile-xl) {
-                background: url("../assets/images/content/doctor-bg-mobile.png") no-repeat center;
-                background-size: cover;
-            }
-        }
-
         .hero__title {
             @include bp.mq(mobile-xl) {
                 width: 100%;
@@ -395,24 +331,14 @@
     }
 
     &.hero-services-detail.hero-reviews {
-        .hero__bg {
-            background: url("../assets/images/content/reviews-bg.png") no-repeat center;
-            background-size: cover;
+        padding-top: 200px;
 
-            @include bp.mq(laptop-m) {
-                background: url("../assets/images/content/reviews-bg-laptop.png") no-repeat center;
-                background-size: cover;
-            }
+        @include bp.mq(mobile-xl) {
+            padding-top: 150px;
+        }
 
-            @include bp.mq(tablet-xl) {
-                background: url("../assets/images/content/reviews-bg-tablet.png") no-repeat center;
-                background-size: cover;
-            }
-
-            @include bp.mq(mobile-xl) {
-                background: url("../assets/images/content/reviews-bg-mobile.png") no-repeat center;
-                background-size: cover;
-            }
+        @include bp.mq(mobile-xl) {
+            min-height: 600px;
         }
 
         .hero__description {
@@ -435,42 +361,13 @@
     &.hero-services-detail.hero-article {
         padding-top: 300px;
 
-        .hero__bg {
-            background: url("../assets/images/content/documents-bg.png") no-repeat center;
-            background-size: cover;
-
-            @include bp.mq(laptop-m) {
-                background: url("../assets/images/content/article-bg-laptop.png") no-repeat center;
-                background-size: cover;
-            }
-
-            @include bp.mq(tablet-xl) {
-                background: url("../assets/images/content/article-bg-tablet.png") no-repeat center;
-                background-size: cover;
-            }
-
-            @include bp.mq(mobile-xl) {
-                background: url("../assets/images/content/article-bg-mobile.png") no-repeat center;
-                background-size: cover;
-            }
-        }
     }
 
     &.hero-services-detail.hero-documents {
         padding-top: 300px;
-
-        .hero__bg {
-            background: url("../assets/images/content/documents-bg.png") no-repeat center;
-            background-size: cover;
-        }
     }
 
     &.hero-services-detail.hero-error {
-
-        .hero__bg {
-            background: url("../assets/images/content/error-bg.png") no-repeat center;
-            background-size: cover;
-        }
 
         .hero__title {
             font-size: 230px;
@@ -530,32 +427,17 @@
     &.hero-before-after.hero-prices {
         padding-top: 210px;
 
+        @include bp.mq(mobile-xl) {
+            padding-top: 150px;
+            min-height: 600px;
+        }
+
         .hero__subtitle {
             margin-top: 0;
             margin-bottom: 68px;
 
             @include bp.mq(mobile-xl) {
                 font-size: 20px;
-            }
-        }
-
-        .hero__bg {
-            background: url("../assets/images/content/prices-bg.png") no-repeat center;
-            background-size: cover;
-
-            @include bp.mq(laptop-m) {
-                background: url("../assets/images/content/prices-bg-laptop.png") no-repeat center;
-                background-size: cover;
-            }
-
-            @include bp.mq(tablet-xl) {
-                background: url("../assets/images/content/prices-bg-tablet.png") no-repeat center;
-                background-size: cover;
-            }
-
-            @include bp.mq(mobile-xl) {
-                background: url("../assets/images/content/prices-bg-tablet.png") no-repeat center;
-                background-size: cover;
             }
         }
     }
@@ -636,26 +518,6 @@
                 font-size: 32px;
             }
         }
-
-        .hero__bg {
-            background: url("../assets/images/content/hero-before-after-detail.png") no-repeat center;
-            background-size: cover;
-
-            @include bp.mq(laptop-m) {
-                background: url("../assets/images/content/hero-before-after-detail-laptop.png") no-repeat center;
-                background-size: cover;
-            }
-
-            @include bp.mq(tablet-xl) {
-                background: url("../assets/images/content/hero-before-after-detail-tablet.png") no-repeat center;
-                background-size: cover;
-            }
-
-            @include bp.mq(mobile-xl) {
-                background: url("../assets/images/content/hero-before-after-detail-mobile.png") no-repeat center;
-                background-size: cover;
-            }
-        }
     }
 
     &.hero-before-after {
@@ -676,29 +538,6 @@
                 margin-bottom: 27px;
             }
         }
-
-        .hero__bg {
-            position: absolute;
-            inset: 0;
-            z-index: 0;
-            background: url("../assets/images/content/hero-before-after-bg.png") no-repeat center;
-            background-size: cover;
-
-            @include bp.mq(laptop-m) {
-                background: url("../assets/images/content/hero-before-after-bg-laptop.png") no-repeat center;
-                background-size: cover;
-            }
-
-            @include bp.mq(tablet-xl) {
-                background: url("../assets/images/content/hero-before-after-bg-tablet.png") no-repeat center;
-                background-size: cover;
-            }
-
-            @include bp.mq(mobile-xl) {
-                background: url("../assets/images/content/hero-before-after-bg-mobile.png") no-repeat center;
-                background-size: cover;
-            }
-        }
     }
 
     &.hero-services {
@@ -717,29 +556,6 @@
             }
         }
 
-        .hero__bg {
-            position: absolute;
-            inset: 0;
-            z-index: 0;
-            background: url("../assets/images/content/hero-services-bg.png") no-repeat center;
-            background-size: cover;
-
-            @include bp.mq(laptop-m) {
-                background: url("../assets/images/content/hero-services-bg-laptop.png") no-repeat center;
-                background-size: cover;
-            }
-
-            @include bp.mq(tablet-xl) {
-                background: url("../assets/images/content/hero-services-bg-tablet.png") no-repeat center;
-                background-size: cover;
-            }
-
-            @include bp.mq(mobile-xl) {
-                background: url("../assets/images/content/hero-services-bg-mobile.png") no-repeat center;
-                background-size: cover;
-            }
-        }
-
         .slider {
             top: 44%;
         }
@@ -748,6 +564,11 @@
     &.hero-experts {
         padding-top: 280px;
 
+        @include bp.mq(mobile-xl) {
+            padding-top: 170px;
+        }
+
+
         .hero__title {
             margin-bottom: 0;
         }
@@ -755,51 +576,25 @@
         .hero__subtitle {
             margin-bottom: 48px;
         }
-
-        .hero__bg {
-            position: absolute;
-            inset: 0;
-            z-index: 0;
-            background: url("../assets/images/content/hero-experts-bg.png") no-repeat center;
-            background-size: cover;
-
-            @include bp.mq(laptop-m) {
-                background: url("../assets/images/content/hero-experts-laptop.png") no-repeat center;
-                background-size: cover;
-            }
-
-            @include bp.mq(tablet-xl) {
-                background: url("../assets/images/content/hero-experts-tablet.png") no-repeat center;
-                background-size: cover;
-            }
-
-            @include bp.mq(mobile-xl) {
-                background: url("../assets/images/content/hero-experts-mobile.png") no-repeat center;
-                background-size: cover;
-            }
-        }
     }
 
     &__bg {
         position: absolute;
         inset: 0;
         z-index: 0;
-        background: url("../assets/images/content/hero-bg.png") no-repeat center;
-        background-size: cover;
+        overflow: hidden;
 
-        @include bp.mq(laptop-m) {
-            background: url("../assets/images/content/hero-bg-laptop.png") no-repeat center;
-            background-size: cover;
+        picture,
+        img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
         }
 
-        @include bp.mq(tablet-xl) {
-            background: url("../assets/images/content/hero-bg-tablet.png") no-repeat center;
-            background-size: cover;
-        }
-
-        @include bp.mq(mobile-xl) {
-            background: url("../assets/images/content/hero-bg-mobile.png") no-repeat center;
-            background-size: cover;
+        img {
+            position: absolute;
+            inset: 0;
         }
     }
 
@@ -977,57 +772,6 @@
     }
 }
 
-.rhinoplasty-hero {
-    .hero__bg {
-        position: absolute;
-        inset: 0;
-        z-index: 0;
-        background: url("../assets/images/content/hero-services-detail-bg.png") no-repeat center;
-        background-size: cover;
-
-        @include bp.mq(laptop-m) {
-            background: url("../assets/images/content/hero-services-detail-bg-laptop.png") no-repeat center;
-            background-size: cover;
-        }
-
-        @include bp.mq(tablet-xl) {
-            background: url("../assets/images/content/hero-services-detail-bg-tablet.png") no-repeat center;
-            background-size: cover;
-        }
-
-        @include bp.mq(mobile-xl) {
-            background: url("../assets/images/content/hero-services-detail-bg-mobile.png") no-repeat center;
-            background-size: cover;
-        }
-    }
-}
-
-
-.buttock-enlargement-hero {
-    .hero__bg {
-        position: absolute;
-        inset: 0;
-        z-index: 0;
-        background: url("../assets/images/content/enlargement-bg.png") no-repeat center;
-        background-size: cover;
-
-        @include bp.mq(laptop-m) {
-            background: url("../assets/images/content/enlargement-bg-laptop.png") no-repeat center;
-            background-size: cover;
-        }
-
-        @include bp.mq(tablet-xl) {
-            background: url("../assets/images/content/enlargement-bg-tablet.png") no-repeat center;
-            background-size: cover;
-        }
-
-        @include bp.mq(mobile-xl) {
-            background: url("../assets/images/content/enlargement-bg-mobile.png") no-repeat center;
-            background-size: cover;
-        }
-    }
-}
-
 .about-hero {
     padding-top: 200px;
 
@@ -1065,27 +809,4 @@
            font-size: 38px;
        }
    }
-
-    .hero__bg {
-        position: absolute;
-        inset: 0;
-        z-index: 0;
-        background: url("../assets/images/content/about-bg.png") no-repeat center;
-        background-size: cover;
-
-        @include bp.mq(laptop-m) {
-            background: url("../assets/images/content/about-bg-laptop.png") no-repeat center;
-            background-size: cover;
-        }
-
-        @include bp.mq(tablet-xl) {
-            background: url("../assets/images/content/about-bg-tablet.png") no-repeat center;
-            background-size: cover;
-        }
-
-        @include bp.mq(mobile-xl) {
-            background: url("../assets/images/content/about-bg-mobile.png") no-repeat center;
-            background-size: cover;
-        }
-    }
 }

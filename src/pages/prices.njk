@@ -1,4 +1,4 @@
-{% set meta = { title: "До/после" } %}
+{% set meta = { title: "Цены" } %}
 {% set breadcrumbs = {
     items: [
         { title: "Главная", url: "/" },
@@ -18,7 +18,11 @@
         subtitle: "Прозрачное ценообразование без скрытых платежей",
         buttonText: "Получить консультацию",
         buttonPopup: "popup-entry",
-        class: "hero-services-detail hero-before-after hero-prices"
+        class: "hero-services-detail hero-before-after hero-prices",
+        bg: "/assets/images/content/prices-bg.png",
+        bgLaptop: "/assets/images/content/prices-bg-laptop.png",
+        bgTablet: "/assets/images/content/prices-bg-tablet.png",
+        bgMobile: "/assets/images/content/prices-bg-mobile.png"
     } %}
     {% include "blocks/common/hero/hero-services-detail.njk" %}
     {% include "blocks/common/special-offer/special-offer-sub.njk" %}

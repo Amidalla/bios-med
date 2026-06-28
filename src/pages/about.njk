@@ -16,7 +16,11 @@
     {# Hero с кастомными параметрами для страницы О клинике #}
     {% set hero = {
         title: "Клиника пластической хирургии Биос в&nbsp;Москве",
-        class: "hero-services-detail about-hero"
+        class: "hero-services-detail about-hero",
+        bg: "/assets/images/content/about-bg.png",
+        bgLaptop: "/assets/images/content/about-bg-laptop.png",
+        bgTablet: "/assets/images/content/about-bg-tablet.png",
+        bgMobile: "/assets/images/content/about-bg-mobile.png"
     } %}
     {% include "blocks/common/hero/hero-services-detail.njk" %}
     {% include "blocks/common/advantages/about-advantages.njk" %}
