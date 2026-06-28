@@ -1,0 +1,17 @@
+{# components/general/social-card/social-card.njk #}
+
+{% macro socialCard(icon, title, link, linkText) %}
+<div class="social-card">
+    <div class="social-card__inner">
+        <div class="social-card__icon">
+            {{ icon | safe }}
+        </div>
+        <h4 class="social-card__title">{{ title }}</h4>
+        <div class="border-block">
+            <a href="{{ link }}" class="social-card__link" target="_blank" rel="noopener noreferrer">
+                <span>{{ linkText | default("Подписаться") }}</span>
+            </a>
+        </div>
+    </div>
+</div>
+{% endmacro %}

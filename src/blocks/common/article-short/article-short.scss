@@ -9,6 +9,30 @@
         padding-top: 25px;
     }
 
+    &.article-short-sub {
+        .article-short__header {
+            margin-bottom: 30px;
+        }
+
+        .tabs__nav {
+           margin-bottom: 0;
+        }
+
+        .tabs {
+            @include bp.mq(tablet-xl) {
+                margin-right: -20px;
+            }
+
+            @include bp.mq(mobile-l) {
+                margin-right: -15px !important;
+            }
+        }
+
+        .tabs__content {
+           overflow: visible;
+        }
+    }
+
     .article-slider {
         @include bp.mq(tablet-xl) {
             @include mixin.swiper-nav-styles(

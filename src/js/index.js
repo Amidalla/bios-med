@@ -46,6 +46,9 @@ import { priceList } from "../blocks/common/price-list/price-list.js";
 import { specialOfferSubSlider } from "../blocks/common/special-offer/special-offer-sub.js";
 import { paymentMethodsSlider } from "../blocks/common/payment-methods/payment-methods.js";
 import { beforeAfterShowMore } from "../blocks/common/before-after-short/before-after-doctor.js";
+import { articleTextToggle } from "../blocks/common/article-text/article-text.js";
+import { heroVideo } from "../blocks/common/hero/hero-contacts.js";
+import { contactAddressVideo } from "../blocks/common/contact-address/contact-address.js";
 
 const components = [
     consentNotice,
@@ -92,7 +95,10 @@ const components = [
     priceList,
     specialOfferSubSlider,
     paymentMethodsSlider,
-    beforeAfterShowMore
+    beforeAfterShowMore,
+    articleTextToggle,
+    heroVideo,
+    contactAddressVideo
 ];
 
 function init(context = document) {

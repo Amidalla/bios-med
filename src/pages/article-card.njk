@@ -20,8 +20,12 @@
         class: "hero-services-detail hero-article article-card"
     } %}
     {% include "blocks/common/hero/hero-services-detail.njk" %}
-    {% include "blocks/common/before-after-description/doctor-description.njk" %}
-    {% include "blocks/common/before-after-short/before-after-doctor.njk" %}
+    {% include "blocks/common/services-categories/services-categories-directions.njk" %}
+    {% include "blocks/common/clinic-location/good-operation.njk" %}
+    {% include "blocks/common/article-text/article-text.njk" %}
+     {% include "blocks/common/undergoing-surgery/undergoing-surgery-article.njk" %}
+     {% include "blocks/common/clinic-location/good-operation-sub.njk" %}
+     {% include "blocks/common/article-text/article-text-sub.njk" %}
      {# Переопределяем переменные для selection-operation #}
                 {% set class = "selection-operation--enlargemen" %}
                 {% set title = "онлайн подбор операции" %}
@@ -32,12 +36,7 @@
 
                 {% include "blocks/common/selection-operation/selection-operation.njk" %}
 
-    {% include "blocks/common/career-path/career-path.njk" %}
-    {% include "blocks/common/expert-advice/expert-advice.njk" %}
-
-    {% set subtitle = "Полный перечень услуг и цен Ворошкевича Андрея Альбертовича" %}
-    {% include "blocks/common/price-list/price-list.njk" %}
-
+    {% include "blocks/common/questions/questions.njk" %}
     {% include "blocks/common/find-more/find-more.njk" %}
     {% include "blocks/common/main-form/main-form.njk" %}
 {% endblock %}

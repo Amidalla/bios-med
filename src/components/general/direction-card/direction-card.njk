@@ -1,0 +1,15 @@
+{# components/general/direction-card/direction-card.njk #}
+
+{% macro directionCard(icon, title, items) %}
+<div class="direction-card">
+    <div class="direction-card__icon">
+        {{ icon | safe }}
+    </div>
+    <h3 class="direction-card__title">{{ title }}</h3>
+    <ul class="direction-card__list">
+        {% for item in items %}
+            <li class="direction-card__item"><span></span>{{ item }}</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endmacro %}

@@ -1,0 +1,54 @@
+{% from "components/general/information-card/information-card.njk" import informationCard %}
+
+<section class="undergoing-surgery section undergoing-surgery-sub undergoing-surgery-article">
+    <div class="container">
+        <div class="undergoing-surgery__header">
+            <h2 class="section-title">Как проходит операция</h2>
+        </div>
+
+        <div class="undergoing-surgery__grid">
+            {{ informationCard(
+                icon="/assets/images/content/undergoing-surgery-sub1.png",
+                title="Консультация с хирургом",
+                text="Индивидуальный прием. Обсуждения пожеланий и составление плана операции. Ответы на все ваши вопросы"
+            ) }}
+
+            {{ informationCard(
+                icon="/assets/images/content/undergoing-surgery-sub2.png",
+                title="Подготовка к операции",
+                text="Сдача необходимых анализов и обследований. Получение подробных рекомендаций по подготовке. Операция на современном операционном блоке под контролем опытной бригады анестезиологов и хирургов"
+            ) }}
+
+            {{ informationCard(
+                icon="/assets/images/content/undergoing-surgery-sub3.png",
+                title="Проведение операции",
+                text="Операция на современном операционном блоке под контролем опытной бригады анестезиологов и хирургов. Максимальный комфорт и безопасность"
+            ) }}
+
+            {{ informationCard(
+                icon="/assets/images/content/undergoing-surgery-sub4.png",
+                title="Реабилитационный период и уход",
+                text="Назначается расписание перевязок и послеоперационных осмотров. Хирург дает подробные рекомендации, соблюдение которых приведут к быстрому восстановлению"
+            ) }}
+
+            {{ informationCard(
+                icon="/assets/images/content/undergoing-surgery-sub5.png",
+                title="Ваш идеальный результат",
+                text="После прохождения реабилитационного периода можно наблюдать окончательный результат. Наслаждайтесь своим новым, свежим и естественным образом, который сохранится на долгие годы"
+            ) }}
+        </div>
+
+        <div class="border-container">
+            <div class="surgeons-enlargemen__footer-grid">
+                <div class="surgeons-enlargemen__footer-item">
+                    <h4 class="surgeons-enlargemen__footer-title">Анастезия безопасна</h4>
+                    <p class="surgeons-enlargemen__footer-text">Современные препараты и постоянный мониторинг показателей сводят риски к инимому. Индивидуальный подход</p>
+                </div>
+                <div class="surgeons-enlargemen__footer-item">
+                    <h4 class="surgeons-enlargemen__footer-title">Круглосуточный контроль</h4>
+                    <p class="surgeons-enlargemen__footer-text">В клинике БИОС обеспецивается постоянное наблюдение за состоянием пациента после операции. Команда профессионалов всегда рядом</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

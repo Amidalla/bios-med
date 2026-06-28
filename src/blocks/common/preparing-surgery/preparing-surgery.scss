@@ -14,6 +14,83 @@
         padding-bottom: 32px;
     }
 
+    &.preparing-surgery-sub {
+        position: relative;
+        padding-bottom: 54px;
+        margin-top: -50px;
+        padding-top: 0;
+
+        @include bp.mq(tablet-xl) {
+            margin-top: 0;
+        }
+
+        @include bp.mq(mobile-xl) {
+            padding-bottom: 0;
+        }
+
+        .preparing-surgery__bg {
+            position: absolute;
+            inset: 150px 0 0;
+            background: linear-gradient(180deg, #f7f8f2 0%, #f6efe5 100%);
+
+            @include bp.mq(tablet-xl) {
+                top: 0;
+            }
+        }
+
+        .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .preparing-surgery__decor {
+            position: absolute;
+            top: -70px;
+            right: -20%;
+            left: -20%;
+            z-index: 1;
+            height: 223px;
+            background: linear-gradient(180deg, #f7f8f2 0%, #f6efe5 100%);
+            filter: blur(36.9px);
+
+            @include bp.mq(laptop-m) {
+                right: -20%;
+                left: -20%;
+                filter: blur(50.9px);
+            }
+
+            @include bp.mq(tablet-xl) {
+                top: -120px;
+                filter: blur(45.9px);
+            }
+
+            @include bp.mq(mobile-xl) {
+                top: -90px;
+                filter: blur(40.9px);
+            }
+
+            @include bp.mq(mobile-m) {
+                top: -50px;
+                filter: blur(44.9px);
+            }
+        }
+
+        .preparing-surgery__subtitle {
+            max-width: 754px;
+            margin: 16px auto 0;
+            font-size: 22px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 136%;
+            color: var(--color-brown-dark);
+            text-align: center;
+
+            @include bp.mq(mobile-xl) {
+                font-size: 18px;
+            }
+        }
+    }
+
     .preparing-slider__nav {
         display: none;
 

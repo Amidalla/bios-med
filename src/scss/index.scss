@@ -53,57 +53,20 @@
 @use "../components/general/border-card/border-card";
 @use "../components/general/pricing-card/pricing-card";
 @use "../components/general/surgeon-card/surgeon-card";
+@use "../components/general/direction-card/direction-card";
 @use "../components/general/surgeon-card/surgeon-card-enlargemen";
+@use "../components/general/social-card/social-card";
 @use "../components/general/border-wrapper/border-wrapper";
 
 @use "../components/general/breadcrumbs/breadcrumbs";
-
-/* @use "../components/general/search-form/search-form";
-@use "../components/general/pagination/pagination";
-@use "../components/general/accordion/accordion";
-@use "../components/general/tabs/tabs"; */
 @use "../components/general/consent-notice/consent-notice";
 @use "../components/general/consent-checkbox/consent-checkbox";
 @use "../components/general/logo/logo";
-
-/* @use "../components/general/input-file/input-file";
-@use "../components/general/newsletter-form/newsletter-form";
-@use "../components/general/files/files";
-@use "../components/general/map/map";
-@use "../components/general/toast/toast"; */
-
 @use "../components/common/contacts-header/contacts-header";
 @use "../components/common/contacts-footer/contacts-footer";
 @use "../components/common/socials-footer/socials-footer";
 @use "../components/common/socials-form/socials-form";
-
-/* @use "../components/common/catalog-dropdown/catalog-dropdown";
-@use "../components/common/file-header/file-header";
-@use "../components/common/mini-cart/mini-cart";
-@use "../components/common/email-footer/email-footer"; */
 @use "../components/common/copyright/copyright";
-
-/* @use "../components/common/benefits-item/benefits-item";
-@use "../components/common/vacancies-list/vacancies-list";
-@use "../components/common/catalog-navigation/catalog-navigation";
-@use "../components/common/product-navigation/product-navigation";
-@use "../components/common/product-gallery/product-gallery";
-@use "../components/common/product-description/product-description";
-@use "../components/common/product-properties/product-properties";
-@use "../components/common/product-sku/product-sku";
-@use "../components/common/product-stock/product-stock";
-@use "../components/common/product-title/product-title";
-@use "../components/common/product-price/product-price";
-@use "../components/common/product-quantity/product-quantity";
-@use "../components/common/product-delivery/product-delivery";
-@use "../components/common/product-payment/product-payment";
-@use "../components/common/ya-maps/ya-maps";
-@use "../components/common/widget-product-delivery/widget-product-delivery";
-@use "../components/common/widget-product-calculate/widget-product-calculate";
-@use "../components/common/products-table/products-table";
-@use "../components/common/order-summary/order-summary";
-@use "../components/common/widget-callback/widget-callback";
-@use "../components/common/popup-order/popup-order"; */
 @use "../components/common/popup-entry/popup-entry";
 @use "../components/common/popup-consultation/popup-consultation";
 @use "../components/common/popup-find-more/popup-find-more";
@@ -116,14 +79,6 @@
 @use "../components/common/popup-gluteoplasty/popup-gluteoplasty";
 @use "../components/common/popup-butterfly/popup-butterfly";
 @use "../components/common/popup-before-after/popup-before-after";
-
-/* @use "../components/common/popup-callback-success/popup-callback-success";
-@use "../components/common/popup-feedback/popup-feedback";
-@use "../components/common/popup-feedback-success/popup-feedback-success";
-@use "../components/common/popup-order-success/popup-order-success";
-@use "../components/common/popup-price/popup-price";
-@use "../components/common/popup-invoice/popup-invoice";
-@use "../components/common/policy-navigation/policy-navigation"; */
 @use "../components/common/contacts-mobile/contacts-mobile";
 
 // --------------------------------------
@@ -133,8 +88,6 @@
 @use "../blocks/general/footer/footer";
 @use "../blocks/general/section/section";
 
-/* @use "../blocks/general/error-404/error-404";
-@use "../blocks/general/search/search"; */
 
 @use "../blocks/common/hero/hero";
 @use "../blocks/common/advantages/advantages";
@@ -183,24 +136,9 @@
 @use "../blocks/common/payment-methods/payment-methods";
 @use "../blocks/common/policy/policy";
 @use "../blocks/common/career-path/career-path";
+@use "../blocks/common/article-text/article-text";
+@use "../blocks/common/contact-address/contact-address";
+@use "../blocks/common/contacts-routes/contacts-routes";
+@use "../blocks/common/contacts-social/contacts-social";
 
-/* @use "../blocks/common/about-short/about-short";
-@use "../blocks/common/about-hero/about-hero";
-@use "../blocks/common/about-benefits/about-benefits";
-@use "../blocks/common/feedback/feedback";
-@use "../blocks/common/newsletter/newsletter";
-@use "../blocks/common/contacts/contacts";
-@use "../blocks/common/catalog/catalog";
-@use "../blocks/common/catalog-hero/catalog-hero";
-@use "../blocks/common/benefits/benefits";
-@use "../blocks/common/payment/payment";
-@use "../blocks/common/delivery/delivery";
-@use "../blocks/common/documents/documents";
-@use "../blocks/common/warranty/warranty";
-@use "../blocks/common/requisites/requisites";
-@use "../blocks/common/vacancies/vacancies";
-@use "../blocks/common/catalog-category/catalog-category";
-@use "../blocks/common/catalog-detail/catalog-detail";
-@use "../blocks/common/order/order";
-@use "../blocks/common/seo/seo";
-@use "../blocks/common/policy/policy"; */
+

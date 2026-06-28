@@ -10,6 +10,23 @@
         padding-bottom: 0;
     }
 
+    &.undergoing-surgery-sub.undergoing-surgery-article {
+
+        @include bp.mq(mobile-xl) {
+            padding-top: 25px;
+        }
+        .surgeons-enlargemen__footer-grid {
+            grid-template-columns: repeat(2, 1fr);
+            margin-top: 30px;
+        }
+
+        .section-title {
+            @include bp.mq(mobile-xl) {
+                margin-top: 0;
+            }
+        }
+    }
+
     &.undergoing-surgery-sub {
         .undergoing-surgery__grid {
             grid-template-columns: repeat(5, 1fr);

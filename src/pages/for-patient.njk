@@ -1,0 +1,42 @@
+{% set meta = { title: "Статьи" } %}
+{% set breadcrumbs = {
+     items: [
+            { title: "Главная", url: "/" },
+            { title: "Пациенту" }
+        ]
+} %}
+{% set page = {
+    heading: false,
+    after_content: true,
+    breadcrumbsSeparator: "line-gradient"
+} %}
+{% extends "layouts/default.njk" %}
+
+{% block content %}
+    {# Hero с кастомными параметрами для страницы ринопластики #}
+    {% set hero = {
+        title: "информация для пациента",
+        subtitle: "Команда профессионалов с многолетним опытом",
+        label: "Полезная информация",
+        description: "<p>Мы подготовили для вас все необходимые сведения о подготовке к операциям, процессе восстановления и важных аспектах вашего пребывания в клинике БИОС.</p>
+        <p>Наша цель - сделать ваш путь к красоте и здоровью максимально комфортным и безопасным. Ознакомьтесь с полезнвми материалами, чтобы чувствовать себя уверенно на каждом этапе</p>",
+        buttonText: "Получить консультацию",
+        buttonPopup: "popup-entry",
+        linkText: "Узнать больше",
+        linkUrl: "#",
+        showRating: true,
+        class: "hero-services-detail for-patient-hero"
+    } %}
+
+    {% include "blocks/common/hero/hero-services-detail.njk" %}
+    {% include "blocks/common/preparing-surgery/preparing-surgery-sub.njk" %}
+    {% include "blocks/common/undergoing-surgery/undergoing-surgery-sub.njk" %}
+    {% include "blocks/common/article-short/article-short-sub.njk" %}
+    {% include "blocks/common/selection-operation/selection-operation.njk" %}
+    {% include "blocks/common/expert-advice/expert-advice.njk" %}
+    {% include "blocks/common/find-more/find-more.njk" %}
+    {% include "blocks/common/main-form/main-form.njk" %}
+{% endblock %}
+
+{% block after_content %}
+{% endblock %}

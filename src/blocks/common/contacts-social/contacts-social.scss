@@ -1,0 +1,71 @@
+@use "core/breakpoints" as bp;
+@use "core/mixins" as mix;
+
+.contacts-social {
+  background: var(--color-8);
+
+  @include bp.mq(tablet-xl) {
+    padding-bottom: 25px;
+  }
+
+  @include bp.mq(mobile-xl) {
+    padding-bottom: 0;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .section-label {
+    margin: 0 auto 45px auto;
+  }
+
+  &__subtitle {
+    text-align: center;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 136%;
+    color: var(--color-brown-dark);
+    margin-top: 22px;
+
+    @include bp.mq(mobile-xl) {
+      font-size: 18px;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 8px;
+    row-gap: 38px;
+
+    @include bp.mq(laptop-l) {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    @include bp.mq(tablet-xl) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+    }
+
+    @include bp.mq(mobile-xl) {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .social-card {
+      @include bp.mq(laptop-l) {
+        width: 30%;
+      }
+
+      @include bp.mq(tablet-xl) {
+        width: auto;
+      }
+    }
+  }
+}

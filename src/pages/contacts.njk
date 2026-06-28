@@ -1,0 +1,42 @@
+{% set meta = { title: "Контакты" } %}
+{% set breadcrumbs = {
+     items: [
+            { title: "Контакты", url: "/" },
+            { title: "Контакты" }
+        ]
+} %}
+{% set page = {
+    heading: false,
+    after_content: true,
+    breadcrumbsSeparator: "line-gradient"
+} %}
+{% extends "layouts/default.njk" %}
+
+{% block content %}
+    {% set hero = {
+            title: "Контакты",
+            class: "hero-services-detail hero-contacts"
+        } %}
+
+    {% include "blocks/common/hero/hero-contacts.njk" %}
+    {% include "blocks/common/contact-address/contact-address.njk" %}
+    {% include "blocks/common/contacts-routes/contacts-routes.njk" %}
+
+    {% set class = "selection-operation--home" %}
+        {% set title = "онлайн подбор операции" %}
+        {% set highlightText = "для иногородних пациентов" %}
+        {% set description = "Подберем для вас оптимальные процедуры на основе ваших индивидуальных потребностей" %}
+        {% set buttonText = "Отправить заявку" %}
+        {% set buttonPopup = "popup-entry" %}
+        {% set backgroundImage = "" %}
+        {% set pretitle = "" %}
+
+        {% include "blocks/common/selection-operation/selection-operation.njk" %}
+
+    {% include "blocks/common/contacts-social/contacts-social.njk" %}
+    {% include "blocks/common/find-more/find-more.njk" %}
+    {% include "blocks/common/main-form/main-form.njk" %}
+{% endblock %}
+
+{% block after_content %}
+{% endblock %}
