@@ -46,18 +46,18 @@
       background-size: cover;
     }
     @include bp.mq(mobile-l) {
+      padding-bottom: 200px;
       background-color: var(--color-8);
       background-image: url("../assets/images/content/good-operation-sub-bg-mobile.png");
       background-repeat: no-repeat;
       background-position: center top;
       background-size: cover;
-      padding-bottom: 200px;
     }
 
     .clinic-location__text-block,
     .clinic-location__list {
-      margin-left: 0;
       margin-right: auto;
+      margin-left: 0;
     }
   }
 
@@ -75,12 +75,12 @@
       background-size: cover;
     }
     @include bp.mq(mobile-l) {
+      padding-bottom: 0;
       background-color: var(--color-8);
       background-image: url("../assets/images/content/good-operation-bg-mobile.png");
       background-repeat: no-repeat;
       background-position: center top;
       background-size: cover;
-      padding-bottom: 0;
     }
 
     .clinic-location__text-block {
@@ -92,10 +92,10 @@
     }
 
     .clinic-location__list {
-      max-width: 1123px;
       grid-template-columns: repeat(4, 1fr);
-      margin-left: auto;
+      max-width: 1123px;
       margin-right: 0;
+      margin-left: auto;
 
       @include bp.mq(tablet-xl) {
         grid-template-columns: repeat(2, 1fr);
@@ -107,13 +107,13 @@
     }
 
     .clinic-location__item-title {
+      margin-bottom: 15px;
       font-family: var(--font-family-secondary);
       font-size: 26px;
       font-style: normal;
       font-weight: 400;
       line-height: 100%;
       color: var(--color-brown-dark);
-      margin-bottom: 15px;
 
       @include bp.mq(mobile-xl) {
         font-size: 18px;

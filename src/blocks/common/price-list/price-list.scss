@@ -187,10 +187,10 @@
 
   &__item-row {
     display: flex;
+    gap: 15px;
     justify-content: space-between;
     padding: 12px 0;
     border-bottom: none;
-    gap: 15px;
 
     &:last-child {
       border-bottom: none;
@@ -319,8 +319,8 @@
     }
 
     @include bp.mq(mobile-xl) {
-      padding: 16px 7px;
       gap: 10px;
+      padding: 16px 7px;
     }
   }
 

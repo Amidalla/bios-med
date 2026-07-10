@@ -35,32 +35,32 @@
         {%
             set images = {
                 all: [
-                    { before: "/assets/images/content/before-face-1.jpg", after: "/assets/images/content/after-face-1.jpg" },
-                    { before: "/assets/images/content/before-face-2.jpg", after: "/assets/images/content/after-face-2.jpg" },
-                    { before: "/assets/images/content/before-face-1.jpg", after: "/assets/images/content/after-face-1.jpg" },
-                    { before: "/assets/images/content/before-face-2.jpg", after: "/assets/images/content/after-face-2.jpg" },
-                    { before: "/assets/images/content/before-face-1.jpg", after: "/assets/images/content/after-face-1.jpg" },
-                    { before: "/assets/images/content/before-face-2.jpg", after: "/assets/images/content/after-face-2.jpg" }
+                    "./assets/images/content/before-after-new.jpg",
+                    "./assets/images/content/before-after-new.jpg",
+                    "./assets/images/content/before-after-new.jpg",
+                    "./assets/images/content/before-after-new.jpg",
+                    "./assets/images/content/before-after-new.jpg",
+                    "./assets/images/content/before-after-new.jpg"
                 ],
                 facelift: [
-                    { before: "/assets/images/content/before-face-1.jpg", after: "/assets/images/content/after-face-1.jpg" },
-                    { before: "/assets/images/content/before-face-2.jpg", after: "/assets/images/content/after-face-2.jpg" },
-                    { before: "/assets/images/content/before-face-1.jpg", after: "/assets/images/content/after-face-1.jpg" }
+                    "./assets/images/content/before-after-new.jpg",
+                    "./assets/images/content/before-after-new.jpg",
+                    "./assets/images/content/before-after-new.jpg"
                 ],
                 blepharoplasty: [
-                    { before: "/assets/images/content/before-face-2.jpg", after: "/assets/images/content/after-face-2.jpg" },
-                    { before: "/assets/images/content/before-face-1.jpg", after: "/assets/images/content/after-face-1.jpg" },
-                    { before: "/assets/images/content/before-face-2.jpg", after: "/assets/images/content/after-face-2.jpg" },
-                    { before: "/assets/images/content/before-face-1.jpg", after: "/assets/images/content/after-face-1.jpg" }
+                    "./assets/images/content/before-after-new.jpg",
+                    "./assets/images/content/before-after-new.jpg",
+                    "./assets/images/content/before-after-new.jpg",
+                    "./assets/images/content/before-after-new.jpg"
                 ],
                 endoscopic: [
-                    { before: "/assets/images/content/before-face-1.jpg", after: "/assets/images/content/after-face-1.jpg" },
-                    { before: "/assets/images/content/before-face-2.jpg", after: "/assets/images/content/after-face-2.jpg" }
+                    "./assets/images/content/before-after-new.jpg",
+                    "./assets/images/content/before-after-new.jpg"
                 ],
                 breast: [
-                    { before: "/assets/images/content/before-face-2.jpg", after: "/assets/images/content/after-face-2.jpg" },
-                    { before: "/assets/images/content/before-face-1.jpg", after: "/assets/images/content/after-face-1.jpg" },
-                    { before: "/assets/images/content/before-face-2.jpg", after: "/assets/images/content/after-face-2.jpg" }
+                    "./assets/images/content/before-after-new.jpg",
+                    "./assets/images/content/before-after-new.jpg",
+                    "./assets/images/content/before-after-new.jpg"
                 ]
             }
         %}
@@ -76,7 +76,11 @@
                     <div class="before-after-short__grid" data-tab="{{ tabId }}">
                         {% for img in currentImages %}
                             <div class="before-after-short__grid-item {% if loop.index > initialCount %}hidden{% endif %}" data-index="{{ loop.index }}">
-                                {{ beforeAfterCard(img.before, img.after) }}
+                                {{ beforeAfterCard(
+                                    image = img,
+                                    beforeText = 'До',
+                                    afterText = 'После'
+                                ) }}
                             </div>
                         {% endfor %}
                     </div>

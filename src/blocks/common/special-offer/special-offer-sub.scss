@@ -21,6 +21,11 @@
     margin-right: -20%;
     margin-left: -20%;
     filter: blur(32.9px);
+
+    @include bp.mq(mobile-xl) {
+      top: -90px;
+    }
+
   }
 
   &__text-wrapper {
@@ -117,13 +122,6 @@
 
     @include bp.mq(mobile-xl) {
       font-size: 16px;
-    }
-  }
-
-  &__slider-wrapper {
-
-    @include bp.mq(mobile-xl) {
-      margin-top: -80px;
     }
   }
 

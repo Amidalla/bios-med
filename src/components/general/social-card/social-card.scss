@@ -22,16 +22,17 @@
   }
 
   &__icon {
+    flex-shrink: 0;
     width: 62.994px;
     height: 59.736px;
     margin: 0 auto 4px;
-    flex-shrink: 0;
 
     svg {
       width: 100%;
       height: 100%;
     }
   }
+
   &__title {
     margin-bottom: 14px;
     font-family: var(--font-family-secondary);

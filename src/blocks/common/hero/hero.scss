@@ -58,34 +58,33 @@
 
 
             .hero__cards-item {
-
                 &.contacts {
-                    border-radius: 15px;
-                    border: 2px solid var(--bg, #BE9158);
-                    background: rgba(255, 255, 255, 0.80);
                     padding: 25px;
+                    background: rgb(255 255 255 / 80%);
+                    border: 2px solid var(--bg, #BE9158);
+                    border-radius: 15px;
 
                     .hero__cards-title {
+                        position: relative;
+                        padding-bottom: 20px;
+                        margin-top: 0;
+                        margin-bottom: 20px;
                         font-family: var(--font-family-secondary);
-                        color: var(--color-brown-dark);
                         font-size: 30px;
                         font-style: normal;
                         font-weight: 400;
                         line-height: 110%; /* 33px */
+                        color: var(--color-brown-dark);
                         text-transform: uppercase;
-                        padding-bottom: 20px;
-                        margin-bottom: 20px;
-                        position: relative;
-                        margin-top: 0;
 
                         &::after {
-                            content: "";
-                            width: 71px;
-                            height: 1px;
-                            background: var(--color-3);
                             position: absolute;
                             bottom: 0;
                             left: 0;
+                            width: 71px;
+                            height: 1px;
+                            content: "";
+                            background: var(--color-3);
                         }
                     }
                 }
@@ -93,29 +92,29 @@
                 &.video {
                     position: relative;
                     width: 365px;
-                    border-radius: 15px;
-                    border: 2px solid var(--bg, #BE9158);
-                    background: rgba(255, 255, 255, 0.55);
                     overflow: hidden;
                     cursor: pointer;
+                    background: rgb(255 255 255 / 55%);
+                    border: 2px solid var(--bg, #BE9158);
+                    border-radius: 15px;
                     transition: transform 0.3s ease, box-shadow 0.3s ease;
 
                     &:hover {
+                        box-shadow: 0 15px 40px rgb(0 0 0 / 50%);
                         backdrop-filter: blur(8px);
-                        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
                     }
 
                     .hero__cards-title {
+                        position: absolute;
+                        top: 25px;
+                        left: 25px;
                         font-family: var(--font-family-secondary);
-                        color: var(--color-brown-dark);
                         font-size: 30px;
                         font-style: normal;
                         font-weight: 400;
                         line-height: 110%; /* 33px */
+                        color: var(--color-brown-dark);
                         text-transform: uppercase;
-                        position: absolute;
-                        top: 25px;
-                        left: 25px;
                     }
 
                     .hero__cards-poster {
@@ -140,23 +139,23 @@
                         position: absolute;
                         top: 50%;
                         left: 50%;
-                        transform: translate(-50%, -50%);
                         z-index: 10;
-                        width: 110px;
-                        height: 110px;
-                        background: none;
-                        border: none;
-                        cursor: pointer;
-                        padding: 0;
-                        transition: transform 0.3s ease, filter 0.3s ease;
                         display: flex;
                         align-items: center;
                         justify-content: center;
+                        width: 110px;
+                        height: 110px;
+                        padding: 0;
+                        cursor: pointer;
+                        background: none;
+                        border: none;
+                        transform: translate(-50%, -50%);
+                        transition: transform 0.3s ease, filter 0.3s ease;
 
                         svg {
                             width: 100%;
                             height: 100%;
-                            filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.5));
+                            filter: drop-shadow(0 4px 20px rgb(0 0 0 / 50%));
                             transition: transform 0.3s ease;
                         }
 
@@ -171,11 +170,11 @@
                         position: absolute;
                         top: 0;
                         left: 0;
+                        z-index: 20;
+                        display: none;
                         width: 100%;
                         height: 100%;
-                        z-index: 20;
                         background: #000;
-                        display: none;
                         opacity: 0;
                         transition: opacity 0.5s ease;
 
@@ -186,24 +185,24 @@
                     }
 
                     .hero__cards-video-player iframe {
+                        display: block;
                         width: 100%;
                         height: 100%;
                         border: none;
-                        display: block;
                     }
                 }
 
                 .hero__cards-list {
-                    padding: 0;
-                    margin: 0;
-                    list-style: none;
                     display: flex;
                     flex-direction: column;
                     gap: 20px;
+                    padding: 0;
+                    margin: 0;
+                    list-style: none;
 
                     li {
-                        padding-left: 25px;
                         position: relative;
+                        padding-left: 25px;
                         font-size: 20px;
                         font-style: normal;
                         font-weight: 500;
@@ -266,6 +265,7 @@
 
                     .hero__cards-btn {
                         @include mix.button-gradient(20px 27px);
+
                         width: 100%;
                     }
                 }
@@ -285,6 +285,10 @@
     }
 
     &.hero-services-detail.for-patient-hero {
+
+        @include bp.mq(mobile-xl) {
+            min-height: 871px;
+        }
 
         @include bp.mq(mobile-xl) {
             .hero__content {
@@ -368,7 +372,6 @@
     }
 
     &.hero-services-detail.hero-error {
-
         .hero__title {
             font-size: 230px;
             font-style: normal;
@@ -376,23 +379,23 @@
             line-height: 96%;
             text-transform: uppercase;
             background: linear-gradient(89deg, #CCA684 31.15%, #FFE0AF 99.32%);
-            background-clip: text;
             -webkit-background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
         .hero__subtitle {
+            margin-bottom: 70px;
+            font-family: var(--font-family-primary);
             font-size: 22px;
             font-style: normal;
             font-weight: 400;
             line-height: 120%;
-            font-family: var(--font-family-primary);
-            margin-bottom: 70px;
 
             @include bp.mq(mobile-xl) {
-                text-align: center;
                 margin-bottom: 30px;
                 font-size: 20px;
+                text-align: center;
             }
         }
 
@@ -428,8 +431,8 @@
         padding-top: 210px;
 
         @include bp.mq(mobile-xl) {
-            padding-top: 150px;
             min-height: 600px;
+            padding-top: 150px;
         }
 
         .hero__subtitle {
@@ -438,6 +441,12 @@
 
             @include bp.mq(mobile-xl) {
                 font-size: 20px;
+            }
+        }
+
+        .hero__content {
+            @include bp.mq(mobile-xl) {
+                align-items: start;
             }
         }
     }
@@ -586,9 +595,9 @@
 
         picture,
         img {
+            display: block;
             width: 100%;
             height: 100%;
-            display: block;
             object-fit: cover;
         }
 

@@ -1,4 +1,4 @@
-{% macro beforeAfterCard(beforeImage, afterImage, beforeText = 'До', afterText = 'После') %}
+<!--{% macro beforeAfterCard(beforeImage, afterImage, beforeText = 'До', afterText = 'После') %}
     <div class="card-ba">
         <div class="card-ba__inner">
             <div class="card-ba__col">
@@ -12,6 +12,20 @@
                     <img class="lazy" src="{{ afterImage }}" alt="{{ afterText }}">
                     <span class="card-ba__label">{{ afterText }}</span>
                 </div>
+            </div>
+        </div>
+    </div>
+{% endmacro %}-->
+{# before-after-card.njk #}
+{% macro beforeAfterCard(image, beforeText = 'До', afterText = 'После') %}
+    <div class="card-ba">
+        <div class="card-ba__inner">
+            <div class="card-ba__image-wrapper">
+                <img class="lazy" src="{{ image }}" alt="До и после">
+            </div>
+            <div class="card-ba__decor">
+               <div class="card-ba__decor-item"><span class="card-ba__label card-ba__label--before">{{ beforeText }}</span></div>
+               <div class="card-ba__decor-item"> <span class="card-ba__label card-ba__label--after">{{ afterText }}</span></div>
             </div>
         </div>
     </div>

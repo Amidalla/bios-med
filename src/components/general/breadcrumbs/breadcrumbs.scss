@@ -157,9 +157,9 @@
 
         .list {
             gap: var(--breadcrumbs-gap-sm);
-            font-size: var(--breadcrumbs-font-size-sm);
-            padding-left: 10px;
             padding-right: 10px;
+            padding-left: 10px;
+            font-size: var(--breadcrumbs-font-size-sm);
         }
 
         .item {

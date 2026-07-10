@@ -18,17 +18,17 @@
   }
 
   .section-label {
-    margin: 0 auto 45px auto;
+    margin: 0 auto 45px;
   }
 
   &__subtitle {
-    text-align: center;
+    margin-top: 22px;
     font-size: 22px;
     font-style: normal;
     font-weight: 500;
     line-height: 136%;
     color: var(--color-brown-dark);
-    margin-top: 22px;
+    text-align: center;
 
     @include bp.mq(mobile-xl) {
       font-size: 18px;
@@ -38,13 +38,12 @@
   &__grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    column-gap: 8px;
-    row-gap: 38px;
+    gap: 38px 8px;
 
     @include bp.mq(laptop-l) {
       display: flex;
-      justify-content: center;
       flex-wrap: wrap;
+      justify-content: center;
     }
 
     @include bp.mq(tablet-xl) {

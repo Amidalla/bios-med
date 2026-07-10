@@ -15,6 +15,7 @@
         @include bp.mq(mobile-xl) {
             padding-top: 25px;
         }
+
         .surgeons-enlargemen__footer-grid {
             grid-template-columns: repeat(2, 1fr);
             margin-top: 30px;
@@ -247,26 +248,26 @@
 
         .section-title {
             @include bp.mq(laptop-l) {
-                white-space: unset;
                 min-width: 849px;
+                white-space: unset;
             }
             @include bp.mq(tablet-xl) {
                 min-width: 500px;
             }
             @include bp.mq(mobile-xl) {
-                margin-top: 0;
                 min-width: auto;
+                margin-top: 0;
 
             }
 
             @include bp.mq(mobile-l) {
-                padding-left: 5px;
                 padding-right: 5px;
+                padding-left: 5px;
             }
 
             @include bp.mq(mobile-l) {
-                padding-left: 1px;
                 padding-right: 1px;
+                padding-left: 1px;
             }
 
         }

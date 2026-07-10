@@ -42,5 +42,11 @@
         @include bp.mq(mobile-l) {
             grid-template-columns: repeat(1, 1fr);
         }
+
+        .information-card {
+            @include bp.mq(laptop-l) {
+                width: auto;
+            }
+        }
     }
 }

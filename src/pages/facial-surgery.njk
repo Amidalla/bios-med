@@ -1,9 +1,9 @@
-{% set meta = { title: "Увеличение ягодиц" } %}
+{% set meta = { title: "Операции на лице" } %}
 {% set breadcrumbs = {
     items: [
         { title: "Главная", url: "/" },
         { title: "Услуги", url: "/services.html" },
-        { title: "Увеличение ягодиц" }
+        { title: "Операции на лице" }
     ]
 } %}
 {% set page = {
@@ -14,26 +14,26 @@
 {% extends "layouts/default.njk" %}
 
 {% block content %}
-    {# Hero с кастомными параметрами для страницы увеличение ягодиц #}
+    {# Hero с кастомными параметрами для страницы ринопластики #}
     {% set hero = {
-        title: "Увеличение ягодиц в клинике BIOS",
+        title: "операции на лице в клинике BIOS",
         label: "Идеальные формы без компромиссов",
-        description: "Естественные и гармоничные пропорции тела благодаря передовым методикам пластической хирургии и опыту наших ведущих специалистов",
+        description: "Естесственные и гармоничные пропорции тела благодаря передовым методикам пластической хирургии и опыту наших ведущих специалистов",
         buttonText: "Получить консультацию",
         buttonPopup: "popup-entry",
         linkText: "Результаты до/после",
         linkUrl: "#before-after-short",
         showRating: true,
-        class: "hero-services-detail buttock-enlargement-hero",
-        bg: "/assets/images/content/enlargement-bg.png",
-        bgLaptop: "/assets/images/content/enlargement-bg-laptop.png",
-        bgTablet: "/assets/images/content/enlargement-bg-tablet.png",
-        bgMobile: "/assets/images/content/enlargement-bg-mobile.png"
+        class: "hero-services-detail facial-surgery-hero",
+        bg: "/assets/images/content/facial-surgery-bg.png",
+        bgLaptop: "/assets/images/content/hero-services-detail-bg-laptop.png",
+        bgTablet: "/assets/images/content/hero-services-detail-bg-tablet.png",
+        bgMobile: "/assets/images/content/hero-services-detail-bg-mobile.png"
     } %}
     {% include "blocks/common/hero/hero-services-detail.njk" %}
 
-    {% include "blocks/common/enlargement-description/enlargement-description.njk" %}
-    {% include "blocks/common/operations-types/magnification-types.njk" %}
+    {% set servicesClass = "services-categories--modified" %}
+    {% include "blocks/common/services-categories/services-categories-sub.njk" %}
 
     {# Переопределяем переменные для before-after-short #}
     {% set showSubtitle = true %}
@@ -65,7 +65,8 @@
 
     {% set buttonText = buttonTextBeforeAfter %}
     {% include "blocks/common/before-after-short/before-after-short.njk" %}
-    {% include "blocks/common/stories-short/stories-short.njk" %}
+
+    {% include "blocks/common/stories-short/stories-short-sub.njk" %}
 
     {# Переопределяем переменные для selection-operation #}
     {% set class = "selection-operation--enlargemen" %}
@@ -76,12 +77,11 @@
 
     {% include "blocks/common/selection-operation/selection-operation.njk" %}
 
-    {% include "blocks/common/surgeons-enlargemen/surgeons-enlargemen.njk" %}
-    {% include "blocks/common/pricing/pricing-enlargemen.njk" %}
+    {% include "blocks/common/surgeons/surgeons.njk" %}
+    {% include "blocks/common/price-list/price-list.njk" %}
     {% include "blocks/common/undergoing-surgery/undergoing-surgery-sub.njk" %}
-     {% include "blocks/common/expert-advice/expert-advice.njk" %}
+    {% include "blocks/common/expert-advice/expert-advice.njk" %}
     {% include "blocks/common/advantages/advantages-sub.njk" %}
-
     {% include "blocks/common/questions/questions.njk" %}
     {% include "blocks/common/main-form/main-form.njk" %}
 {% endblock %}

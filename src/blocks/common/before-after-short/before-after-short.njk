@@ -36,6 +36,93 @@
         {%
             set images = images | default({
                 face: [
+                    "./assets/images/content/before-after-new.jpg",
+                    "./assets/images/content/before-after-new.jpg"
+                ],
+                breast: [
+                    "./assets/images/content/before-after-new.jpg"
+                ],
+                body: [
+                    "./assets/images/content/before-after-new.jpg"
+                ]
+            })
+        %}
+
+        {% call tabsRender(tabsLabels, defaultTab) %}
+
+            {% call panel("face", defaultTab == "face") %}
+                <div class="before-after-short__grid">
+                    {% for img in images.face %}
+                        {{ beforeAfterCard(img) }}
+                    {% endfor %}
+                </div>
+            {% endcall %}
+
+            {% call panel("breast", defaultTab == "breast") %}
+                <div class="before-after-short__grid">
+                    {% for img in images.breast %}
+                        {{ beforeAfterCard(img) }}
+                    {% endfor %}
+                </div>
+            {% endcall %}
+
+            {% call panel("body", defaultTab == "body") %}
+                <div class="before-after-short__grid">
+                    {% for img in images.body %}
+                        {{ beforeAfterCard(img) }}
+                    {% endfor %}
+                </div>
+            {% endcall %}
+
+        {% endcall %}
+
+        <div class="before-after-short__footer">
+            <div class="border-block">
+                <a href="{{ buttonLink | default('/before-after') }}" class="link-all-results">
+                    <span>{{ buttonText | default("Все результаты") }}</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+<!--{# blocks/common/before-after-short/before-after-short.njk #}
+
+{% from "components/general/before-after-card/before-after-card.njk" import beforeAfterCard %}
+{% from "components/general/tabs/tabs.njk" import render as tabsRender, panel %}
+
+<section class="before-after-short section" id="before-after-short">
+    <div class="container">
+        <div class="before-after-short__header">
+            {% set title = {
+                text: "результаты до/после",
+                tag: "h2",
+                class: "section-title"
+            } %}
+            {% include "components/general/title/title.njk" %}
+
+            {# Подзаголовок - выводится только если передан showSubtitle = true #}
+            {% if showSubtitle | default(false) %}
+                <div class="before-after-short__subtitle">
+                    <p>{{ subtitleText | default("Смотрите реальные результаты наших пациентов") }}</p>
+                </div>
+            {% endif %}
+        </div>
+
+        {%
+            set tabsLabels = tabsLabels | default({
+                face: "Лицо",
+                breast: "Грудь",
+                body: "Тело"
+            })
+        %}
+
+        {%
+            set defaultTab = defaultTab | default("face")
+        %}
+
+        {%
+            set images = images | default({
+                face: [
                     { before: "/assets/images/content/before-face-1.jpg", after: "/assets/images/content/after-face-1.jpg" },
                     { before: "/assets/images/content/before-face-2.jpg", after: "/assets/images/content/after-face-2.jpg" }
                 ],
@@ -84,4 +171,4 @@
             </div>
         </div>
     </div>
-</section>
+</section>-->

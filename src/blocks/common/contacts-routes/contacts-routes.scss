@@ -7,12 +7,12 @@
 
   &__map {
     position: relative;
-    margin-left: -5%;
     margin-right: -5%;
+    margin-left: -5%;
 
     @include bp.mq(tablet-xl) {
-      margin-left: -10%;
       margin-right: -10%;
+      margin-left: -10%;
     }
 
     iframe {
@@ -21,23 +21,22 @@
     }
 
     &::before {
-      content: "";
-      width: 100%;
-      height: 200px;
       position: absolute;
       top: -80px;
-      left: 0;
       right: 0;
+      left: 0;
+      z-index: 1;
+      width: 100%;
+      height: 200px;
       pointer-events: none;
-      filter: blur(30.9px);
-
+      content: "";
       background-image:
               url("../assets/images/content/map-before.png"),
               linear-gradient(180deg, #f7f8f2 0%, #f6efe5 100%);
       background-repeat: no-repeat;
       background-position: center;
       background-size: 100% 100%;
-      z-index: 1;
+      filter: blur(30.9px);
 
       @include bp.mq(tablet-xl) {
         filter: blur(22.9px);
@@ -45,23 +44,22 @@
     }
 
     &::after {
-      content: "";
-      width: 100%;
-      height: 200px;
       position: absolute;
+      right: 0;
       bottom: -80px;
       left: 0;
-      right: 0;
+      z-index: 1;
+      width: 100%;
+      height: 200px;
       pointer-events: none;
-      filter: blur(30.9px);
-
+      content: "";
       background-image:
               url("../assets/images/content/map-before.png"),
               linear-gradient(180deg, #f7f8f2 0%, #f6efe5 100%);
       background-repeat: no-repeat;
       background-position: center;
       background-size: 100% 100%;
-      z-index: 1;
+      filter: blur(30.9px);
 
       @include bp.mq(tablet-xl) {
         filter: blur(22.9px);
@@ -77,15 +75,15 @@
 
   &__map-decor {
     position: absolute;
-    width: 100%;
-    height: 100%;
     top: 0;
     left: 0;
     z-index: 0;
-    opacity: 0.8;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
     background: linear-gradient(139deg, #E5D5B0 43.66%, #5D3D21 60.8%);
     mix-blend-mode: multiply;
-    pointer-events: none;
+    opacity: 0.8;
   }
 
   .container {
@@ -94,13 +92,13 @@
   }
 
   &__subtitle {
-    text-align: center;
+    margin-top: 22px;
     font-size: 22px;
     font-style: normal;
     font-weight: 500;
     line-height: 136%;
     color: var(--color-brown-dark);
-    margin-top: 22px;
+    text-align: center;
 
     @include bp.mq(mobile-xl) {
       font-size: 18px;
@@ -108,10 +106,10 @@
   }
 
   &__grid {
-    margin-top: 25px;
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 23px;
+    margin-top: 25px;
     margin-bottom: 37px;
 
     @include bp.mq(mobile-xl) {
@@ -131,9 +129,9 @@
       padding-bottom: 11px;
       margin-top: -11px;
       margin-bottom: -11px;
+      color: var(--color-white);
       border: 1px solid #be9158;
       border-radius: 20px;
-      color: var(--color-white);
     }
   }
 

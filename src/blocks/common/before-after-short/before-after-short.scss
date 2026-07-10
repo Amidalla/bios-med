@@ -84,8 +84,9 @@
 
         .before-after-short__show-more {
             @include mix.button-gradient(24px 40px);
-            max-width: 100%;
+
             width: 100%;
+            max-width: 100%;
 
             &:hover {
                 transform: none;
@@ -98,9 +99,9 @@
 
         .before-after-short__show-more span {
             display: inline-block;
-            color: #967252;
-            font-weight: 500;
             font-size: 16px;
+            font-weight: 500;
+            color: #967252;
             transition: all 0.3s ease;
         }
 
@@ -110,6 +111,7 @@
 
         .border-block {
             @include mix.border-block;
+
             max-width: 305px;
         }
 

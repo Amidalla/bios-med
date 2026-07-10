@@ -63,8 +63,8 @@
 
         .review-card__badge {
             @include bp.mq(tablet-xl) {
-                padding-left: 15px;
                 padding-right: 15px;
+                padding-left: 15px;
             }
         }
 

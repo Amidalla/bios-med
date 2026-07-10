@@ -2,7 +2,7 @@ import { Fancybox } from "@fancyapps/ui/dist/fancybox/";
 
 export function popupEntry(context = document) {
 
-    context.addEventListener('click', function(e) {
+    context.addEventListener('click', (e) => {
 
         const trigger = e.target.closest('*[data-src="popup-entry"]');
         if (!trigger) return;

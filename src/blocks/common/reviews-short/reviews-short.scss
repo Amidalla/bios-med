@@ -41,12 +41,12 @@
         .reviews-short__decor {
             position: absolute;
             top: -30px;
+            right: -20%;
+            left: -20%;
             z-index: 1;
             height: 223px;
             background: linear-gradient(180deg, #f7f8f2 0%, #f6efe5 100%);
             filter: blur(37.9px);
-            right: -20%;
-            left: -20%;
 
             @include bp.mq(laptop-m) {
                 filter: blur(15.9px);

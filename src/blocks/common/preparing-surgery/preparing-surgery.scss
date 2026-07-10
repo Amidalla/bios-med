@@ -16,9 +16,9 @@
 
     &.preparing-surgery-sub {
         position: relative;
+        padding-top: 0;
         padding-bottom: 54px;
         margin-top: -50px;
-        padding-top: 0;
 
         @include bp.mq(tablet-xl) {
             margin-top: 0;

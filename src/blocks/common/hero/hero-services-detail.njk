@@ -11,8 +11,7 @@
 {% set heroLinkUrl = hero.linkUrl | default(null) %}
 {% set heroShowRating = hero.showRating | default(false) %}
 {% set heroClass = hero.class | default("") %}
-{% set heroBeforeImage = hero.beforeImage | default(null) %}
-{% set heroAfterImage = hero.afterImage | default(null) %}
+{% set heroImage = hero.image | default(null) %}
 {% set heroBeforeText = hero.beforeText | default("До") %}
 {% set heroAfterText = hero.afterText | default("После") %}
 
@@ -62,20 +61,19 @@
             {% endif %}
         </div>
 
-        {% if heroBeforeImage and heroAfterImage %}
+        {% if heroImage %}
         <div class="hero__card-ba">
             <div class="card-ba">
                 <div class="card-ba__inner">
-                    <div class="card-ba__col">
-                        <div class="card-ba__image">
-                            <img class="lazy" data-src="{{ heroBeforeImage }}" alt="{{ heroBeforeText }}">
-                            <span class="card-ba__label">{{ heroBeforeText }}</span>
-                        </div>
+                    <div class="card-ba__image-wrapper">
+                        <img class="lazy" data-src="{{ heroImage }}" alt="До и после">
                     </div>
-                    <div class="card-ba__col">
-                        <div class="card-ba__image">
-                            <img class="lazy" data-src="{{ heroAfterImage }}" alt="{{ heroAfterText }}">
-                            <span class="card-ba__label">{{ heroAfterText }}</span>
+                    <div class="card-ba__decor">
+                        <div class="card-ba__decor-item">
+                            <span class="card-ba__label card-ba__label--before">{{ heroBeforeText }}</span>
+                        </div>
+                        <div class="card-ba__decor-item">
+                            <span class="card-ba__label card-ba__label--after">{{ heroAfterText }}</span>
                         </div>
                     </div>
                 </div>
