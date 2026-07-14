@@ -1,9 +1,13 @@
 {# components/general/direction-card/direction-card.njk #}
 
-{% macro directionCard(icon, title, items) %}
+{% macro directionCard(icon, title, items, iconAlt = "", isImage = false) %}
 <div class="direction-card">
     <div class="direction-card__icon">
-        {{ icon | safe }}
+        {% if isImage %}
+            <img src="{{ icon }}" alt="{{ iconAlt | default(title) }}" class="direction-card__icon-img">
+        {% else %}
+            {{ icon | safe }}
+        {% endif %}
     </div>
     <h3 class="direction-card__title">{{ title }}</h3>
     <ul class="direction-card__list">

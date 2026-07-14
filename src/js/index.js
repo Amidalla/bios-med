@@ -20,16 +20,11 @@ import { preparingSurgery } from "../blocks/common/preparing-surgery/preparing-s
 import { popupFindMore } from "../components/common/popup-find-more/popup-find-more.js";
 import { popupWhatThis } from "../components/common/popup-what-this/popup-what-this.js";
 import { popupWhoSuitable } from "../components/common/popup-who-suitable/popup-who-suitable.js";
-import { popupReconstructiveRhinoplasty } from "../components/common/popup-reconstructive-rhinoplasty/popup-reconstructive-rhinoplasty.js";
 import { initExpandButtons } from "../components/general/operations-types-card/operations-types-card.js";
 import { popupRehabilitation } from "../components/common/popup-rehabilitation/popup-rehabilitation.js";
 import { surgeons } from "../blocks/common/surgeons/surgeons.js";
 import { expertAdvice } from "../blocks/common/expert-advice/expert-advice.js";
 import { questions } from "../blocks/common/questions/questions.js";
-import { popupIncrease } from "../components/common/popup-increase/popup-increase.js";
-import { popupLipofilling } from "../components/common/popup-lipofilling/popup-lipofilling.js";
-import { popupGluteoplasty } from "../components/common/popup-gluteoplasty/popup-gluteoplasty.js";
-import { popupButterfly } from "../components/common/popup-butterfly/popup-butterfly.js";
 import { surgeonsEnlargemen } from "../blocks/common/surgeons-enlargemen/surgeons-enlargemen.js";
 import { advantagesVideo } from "../blocks/common/advantages/about-advantages.js";
 import { operationalExaminationSlider } from "../blocks/common/operational-examination/operational-examination.js";
@@ -49,6 +44,7 @@ import { beforeAfterShowMore } from "../blocks/common/before-after-short/before-
 import { articleTextToggle } from "../blocks/common/article-text/article-text.js";
 import { heroVideo } from "../blocks/common/hero/hero-contacts.js";
 import { contactAddressVideo } from "../blocks/common/contact-address/contact-address.js";
+import { initPopupHandler } from './utils/popup-handler.js';
 
 const components = [
     consentNotice,
@@ -72,16 +68,11 @@ const components = [
     popupFindMore,
     popupWhatThis,
     popupWhoSuitable,
-    popupReconstructiveRhinoplasty,
     initExpandButtons,
     popupRehabilitation,
     surgeons,
     expertAdvice,
     questions,
-    popupIncrease,
-    popupLipofilling,
-    popupGluteoplasty,
-    popupButterfly,
     surgeonsEnlargemen,
     advantagesVideo,
     operationalExaminationSlider,
@@ -98,7 +89,8 @@ const components = [
     beforeAfterShowMore,
     articleTextToggle,
     heroVideo,
-    contactAddressVideo
+    contactAddressVideo,
+    initPopupHandler
 ];
 
 function init(context = document) {

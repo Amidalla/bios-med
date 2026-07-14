@@ -8,6 +8,51 @@ export function expertAdvice() {
 
     let swiperInstance = null;
 
+    // ===== ФУНКЦИЯ ДЛЯ ВИДЕО (такая же, как в storiesShort) =====
+    function initVideoPlayers() {
+        // Ищем контейнеры с видео внутри expert-advice
+        const container = document.querySelector('.expert-advice');
+        if (!container) return;
+
+        const previewContainers = container.querySelectorAll('.video-review-card__preview-container');
+
+        previewContainers.forEach((container) => {
+            if (container.dataset.videoInitialized === 'true') return;
+            container.dataset.videoInitialized = 'true';
+
+            const playButton = container.querySelector('.video-review-card__play');
+            const videoUrl = container.dataset.videoUrl;
+
+            if (!playButton || !videoUrl) return;
+
+            const replaceWithIframe = (e) => {
+                if (e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                }
+
+                if (container.querySelector('.video-review-card__iframe')) return;
+
+                const iframe = document.createElement('iframe');
+                iframe.src = videoUrl + (videoUrl.includes('?') ? '&' : '?') + 'autoplay=1';
+                iframe.className = 'video-review-card__iframe';
+                iframe.setAttribute('frameborder', '0');
+                iframe.setAttribute(
+                    'allow',
+                    'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+                );
+                iframe.setAttribute('allowfullscreen', '');
+
+                container.innerHTML = '';
+                container.appendChild(iframe);
+                container.classList.add('is-playing');
+            };
+
+            playButton.addEventListener('click', replaceWithIframe);
+            container.addEventListener('click', replaceWithIframe);
+        });
+    }
+
     function initSwiper() {
         if (swiperInstance) {
             swiperInstance.destroy(true, true);
@@ -33,8 +78,21 @@ export function expertAdvice() {
                     slidesPerView: 3,
                     spaceBetween: 22
                 }
+            },
+            on: {
+                init: function() {
+                    // ✅ Инициализируем видео после загрузки слайдера
+                    setTimeout(initVideoPlayers, 200);
+                },
+                slideChange: function() {
+                    // ✅ Обновляем видео при смене слайда
+                    setTimeout(initVideoPlayers, 200);
+                }
             }
         });
+
+        // ✅ Также вызываем после инициализации
+        setTimeout(initVideoPlayers, 300);
 
         if (prevBtn && nextBtn) {
             const oldPrev = prevBtn.cloneNode(true);
@@ -66,6 +124,8 @@ export function expertAdvice() {
             swiperInstance.on("slideChange", updateButtons);
             updateButtons();
         }
+
+        initVideoPlayers();
     }
 
     initSwiper();

@@ -12,26 +12,29 @@
             <div class="undergoing-surgery__grid">
                 {% set cards = [
                     {
-                        icon: "<span>01</span>",
+                        icon: "01",
                         title: "Консультация и планирование",
                         textItems: [
                             { type: "list", items: ["3D-моделирование будущего результата", "Обсуждение техники операции", "Назначение анализов и обследований"] }
-                        ]
+                        ],
+                        iconType: "text"
                     },
                     {
-                        icon: "<span>02</span>",
+                        icon: "02",
                         title: "Проведение операции",
                         textItems: [
                             { type: "paragraph", content: "Операция выполняется под общим наркозом и длится от 1 до 3 часов в зависимости от сложности." },
                             { type: "list", items: ["Доступ через разрезы внутри носа или на колумелле", "Коррекция хрящевой и костной ткани", "Наложение косметических швов"] }
-                        ]
+                        ],
+                        iconType: "text"
                     },
                     {
-                        icon: "<span>03</span>",
+                        icon: "03",
                         title: "Реабилитация и результат",
                         textItems: [
                             { type: "list", items: ["Снятие швов на 7-10 день", "Использование шины и лейкопластыря", "Контрольные осмотры хирурга"] }
-                        ]
+                        ],
+                        iconType: "text"
                     }
                 ] %}
 
@@ -41,7 +44,8 @@
                         title=card.title,
                         textItems=card.textItems,
                         buttons=[],
-                        showReadMore=false
+                        showReadMore=false,
+                        iconType=card.iconType | default('image')
                     ) }}
                 {% endfor %}
             </div>

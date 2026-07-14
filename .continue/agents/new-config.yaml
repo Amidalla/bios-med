@@ -1,0 +1,24 @@
+name: My Config
+version: 1.0.0
+schema: v1
+
+models:
+  - name: DeepSeek Coder
+    provider: ollama
+    model: deepseek-coder:6.7b
+    roles:
+      - chat
+      - edit
+      - apply
+      - autocomplete
+    defaultCompletionOptions:
+      temperature: 0.3
+      maxTokens: 4000
+      contextLength: 8192
+
+tabAutocompleteOptions:
+  maxPromptTokens: 400
+  debounceDelay: 200
+  onlyMyCode: true
+
+allowAnonymousTelemetry: false

@@ -9,30 +9,33 @@
         <div class="magnification-types__list">
             {% set cards = [
                 {
+                    serviceId: "increase",
                     icon: "/assets/images/content/magnification-types1.png",
                     title: "Увеличение ягодиц филлерами",
                     textItems: [
                         { type: "list", items: ["Консультация ", "Анестезия", "Филлеры ", "Осмотры после процедуры"] }
                     ],
                     labels: ["Без операции", "Без наркоза"],
-                    buttons: [{ text: "Реабилитация", type: "primary", show: true, modal: "popup-increase" }],
+                    buttons: [{ text: "Реабилитация", type: "primary", show: true }],
                     footerLinks: [{ text: "Подробнее об услуге", url: "#", show: true }],
                     showReadMore: true,
                     isImage: true
                 },
                 {
+                    serviceId: "lipofilling",
                     icon: "/assets/images/content/magnification-types2.png",
                     title: "Липолифтинг ягодиц",
                     textItems: [
                         { type: "list", items: ["Консультация", "Общая анестезия", "Стационар 1 сутки ", "Перевязки ", "Послеоперационное наблюдение"] }
                     ],
                     labels: ["Собственный жир", "Наркоз"],
-                    buttons: [{ text: "Реабилитация", type: "primary", show: true, modal: "popup-lipofilling" }],
+                    buttons: [{ text: "Реабилитация", type: "primary", show: true }],
                     footerLinks: [{ text: "Подробнее об услуге", url: "#", show: true }],
                     showReadMore: true,
                     isImage: true
                 },
                 {
+                    serviceId: "gluteoplasty",
                     icon: "/assets/images/content/magnification-types3.png",
                     title: "Глютеопластика (имплантация)",
                     textItems: [
@@ -41,12 +44,13 @@
                         { type: "paragraph", content: "Рекомендуется после значительной потери веса или с возрастом" }
                     ],
                     labels: ["Импланты", "Наркоз"],
-                    buttons: [{ text: "Реабилитация", type: "primary", show: true, modal: "popup-gluteoplasty" }],
+                    buttons: [{ text: "Реабилитация", type: "primary", show: true }],
                     footerLinks: [{ text: "Подробнее об услуге", url: "#", show: true }],
                     showReadMore: true,
                     isImage: true
                 },
                 {
+                    serviceId: "butterfly",
                     icon: "/assets/images/content/magnification-types4.png",
                     title: "Подтяжка ягодиц методом Butterfly lift",
                     textItems: [
@@ -55,7 +59,7 @@
                         { type: "paragraph", content: "Оптимальное решение для сложных клинических случаев" }
                     ],
                     labels: ["Максимальный результат"],
-                    buttons: [{ text: "Реабилитация", type: "primary", show: true, modal: "popup-butterfly" }],
+                    buttons: [{ text: "Реабилитация", type: "primary", show: true }],
                     footerLinks: [{ text: "Подробнее об услуге", url: "#", show: true }],
                     showReadMore: true,
                     isImage: true
@@ -71,7 +75,8 @@
                     buttons=card.buttons,
                     footerLinks=card.footerLinks,
                     showReadMore=card.showReadMore,
-                    isImage=card.isImage
+                    isImage=card.isImage,
+                    serviceId=card.serviceId
                 ) }}
             {% endfor %}
         </div>

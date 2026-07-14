@@ -7,47 +7,94 @@ export function reviewsShort() {
     let observer = null;
     let isVisible = false;
 
+    // ===== ФУНКЦИЯ ДЛЯ ВИДЕО (скопирована из storiesShort) =====
+    function initVideoPlayers() {
+        // Ищем контейнеры с видео в секции reviews-short-sub
+        const container = document.querySelector('.reviews-short-sub');
+        if (!container) return;
+
+        const previewContainers = container.querySelectorAll('.video-review-card__preview-container');
+
+        previewContainers.forEach((container) => {
+            if (container.dataset.videoInitialized === 'true') return;
+            container.dataset.videoInitialized = 'true';
+
+            const playButton = container.querySelector('.video-review-card__play');
+            const videoUrl = container.dataset.videoUrl;
+
+            if (!playButton || !videoUrl) return;
+
+            const replaceWithIframe = (e) => {
+                if (e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                }
+
+                if (container.querySelector('.video-review-card__iframe')) return;
+
+                const iframe = document.createElement('iframe');
+                iframe.src = videoUrl + (videoUrl.includes('?') ? '&' : '?') + 'autoplay=1';
+                iframe.className = 'video-review-card__iframe';
+                iframe.setAttribute('frameborder', '0');
+                iframe.setAttribute(
+                    'allow',
+                    'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+                );
+                iframe.setAttribute('allowfullscreen', '');
+
+                container.innerHTML = '';
+                container.appendChild(iframe);
+                container.classList.add('is-playing');
+            };
+
+            playButton.addEventListener('click', replaceWithIframe);
+            container.addEventListener('click', replaceWithIframe);
+        });
+    }
+
     function initSwiper() {
         // Проверяем, есть ли активный таб в секции reviews-all
         const activePanel = document.querySelector(".reviews-all .tabs__panel.active");
 
         let sliderEl;
         if (activePanel) {
-            // Если есть табы - ищем слайдер в активном табе
             sliderEl = activePanel.querySelector(".reviews-slider");
         } else {
-            // Если нет табов - ищем обычный слайдер
             sliderEl = document.querySelector(".reviews-short:not(.reviews-all) .reviews-slider");
         }
 
         if (!sliderEl) {
-            destroySwiper();
+            if (swiperInstance) {
+                swiperInstance.destroy(true, true);
+                swiperInstance = null;
+            }
             return;
         }
 
-        // Если слайдер уже существует и это тот же элемент, обновляем
         if (swiperInstance && swiperInstance.el === sliderEl) {
             try {
                 swiperInstance.update();
                 updateNavigationVisibility(sliderEl);
+                setTimeout(initVideoPlayers, 200);
                 return;
             } catch (e) {
-                destroySwiper();
+                swiperInstance = null;
             }
         }
 
-        // Уничтожаем старый инстанс
-        destroySwiper();
-
         const sliderWrapper = sliderEl.closest(".reviews-short__slider");
-        if (!sliderWrapper) return;
+        if (sliderWrapper) {
+            sliderWrapper.style.opacity = "0";
+            sliderWrapper.style.transition = "opacity 0.2s ease";
+        }
 
-        // Скрываем до инициализации
-        sliderWrapper.style.opacity = "0";
-        sliderWrapper.style.transition = "opacity 0.2s ease";
+        if (swiperInstance) {
+            swiperInstance.destroy(true, true);
+            swiperInstance = null;
+        }
 
-        const prevBtn = sliderWrapper.querySelector(".reviews-slider__button-prev");
-        const nextBtn = sliderWrapper.querySelector(".reviews-slider__button-next");
+        const prevBtn = sliderWrapper ? sliderWrapper.querySelector(".reviews-slider__button-prev") : null;
+        const nextBtn = sliderWrapper ? sliderWrapper.querySelector(".reviews-slider__button-next") : null;
 
         swiperInstance = new Swiper(sliderEl, {
             slidesPerView: 1.3,
@@ -68,11 +115,15 @@ export function reviewsShort() {
             },
             on: {
                 init: function() {
-                    sliderWrapper.style.opacity = "1";
+                    if (sliderWrapper) {
+                        sliderWrapper.style.opacity = "1";
+                    }
                     updateNavigationVisibility(sliderEl);
+                    setTimeout(initVideoPlayers, 200);
                 },
                 slideChange: function() {
                     updateNavigationVisibility(sliderEl);
+                    setTimeout(initVideoPlayers, 200);
                 },
                 resize: function() {
                     updateNavigationVisibility(sliderEl);
@@ -80,10 +131,10 @@ export function reviewsShort() {
             }
         });
 
-        // Запасной таймаут
         setTimeout(() => {
-            if (sliderWrapper.style.opacity !== "1") {
+            if (sliderWrapper && sliderWrapper.style.opacity !== "1") {
                 sliderWrapper.style.opacity = "1";
+                initVideoPlayers();
             }
         }, 300);
 
@@ -120,6 +171,8 @@ export function reviewsShort() {
             swiperInstance.on("slideChange", updateButtons);
             updateButtons();
         }
+
+        initVideoPlayers();
     }
 
     function updateNavigationVisibility(sliderEl) {
@@ -151,8 +204,8 @@ export function reviewsShort() {
     }
 
     function setupIntersectionObserver() {
-        const section = document.querySelector(".reviews-short");
-        if (!section) return;
+        const sections = document.querySelectorAll(".reviews-short:not(.reviews-all)");
+        if (!sections.length) return;
 
         if (observer) {
             observer.disconnect();
@@ -161,21 +214,30 @@ export function reviewsShort() {
         observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 isVisible = entry.isIntersecting;
-
                 if (entry.isIntersecting) {
                     setTimeout(() => {
-                        initSwiper();
-                    }, 100);
+                        if (swiperInstance) {
+                            try {
+                                swiperInstance.update();
+                                const sliderEl = document.querySelector(".reviews-short:not(.reviews-all) .reviews-slider");
+                                if (sliderEl) updateNavigationVisibility(sliderEl);
+                            } catch (e) {
+                                initSwiper();
+                            }
+                        } else {
+                            initSwiper();
+                        }
+                    }, 50);
                 } else {
                     destroySwiper();
                 }
             });
         }, {
             rootMargin: "0px 0px 0px 0px",
-            threshold: [0, 0.1, 0.5, 1]
+            threshold: 0.1
         });
 
-        observer.observe(section);
+        sections.forEach(section => observer.observe(section));
     }
 
     // Инициализация
@@ -192,11 +254,14 @@ export function reviewsShort() {
                 el.style.opacity = "0";
             });
 
-            destroySwiper();
+            if (swiperInstance) {
+                try {
+                    swiperInstance.destroy(true, true);
+                } catch (e) {}
+                swiperInstance = null;
+            }
 
-            setTimeout(() => {
-                initSwiper();
-            }, 150);
+            setTimeout(initSwiper, 150);
         }
     });
 
@@ -205,19 +270,46 @@ export function reviewsShort() {
         clearTimeout(resizeTimeout);
         resizeTimeout = setTimeout(() => {
             if (isVisible) {
-                initSwiper();
+                if (swiperInstance) {
+                    try {
+                        swiperInstance.update();
+                        const sliderEl = document.querySelector(".reviews-short:not(.reviews-all) .reviews-slider");
+                        if (sliderEl) updateNavigationVisibility(sliderEl);
+                    } catch (e) {
+                        initSwiper();
+                    }
+                } else {
+                    initSwiper();
+                }
             }
         }, 200);
     });
 
     document.addEventListener("visibilitychange", () => {
         if (!document.hidden && isVisible) {
-            setTimeout(initSwiper, 200);
+            setTimeout(() => {
+                if (swiperInstance) {
+                    try {
+                        swiperInstance.update();
+                        const sliderEl = document.querySelector(".reviews-short:not(.reviews-all) .reviews-slider");
+                        if (sliderEl) updateNavigationVisibility(sliderEl);
+                    } catch (e) {
+                        initSwiper();
+                    }
+                } else {
+                    initSwiper();
+                }
+            }, 200);
         }
     });
 
     window.addEventListener("beforeunload", () => {
-        destroySwiper();
+        if (swiperInstance) {
+            try {
+                swiperInstance.destroy(true, true);
+            } catch (e) {}
+            swiperInstance = null;
+        }
         if (observer) {
             observer.disconnect();
         }

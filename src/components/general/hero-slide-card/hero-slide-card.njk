@@ -3,9 +3,9 @@
     <div class="hero-slide-card__content">
         <h3 class="hero-slide-card__title">{{ params.title | safe }}</h3>
 
-        {% if params.svg %}
+        {% if params.icon %}
             <div class="hero-slide-card__icon">
-                {{ params.svg | safe }}
+                <img class="lazy" src="{{ params.icon }}" alt="{{ params.iconAlt | default('Иконка') }}" class="hero-slide-card__icon-img">
             </div>
         {% endif %}
 

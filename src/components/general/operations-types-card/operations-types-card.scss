@@ -33,9 +33,10 @@
         background: var(--bg, linear-gradient(96deg, #be9158 12.36%, #f7e0aa 53.53%, #be9158 91.65%));
         border-radius: 50%;
 
-        svg {
+        img {
             width: 90%;
             height: 90%;
+            object-fit: contain;
         }
 
         @include bp.mq(mobile-xl) {
