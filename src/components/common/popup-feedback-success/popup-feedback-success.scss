@@ -1,0 +1,61 @@
+@use "core/breakpoints" as bp;
+@use "core/popup" as *;
+
+.popup-feedback-success {
+  @include popup;
+
+  &__btn {
+    min-width: 160px;
+    margin-top: 16px;
+
+    @include bp.mq(mobile-xl) {
+      width: 100%;
+      min-width: unset;
+    }
+  }
+
+  .heading {
+    .icon {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 10px;
+
+      img {
+        display: block;
+        width: 64px;
+        height: 64px;
+        object-fit: contain;
+      }
+    }
+
+    .title {
+      font-family: var(--font-family-secondary);
+      font-size: 36px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 120%;
+      text-transform: uppercase;
+      color: var(--color-white);
+      text-align: center;
+      margin: 0 0 10px 0;
+
+      @include bp.mq(mobile-xl) {
+        font-size: 20px;
+      }
+    }
+
+    .text {
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 150%;
+      color: var(--color-white);
+      text-align: center;
+      margin: 0 0 8px 0;
+
+      @include bp.mq(mobile-xl) {
+        font-size: 14px;
+      }
+    }
+  }
+}

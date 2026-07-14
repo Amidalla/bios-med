@@ -45,6 +45,7 @@ import { articleTextToggle } from "../blocks/common/article-text/article-text.js
 import { heroVideo } from "../blocks/common/hero/hero-contacts.js";
 import { contactAddressVideo } from "../blocks/common/contact-address/contact-address.js";
 import { initPopupHandler } from './utils/popup-handler.js';
+import { popupFeedbackSuccess } from "../components/common/popup-feedback-success/popup-feedback-success.js";
 
 const components = [
     consentNotice,
@@ -90,7 +91,8 @@ const components = [
     articleTextToggle,
     heroVideo,
     contactAddressVideo,
-    initPopupHandler
+    initPopupHandler,
+    popupFeedbackSuccess
 ];
 
 function init(context = document) {
