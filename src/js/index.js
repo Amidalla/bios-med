@@ -45,6 +45,7 @@ import { articleTextToggle } from "../blocks/common/article-text/article-text.js
 import { heroVideo } from "../blocks/common/hero/hero-contacts.js";
 import { contactAddressVideo } from "../blocks/common/contact-address/contact-address.js";
 import { initPopupHandler } from './utils/popup-handler.js';
+import { popupReconstructiveRhinoplasty } from "../components/common/popup-reconstructive-rhinoplasty/popup-reconstructive-rhinoplasty.js";
 import { popupFeedbackSuccess } from "../components/common/popup-feedback-success/popup-feedback-success.js";
 
 const components = [
@@ -92,6 +93,7 @@ const components = [
     heroVideo,
     contactAddressVideo,
     initPopupHandler,
+    popupReconstructiveRhinoplasty,
     popupFeedbackSuccess
 ];
 
