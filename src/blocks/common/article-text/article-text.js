@@ -13,28 +13,27 @@ export function articleTextToggle() {
 
         if (!hiddenContent || !borderBlock) return;
 
-        toggleBtn.addEventListener("click", function () {
+        const label = toggleBtn.querySelector("span") || toggleBtn;
+
+        toggleBtn.addEventListener("click", () => {
             const isOpen = hiddenContent.classList.contains("is-open");
 
             if (isOpen) {
+                hiddenContent.style.maxHeight = `${hiddenContent.scrollHeight}px`;
+                // Force reflow before collapsing
+                hiddenContent.offsetHeight;
+
                 hiddenContent.classList.remove("is-open");
                 borderBlock.classList.remove("is-open");
                 section.classList.remove("is-open");
-                this.querySelector("span").textContent = "Подробнее";
-
-                setTimeout(() => {
-                    hiddenContent.style.overflow = "hidden";
-                }, 100);
+                hiddenContent.style.maxHeight = "0px";
+                label.textContent = "Подробнее";
             } else {
-                hiddenContent.style.overflow = "hidden";
                 hiddenContent.classList.add("is-open");
                 borderBlock.classList.add("is-open");
                 section.classList.add("is-open");
-                this.querySelector("span").textContent = "Скрыть";
-
-                setTimeout(() => {
-                    hiddenContent.style.overflow = "visible";
-                }, 700);
+                hiddenContent.style.maxHeight = `${hiddenContent.scrollHeight}px`;
+                label.textContent = "Скрыть";
             }
         });
     });
