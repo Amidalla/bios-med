@@ -69,9 +69,7 @@
         }
 
         .review-card {
-            @include bp.mq(mobile-xl) {
-                width: 100%;
-            }
+            width: 100%;
         }
 
         .review-card__badge-text {

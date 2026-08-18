@@ -106,6 +106,8 @@
 }
 
 .input-wrapper--date {
+    position: relative;
+    overflow: visible;
     cursor: pointer;
 }
 
@@ -194,6 +196,15 @@
         }
     }
 
+    .flatpickr-month-heading {
+        margin-bottom: 8px;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 1.2;
+        color: var(--color-white);
+        text-align: center;
+    }
+
     .flatpickr-weekdays {
         margin-bottom: 4px;
     }
@@ -210,12 +221,14 @@
 
     .dayContainer {
         gap: 2px;
+        justify-content: flex-start;
         width: 100%;
         min-width: 0;
         max-width: none;
     }
 
     .flatpickr-day {
+        flex: 0 0 36px;
         width: 36px;
         max-width: 36px;
         height: 36px;
@@ -263,7 +276,10 @@
     }
 
     &.flatpickr-calendar--in-fancybox {
-        left: auto !important;
         z-index: 30;
+
+        &.open {
+            animation: none;
+        }
     }
 }

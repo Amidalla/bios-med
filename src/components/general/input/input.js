@@ -41,8 +41,16 @@ function getDateFieldFromEvent(target) {
     return wrapper?.querySelector('[data-mask="date"]') || null;
 }
 
+function getDateFieldWrapper(field) {
+    return field.closest(".input-wrapper--date");
+}
+
+function isInFancybox(field) {
+    return Boolean(field.closest(".fancybox__dialog"));
+}
+
 function getAppendTarget(field) {
-    return field.closest(".fancybox__dialog") ? field.closest("form") : document.body;
+    return isInFancybox(field) ? getDateFieldWrapper(field) : document.body;
 }
 
 function destroyActiveDatePicker() {
@@ -52,41 +60,71 @@ function destroyActiveDatePicker() {
     activeDatePicker = null;
 }
 
-function styleCalendar(instance, appendTo, field) {
-    const inFancybox = appendTo !== document.body;
-    const getRelativeBottom = (element, relativeTo) => {
-        const elementRect = element.getBoundingClientRect();
-        const parentRect = relativeTo.getBoundingClientRect();
-        return elementRect.bottom - parentRect.top;
-    };
+function updateCalendarMonthLabel(instance) {
+    const label = instance.calendarContainer.querySelector(".flatpickr-month-heading");
+    if (!label) return;
 
-    let bottomY;
-    if (inFancybox && appendTo) {
-        const parent = document.getElementById('popup-entry');
-        bottomY = getRelativeBottom(field, parent);
+    const months = instance.l10n.months.longhand;
+    label.textContent = `${months[instance.currentMonth]} ${instance.currentYear}`;
+}
+
+function ensureCalendarMonthLabel(instance) {
+    let label = instance.calendarContainer.querySelector(".flatpickr-month-heading");
+
+    if (!label) {
+        label = document.createElement("div");
+        label.className = "flatpickr-month-heading";
+        label.setAttribute("aria-live", "polite");
+
+        const weekdays = instance.calendarContainer.querySelector(".flatpickr-weekdays");
+        weekdays?.parentNode?.insertBefore(label, weekdays);
     }
 
+    updateCalendarMonthLabel(instance);
+}
+
+function positionCalendarInWrapper(instance, field, wrapper) {
+    const calendar = instance.calendarContainer;
+    const gap = 8;
+    const fieldRect = field.getBoundingClientRect();
+    const wrapperRect = wrapper.getBoundingClientRect();
+    const calendarWidth = calendar.offsetWidth;
+    const wrapperWidth = wrapper.clientWidth;
+
+    let left = fieldRect.left - wrapperRect.left + wrapper.scrollLeft;
+    left = Math.max(0, Math.min(left, wrapperWidth - calendarWidth));
+
+    calendar.style.position = "absolute";
+    calendar.style.top = `${fieldRect.bottom - wrapperRect.top + wrapper.scrollTop + gap}px`;
+    calendar.style.left = `${left}px`;
+    calendar.style.right = "auto";
+    calendar.style.bottom = "auto";
+}
+
+function prepareCalendar(instance, field, appendTo, inFancybox) {
     instance.calendarContainer.classList.toggle("flatpickr-calendar--in-fancybox", inFancybox);
-    instance.calendarContainer.style.zIndex = inFancybox ? "30" : "";
 
     if (inFancybox) {
-        setTimeout(() => {
-            instance.calendarContainer.style.top = `${bottomY}px`
-        }, 100)
+        instance.calendarContainer.style.zIndex = "30";
+        positionCalendarInWrapper(instance, field, appendTo);
+    } else {
+        instance.calendarContainer.style.zIndex = "";
     }
 }
 
 function openDatePicker(field) {
     if (!field || field.disabled) return;
 
+    const inFancybox = isInFancybox(field);
     const appendTo = getAppendTarget(field);
+
+    if (!appendTo) return;
 
     if (activeDatePicker?.input === field) {
         if (activeDatePicker.calendarContainer.parentNode !== appendTo) {
             appendTo.appendChild(activeDatePicker.calendarContainer);
         }
 
-        styleCalendar(activeDatePicker, appendTo, field);
         activeDatePicker.open();
         field.focus();
         return;
@@ -103,8 +141,18 @@ function openDatePicker(field) {
         minDate: "today",
         maxDate: getMaxDate(),
         appendTo,
+        animate: !inFancybox,
+        position: inFancybox
+            ? (instance) => positionCalendarInWrapper(instance, field, appendTo)
+            : "auto",
         monthSelectorType: "static",
-        onOpen: (_, __, instance) => styleCalendar(instance, appendTo, field),
+        onReady: (_, __, instance) => ensureCalendarMonthLabel(instance),
+        onOpen: (_, __, instance) => {
+            ensureCalendarMonthLabel(instance);
+            prepareCalendar(instance, field, appendTo, inFancybox);
+        },
+        onMonthChange: (_, __, instance) => updateCalendarMonthLabel(instance),
+        onYearChange: (_, __, instance) => updateCalendarMonthLabel(instance),
         onChange: () => dispatchInputEvent(field),
         onClose: () => dispatchInputEvent(field)
     });

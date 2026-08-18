@@ -1,5 +1,10 @@
 {# blocks/common/nav-section/nav-section.njk #}
 
+{% set navBg = navSectionBg | default('/assets/images/content/nav-section.jpg') %}
+{% set navBgLaptop = navSectionBgLaptop | default('/assets/images/content/nav-section-laptop.jpg') %}
+{% set navBgTablet = navSectionBgTablet | default('/assets/images/content/nav-section-tablet.jpg') %}
+{% set navBgMobile = navSectionBgMobile | default('/assets/images/content/nav-section-mobile.jpg') %}
+
 <section class="nav-section section {{ class | default('') }}">
     <div class="container">
         <div class="nav-section__wrapper">
@@ -29,5 +34,13 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class="nav-section__bg">
+        <picture>
+            <source media="(max-width: 374.98px)" srcset="{{ navBgMobile }}">
+            <source media="(max-width: 833.98px)" srcset="{{ navBgTablet }}">
+            <source media="(max-width: 1899.98px)" srcset="{{ navBgLaptop }}">
+            <img class="lazy" src="{{ navBg }}" alt="" aria-hidden="true">
+        </picture>
     </div>
 </section>

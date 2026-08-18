@@ -1,6 +1,43 @@
 {# blocks/common/selection-operation/selection-operation.njk #}
 
-<section class="selection-operation section {{ class | default('') }}">
+{% set soClass = class | default('') %}
+
+{% if soClass == 'subscription' %}
+    {% set soBgDefault = '/assets/images/content/subscription-bg.png' %}
+    {% set soBgLaptopDefault = '/assets/images/content/subscription-bg-laptop.jpg' %}
+    {% set soBgTabletDefault = '/assets/images/content/subscription-bg-tablet.jpg' %}
+    {% set soBgMobileDefault = '/assets/images/content/subscription-bg-mobile.jpg' %}
+    {% set soBgMobileMq = '(max-width: 759.98px)' %}
+    {% set soBgTabletMq = '(max-width: 1309.98px)' %}
+{% elif soClass == 'selection-operation--about' %}
+    {% set soBgDefault = '/assets/images/content/selection-operation--about-bg.jpg' %}
+    {% set soBgLaptopDefault = '/assets/images/content/selection-operation--about-bg-laptop.jpg' %}
+    {% set soBgTabletDefault = '/assets/images/content/selection-operation--about-bg-tablet.jpg' %}
+    {% set soBgMobileDefault = '/assets/images/content/selection-operation--about-bg-mobile.jpg' %}
+    {% set soBgMobileMq = '(max-width: 374.98px)' %}
+    {% set soBgTabletMq = '(max-width: 833.98px)' %}
+{% elif soClass == 'selection-operation--enlargemen' %}
+    {% set soBgDefault = '/assets/images/content/selection-operation-bg2.jpg' %}
+    {% set soBgLaptopDefault = '/assets/images/content/selection-operation-bg-laptop2.jpg' %}
+    {% set soBgTabletDefault = '/assets/images/content/selection-operation-bg-tablet2.jpg' %}
+    {% set soBgMobileDefault = '/assets/images/content/selection-operation-bg-mobile2.jpg' %}
+    {% set soBgMobileMq = '(max-width: 374.98px)' %}
+    {% set soBgTabletMq = '(max-width: 833.98px)' %}
+{% else %}
+    {% set soBgDefault = '/assets/images/content/selection-operation-bg.jpg' %}
+    {% set soBgLaptopDefault = '/assets/images/content/selection-operation-bg-laptop.jpg' %}
+    {% set soBgTabletDefault = '/assets/images/content/selection-operation-bg-tablet.jpg' %}
+    {% set soBgMobileDefault = '/assets/images/content/selection-operation-bg-mobile.jpg' %}
+    {% set soBgMobileMq = '(max-width: 374.98px)' %}
+    {% set soBgTabletMq = '(max-width: 833.98px)' %}
+{% endif %}
+
+{% set soBg = bg | default(soBgDefault) %}
+{% set soBgLaptop = bgLaptop | default(soBgLaptopDefault) %}
+{% set soBgTablet = bgTablet | default(soBgTabletDefault) %}
+{% set soBgMobile = bgMobile | default(soBgMobileDefault) %}
+
+<section class="selection-operation section {{ soClass }}">
     <div class="container">
         <div class="selection-operation__wrapper">
             <div class="selection-operation__grid">
@@ -24,5 +61,13 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class="selection-operation__bg">
+        <picture>
+            <source media="{{ soBgMobileMq }}" srcset="{{ soBgMobile }}">
+            <source media="{{ soBgTabletMq }}" srcset="{{ soBgTablet }}">
+            <source media="(max-width: 1899.98px)" srcset="{{ soBgLaptop }}">
+            <img class="lazy" src="{{ soBg }}" alt="">
+        </picture>
     </div>
 </section>

@@ -15,16 +15,18 @@
 
     &__list {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(4, minmax(0, 1fr));
         gap: 38px;
         margin-bottom: 29px;
 
         @include bp.mq(tablet-xl) {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
             gap: 9px;
         }
 
-        @include bp.mq(mobile-xl) {
-            grid-template-columns: repeat(2, 1fr);
+        .service-card {
+            width: 100%;
+            min-width: 0;
         }
     }
 
