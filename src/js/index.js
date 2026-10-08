@@ -43,6 +43,7 @@ import { paymentMethodsSlider } from "../blocks/common/payment-methods/payment-m
 import { beforeAfterShowMore } from "../blocks/common/before-after-short/before-after-doctor.js";
 import { articleTextToggle } from "../blocks/common/article-text/article-text.js";
 import { heroVideo } from "../blocks/common/hero/hero-contacts.js";
+import { contactsSocialToggle } from "../blocks/common/contacts-social/contacts-social.js";
 import { contactAddressVideo } from "../blocks/common/contact-address/contact-address.js";
 import { initPopupHandler } from './utils/popup-handler.js';
 import { popupReconstructiveRhinoplasty } from "../components/common/popup-reconstructive-rhinoplasty/popup-reconstructive-rhinoplasty.js";
@@ -91,6 +92,7 @@ const components = [
     beforeAfterShowMore,
     articleTextToggle,
     heroVideo,
+    contactsSocialToggle,
     contactAddressVideo,
     initPopupHandler,
     popupReconstructiveRhinoplasty,

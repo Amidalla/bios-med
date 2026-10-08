@@ -9,6 +9,10 @@
         padding-top: 0;
         padding-bottom: 0;
     }
+    .operations-types-card__text p {
+        margin: 0;
+    }
+
 
     &.undergoing-surgery-sub.undergoing-surgery-article {
 
@@ -198,6 +202,42 @@
             grid-template-columns: 64px 1fr;
             padding: 22px 21px 31px;
         }
+
+        @include bp.mq(tablet-xl) {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 0 20px;
+            align-items: center;
+        }
+
+        @include bp.mq(mobile-xl) {
+            gap: 0 12px;
+        }
+    }
+
+    .operations-types-card__content {
+        @include bp.mq(tablet-xl) {
+            display: contents;
+        }
+    }
+
+    .operations-types-card__title {
+        @include bp.mq(tablet-xl) {
+            margin-bottom: 0;
+        }
+    }
+
+    .operations-types-card__text-wrapper,
+    .operations-types-card__buttons {
+        @include bp.mq(tablet-xl) {
+            grid-column: 1 / -1;
+        }
+    }
+
+    .operations-types-card__text-wrapper {
+        @include bp.mq(tablet-xl) {
+            margin-top: 10px;
+        }
     }
 
     .operations-types-card__icon-wrapper {
@@ -210,8 +250,8 @@
         }
 
         @include bp.mq(mobile-xl) {
-            width: 40px;
-            height: 64px;
+            width: 38px;
+            height: 54px;
         }
 
         span {
@@ -222,7 +262,7 @@
             color: var(--color-white);
 
             @include bp.mq(mobile-xl) {
-                font-size: 30px;
+                font-size: 24px;
             }
         }
     }

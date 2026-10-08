@@ -59,7 +59,7 @@
         transition: all 0.3s ease;
 
         @include bp.mq(mobile-xl) {
-            padding: 16px 8px 18px 25px;
+            padding: 12px 8px 18px 12px;
         }
 
         &::before {

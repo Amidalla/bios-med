@@ -724,8 +724,11 @@
             margin-right: 0;
             margin-bottom: 13px;
             margin-left: 0;
-            font-size: 38px;
+            font-size: 36px;
             text-align: left;
+            overflow-wrap: break-word;
+            white-space: normal;
+            word-break: normal;
         }
     }
 

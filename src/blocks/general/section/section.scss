@@ -34,7 +34,10 @@
             -webkit-text-fill-color: transparent;
 
             @include bp.mq(mobile-l) {
-                padding: 0 10px 12.5px;
+                padding: 0 5px 12.5px;
+                overflow-wrap: break-word;
+                white-space: normal;
+                word-break: normal;
             }
 
             &::after {
@@ -60,7 +63,9 @@
         }
 
         @include bp.mq(mobile-xl) {
-            font-size: 36px;
+            font-size: 32px;
+            margin-left: -10px;
+            margin-right: -10px;
         }
     }
 

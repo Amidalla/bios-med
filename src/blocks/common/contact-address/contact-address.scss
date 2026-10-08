@@ -17,6 +17,11 @@
     margin-right: -20%;
     margin-left: -20%;
     filter: blur(30.9px);
+
+    @include bp.mq(mobile-xl) {
+      top: -90px;
+      filter: blur(20.9px);
+    }
   }
 
   .contact-address__bg {

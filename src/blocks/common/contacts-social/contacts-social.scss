@@ -57,6 +57,11 @@
       flex-direction: column;
     }
 
+    &--collapsible {
+      overflow: hidden;
+      transition: max-height 0.5s ease;
+    }
+
     .social-card {
       @include bp.mq(laptop-l) {
         width: 30%;
@@ -64,6 +69,37 @@
 
       @include bp.mq(tablet-xl) {
         width: auto;
+      }
+    }
+  }
+
+  &__toggle {
+    display: none;
+    justify-content: center;
+    margin-top: 38px;
+
+    &--visible {
+      display: flex;
+    }
+
+    @include bp.mq(tablet-xl) {
+      margin-top: 20px;
+    }
+
+    .border-block {
+      @include mix.border-block;
+
+      max-width: 300px;
+
+      button {
+        @include mix.button-gradient(24px 40px);
+
+        max-width: 100%;
+        cursor: pointer;
+
+        &:hover {
+          text-decoration: none;
+        }
       }
     }
   }
