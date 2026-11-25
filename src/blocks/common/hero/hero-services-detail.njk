@@ -12,6 +12,8 @@
 {% set heroShowRating = hero.showRating | default(false) %}
 {% set heroClass = hero.class | default("") %}
 {% set heroImage = hero.image | default(null) %}
+{% set heroDoctorPhoto = hero.doctorPhoto | default(null) %}
+{% set heroDoctorPhotoAlt = hero.doctorPhotoAlt | default("Фото врача") %}
 {% set heroBeforeText = hero.beforeText | default("До") %}
 {% set heroAfterText = hero.afterText | default("После") %}
 
@@ -81,6 +83,12 @@
         </div>
         {% endif %}
     </div>
+
+    {% if heroDoctorPhoto %}
+    <div class="hero__doctor-photo">
+        <img class="lazy" data-src="{{ heroDoctorPhoto }}" alt="{{ heroDoctorPhotoAlt }}">
+    </div>
+    {% endif %}
 
     <div class="hero__bg">
         <picture>

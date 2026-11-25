@@ -56,12 +56,11 @@
                 display: none;
             }
 
-
             .hero__cards-item {
                 &.contacts {
                     padding: 25px;
                     background: rgb(255 255 255 / 80%);
-                    border: 2px solid var(--bg, #BE9158);
+                    border: 2px solid var(--bg, #be9158);
                     border-radius: 15px;
 
                     .hero__cards-title {
@@ -95,9 +94,11 @@
                     overflow: hidden;
                     cursor: pointer;
                     background: rgb(255 255 255 / 55%);
-                    border: 2px solid var(--bg, #BE9158);
+                    border: 2px solid var(--bg, #be9158);
                     border-radius: 15px;
-                    transition: transform 0.3s ease, box-shadow 0.3s ease;
+                    transition:
+                        transform 0.3s ease,
+                        box-shadow 0.3s ease;
 
                     &:hover {
                         box-shadow: 0 15px 40px rgb(0 0 0 / 50%);
@@ -131,7 +132,9 @@
                             width: 100%;
                             height: 100%;
                             object-fit: cover;
-                            transition: opacity 0.8s ease, transform 0.5s ease;
+                            transition:
+                                opacity 0.8s ease,
+                                transform 0.5s ease;
                         }
                     }
 
@@ -150,7 +153,9 @@
                         background: none;
                         border: none;
                         transform: translate(-50%, -50%);
-                        transition: transform 0.3s ease, filter 0.3s ease;
+                        transition:
+                            transform 0.3s ease,
+                            filter 0.3s ease;
 
                         svg {
                             width: 100%;
@@ -269,23 +274,19 @@
                         width: 100%;
                     }
                 }
-
             }
         }
     }
 
-
     &.hero-promotions {
-
         @include bp.mq(mobile-xl) {
-           min-height: 671px;
+            min-height: 671px;
         }
 
         padding-top: 300px;
     }
 
     &.hero-services-detail.for-patient-hero {
-
         @include bp.mq(mobile-xl) {
             min-height: 871px;
         }
@@ -305,13 +306,13 @@
         }
 
         .hero__content {
-           max-width: 1100px;
+            max-width: 1100px;
         }
     }
 
     &.hero-services-detail.hero-doctor {
-
         @include bp.mq(mobile-xl) {
+            min-height: 900px;
             padding-top: 150px;
         }
 
@@ -364,7 +365,6 @@
 
     &.hero-services-detail.hero-article {
         padding-top: 300px;
-
     }
 
     &.hero-services-detail.hero-documents {
@@ -378,7 +378,7 @@
             font-weight: 400;
             line-height: 96%;
             text-transform: uppercase;
-            background: linear-gradient(89deg, #CCA684 31.15%, #FFE0AF 99.32%);
+            background: linear-gradient(89deg, #cca684 31.15%, #ffe0af 99.32%);
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -424,7 +424,6 @@
                 transform: none;
             }
         }
-
     }
 
     &.hero-before-after.hero-prices {
@@ -458,7 +457,6 @@
         @include bp.mq(mobile-xl) {
             padding-top: 120px;
         }
-
 
         .hero__card-ba {
             position: absolute;
@@ -577,7 +575,6 @@
             padding-top: 170px;
         }
 
-
         .hero__title {
             margin-bottom: 0;
         }
@@ -604,6 +601,58 @@
         img {
             position: absolute;
             inset: 0;
+        }
+    }
+
+    &__doctor-photo {
+        position: absolute;
+        right: 84px;
+        bottom: -70px;
+        z-index: 2;
+        display: none;
+        width: 222px;
+        height: 222px;
+        overflow: hidden;
+        background: linear-gradient(180deg, #967252 0%, #e5cec1 100%);
+        border-radius: 50%;
+
+        @include bp.mq(laptop-s) {
+            display: block;
+        }
+
+        @include bp.mq(tablet-xl) {
+            right: 68px;
+            bottom: 47px;
+            width: 306px;
+            height: 306px;
+        }
+
+        @include bp.mq(mobile-xl) {
+            right: auto;
+            bottom: 34px;
+            left: 50%;
+            width: 266px;
+            height: 266px;
+            transform: translateX(-50%);
+        }
+
+        img {
+            position: absolute;
+            top: -2%;
+            left: 50%;
+            width: 149%;
+            max-width: none;
+            transform: translateX(-50%);
+
+            @include bp.mq(tablet-xl) {
+                top: -8%;
+                width: 128%;
+            }
+
+            @include bp.mq(mobile-xl) {
+                top: -1.5%;
+                width: 141%;
+            }
         }
     }
 
@@ -726,9 +775,9 @@
             margin-left: 0;
             font-size: 36px;
             text-align: left;
+            word-break: normal;
             overflow-wrap: break-word;
             white-space: normal;
-            word-break: normal;
         }
     }
 
@@ -803,22 +852,22 @@
         }
     }
 
-   .hero__title {
-       font-size: 80px;
-       font-style: normal;
-       font-weight: 400;
-       line-height: 102%;
+    .hero__title {
+        font-size: 80px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 102%;
 
-       @include bp.mq(laptop-xl) {
-           font-size: 70px;
-       }
+        @include bp.mq(laptop-xl) {
+            font-size: 70px;
+        }
 
-       @include bp.mq(tablet-xl) {
-           font-size: 60px;
-       }
+        @include bp.mq(tablet-xl) {
+            font-size: 60px;
+        }
 
-       @include bp.mq(mobile-xl) {
-           font-size: 38px;
-       }
-   }
+        @include bp.mq(mobile-xl) {
+            font-size: 38px;
+        }
+    }
 }
